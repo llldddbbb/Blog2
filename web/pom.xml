@@ -31,7 +31,7 @@
     </dependencies>
 
     <build>
-        <finalName>bookshop</finalName>
+        <finalName>blog</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

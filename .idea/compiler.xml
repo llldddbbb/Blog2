@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="common" />
         <module name="dao" />
         <module name="pojo" />
         <module name="service" />
@@ -14,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Blog" target="1.8" />
+      <module name="common" target="1.8" />
       <module name="dao" target="1.8" />
       <module name="pojo" target="1.8" />
       <module name="service" target="1.8" />
