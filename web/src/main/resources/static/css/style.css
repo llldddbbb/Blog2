@@ -1,7 +1,7 @@
 html, body{
 font-family: 'Raleway', sans-serif;
 	font-size: 100%;
-	background: #f7f7f7;
+    background: #f7f7f7;
 }
 body a,.grid_1,plan_1,plan_1.one,plan_1.two,i.icon1, i.icon2, i.icon3, i.icon4, i.icon5, i.icon6 {
 	transition:0.5s all;
