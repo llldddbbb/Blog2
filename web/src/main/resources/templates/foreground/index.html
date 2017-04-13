@@ -1,447 +1,558 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<link href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<link href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css' />
-<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="../../static/foreground/js/bootstrap.min.js"></script>
-<!-- animation-effect -->
-<link href="../../static/foreground/css/animate.min.css" rel="stylesheet">
-<script src="../../static/foreground/js/wow.min.js"></script>
-<script>
- new WOW().init();
-</script>
-<!-- //animation-effect -->
+    <title>DB'S BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <link href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <!-- Custom Theme files -->
+    <link href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="../../static/foreground/css/dropdown.css" rel='stylesheet' type='text/css'/>
+    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../static/foreground/js/bootstrap.min.js"></script>
+    <!-- animation-effect -->
+    <link href="../../static/foreground/css/animate.min.css" rel="stylesheet">
+    <script src="../../static/foreground/js/wow.min.js"></script>
+    <script src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+    <script src="../../static/foreground/js/jquery.dropdown.js"></script>
+    <script src="../../static/foreground/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="../../static/foreground/js/time.js"></script>
+    <script type="text/javascript" src="../../static/foreground/js/xiaolongbao.js"></script>
+    <script>
+        new WOW().init();
+
+        $(document).ready(function () {
+            var entries = [
+                {label: 'Back to top', url: '#', target: '_top'},
+                {label: 'Bootstrap', url: '#', target: '_top'},
+                {label: 'Carousel', url: '#', target: '_top'},
+                {label: 'Countdown', url: '#', target: '_top'},
+                {label: 'Dropdown Menu', url: '#', target: '_top'},
+                {label: 'CodePen', url: 'http://codepen.io/', target: '_top'},
+                {label: 'three.js', url: 'http://threejs.org/', target: '_top'},
+                {label: 'Form Validation', url: '#', target: '_top'},
+                {label: 'JS Compress', url: 'http://jscompress.com/', target: '_top'},
+                {label: 'TinyPNG', url: 'https://tinypng.com/', target: '_top'},
+                {label: 'Can I Use', url: 'http://caniuse.com/', target: '_top'},
+                {label: 'URL shortener', url: 'https://goo.gl/', target: '_top'},
+                {label: 'Grid Layout', url: '#', target: '_top'},
+                {label: 'Twitter', url: 'https://twitter.com/', target: '_top'},
+                {label: 'deviantART', url: 'http://nkunited.deviantart.com/', target: '_top'},
+                {label: 'Gulp', url: 'http://gulpjs.com/', target: '_top'},
+                {label: 'Browsersync', url: 'https://www.browsersync.io/', target: '_top'},
+                {label: 'GitHub', url: 'https://github.com/', target: '_top'},
+                {label: 'Shadertoy', url: 'https://www.shadertoy.com/', target: '_top'},
+                {label: 'Tree View', url: '#', target: '_top'},
+                {label: 'jsPerf', url: 'http://jsperf.com/', target: '_top'},
+                {label: 'Foundation', url: 'http://foundation.zurb.com/', target: '_top'},
+                {label: 'CreateJS', url: 'http://createjs.com/', target: '_top'},
+                {label: 'Velocity.js', url: 'http://julian.com/research/velocity/', target: '_top'},
+                {label: 'TweenLite', url: 'https://greensock.com/docs/#/HTML5/GSAP/TweenLite/', target: '_top'},
+                {label: 'jQuery', url: 'https://jquery.com/', target: '_top'},
+                {label: 'Notification', url: '#', target: '_top'},
+                {label: 'Parallax', url: '#', target: '_top'}
+            ];
+
+            var settings = {
+
+                entries: entries,
+                width: '100%',
+                height: '100%',
+                radius: '78%',
+                radiusMin: '50%',
+                bgDraw: true,
+                bgColor: '#FFF',
+                opacityOver: 1.00,
+                opacityOut: 0.13,
+                opacitySpeed: 6,
+                fov: 800,
+                speed: 0.5,
+                fontFamily: 'Oswald, Arial, sans-serif',
+                fontSize: '15',
+                fontColor: '#000',
+                fontWeight: 'normal',//bold
+                fontStyle: 'normal',//italic
+                fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+                fontToUpperCase: false
+
+            };
+
+            //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+            $('#tag-cloud').svg3DTagCloud(settings);
+
+        });
+
+
+        $(document).ready(function () {
+            $('#cd-dropdown').dropdown();
+        });
+
+
+    </script>
+
+    <!-- //animation-effect -->
 </head>
 <body>
 <div class="header" id="ban">
-		<div class="container">
-			<div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-				<div class="header-search">
-						<div class="search">
-							<input class="search_box" type="checkbox" id="search_box">
-							<label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
-							<div class="search_form">
-								<form action="#" method="post">
-									<input type="text" name="Search" placeholder="Search...">
-									<input type="submit" value="Send">
-								</form>
-							</div>
-						</div>
-				</div>
-			</div>
-			<div class="header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
+    <div class="container">
+        <div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s"
+             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+            <div class="header-search">
+                <div class="search">
+                    <input class="search_box" type="checkbox" id="search_box">
+                    <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search"
+                                                                      aria-hidden="true"></span></label>
+                    <div class="search_form">
+                        <form action="#" method="post">
+                            <input type="text" name="Search" placeholder="Search...">
+                            <input type="submit" value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_right wow fadeInLeft animated animated" data-wow-delay=".5s"
+             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-					<nav class="link-effect-7" id="link-effect-7">
-						<ul class="nav navbar-nav">
-							<li class="active act"><a href="index.html">首页</a></li>
-							<li><a href="features.html">技术干货</a></li>
-							<li><a href="about.html">经验总结</a></li>
-							<li><a href="travel.html">实验基地</a></li>
-							<li><a href="fashion.html">资源导航</a></li>
-							<li><a href="music.html">心情随笔</a></li>
-							<li><a href="codes.html">给我留言</a></li>
-							<li><a href="contact.html">关于博主</a></li>
-						</ul>
-					</nav>
-				</div>
-				<!-- /.navbar-collapse -->
-			</nav>
-			</div>
-			<div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-					<ul>
-						<li><a href="#"> </a></li>
-						<li><a href="#" class="pin"> </a></li>
-						<li><a href="#" class="in"> </a></li>
-						<li><a href="#" class="be"> </a></li>
-						<li><a href="#" class="vimeo"> </a></li>
-					</ul>
-				</div>
-			<div class="clearfix"> </div>	
-		</div>
-	</div>
-	<!--start-main-->
-	<div class="header-bottom">
-		<div class="container">
-			<div class="logo wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-				<h1><a href="index.html">DB'S BLOG</a></h1>
-				<p><label class="of"></label>Just do IT<label class="on"></label></p>
-			</div>
-		</div>
-	</div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <nav class="link-effect-7" id="link-effect-7">
+                        <ul class="nav navbar-nav">
+                            <li class="active act"><a href="index.html">首页</a></li>
+                            <li><a href="features.html">技术干货</a></li>
+                            <li><a href="about.html">经验总结</a></li>
+                            <li><a href="travel.html">实验基地</a></li>
+                            <li><a href="fashion.html">资源导航</a></li>
+                            <li><a href="music.html">心情随笔</a></li>
+                            <li><a href="codes.html">给我留言</a></li>
+                            <li><a href="contact.html">关于博主</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s"
+             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+            <ul>
+                <li><a href="#"> </a></li>
+                <li><a href="#" class="pin"> </a></li>
+                <li><a href="#" class="in"> </a></li>
+                <li><a href="#" class="be"> </a></li>
+                <li><a href="#" class="vimeo"> </a></li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--start-main-->
+<div class="header-bottom">
+    <div class="container">
+        <div class="logo wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+            <h1><a href="index.html">DB'S BLOG</a></h1>
+            <p><label class="of"></label>Just do IT<label class="on"></label></p>
+        </div>
+    </div>
+</div>
 <!-- banner -->
 
 <div class="banner">
-<div class="container">	
-		<h2>提醒自己一件事，千万不要自己感动自己</h2>
-		<p>大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那么富士康流水线上任何一个人都比你努力多了。人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里。 </p>
-		<a href="singlepage.html">Hello Word!</a>
-	</div>
+    <div class="container">
+        <h2>提醒自己一件事，千万不要自己感动自己</h2>
+        <p>
+            大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那么富士康流水线上任何一个人都比你努力多了。人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里。 </p>
+        <a href="singlepage.html">Hello Word!</a>
+    </div>
 </div>
-<div class="services w3l wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-		<div class="container">
-			<div class="grid_3 grid_5">
-				<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-					<ul id="myTab" class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab" data-toggle="tab" aria-controls="expeditions" aria-expanded="true">音乐欣赏</a></li>
-						<li role="presentation" class=""><a href="#safari" role="tab" id="safari-tab" data-toggle="tab" aria-controls="safari">网页游戏</a></li>
-						<li role="presentation" class=""><a href="#trekking" role="tab" id="trekking-tab" data-toggle="tab" aria-controls="trekking">照片墙</a></li>
-					</ul>
-					<div id="myTabContent" class="tab-content">
-						<div role="tabpanel" class="tab-pane fade" id="expeditions" aria-labelledby="expeditions-tab">
-							
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/f2.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/f4.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/f3.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						
-						
-						<div role="tabpanel" class="tab-pane fade" id="safari" aria-labelledby="safari-tab">
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/t1.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/t2.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/t3.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="clearfix"></div>
-						</div>
-						<div role="tabpanel" class="tab-pane fade active in" id="trekking" aria-labelledby="trekking-tab">
+<div class="services w3l wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+    <div class="container">
+        <div class="grid_3 grid_5">
+            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#expeditions" id="expeditions-tab" role="tab"
+                                                              data-toggle="tab" aria-controls="expeditions"
+                                                              aria-expanded="true">音乐欣赏</a></li>
+                    <li role="presentation" class=""><a href="#safari" role="tab" id="safari-tab" data-toggle="tab"
+                                                        aria-controls="safari">网页游戏</a></li>
+                    <li role="presentation" class=""><a href="#trekking" role="tab" id="trekking-tab" data-toggle="tab"
+                                                        aria-controls="trekking">照片墙</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade" id="expeditions" aria-labelledby="expeditions-tab">
 
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/m1.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="col-md-4 col-sm-5 tab-image">
-								<img src="../../static/foreground/images/m3.jpg" class="img-responsive" alt="Wanderer">
-							</div>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- technology-left -->
-	<div class="technology">
-	<div class="container">
-		<div class="col-md-9 technology-left">
-		<div class="tech-no">
-			<!-- technology-top -->
-			
-			 <div class="tc-ch wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-				
-					<div class="tch-img">
-						<a href="singlepage.html"><img src="../../static/foreground/images/t4.jpg" class="img-responsive" alt=""></a>
-					</div>
-					
-					<h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-					<h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-						<div class="bht1">
-							<a href="singlepage.html">Continue Reading</a>
-						</div>
-						<div class="soci">
-							<ul>
-								<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
-								<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
-								<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
-								<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
-								<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-			</div>
-			<div class="clearfix"></div>
-			<!-- technology-top -->
-			<!-- technology-top -->
-			<div class="w3ls">
-				<div class="col-md-6 w3ls-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-					 <div class="tc-ch">
-						<div class="tch-img">
-							<a href="singlepage.html">
-							<img src="../../static/foreground/images/m4.jpg" class="img-responsive" alt=""></a>
-						</div>
-					
-						<h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-						<h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-							<p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							<div class="bht1">
-								<a href="singlepage.html">Read More</a>
-							</div>
-							<div class="soci">
-								<ul>
-									<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
-									<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="col-md-6 w3ls-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-					 <div class="tc-ch">
-						<div class="tch-img">
-							<a href="singlepage.html"><img src="../../static/foreground/images/m5.jpg" class="img-responsive" alt=""></a>
-						</div>
-					
-						<h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-						<h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-							<p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-							<div class="bht1">
-								<a href="singlepage.html">Read More</a>
-							</div>
-							<div class="soci">
-								<ul>
-									<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
-									<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<!-- technology-top -->
-			<div class="wthree">
-				 <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-					<div class="tch-img">
-							<a href="singlepage.html"><img src="../../static/foreground/images/f1.jpg" class="img-responsive" alt=""></a>
-						</div>
-				 </div>
-				 <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-						<h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-						<h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-							<p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris .</p>
-							<div class="bht1">
-								<a href="singlepage.html">Read More</a>
-							</div>
-							<div class="soci">
-								<ul>
-									
-									<li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
-									<li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-					
-				 </div>
-					<div class="clearfix"></div>
-			</div>
-			<div class="wthree">
-				 <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-					<div class="tch-img">
-							<a href="singlepage.html"><img src="../../static/foreground/images/f2.jpg" class="img-responsive" alt=""></a>
-						</div>
-				 </div>
-				 <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-						<h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-						<h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-							<p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris .</p>
-							<div class="bht1">
-								<a href="singlepage.html">Read More</a>
-							</div>
-							<div class="soci">
-								<ul>
-									<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>									
-									<li class="hvr-rectangle-out"><a class="fb" href="#"></a></li>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-					
-				 </div>
-					<div class="clearfix"></div>
-			</div>
-			<div class="wthree">
-				 <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-					<div class="tch-img">
-							<a href="singlepage.html"><img src="../../static/foreground/images/f3.jpg" class="img-responsive" alt=""></a>
-						</div>
-				 </div>
-				 <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-						<h3><a href="singlepage.html">Lorem Ipsum is simply</a></h3>
-						<h6>BY <a href="singlepage.html">ADAM ROSE </a>JULY 10 2016.</h6>
-							<p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua exercitation ullamco laboris.</p>
-							<div class="bht1">
-								<a href="singlepage.html">Read More</a>
-							</div>
-							<div class="soci">
-								<ul>
-									<li class="hvr-rectangle-out"><a class="drib" href="#"></a></li>
-									<li class="hvr-rectangle-out"><a class="goog" href="#"></a></li>
-								</ul>
-							</div>
-							<div class="clearfix"></div>
-					
-				 </div>
-					<div class="clearfix"></div>
-			</div>
-			</div>
-		</div>
-		<!-- technology-right -->
-		<div class="col-md-3 technology-right">
-				
-				
-				<div class="blo-top1">
-							
-					<div class="tech-btm">
-					<div class="search-1 wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-							<form action="#" method="post">
-								<input type="search" name="Search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required>
-								<input type="submit" value=" ">
-							</form>
-						</div>
-					<h4>热门点击</h4>
-						<div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-							<div class="blog-grid-left">
-								<a href="singlepage.html"><img src="../../static/foreground/images/t2.jpg" class="img-responsive" alt=""></a>
-							</div>
-							<div class="blog-grid-right">
-								
-								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-							<div class="blog-grid-left">
-								<a href="singlepage.html"><img src="../../static/foreground/images/m2.jpg" class="img-responsive" alt=""></a>
-							</div>
-							<div class="blog-grid-right">
-								
-								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-							<div class="blog-grid-left">
-								<a href="singlepage.html"><img src="../../static/foreground/images/f2.jpg" class="img-responsive" alt=""></a>
-							</div>
-							<div class="blog-grid-right">
-								
-								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-							<div class="blog-grid-left">
-								<a href="singlepage.html"><img src="../../static/foreground/images/t3.jpg" class="img-responsive" alt=""></a>
-							</div>
-							<div class="blog-grid-right">
-								
-								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="blog-grids wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-							<div class="blog-grid-left">
-								<a href="singlepage.html"><img src="../../static/foreground/images/m3.jpg" class="img-responsive" alt=""></a>
-							</div>
-							<div class="blog-grid-right">
-								
-								<h5><a href="singlepage.html">Pellentesque dui Maecenas male</a> </h5>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="insta wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-					<h4>标签云</h4>
-						<ul>
-							
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/t1.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/m1.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/f1.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/m2.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/f2.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/t2.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/f3.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/t3.jpg" class="img-responsive" alt=""></a></li>
-							<li><a href="singlepage.html"><img src="../../static/foreground/images/m3.jpg" class="img-responsive" alt=""></a></li>
-						</ul>
-					</div>
-					
-					<p>Lorem ipsum ex vix illud nonummy, novum tation et his. At vix scripta patrioque scribentur, at pro</p>
-					</div>
-					
-					
-					
-				</div>
-				
-			
-		</div>
-		<div class="clearfix"></div>
-		<!-- technology-right -->
-	</div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/f2.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/f4.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/f3.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <div role="tabpanel" class="tab-pane fade" id="safari" aria-labelledby="safari-tab">
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/t1.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/t2.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/t3.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade active in" id="trekking" aria-labelledby="trekking-tab">
+
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/m1.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="col-md-4 col-sm-5 tab-image">
+                            <img src="../../static/foreground/images/m3.jpg" class="img-responsive" alt="Wanderer">
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- technology-left -->
+<div class="technology">
+    <div class="container">
+        <div class="col-md-9 technology-left">
+            <div class="tech-no">
+                <!-- technology-top -->
+                <div class="tc-ch wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <h3><a href="singlepage.html">推荐博文</a></h3>
+                    <h6></h6>
+                    <div class="tch-img">
+                        <a href="singlepage.html"><img src="../../static/foreground/images/t4.jpg"
+                                                       class="img-responsive" alt=""></a>
+                    </div>
+                    <h6><a href="singlepage.html">本站源码下载</a></h6>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.</p>
+                    <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <div class="bht1">
+                        <a href="singlepage.html">继续阅读</a>
+                    </div>
+                    <div class="soci">
+                        <p>2017-04-13<a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0
+                        </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+                <!-- technology-top -->
+                <div class="w3ls tc-ch wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <h3><a href="singlepage.html">最新更新</a></h3>
+                    <h6></h6>
+                    <div class="col-md-6 w3ls-left wow fadeInDown">
+                        <div class="tc-ch" style="padding:0px;">
+                            <div class="tch-img">
+                                <a href="singlepage.html">
+                                    <img src="../../static/foreground/images/m4.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <h6><a href="singlepage.html">最新博文0</a></h6>
+                            <h6>BY <a href="singlepage.html">氧化钡</a> 2017-04-13</h6>
+                            <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <div class="bht1">
+                                <a href="singlepage.html">查看更多</a>
+                            </div>
+                            <div class="soci">
+                                <p style="padding-right: 1.8em"><a class="span_link" href="#"><span
+                                        class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link"
+                                                                                            href="#"><span
+                                        class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 w3ls-left wow fadeInDown">
+                        <div class="tc-ch" style="padding:0px;">
+                            <div class="tch-img">
+                                <a href="singlepage.html"><img src="../../static/foreground/images/m5.jpg"
+                                                               class="img-responsive" alt=""></a>
+                            </div>
+
+                            <h6><a href="singlepage.html">最新博文1</a></h6>
+                            <h6>BY <a href="singlepage.html">Bobbi</a> 2017-04-13</h6>
+                            <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <div class="bht1">
+                                <a href="singlepage.html">查看更多</a>
+                            </div>
+                            <div class="soci">
+                                <p style="padding-right: 1.8em"><a class="span_link" href="#"><span
+                                        class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link"
+                                                                                            href="#"><span
+                                        class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!-- technology-top -->
+                <div class="wthree">
+                    <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="tch-img">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/f1.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <h6><a href="singlepage.html">最新博文2</a></h6>
+                        <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
+                        <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua exercitation ullamco laboris .</p>
+                        <div class="bht1">
+                            <a href="singlepage.html">查看更多</a>
+                        </div>
+                        <div class="soci">
+                            <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a
+                                    class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="wthree">
+                    <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="tch-img">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/f2.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <h6><a href="singlepage.html">最新博文3</a></h6>
+                        <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
+                        <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua exercitation ullamco laboris .</p>
+                        <div class="bht1">
+                            <a href="singlepage.html">查看更多</a>
+                        </div>
+                        <div class="soci">
+                            <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a
+                                    class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="wthree">
+                    <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="tch-img">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/f3.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <h6><a href="singlepage.html">SpringBoot多模块配置</a></h6>
+                        <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
+                        <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua exercitation ullamco laboris.</p>
+                        <div class="bht1">
+                            <a href="singlepage.html">查看更多</a>
+                        </div>
+                        <div class="soci">
+                            <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a
+                                    class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <nav class="paging wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <ul class="pagination pagination-mg">
+                        <li><a href="#" aria-label="Previous"><span aria-hidden="true"><<</span></a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#" aria-label="Next"><span aria-hidden="true">>></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- technology-right -->
+        <div class="col-md-3 technology-right">
+
+
+            <div class="blo-top1">
+
+                <div class="tech-btm">
+                    <div id="time" class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".5s">
+                        <canvas id="canvas" style="width: 100%"></canvas>
+                    </div>
+                    <div class="search-1 wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <form action="#" method="post">
+                            <input type="search" name="Search" value="Search" onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = 'Search';}" required>
+                            <input type="submit" value=" ">
+                        </form>
+                    </div>
+
+                    <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".5s">
+                        <select id="cd-dropdown" class="cd-select">
+                            <option selected>博客类别</option>
+                            <option>项目分享</option>
+                            <option>技术探讨</option>
+                            <option>散文随笔</option>
+                            <option>花店</option>
+                        </select>
+                    </div>
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <h4>热门点击</h4>
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/t2.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5><a href="singlepage.html">热门博文0</a></h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/m2.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5><a href="singlepage.html">热门博文1</a></h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/f2.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5><a href="singlepage.html">热门博文2</a></h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/t3.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5><a href="singlepage.html">热门博文3</a></h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="blog-grid-left">
+                            <a href="singlepage.html"><img src="../../static/foreground/images/m3.jpg"
+                                                           class="img-responsive" alt=""></a>
+                        </div>
+                        <div class="blog-grid-right">
+
+                            <h5><a href="singlepage.html">SpringBoot多模块配置</a></h5>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".5s">
+                        <h4>标签云</h4>
+                        <div id="tag-cloud"></div>
+                    </div>
+
+                    <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".5s">
+                        <h4>友情链接</h4>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="clearfix"></div>
+        <!-- technology-right -->
+    </div>
+
 </div>
 <div class="footer">
-		<div class="container">
-			<div class="col-md-4 footer-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-				<h4>About Me</h4>
-				<p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-				<img src="../../static/foreground/images/t4.jpg" class="img-responsive" alt="">
-					<div class="bht1">
-						<a href="singlepage.html">Read More</a>
-					</div>
-			</div>
-			<div class="col-md-4 footer-middle wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-			<h4>Latest Tweet</h4>
-			<div class="mid-btm">
-				<p>Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-				<a href="#">your link</a>
-			</div>
-			
-				<p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-				<a href="#">your link</a>
-		
-			</div>
-			<div class="col-md-4 footer-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-				<h4>Newsletter</h4>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-						<div class="name">
-							<form action="#" method="post">
-								<input type="text" placeholder="Your Name" required>
-								<input type="text" placeholder="Your Email" required>
-								<input type="submit" value="Subscribed Now">
-							</form>
-						
-						</div>	
-						
-							<div class="clearfix"> </div>
-					
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
-				<div class="container">
-					<p>Copyright &copy; 2016.Company name All rights reserved.</p>
-				</div>
-			</div>
+    <div class="container">
+        <div class="col-md-4 footer-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+            <h4>About Me</h4>
+            <p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+            <img src="../../static/foreground/images/t4.jpg" class="img-responsive" alt="">
+            <div class="bht1">
+                <a href="singlepage.html">Read More</a>
+            </div>
+        </div>
+        <div class="col-md-4 footer-middle wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+            <h4>Latest Tweet</h4>
+            <div class="mid-btm">
+                <p>Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+                <a href="#">your link</a>
+            </div>
+
+            <p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+            <a href="#">your link</a>
+
+        </div>
+        <div class="col-md-4 footer-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+            <h4>Newsletter</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+            <div class="name">
+                <form action="#" method="post">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Your Email" required>
+                    <input type="submit" value="Subscribed Now">
+                </form>
+
+            </div>
+
+            <div class="clearfix"></div>
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+    <div class="container">
+        <p>Copyright &copy; 2016.Company name All rights reserved.</p>
+    </div>
+</div>
+
+<img id="oImg" src="../../static/foreground/images/xiaolongbao.gif" />
 </body>
 </html>

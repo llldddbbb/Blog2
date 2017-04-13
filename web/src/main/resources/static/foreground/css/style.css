@@ -403,7 +403,7 @@ i.glyphicon.glyphicon-comment {
     color: #fa4b2a;
     font-weight: 600;
 }
-.tc-ch h3 a:hover, .wthree h3 a:hover {
+.tc-ch h6 a:hover, .wthree h6 a:hover {
     color: #000000;
 }
 .tc-ch p,.wthree p {
@@ -464,7 +464,7 @@ i.glyphicon.glyphicon-comment {
 }
 .soci {
     float: right;
-    padding-top: 1em;
+    padding-top: 0.5em;
 }
 .soci li {
     display: inline-block;
@@ -520,6 +520,7 @@ i.glyphicon.glyphicon-comment {
     color: #fa4b2a;
     font-weight: 700;
     margin-bottom: 1em;
+    text-align: center;
 }
 .insta h4 {
     font-size: 1.5em;
@@ -600,6 +601,7 @@ i.glyphicon.glyphicon-comment {
     border-bottom: none;
     border-top: none;
     outline: none;
+    float: right;
 }
 /*--footer--*/
 .footer {
@@ -1610,9 +1612,6 @@ span.glyphicon.glyphicon-comment, span.glyphicon.glyphicon-eye-open, span.glyphi
 .m1 {
     margin: 2em 0 0;
 }
-.paging{
-	margin:3em 0 0; 
-}
 .blog-grids1 {
     margin-top: 3em;
 }
@@ -2429,4 +2428,19 @@ label.icon-search span {
 .coment-form input[type="submit"] {
     width: 74%;
 }
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #fa4b2a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+#oImg {
+    position: fixed;
+    right: 7%;
+    top: 30%;
+    z-index: 1;
 }
