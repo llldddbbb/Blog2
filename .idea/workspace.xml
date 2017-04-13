@@ -2,9 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0868b744-6fc6-437c-8d3e-e4164066d79f" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/css/animate.min.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/animate.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/css/chocolat.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/chocolat.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/css/component.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/component.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/fonts/glyphicons-halflings-regular.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/2.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/3.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/banner-1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/banner-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/close.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/close.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/f1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/f1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/f2.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/f2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/f3.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/f3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/f4.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/f4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g2.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g3.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g4.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g5.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g6.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g6.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g7.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g7.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/g8.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g8.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/img-sp.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/img-sp.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/key2.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/key2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/left.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/left.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/m1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/m2.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/m3.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/m4.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/m5.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m5.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/right.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/right.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/search-icon.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/search-icon.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/search.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/search.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/si.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/si.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/sin1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/sin1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/sin2.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/sin2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/sing-1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/sing-1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/social-icons.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/social-icons.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/social.png" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/social.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/t1.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t1.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/t2.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t2.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/t3.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t3.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/images/t4.jpg" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t4.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/classie.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/classie.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery-1.11.1.min.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery-1.11.1.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/jquery.chocolat.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.chocolat.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/modernizr.custom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/uisearch.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/uisearch.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/js/wow.min.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/wow.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/about.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/codes.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/codes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/contact.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/contact.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/fashion.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/fashion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/features.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/features.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/music.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/music.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/travel.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/travel.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,7 +93,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="banner-1.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/banner-1.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/banner-1.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -42,64 +102,64 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="55" column="69" lean-forward="true" selection-start-line="55" selection-start-column="69" selection-end-line="55" selection-end-column="69" />
+            <state relative-caret-position="243">
+              <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="g2.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/g2.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g2.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="g4.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/g4.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g4.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="m3.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/m3.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m3.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="img-sp.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/img-sp.png">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/img-sp.png">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="t4.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t4.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t4.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="t3.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t3.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t3.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="t2.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t2.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t2.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="t1.jpg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t1.jpg">
+        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t1.jpg">
           <provider selected="true" editor-type-id="images">
             <state />
           </provider>
@@ -221,8 +281,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,6 +381,36 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="foreground" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -349,103 +438,22 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
+              <option name="myItemId" value="com" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="ldb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,12 +463,12 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static" />
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\templates\foreground" />
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\java\com\ldb\mappers" />
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\java\com\ldb\config" />
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\resources" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\js" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\images" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\fonts" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\css" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.ldb.controller" />
@@ -469,11 +477,12 @@
       <recent name="com.ldb.pojo" />
       <recent name="com.ldb.config" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources" />
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static" />
       <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\templates\foreground" />
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\resources\config" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\java\com\ldb\mappers" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\java\com\ldb\config" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\dao\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -939,7 +948,8 @@
       <workItem from="1491911659692" duration="3766000" />
       <workItem from="1491925938030" duration="12483000" />
       <workItem from="1491991955364" duration="187000" />
-      <workItem from="1491992199224" duration="5081000" />
+      <workItem from="1491992199224" duration="7238000" />
+      <workItem from="1492046624451" duration="333000" />
     </task>
     <task id="LOCAL-00001" summary="导入前端模板">
       <created>1491912840584</created>
@@ -955,15 +965,21 @@
       <option name="project" value="LOCAL" />
       <updated>1491914397843</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改部分前端">
+      <created>1492007156362</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492007156362</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35236000" />
+    <option name="totallyTimeSpent" value="37726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -980,7 +996,6 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -988,7 +1003,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22624435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24946351" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25268242" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -997,6 +1012,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1010,7 +1026,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="导入前端模板" />
     <MESSAGE value="添加banner，修改application.properties位置" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加banner，修改application.properties位置" />
+    <MESSAGE value="修改部分前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改部分前端" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1083,7 +1100,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,7 +1261,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1271,72 +1286,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/css/style.css">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
           <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/close.png">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/close.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/banner-1.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/banner-1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/g2.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/g4.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g4.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/m3.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m3.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/img-sp.png">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/img-sp.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t4.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t4.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t3.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t3.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/social-icons.png">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/social-icons.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t2.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/images/t1.jpg">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/t1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="55" column="69" lean-forward="true" selection-start-line="55" selection-start-column="69" selection-end-line="55" selection-end-column="69" />
+        <state relative-caret-position="243">
+          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
           <folding />
         </state>
       </provider>
