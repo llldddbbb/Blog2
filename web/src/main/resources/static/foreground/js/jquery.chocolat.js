@@ -27,7 +27,7 @@
 			leftImg               : 'images/left.gif',	
 			rightImg              : 'images/right.gif',	
 			closeImg              : 'images/close.gif',		
-			loadingImg            : 'images/loading.gif',		
+			loadingImg            : 'images/loading.gif',
 			currentImage          : 0,						
 			setIndex              : 0,
 			setTitle              : '',
