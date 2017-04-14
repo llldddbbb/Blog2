@@ -1,17 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0868b744-6fc6-437c-8d3e-e4164066d79f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/xiaolongbao.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.svg3dtagcloud.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/xiaolongbao.js" />
+    <list default="true" id="0868b744-6fc6-437c-8d3e-e4164066d79f" name="Default" comment="修改首页样式">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/1.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/10.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/11.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/12.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/13.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/14.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/15.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/16.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/17.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/18.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/19.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/2.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/20.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/21.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/22.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/23.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/24.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/25.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/26.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/27.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/28.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/29.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/3.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/30.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/31.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/32.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/33.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/34.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/35.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/36.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/37.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/38.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/39.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/4.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/40.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/41.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/42.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/43.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/44.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/45.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/46.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/47.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/48.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/49.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/5.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/50.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/51.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/52.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/53.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/54.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/55.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/56.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/57.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/58.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/59.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/6.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/60.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/61.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/62.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/63.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/64.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/65.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/66.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/67.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/68.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/69.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/7.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/70.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/71.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/72.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/73.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/74.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/75.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/76.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/77.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/78.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/79.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/8.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/80.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/81.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/82.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/83.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/84.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/85.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/86.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/87.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/88.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/89.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/9.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/90.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/qq/91.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/images/web_heart_animation.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/jquery.emoji.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/jquery.mCustomScrollbar.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/mystyle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.emoji.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.mCustomScrollbar.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.mousewheel-3.0.6.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/modernizr.custom.63321.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/myjs.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js" afterPath="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/travel.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/travel.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html" afterPath="$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,105 +138,37 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14823">
-              <caret line="555" column="13" lean-forward="false" selection-start-line="555" selection-start-column="9" selection-end-line="555" selection-end-column="13" />
+            <state relative-caret-position="995">
+              <caret line="417" column="96" lean-forward="false" selection-start-line="417" selection-start-column="96" selection-end-line="417" selection-end-column="96" />
               <folding>
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#27051#27057#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xiaolongbao.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/xiaolongbao.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xiaolongbao.gif" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/xiaolongbao.gif">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="time.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/time.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4050">
-              <caret line="150" column="39" lean-forward="false" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
-              <folding>
-                <marker date="1492074463991" expanded="true" signature="58:69" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.dropdown.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3996">
-              <caret line="157" column="43" lean-forward="false" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dropdown.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1512">
-              <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2423" column="1" lean-forward="true" selection-start-line="2423" selection-start-column="1" selection-end-line="2423" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125415">
-              <caret line="4645" column="6" lean-forward="false" selection-start-line="4645" selection-start-column="0" selection-end-line="4652" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="singlepage.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="singlepage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2700">
-              <caret line="100" column="207" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="207" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="135">
+              <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+              <folding>
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#14865#14871#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -151,6 +179,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -167,7 +197,12 @@
       <find>.cd-dropdown</find>
       <find>height</find>
       <find>300</find>
+      <find>.cd-active.cd-dropdown &gt; span</find>
+      <find>h6</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\js</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -203,12 +238,16 @@
         <option value="$PROJECT_DIR$/web/src/main/resources/static/css/style.css" />
         <option value="$PROJECT_DIR$/web/src/main/resources/templates/foreground/travel.html" />
         <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/time.js" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/tree.js" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/xiaolongbao.js" />
         <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js" />
         <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/time.js" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/xiaolongbao.js" />
         <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/css/mystyle.css" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/static/foreground/js/myjs.js" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html" />
+        <option value="$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html" />
       </list>
     </option>
   </component>
@@ -277,6 +316,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -410,8 +451,42 @@
               <option name="myItemId" value="foreground" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="Blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="foreground" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -448,42 +523,12 @@
               <option name="myItemId" value="foreground" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Blog" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="foreground" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="qq" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -524,20 +569,19 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.zeroturnaround.javarebel.idea.plugin.settings.JRebelSettingsComponent" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SEIN" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\js" />
       <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\images" />
+      <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\js" />
       <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static\foreground\css" />
       <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\static" />
       <recent name="C:\ProgramSoftWare\Idea Workspace\Blog\web\src\main\resources\templates\foreground" />
@@ -1023,7 +1067,10 @@
       <workItem from="1491992199224" duration="7238000" />
       <workItem from="1492046624451" duration="9243000" />
       <workItem from="1492064794989" duration="10496000" />
-      <workItem from="1492083444643" duration="32000" />
+      <workItem from="1492083444643" duration="6601000" />
+      <workItem from="1492094776293" duration="7230000" />
+      <workItem from="1492130075831" duration="11026000" />
+      <workItem from="1492150475062" duration="2446000" />
     </task>
     <task id="LOCAL-00001" summary="导入前端模板">
       <created>1491912840584</created>
@@ -1053,11 +1100,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492047013983</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改首页样式">
+      <created>1492083504649</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1492083504649</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57164000" />
+    <option name="totallyTimeSpent" value="84435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1067,28 +1121,28 @@
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39932126" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22624435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26019314" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20493563" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1106,14 +1160,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="导入前端模板" />
     <MESSAGE value="添加banner，修改application.properties位置" />
     <MESSAGE value="修改部分前端" />
     <MESSAGE value="移动前台位置" />
-    <option name="LAST_COMMIT_MESSAGE" value="移动前台位置" />
+    <MESSAGE value="修改首页样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改首页样式" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1121,103 +1179,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dao/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/generic.html" />
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/elements.html" />
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pojo/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/ldb/config/MyBatisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="39" column="49" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pojo/src/main/java/com/ldb/pojo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/ldb/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/ldb/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/ldb/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="21" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/ldb/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/ldb/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#335#336#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/src/main/java/com/ldb/config/MyBatisMapperScannerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/assets/js/ie/html5shiv.js" />
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/elements.html" />
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/generic.html" />
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/ldb/config/DruidConfig.java">
@@ -1288,11 +1249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/close.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/banner-1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1309,11 +1265,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/m3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/img-sp.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1361,15 +1312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="100" column="207" lean-forward="false" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="207" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1377,6 +1319,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1396,22 +1339,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/modernizr.js" />
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3996">
-          <caret line="157" column="43" lean-forward="false" selection-start-line="157" selection-start-column="43" selection-end-line="157" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="56" column="22" lean-forward="false" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/time.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4050">
@@ -1427,34 +1354,202 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/verlet-1.0.0.min.js" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/tree.js" />
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/social.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/left.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/img-sp.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g7.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/g5.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/close.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/f1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/images/3.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/dropdown.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14823">
-          <caret line="555" column="13" lean-forward="false" selection-start-line="555" selection-start-column="9" selection-end-line="555" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="141" column="29" lean-forward="false" selection-start-line="141" selection-start-column="29" selection-end-line="141" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/xiaolongbao.js">
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.dropdown.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="84" column="69" lean-forward="false" selection-start-line="84" selection-start-column="69" selection-end-line="84" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/modernizr.custom.63321.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2423" column="1" lean-forward="true" selection-start-line="2423" selection-start-column="1" selection-end-line="2423" selection-end-column="1" />
+        <state relative-caret-position="339">
+          <caret line="2184" column="4" lean-forward="false" selection-start-line="2184" selection-start-column="4" selection-end-line="2184" selection-end-column="4" />
+          <folding>
+            <element signature="e#29304#29394#0" expanded="false" />
+            <element signature="e#29426#29462#0" expanded="false" />
+            <element signature="e#29486#29568#0" expanded="false" />
+            <element signature="e#29607#29705#0" expanded="false" />
+            <element signature="e#29746#29874#0" expanded="false" />
+            <element signature="e#29907#29966#0" expanded="false" />
+            <element signature="e#30003#30070#0" expanded="false" />
+            <element signature="e#30084#30129#0" expanded="false" />
+            <element signature="e#30167#30293#0" expanded="false" />
+            <element signature="e#30340#30390#0" expanded="false" />
+            <element signature="e#30402#30449#0" expanded="false" />
+            <element signature="e#30457#30545#0" expanded="false" />
+            <element signature="e#30554#30578#0" expanded="false" />
+            <element signature="e#30714#30737#0" expanded="false" />
+            <element signature="e#30842#30912#0" expanded="false" />
+            <element signature="e#30923#30947#0" expanded="false" />
+            <element signature="e#30997#31012#0" expanded="false" />
+            <element signature="e#31034#31054#0" expanded="false" />
+            <element signature="e#31075#31243#0" expanded="false" />
+            <element signature="e#31269#31288#0" expanded="false" />
+            <element signature="e#31309#31426#0" expanded="false" />
+            <element signature="e#31446#31510#0" expanded="false" />
+            <element signature="e#31515#31539#0" expanded="false" />
+            <element signature="e#31553#31577#0" expanded="false" />
+            <element signature="e#31584#31631#0" expanded="false" />
+            <element signature="e#31677#33185#0" expanded="false" />
+            <element signature="e#33214#34673#0" expanded="false" />
+            <element signature="e#34702#34730#0" expanded="false" />
+            <element signature="e#34759#34894#0" expanded="false" />
+            <element signature="e#34923#36361#0" expanded="false" />
+            <element signature="e#36390#37165#0" expanded="false" />
+            <element signature="e#37194#37550#0" expanded="false" />
+            <element signature="e#37579#37797#0" expanded="false" />
+            <element signature="e#37826#38045#0" expanded="false" />
+            <element signature="e#38074#38315#0" expanded="false" />
+            <element signature="e#40614#41380#0" expanded="false" />
+            <element signature="e#41409#41637#0" expanded="false" />
+            <element signature="e#41666#43468#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/jquery.mCustomScrollbar.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/mystyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="257" column="19" lean-forward="false" selection-start-line="257" selection-start-column="19" selection-end-line="257" selection-end-column="19" />
+          <folding>
+            <element signature="e#783#940#0" expanded="false" />
+            <element signature="e#964#1123#0" expanded="false" />
+            <element signature="e#1392#2471#0" expanded="false" />
+            <element signature="e#2473#3544#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/css/jquery.emoji.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/myjs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="90" column="34" lean-forward="false" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/static/foreground/js/xiaolongbao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="57" column="49" lean-forward="true" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="995">
+          <caret line="417" column="96" lean-forward="false" selection-start-line="417" selection-start-column="96" selection-end-line="417" selection-end-column="96" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#27051#27057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/resources/templates/foreground/singlepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#canvas#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#4;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#14865#14871#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

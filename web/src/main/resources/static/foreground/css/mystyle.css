@@ -1,0 +1,265 @@
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+    color: #fa4b2a;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.dateCategory {
+    text-align: center;
+}
+
+.dateCategory a {
+    display: block;
+    margin-bottom: 0.7em;
+    color: #0E83CD;
+    text-decoration: none;
+}
+
+.dateCategory a:hover {
+    color: #FA4B2A;
+}
+
+#oImg {
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    z-index: 1;
+}
+
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+    display: inline-block;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.2s;
+    transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+    margin-right: 10px;
+    content: '[';
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+.cl-effect-1 a::after {
+    margin-left: 10px;
+    content: ']';
+    -webkit-transform: translateX(-20px);
+    -moz-transform: translateX(-20px);
+    transform: translateX(-20px);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    transform: translateX(0px);
+    color: #FA4B2A;
+}
+
+@-webkit-keyframes jello {
+    from, 11.1%, to {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    22.2% {
+        -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+        transform: skewX(-12.5deg) skewY(-12.5deg);
+    }
+
+    33.3% {
+        -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+        transform: skewX(6.25deg) skewY(6.25deg);
+    }
+
+    44.4% {
+        -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+        transform: skewX(-3.125deg) skewY(-3.125deg);
+    }
+
+    55.5% {
+        -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+        transform: skewX(1.5625deg) skewY(1.5625deg);
+    }
+
+    66.6% {
+        -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+        transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    }
+
+    77.7% {
+        -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
+        transform: skewX(0.390625deg) skewY(0.390625deg);
+    }
+
+    88.8% {
+        -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+        transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+    }
+}
+
+@keyframes jello {
+    from, 11.1%, to {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    22.2% {
+        -webkit-transform: skewX(-12.5deg) skewY(-12.5deg);
+        transform: skewX(-12.5deg) skewY(-12.5deg);
+    }
+
+    33.3% {
+        -webkit-transform: skewX(6.25deg) skewY(6.25deg);
+        transform: skewX(6.25deg) skewY(6.25deg);
+    }
+
+    44.4% {
+        -webkit-transform: skewX(-3.125deg) skewY(-3.125deg);
+        transform: skewX(-3.125deg) skewY(-3.125deg);
+    }
+
+    55.5% {
+        -webkit-transform: skewX(1.5625deg) skewY(1.5625deg);
+        transform: skewX(1.5625deg) skewY(1.5625deg);
+    }
+
+    66.6% {
+        -webkit-transform: skewX(-0.78125deg) skewY(-0.78125deg);
+        transform: skewX(-0.78125deg) skewY(-0.78125deg);
+    }
+
+    77.7% {
+        -webkit-transform: skewX(0.390625deg) skewY(0.390625deg);
+        transform: skewX(0.390625deg) skewY(0.390625deg);
+    }
+
+    88.8% {
+        -webkit-transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+        transform: skewX(-0.1953125deg) skewY(-0.1953125deg);
+    }
+}
+
+.button5 {
+    color: #434343;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    position: relative;
+    border: 1px solid rgba(121, 255, 83, 0.5);
+}
+
+.button5 a {
+    color: rgba(51, 51, 51, 1);
+    text-decoration: none;
+    display: block;
+}
+
+.button5:hover {
+    -webkit-animation-name: jello;
+    animation-name: jello;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    background-color: rgba(255, 238, 95, 0.2);
+
+}
+
+.sim-button {
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    width: 48%;
+    cursor: pointer;
+}
+
+.heart {
+    background: url(../../foreground/images/web_heart_animation.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    position: absolute;
+    background-size: 2900%;
+    margin-top: -1.5em;
+}
+
+.likeCount {
+    display: inline-block;
+    margin-left:2.8em;
+    margin-top: 1.2em;
+    font-size: 1.3em;
+    color: #999999
+}
+
+.heart:hover, .heart:focus {
+    background-position: right;
+}
+
+@-webkit-keyframes heartBlast {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+@keyframes heartBlast {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+.heartAnimation {
+    display: inline-block;
+    -webkit-animation-name: heartBlast;
+    animation-name: heartBlast;
+    -webkit-animation-duration: .8s;
+    animation-duration: .8s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-timing-function: steps(28);
+    animation-timing-function: steps(28);
+    background-position: right;
+}
+@media (max-width:614px){
+    .heart {
+        height: 65px;
+    }
+    .likeCount {
+        margin-top: 0.8em;
+    }
+    #oImg {
+        height: 130px;
+    }
+}
+.box{
+    text-align: center;
+    border: #ccc 1px dashed;
+    padding: 0.5em;
+    margin-top: 0.8em;
+}
+.box>span{
+    display: inline-block;
+    margin-right: 1.8em;
+}
+
+
