@@ -157,7 +157,8 @@
     -o-transition: all 0.5s;
     transition: all 0.5s;
     position: relative;
-    border: 1px solid rgba(121, 255, 83, 0.5);
+    border: 1px solid #fa4b2a;
+    margin-bottom: 2px;
 }
 
 .button5 a {
@@ -260,6 +261,42 @@
 .box>span{
     display: inline-block;
     margin-right: 1.8em;
+    font-size: 0.9em;
 }
-
+hr{
+    margin-top: 3em;
+    height:3px;border:none;border-top:2px dashed rgba(67, 67, 67, 0.78);
+}
+.send{
+    background: #fa4b2a;
+    border: none;
+    padding: 0.5em 0;
+    width: 25%;
+    font-size: 0.95em;
+    color: #fff;
+    float: right;
+    letter-spacing: 0.5px;
+    outline: none;
+    transition: .5s all;
+    -webkit-transition: .5s all;
+    -moz-transition: .5s all;
+    -o-transition: .5s all;
+    -ms-transition: .5s all;
+}
+.nickName,.comment{
+    border: 1px solid #000;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #000;
+    background:none;
+    width:30%;
+}
+.comment{
+    width: 100%;
+}
+.comment-title{
+    display: inline-block;
+    vertical-align: middle;
+}
 
