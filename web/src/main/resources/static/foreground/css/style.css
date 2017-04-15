@@ -187,7 +187,7 @@ label.icon-search span {
     color: #303030;
 }
 .navbar-nav > li > a {
-    font-size: 14px;
+    font-size: 16px;
     padding: 10px 18px;
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
@@ -1497,7 +1497,7 @@ p.reply i{
 }
 .media-left.response-text-left {
     float: left;
-    width: 19%;
+   /* width: 19%;*/
 }
 .response-text-right p {
     color: #777;

@@ -241,17 +241,7 @@
     animation-timing-function: steps(28);
     background-position: right;
 }
-@media (max-width:614px){
-    .heart {
-        height: 65px;
-    }
-    .likeCount {
-        margin-top: 0.8em;
-    }
-    #oImg {
-        height: 130px;
-    }
-}
+
 .box{
     text-align: center;
     border: #ccc 1px dashed;
@@ -299,6 +289,46 @@ hr{
     display: inline-block;
     vertical-align: middle;
 }
+/*.media-left.response-text-left{
+    width: 9%;
+}*/
+.line{
+    border-bottom: 1px solid #c3c3c3;
+    margin: 10px;
+}
 
-
-
+.media-left.response-text-left a img{
+display: inline-block;
+    width: 70px;
+}
+.media-body.response-text-right{
+    width: 91%;
+}
+@media (max-width:1012px){
+    .media-body.response-text-right{
+        width: 85%;
+    }
+}
+@media (max-width:700px){
+    .media-body.response-text-right{
+        width: 82%;
+    }
+}
+@media (max-width:614px){
+    .heart {
+        height: 65px;
+    }
+    .likeCount {
+        margin-top: 0.8em;
+    }
+    #oImg {
+        height: 130px;
+    }
+    .media-body.response-text-right{
+        width: 80%;
+        display: inline-block;
+    }
+    .media-left.response-text-left a img{
+        width: 60px;
+    }
+}
