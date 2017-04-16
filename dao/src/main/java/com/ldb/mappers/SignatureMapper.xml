@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.ldb.dao.SignatureDAO">
 
     <sql id="model">
-        title,content
+        title,content,buttonText
     </sql>
 
     <select id="getSignatureVO" resultType="com.ldb.pojo.vo.SignatureVO">

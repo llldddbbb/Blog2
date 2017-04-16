@@ -5,7 +5,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.BlogDAO">
 
-
+    <resultMap id="BaseResultMap" type="com.ldb.pojo.po.BlogPO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="author" property="author" jdbcType="VARCHAR" />
+        <result column="summary" property="summary" jdbcType="VARCHAR" />
+        <result column="coverImageName" property="coverImageName" jdbcType="VARCHAR" />
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+        <result column="readNum" property="readNum" jdbcType="INTEGER" />
+        <result column="isRecommend" property="isRecommend" jdbcType="BIT" />
+        <result column="blogTypeId" property="blogTypeId" jdbcType="INTEGER" />
+        <result column="blogTagId" property="blogTagId" jdbcType="INTEGER" />
+    </resultMap>
 
 
     <select id="listBlogDateArchiveVO" resultType="com.ldb.pojo.vo.BlogDateArchiveVO">
