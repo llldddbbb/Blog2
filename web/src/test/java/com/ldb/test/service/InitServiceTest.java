@@ -38,8 +38,8 @@ public class InitServiceTest {
         Assert.assertNotNull(blogTypeService.listBlogType());
         Assert.assertNotNull(blogTagService.listBlogTag());
         Assert.assertNotNull(blogService.listBlogDateArchive());
-        Assert.assertNotNull(blogService.listBlogDateArchive());
         Assert.assertNotNull(mottoService.getMotto());
         Assert.assertNotNull(signatureService.getSignature());
+        Assert.assertNotNull(blogService.getRecommendBlog());
     }
 }

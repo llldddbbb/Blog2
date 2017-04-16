@@ -1,6 +1,7 @@
 package com.ldb.service;
 
 import com.ldb.pojo.vo.BlogDateArchiveVO;
+import com.ldb.pojo.vo.BlogVO;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ import java.util.List;
 public interface BlogService {
 
     List<BlogDateArchiveVO> listBlogDateArchive();
+
+    BlogVO getRecommendBlog();
 }

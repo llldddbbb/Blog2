@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.BlogDAO">
 
-    <resultMap id="BaseResultMap" type="com.ldb.pojo.po.BlogPO" >
+    <resultMap id="BlogResultMap" type="com.ldb.pojo.po.BlogPO" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="title" property="title" jdbcType="VARCHAR" />
         <result column="author" property="author" jdbcType="VARCHAR" />
@@ -18,9 +18,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="blogTagId" property="blogTagId" jdbcType="INTEGER" />
     </resultMap>
 
+    <sql id="listVO">
+        id,title,author,summary,coverImageName,publishTime,readNum
+    </sql>
+
 
     <select id="listBlogDateArchiveVO" resultType="com.ldb.pojo.vo.BlogDateArchiveVO">
         SELECT publishTime AS archiveDate,COUNT(publishTime)AS totalNum  FROM blog GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
+    </select>
+
+    <select id="getRecommendBlogVO" resultType="com.ldb.pojo.vo.BlogVO">
+        SELECT <include refid="listVO"/> from blog WHERE isRecommend=1 ORDER BY publishTime limit 0,1
     </select>
 
 </mapper> 

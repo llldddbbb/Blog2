@@ -95,24 +95,22 @@
         <div class="col-md-9 technology-left">
             <div class="tech-no">
                 <div class="tc-ch wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                    <h3><a href="singlepage.html">推荐 : 网站源码下载</a></h3>
+                    <h3><a href="singlepage.html">推荐 : <span th:text="${application.recommendBlog.title}">网站源码下载</span></a></h3>
                     <h6></h6>
                     <div class="tch-img">
                         <a href="singlepage.html"><img th:src="@{/foreground/images/t4.jpg}" src="../../static/foreground/images/t4.jpg" class="img-responsive" alt=""></a>
                     </div>
-                    <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                    <h6>BY <a href="singlepage.html" th:text="${application.recommendBlog.author}">氧化钡 </a> <span th:text="${#calendars.format(application.recommendBlog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                    <p th:text="${application.recommendBlog.summary}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt
                         ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.</p>
-                    <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna aliqua
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     <div class="bht1">
                         <a href="singlepage.html">继续阅读</a>
                     </div>
                     <div class="soci">
-                        <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0
-                        </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                        <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment" ></span><span th:text="${application.recommendBlog.commentCount}"></span>
+                        </a><a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open" ></span><span th:text="${application.recommendBlog.readNum}"></span></a></p>
                     </div>
                     <div class="clearfix"></div>
                 </div><!--推荐阅读结束-->

@@ -2,10 +2,7 @@ package com.ldb.cache;
 
 import com.ldb.pojo.po.BlogTagPO;
 import com.ldb.pojo.po.BlogTypePO;
-import com.ldb.pojo.vo.BlogDateArchiveVO;
-import com.ldb.pojo.vo.LinkVO;
-import com.ldb.pojo.vo.MottoVO;
-import com.ldb.pojo.vo.SignatureVO;
+import com.ldb.pojo.vo.*;
 import com.ldb.service.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -51,6 +48,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         List<BlogDateArchiveVO> blogDateArchiveList=blogService.listBlogDateArchive();
         MottoVO motto=mottoService.getMotto();
         SignatureVO signature = signatureService.getSignature();
+        BlogVO recommendBlog=blogService.getRecommendBlog();
 
         //将数据塞进application
         application.setAttribute("linkList",linkList);//友情链接
@@ -59,6 +57,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         application.setAttribute("blogDateArchiveList",blogDateArchiveList);//博客日期归档;
         application.setAttribute("motto",motto);//博客座右铭;
         application.setAttribute("signature",signature);//博客座右铭;
+        application.setAttribute("recommendBlog",recommendBlog);//博客座右铭;
 
     }
 
