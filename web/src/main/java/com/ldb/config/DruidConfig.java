@@ -18,7 +18,7 @@ public class DruidConfig {
         ServletRegistrationBean reg = new ServletRegistrationBean();
         reg.setServlet(new StatViewServlet());
         reg.addUrlMappings("/druid/*");
-        reg.addInitParameter("loginUsername", "ldb");
+        reg.addInitParameter("loginUsername", "ldb");//设置Druid账号密码
         reg.addInitParameter("loginPassword", "ldb");
         return reg;
     }

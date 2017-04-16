@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
     <select id="listBlogDateArchiveVO" resultType="com.ldb.pojo.vo.BlogDateArchiveVO">
-        SELECT publishTime,COUNT(publishTime)AS totalNum  FROM blog GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
+        SELECT publishTime AS archiveDate,COUNT(publishTime)AS totalNum  FROM blog GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
     </select>
 
 </mapper> 

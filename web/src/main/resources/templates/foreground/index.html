@@ -348,10 +348,7 @@
                     <div class="dateCategory wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h4>日期归档</h4>
                         <nav class="cl-effect-1">
-                            <a href="#">2017年04月11日 (10)</a>
-                            <a href="#">2017年04月11日 (10)</a>
-                            <a href="#">2017年04月11日 (10)</a>
-                            <a href="#">2017年04月11日 (10)</a>
+                            <a th:each="blogDateArchive:${application.blogDateArchiveList}" th:text="${#calendars.format(blogDateArchive.archiveDate,'yyyy年MM月')}+'&nbsp;('+${blogDateArchive.totalNum}+')'" href="#">2017年04月11日 (10)</a>
                         </nav>
 
                     </div><!--日期归档结束-->

@@ -33,16 +33,19 @@
         <mybatis-spring.version>1.2.0</mybatis-spring.version>
         <mybatis-connector.version>5.1.39</mybatis-connector.version>
         <druid.version>1.0.26</druid.version>
+        <jackson.version>2.8.6</jackson.version>
     </properties>
 
 
     <dependencyManagement>
         <dependencies>
+            <!--添加SpringBoot-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring.version}</version>
             </dependency>
+            <!--添加mybatis驱动-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
@@ -55,21 +58,40 @@
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+            <!--添加thymeleaf页面引擎-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
+            <!--添加springMVC-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
             </dependency>
+            <!--添加测试框架-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring-boot.version}</version>
                 <scope>test</scope>
+            </dependency>
+            <!--添加jackson支持-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -77,6 +99,7 @@
     <build>
         <pluginManagement>
             <plugins>
+                <!--添加SpringBoot插件:tomcat-->
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>

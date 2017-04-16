@@ -1,5 +1,7 @@
 package com.ldb.pojo.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  */
 public class BlogDateArchiveVO {
 
+    @JsonFormat(pattern="yyyy月MM")
     private Date archiveDate;
     private Integer totalNum;
 
