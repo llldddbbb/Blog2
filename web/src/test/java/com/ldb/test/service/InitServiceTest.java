@@ -29,6 +29,8 @@ public class InitServiceTest {
     private BlogService blogService;
     @Autowired
     private MottoService mottoService;
+    @Autowired
+    private SignatureService signatureService;
 
     @Test
     public void initTest(){
@@ -38,5 +40,6 @@ public class InitServiceTest {
         Assert.assertNotNull(blogService.listBlogDateArchive());
         Assert.assertNotNull(blogService.listBlogDateArchive());
         Assert.assertNotNull(mottoService.getMotto());
+        Assert.assertNotNull(signatureService.getSignature());
     }
 }

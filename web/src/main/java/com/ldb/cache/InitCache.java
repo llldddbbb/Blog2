@@ -5,6 +5,7 @@ import com.ldb.pojo.po.BlogTypePO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.LinkVO;
 import com.ldb.pojo.vo.MottoVO;
+import com.ldb.pojo.vo.SignatureVO;
 import com.ldb.service.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -41,6 +42,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         BlogTagService blogTagService=(BlogTagService)applicationContext.getBean("blogTagService");
         BlogService blogService=(BlogService)applicationContext.getBean("blogService");
         MottoService mottoService=(MottoService)applicationContext.getBean("mottoService");
+        SignatureService signatureService=(SignatureService)applicationContext.getBean("signatureService");
 
         //调用service方法，取得数据
         List<LinkVO> linkList=linkService.listLink();
@@ -48,6 +50,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         List<BlogTagPO> blogTagList=blogTagService.listBlogTag();
         List<BlogDateArchiveVO> blogDateArchiveList=blogService.listBlogDateArchive();
         MottoVO motto=mottoService.getMotto();
+        SignatureVO signature = signatureService.getSignature();
 
         //将数据塞进application
         application.setAttribute("linkList",linkList);//友情链接
@@ -55,6 +58,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         application.setAttribute("blogTagList",blogTagList);//博客列表
         application.setAttribute("blogDateArchiveList",blogDateArchiveList);//博客日期归档;
         application.setAttribute("motto",motto);//博客座右铭;
+        application.setAttribute("signature",signature);//博客座右铭;
 
     }
 
