@@ -4,16 +4,16 @@ package com.ldb.pojo.po;
  * Created by ldb on 2017/4/15.
  */
 public class LinkPO {
-    private int id;
+    private Integer id;
     private String linkName;
     private String linkUrl;
     private String orderNum;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

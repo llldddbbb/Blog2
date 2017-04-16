@@ -5,14 +5,14 @@ package com.ldb.pojo.po;
  */
 public class BlogTypePO {
 
-    private int id;
+    private Integer id;
     private String typeName;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -23,5 +23,4 @@ public class BlogTypePO {
     public void setTypeName(String typeName) {
         this.typeName = typeName;
     }
-
 }

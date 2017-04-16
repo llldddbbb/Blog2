@@ -382,5 +382,44 @@
 <script th:src="@{/foreground/js/time.js}" src="../../static/foreground/js/time.js"></script>
 <script th:src="@{/foreground/js/xiaolongbao.js}" src="../../static/foreground/js/xiaolongbao.js"></script>
 <script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script  th:inline="javascript">
+    $(document).ready(function () {
+        var blogTagList=[[${application.blogTagList}]];
+        var entries=[];
+        for(var i in blogTagList){
+            var entry={
+                label:blogTagList[i].tagName
+            }
+            entries.push(entry);
+        }
+        var settings = {
+
+            entries: entries,
+            width: '100%',
+            height: '100%',
+            radius: '78%',
+            radiusMin: '50%',
+            bgDraw: true,
+            bgColor: '#FFF',
+            opacityOver: 1.00,
+            opacityOut: 0.13,
+            opacitySpeed: 6,
+            fov: 800,
+            speed: 0.5,
+            fontFamily: 'Oswald, Arial, sans-serif',
+            fontSize: '15',
+            fontColor: '#000',
+            fontWeight: 'normal',//bold
+            fontStyle: 'normal',//italic
+            fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            fontToUpperCase: false
+
+        };
+
+        //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+        $('#tag-cloud').svg3DTagCloud(settings);
+    });
+
+</script>
 </body>
 </html>

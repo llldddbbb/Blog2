@@ -1,7 +1,9 @@
 package com.ldb.cache;
 
+import com.ldb.pojo.po.BlogTagPO;
 import com.ldb.pojo.po.BlogTypePO;
 import com.ldb.pojo.po.LinkPO;
+import com.ldb.service.BlogTagService;
 import com.ldb.service.BlogTypeService;
 import com.ldb.service.LinkService;
 import org.springframework.beans.BeansException;
@@ -30,14 +32,18 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         ServletContext application=servletContextEvent.getServletContext();
+
         LinkService linkService=(LinkService)applicationContext.getBean("linkService");
         BlogTypeService blogTypeService=(BlogTypeService)applicationContext.getBean("blogTypeService");
+        BlogTagService blogTagService=(BlogTagService)applicationContext.getBean("blogTagService");
 
         List<LinkPO> linkList=linkService.listLink();
         List<BlogTypePO> blogTypeList=blogTypeService.listBlogType();
+        List<BlogTagPO> blogTagList=blogTagService.listBlogTag();
 
         application.setAttribute("linkList",linkList);
         application.setAttribute("blogTypeList",blogTypeList);
+        application.setAttribute("blogTagList",blogTagList);
 
     }
 
