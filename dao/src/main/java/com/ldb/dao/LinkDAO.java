@@ -1,6 +1,6 @@
 package com.ldb.dao;
 
-import com.ldb.pojo.po.LinkPO;
+import com.ldb.pojo.vo.LinkVO;
 
 import java.util.List;
 
@@ -9,5 +9,5 @@ import java.util.List;
  */
 public interface LinkDAO {
 
-    List<LinkPO> listLink();
+    List<LinkVO> listLinkVO();
 }

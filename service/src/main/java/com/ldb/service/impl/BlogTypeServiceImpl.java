@@ -19,6 +19,6 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     @Override
     public List<BlogTypePO> listBlogType() {
-        return blogTypeDAO.listBlogType();
+        return blogTypeDAO.listBlogTypePO();
     }
 }

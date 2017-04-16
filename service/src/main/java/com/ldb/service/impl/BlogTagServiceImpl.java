@@ -19,6 +19,6 @@ public class BlogTagServiceImpl implements BlogTagService {
 
     @Override
     public List<BlogTagPO> listBlogTag() {
-        return blogTagDAO.listBlogTag();
+        return blogTagDAO.listBlogTagPO();
     }
 }

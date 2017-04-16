@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface BlogTypeDAO {
 
-    List<BlogTypePO> listBlogType();
+    List<BlogTypePO> listBlogTypePO();
 
 }

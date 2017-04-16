@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </sql>
 
 
-    <select id="listBlogTag" resultMap="blogTagResultMap">
+    <select id="listBlogTagPO" resultMap="blogTagResultMap">
         select <include refid="list"/> from blogTag
     </select>
 
