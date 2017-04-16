@@ -278,12 +278,10 @@
                     <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <select id="cd-dropdown" class="cd-select">
                             <option selected>博客类别</option>
-                            <option><a href="#">项目分享</a></option>
-                            <option>技术探讨</option>
-                            <option>散文随笔</option>
-                            <option>花店</option>
+                            <option th:each="blogType:${application.blogTypeList}"><a href="#" th:text="${blogType.typeName}">项目分享</a></option>
                         </select>
                     </div><!--博客类别结束-->
+
                     <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h4>热门点击</h4>
                         <div class="blog-grid-left">
@@ -360,7 +358,7 @@
 
                     <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h4>友情链接</h4>
-                        <div class="sim-button button5" th:each="link:${application.linkList}"><a th:href="${link.linkUrl}" href="#"><span th:text="${link.linkName}">罗思瑜的博客</span></a></div>
+                        <div class="sim-button button5" th:each="link:${application.linkList}"><a th:href="${link.linkUrl}" target="_blank"><span th:text="${link.linkName}">罗思瑜的博客</span></a></div>
                     </div><!--友情链接结束-->
                 </div>
             </div>
