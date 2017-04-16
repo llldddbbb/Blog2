@@ -4,11 +4,11 @@
     <title>DB'S BLOG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="http://oohwofmub.bkt.clouddn.com/css/bootstrap.css" rel='stylesheet' type='text/css'/>
-    <link href="http://oohwofmub.bkt.clouddn.com/css/style.css" rel='stylesheet' type='text/css'/>
-    <link th:href="@{/foreground/css/mystyle.css}" href="http://oohwofmub.bkt.clouddn.com/css/mystyle.css" rel='stylesheet' type='text/css'/>
-    <link href="http://oohwofmub.bkt.clouddn.com/css/dropdown.css" rel='stylesheet' type='text/css'/>
-    <link href="http://oohwofmub.bkt.clouddn.com/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/bootstrap.css}" href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/dropdown.css}" href="../../static/foreground/css/dropdown.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
@@ -24,8 +24,8 @@
 
 <div class="banner">
     <div class="container">
-        <h2 th:text="${application.signature.title}">提醒自己一件事，千万不要自己感动自己</h2>
-        <p th:text="${application.signature.content}">大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那么富士康流水线上任何一个人都比你努力多了。人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里。 </p>
+        <h2>提醒自己一件事，千万不要自己感动自己</h2>
+        <p>大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那么富士康流水线上任何一个人都比你努力多了。人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里。 </p>
         <a href="#">Hello Word!</a>
     </div>
 </div><!--鸡汤签名结束-->
@@ -49,38 +49,38 @@
                     <div role="tabpanel" class="tab-pane fade" id="expeditions" aria-labelledby="expeditions-tab">
 
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/f2.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f2.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img src="http://oohwofmub.bkt.clouddn.com/images/f4.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/f4.jpg}" src="../../static/foreground/images/f4.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/f3.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/f3.jpg}" src="../../static/foreground/images/f3.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="clearfix"></div>
                     </div><!--tab1内容结束-->
                     <div role="tabpanel" class="tab-pane fade" id="safari" aria-labelledby="safari-tab">
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/t1.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/t1.jpg}" src="../../static/foreground/images/t1.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/t2.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/t2.jpg}" src="../../static/foreground/images/t2.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/t3.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/t3.jpg}" src="../../static/foreground/images/t3.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="clearfix"></div>
                     </div><!--tab2内容结束-->
                     <div role="tabpanel" class="tab-pane fade active in" id="trekking" aria-labelledby="trekking-tab">
 
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/m2.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/m1.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/m1.jpg}" src="../../static/foreground/images/m1.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="col-md-4 col-sm-5 tab-image">
-                            <img  src="http://oohwofmub.bkt.clouddn.com/images/m3.jpg" class="img-responsive" alt="Wanderer">
+                            <img th:src="@{/foreground/images/m3.jpg}" src="../../static/foreground/images/m3.jpg" class="img-responsive" alt="Wanderer">
                         </div>
                         <div class="clearfix"></div>
                     </div><!--tab3内容结束-->
@@ -98,7 +98,7 @@
                     <h3><a href="singlepage.html">推荐 : 网站源码下载</a></h3>
                     <h6></h6>
                     <div class="tch-img">
-                        <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/t4.jpg" class="img-responsive" alt=""></a>
+                        <a href="singlepage.html"><img th:src="@{/foreground/images/t4.jpg}" src="../../static/foreground/images/t4.jpg" class="img-responsive" alt=""></a>
                     </div>
                     <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -125,7 +125,7 @@
                         <div class="tc-ch" style="padding:0px;">
                             <div class="tch-img">
                                 <a href="singlepage.html">
-                                    <img  src="http://oohwofmub.bkt.clouddn.com/images/m4.jpg" class="img-responsive" alt="">
+                                    <img th:src="@{/foreground/images/m4.jpg}" src="../../static/foreground/images/m4.jpg" class="img-responsive" alt="">
                                 </a>
                             </div>
                             <h6><a href="singlepage.html">最新博文0</a></h6>
@@ -147,7 +147,7 @@
                     <div class="col-md-6 w3ls-left wow fadeInDown">
                         <div class="tc-ch" style="padding:0px;">
                             <div class="tch-img">
-                                <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/m5.jpg"
+                                <a href="singlepage.html"><img th:src="@{/foreground/images/m5.jpg}" src="../../static/foreground/images/m5.jpg"
                                                                class="img-responsive" alt=""></a>
                             </div>
 
@@ -174,7 +174,7 @@
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
                             <a href="singlepage.html">
-                                <img  src="http://oohwofmub.bkt.clouddn.com/images/f1.jpg" class="img-responsive" alt="">
+                                <img th:src="@{/foreground/images/f1.jpg}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
@@ -199,7 +199,7 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/f2.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f2.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                     </div>
@@ -224,7 +224,7 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/f3.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/f3.jpg}" src="../../static/foreground/images/f3.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
                     <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h4>热门点击</h4>
                         <div class="blog-grid-left">
-                            <a href="singlepage.html"><img src="http://oohwofmub.bkt.clouddn.com/images/t2.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/t2.jpg}" src="../../static/foreground/images/t2.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                         <div class="blog-grid-right">
@@ -296,7 +296,7 @@
                     </div>
                     <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="blog-grid-left">
-                            <a href="singlepage.html"><img src="http://oohwofmub.bkt.clouddn.com/images/m2.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                         <div class="blog-grid-right">
@@ -307,7 +307,7 @@
                     </div>
                     <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="blog-grid-left">
-                            <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/f2.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f2.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                         <div class="blog-grid-right">
@@ -318,7 +318,7 @@
                     </div>
                     <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="blog-grid-left">
-                            <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/t3.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/t3.jpg}" src="../../static/foreground/images/t3.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                         <div class="blog-grid-right">
@@ -329,7 +329,7 @@
                     </div>
                     <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="blog-grid-left">
-                            <a href="singlepage.html"><img  src="http://oohwofmub.bkt.clouddn.com/images/m3.jpg"
+                            <a href="singlepage.html"><img th:src="@{/foreground/images/m3.jpg}" src="../../static/foreground/images/m3.jpg"
                                                            class="img-responsive" alt=""></a>
                         </div>
                         <div class="blog-grid-right">
@@ -368,17 +368,17 @@
 
 <div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" th:include="foreground/common::copyright"></div><!--版权区结束-->
 
-<img id="oImg"  src="http://oohwofmub.bkt.clouddn.com/images/xiaolongbao.gif" />
+<img id="oImg" th:src="@{/foreground/images/xiaolongbao.gif}" src="../../static/foreground/images/xiaolongbao.gif" />
 
-<script  src="http://oohwofmub.bkt.clouddn.com/js/jquery-1.11.1.min.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/bootstrap.min.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/wow.min.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/jquery.svg3dtagcloud.min.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/modernizr.custom.63321.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/jquery.dropdown.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/time.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/xiaolongbao.js"></script>
-<script  src="http://oohwofmub.bkt.clouddn.com/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery-1.11.1.min.js}" src="../../static/foreground/js/jquery-1.11.1.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/modernizr.custom.63321.js}" src="../../static/foreground/js/modernizr.custom.63321.js"></script>
+<script th:src="@{/foreground/js/jquery.dropdown.js}" src="../../static/foreground/js/jquery.dropdown.js"></script>
+<script th:src="@{/foreground/js/time.js}" src="../../static/foreground/js/time.js"></script>
+<script th:src="@{/foreground/js/xiaolongbao.js}" src="../../static/foreground/js/xiaolongbao.js"></script>
+<script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
 <script  th:inline="javascript">
     $(document).ready(function () {
         var blogTagList=[[${application.blogTagList}]];
