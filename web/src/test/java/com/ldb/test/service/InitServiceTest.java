@@ -1,10 +1,6 @@
 package com.ldb.test.service;
 
-import com.ldb.service.BlogService;
-import com.ldb.service.BlogTagService;
-import com.ldb.service.BlogTypeService;
-import com.ldb.service.LinkService;
-import com.ldb.utils.JacksonUtil;
+import com.ldb.service.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,6 +27,8 @@ public class InitServiceTest {
     private BlogTagService blogTagService;
     @Autowired
     private BlogService blogService;
+    @Autowired
+    private MottoService mottoService;
 
     @Test
     public void initTest(){
@@ -38,6 +36,7 @@ public class InitServiceTest {
         Assert.assertNotNull(blogTypeService.listBlogType());
         Assert.assertNotNull(blogTagService.listBlogTag());
         Assert.assertNotNull(blogService.listBlogDateArchive());
-        logger.info(JacksonUtil.toJSon(blogService.listBlogDateArchive()));
+        Assert.assertNotNull(blogService.listBlogDateArchive());
+        Assert.assertNotNull(mottoService.getMotto());
     }
 }

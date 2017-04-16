@@ -4,10 +4,8 @@ import com.ldb.pojo.po.BlogTagPO;
 import com.ldb.pojo.po.BlogTypePO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.LinkVO;
-import com.ldb.service.BlogService;
-import com.ldb.service.BlogTagService;
-import com.ldb.service.BlogTypeService;
-import com.ldb.service.LinkService;
+import com.ldb.pojo.vo.MottoVO;
+import com.ldb.service.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -42,18 +40,21 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         BlogTypeService blogTypeService=(BlogTypeService)applicationContext.getBean("blogTypeService");
         BlogTagService blogTagService=(BlogTagService)applicationContext.getBean("blogTagService");
         BlogService blogService=(BlogService)applicationContext.getBean("blogService");
+        MottoService mottoService=(MottoService)applicationContext.getBean("mottoService");
 
         //调用service方法，取得数据
         List<LinkVO> linkList=linkService.listLink();
         List<BlogTypePO> blogTypeList=blogTypeService.listBlogType();
         List<BlogTagPO> blogTagList=blogTagService.listBlogTag();
         List<BlogDateArchiveVO> blogDateArchiveList=blogService.listBlogDateArchive();
+        MottoVO motto=mottoService.getMotto();
 
         //将数据塞进application
         application.setAttribute("linkList",linkList);//友情链接
         application.setAttribute("blogTypeList",blogTypeList);//博客类比
         application.setAttribute("blogTagList",blogTagList);//博客列表
         application.setAttribute("blogDateArchiveList",blogDateArchiveList);//博客日期归档;
+        application.setAttribute("motto",motto);//博客座右铭;
 
     }
 
