@@ -33,7 +33,7 @@ public class InitServiceTest {
     private SignatureService signatureService;
 
     @Test
-    public void initTest(){
+    public void testInit(){
         Assert.assertNotNull(linkService.listLink());
         Assert.assertNotNull(blogTypeService.listBlogType());
         Assert.assertNotNull(blogTagService.listBlogTag());

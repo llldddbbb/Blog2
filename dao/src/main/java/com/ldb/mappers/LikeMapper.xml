@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应dao接口 -->
+<mapper namespace="com.ldb.dao.LikeDAO">
+
+
+
+    <select id="getLikeCount" resultType="int">
+        select COUNT(*) from `like`
+    </select>
+
+</mapper> 
