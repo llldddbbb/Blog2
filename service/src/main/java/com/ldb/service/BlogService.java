@@ -13,4 +13,6 @@ public interface BlogService {
     List<BlogDateArchiveVO> listBlogDateArchive();
 
     BlogVO getRecommendBlog();
+
+    List<BlogVO> listNewBlog();
 }

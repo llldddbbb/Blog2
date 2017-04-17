@@ -1,4 +1,4 @@
-package com.ldb.utils;
+package com.ldb.controller.utils;
 
 /**
  * Created by ldb on 2017/4/17.

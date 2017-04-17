@@ -1,4 +1,4 @@
-package com.ldb.utils;
+package com.ldb.controller.utils;
 
 import eu.bitwalker.useragentutils.Browser;
 import eu.bitwalker.useragentutils.OperatingSystem;

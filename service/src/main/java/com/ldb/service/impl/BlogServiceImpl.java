@@ -5,6 +5,7 @@ import com.ldb.dao.CommentDAO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 import com.ldb.service.BlogService;
+import com.ldb.service.utils.BlogVOUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,18 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public BlogVO getRecommendBlog() {
         BlogVO recommendBlogVO = blogDAO.getRecommendBlogVO();
-        recommendBlogVO.setCommentCount(commentDAO.getCommentCount(recommendBlogVO.getId()));
+        BlogVOUtil.setBlogVO(recommendBlogVO,commentDAO);
         return recommendBlogVO;
     }
+
+    @Override
+    public List<BlogVO> listNewBlog() {
+        List<BlogVO> blogVOList = blogDAO.listNewBlog();
+        for(BlogVO blogVO:blogVOList){
+            BlogVOUtil.setBlogVO(blogVO,commentDAO);
+        }
+        return blogVOList;
+    }
+
+
 }

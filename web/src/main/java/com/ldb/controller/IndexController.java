@@ -1,10 +1,12 @@
 package com.ldb.controller;
 
 import com.ldb.pojo.po.VisitorPO;
+import com.ldb.pojo.vo.BlogVO;
+import com.ldb.service.BlogService;
 import com.ldb.service.LikeService;
 import com.ldb.service.VisitorService;
-import com.ldb.utils.ConfigStrUtil;
-import com.ldb.utils.RequestUtil;
+import com.ldb.controller.utils.ConfigStrUtil;
+import com.ldb.controller.utils.RequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by ldb on 2017/4/17.
@@ -27,6 +30,9 @@ public class IndexController {
 
     @Autowired
     private VisitorService visitorService;
+
+    @Autowired
+    private BlogService blogService;
 
     @RequestMapping(value = {"/","/index"})
     public ModelAndView goIndex(HttpServletRequest request){
@@ -42,6 +48,10 @@ public class IndexController {
         //获取游客浏览数量
         Long readNum=visitorService.getReadNum();
         mav.addObject("readNum",readNum);
+
+        //获取最新5篇博文
+        List<BlogVO> newBlogList = blogService.listNewBlog();
+        mav.addObject("newBlogList",newBlogList);
         return mav;
     }
 

@@ -14,4 +14,6 @@ public interface BlogDAO {
 
     BlogVO getRecommendBlogVO();
 
+    List<BlogVO> listNewBlog();
+
 }

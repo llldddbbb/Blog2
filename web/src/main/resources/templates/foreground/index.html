@@ -127,17 +127,17 @@
                                     <img th:src="@{/foreground/images/m4.jpg}" src="../../static/foreground/images/m4.jpg" class="img-responsive" alt="">
                                 </a>
                             </div>
-                            <h6><a href="singlepage.html">最新博文0</a></h6>
-                            <h6>BY <a href="singlepage.html">氧化钡</a> 2017-04-13</h6>
-                            <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            <h6><a href="singlepage.html" th:text="${newBlogList[0].title}">最新博文0</a></h6>
+                            <h6>BY <a href="singlepage.html" th:text="${newBlogList[0].author}">氧化钡</a> <span th:text="${#calendars.format(newBlogList[0].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                            <p th:text="${newBlogList[0].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="bht1">
                                 <a href="singlepage.html">查看更多</a>
                             </div>
                             <div class="soci">
                                 <p style="padding-right: 1.8em">
-                                    <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a>
-                                    <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                                    <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span><span th:text="${newBlogList[0].commentCount}">0</span></a>
+                                    <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><span th:text="${newBlogList[0].readNum}">56</span></a>
                                 </p>
                             </div>
                             <div class="clearfix"></div>
@@ -150,18 +150,18 @@
                                                                class="img-responsive" alt=""></a>
                             </div>
 
-                            <h6><a href="singlepage.html">最新博文1</a></h6>
-                            <h6>BY <a href="singlepage.html">Bobbi</a> 2017-04-13</h6>
-                            <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            <h6><a href="singlepage.html" th:text="${newBlogList[1].title}">最新博文1</a></h6>
+                            <h6>BY <a href="singlepage.html" th:text="${newBlogList[1].author}">Bobbi</a><span th:text="${#calendars.format(newBlogList[1].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                            <p th:text="${newBlogList[1].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="bht1">
                                 <a href="singlepage.html">查看更多</a>
                             </div>
                             <div class="soci">
-                                <p style="padding-right: 1.8em"><a class="span_link" href="#"><span
-                                        class="glyphicon glyphicon-comment"></span>0 </a><a class="span_link"
-                                                                                            href="#"><span
-                                        class="glyphicon glyphicon-eye-open"></span>56 </a></p>
+                                <p style="padding-right: 1.8em">
+                                    <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span><span th:text="${newBlogList[1].commentCount}">0</span></a>
+                                    <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><span th:text="${newBlogList[1].readNum}">56</span></a>
+                                </p>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -178,16 +178,17 @@
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h6><a href="singlepage.html">最新博文2</a></h6>
-                        <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
-                        <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                        <h6><a href="singlepage.html" th:text="${newBlogList[2].title}">最新博文2</a></h6>
+                        <h6>BY <a href="singlepage.html" th:text="${newBlogList[2].author}">氧化钡 </a><span th:text="${#calendars.format(newBlogList[2].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                        <p th:text="${newBlogList[2].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
                             <a href="singlepage.html">查看更多</a>
                         </div>
                         <div class="soci">
-                            <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a
-                                    class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                            <p>
+                                <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span><span th:text="${newBlogList[2].commentCount}">0</span></a>
+                                <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><span th:text="${newBlogList[2].readNum}">56</span></a>
                             </p>
                         </div>
                         <div class="clearfix"></div>
@@ -198,21 +199,23 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f2.jpg"
-                                                           class="img-responsive" alt=""></a>
+                            <a href="singlepage.html">
+                                <img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h6><a href="singlepage.html">最新博文3</a></h6>
-                        <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
-                        <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                        <h6><a href="singlepage.html" th:text="${newBlogList[3].title}">最新博文2</a></h6>
+                        <h6>BY <a href="singlepage.html" th:text="${newBlogList[3].author}">氧化钡 </a><span th:text="${#calendars.format(newBlogList[3].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                        <p th:text="${newBlogList[3].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
                             <a href="singlepage.html">查看更多</a>
                         </div>
                         <div class="soci">
-                            <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a
-                                    class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                            <p>
+                                <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span><span th:text="${newBlogList[3].commentCount}">0</span></a>
+                                <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><span th:text="${newBlogList[3].readNum}">56</span></a>
                             </p>
                         </div>
                         <div class="clearfix"></div>
@@ -223,28 +226,31 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/f3.jpg}" src="../../static/foreground/images/f3.jpg"
-                                                           class="img-responsive" alt=""></a>
+                            <a href="singlepage.html">
+                                <img th:src="@{/foreground/images/f3.jpg}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
+                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h6><a href="singlepage.html">SpringBoot多模块配置</a></h6>
-                        <h6>BY <a href="singlepage.html">氧化钡 </a> 2017-04-13</h6>
-                        <p>Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua exercitation ullamco laboris.</p>
+                        <h6><a href="singlepage.html" th:text="${newBlogList[4].title}">最新博文2</a></h6>
+                        <h6>BY <a href="singlepage.html" th:text="${newBlogList[4].author}">氧化钡 </a><span th:text="${#calendars.format(newBlogList[4].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                        <p th:text="${newBlogList[4].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
                             <a href="singlepage.html">查看更多</a>
                         </div>
                         <div class="soci">
-                            <p><a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span>0 </a><a
-                                    class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span>56 </a>
+                            <p>
+                                <a class="span_link" href="#"><span class="glyphicon glyphicon-comment"></span><span th:text="${newBlogList[4].commentCount}">0</span></a>
+                                <a class="span_link" href="#"><span class="glyphicon glyphicon-eye-open"></span><span th:text="${newBlogList[4].readNum}">56</span></a>
                             </p>
                         </div>
                         <div class="clearfix"></div>
 
                     </div>
                     <div class="clearfix"></div>
-                </div><!--3篇博文结束-->
+                </div>
+                <!--3篇博文结束-->
                 <nav class="paging wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                     <ul class="pagination pagination-mg">
                         <li><a href="#" aria-label="Previous"><span aria-hidden="true"><<</span></a></li>

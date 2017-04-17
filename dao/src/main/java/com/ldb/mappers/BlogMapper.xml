@@ -31,4 +31,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT <include refid="listVO"/> from blog WHERE isRecommend=1 ORDER BY publishTime limit 0,1
     </select>
 
+    <select id="listNewBlog" resultType="com.ldb.pojo.vo.BlogVO">
+        select <include refid="listVO"/> from blog ORDER BY publishTime desc limit 0,5;
+    </select>
+
 </mapper> 
