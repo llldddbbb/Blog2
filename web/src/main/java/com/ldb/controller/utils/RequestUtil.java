@@ -35,11 +35,11 @@ public class RequestUtil {
         String agentStr = request.getHeader("user-agent");
         UserAgent agent = UserAgent.parseUserAgentString(agentStr);
         Browser browser = agent.getBrowser();
-        return "类型："+browser.getBrowserType()+
-                " 名称："+browser.getName()+
-                " 厂商："+browser.getManufacturer()+
-                " 产品系列："+browser.getGroup()+
-                " 引擎："+browser.getRenderingEngine();
+        return "{类型:"+browser.getBrowserType()+
+                ",名称:"+browser.getName()+
+                ",厂商:"+browser.getManufacturer()+
+                ",产品系列:"+browser.getGroup()+
+                ",引擎:"+browser.getRenderingEngine()+"}";
     }
 
 
@@ -48,10 +48,10 @@ public class RequestUtil {
         String agentStr = request.getHeader("user-agent");
         UserAgent agent = UserAgent.parseUserAgentString(agentStr);
         OperatingSystem os = agent.getOperatingSystem();
-        return "名称："+os.getName()+
-                " 设备类型："+os.getDeviceType()+
-                " 产品系列："+os.getGroup()+
-                " 生成厂商："+os.getManufacturer();
+        return "{名称:"+os.getName()+
+                ",设备类型:"+os.getDeviceType()+
+                ",产品系列:"+os.getGroup()+
+                ",生成厂商:"+os.getManufacturer()+"}";
     }
 
 
