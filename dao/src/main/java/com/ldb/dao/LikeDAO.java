@@ -1,8 +1,6 @@
 package com.ldb.dao;
 
-import com.ldb.pojo.vo.LinkVO;
-
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * Created by ldb on 2017/4/15.
@@ -10,4 +8,6 @@ import java.util.List;
 public interface LikeDAO {
 
     int getLikeCount();
+
+    int addLike(@Param("userIP")String userIP);
 }

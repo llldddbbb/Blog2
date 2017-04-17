@@ -11,4 +11,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select COUNT(*) from `like`
     </select>
 
+    <insert id="addLike" >
+        insert into `like` values(null,#{userIP},now())
+    </insert>
+
 </mapper> 

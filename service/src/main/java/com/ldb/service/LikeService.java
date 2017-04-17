@@ -6,4 +6,6 @@ package com.ldb.service;
 public interface LikeService {
 
     int getLikeCount();
+
+    int addLike(String userIP);
 }

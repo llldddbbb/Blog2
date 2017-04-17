@@ -18,4 +18,9 @@ public class LikeServiceImpl implements LikeService {
     public int getLikeCount(){
         return likeDAO.getLikeCount();
     }
+
+    @Override
+    public int addLike(String userIP) {
+        return likeDAO.addLike(userIP);
+    }
 }

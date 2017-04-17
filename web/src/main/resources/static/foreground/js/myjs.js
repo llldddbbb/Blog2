@@ -29,10 +29,26 @@ $(document).ready(function () {
         {
             $("#likeCount"+messageID).html(C+1);
             $(this).addClass("heartAnimation").attr("rel","unlike");
+            $.ajax({
+                url:'like',
+                type:'POST',
+                async:true,    //或false,是否异步
+                data:{
+                },
+                success:function (result) {
+                    var result=eval("("+result+")");
+                    if(result.success){
+                        alert("点赞成功，感谢你的支持(∩_∩)");
+                    }else{
+                        alert("点赞失败，系统可能出了故障哦~~~~(>_<)~~~~")
+                    }
+                }
+
+            });
         }
         else
         {
-            alert("您已经点过赞了哦，感谢您的支持");
+            alert("您已经点过赞了哦，感谢您的支持(∩_∩)");
             /*$("#likeCount"+messageID).html(C-1);
             $(this).removeClass("heartAnimation").attr("rel","like");
             $(this).css("background-position","left");*/
