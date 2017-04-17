@@ -22,7 +22,7 @@ import java.util.List;
  * Created by ldb on 2017/4/17.
  */
 @Controller
-@SessionAttributes("readNum")
+@SessionAttributes(value = {"readNum","hotBlogList"})
 public class IndexController {
 
     @Autowired
@@ -52,6 +52,10 @@ public class IndexController {
         //获取最新5篇博文
         List<BlogVO> newBlogList = blogService.listNewBlog();
         mav.addObject("newBlogList",newBlogList);
+
+        //获取热门5篇博文
+        List<BlogVO> hotBlogList = blogService.listHotBlog();
+        mav.addObject("hotBlogList",hotBlogList);
         return mav;
     }
 

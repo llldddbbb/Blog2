@@ -44,5 +44,14 @@ public class BlogServiceImpl implements BlogService {
         return blogVOList;
     }
 
+    @Override
+    public List<BlogVO> listHotBlog() {
+        List<BlogVO> blogVOList = blogDAO.listHotBlog();
+        for(BlogVO blogVO:blogVOList){
+            BlogVOUtil.setBlogVO(blogVO,commentDAO);
+        }
+        return blogVOList;
+    }
+
 
 }

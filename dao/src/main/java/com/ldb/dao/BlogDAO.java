@@ -16,4 +16,6 @@ public interface BlogDAO {
 
     List<BlogVO> listNewBlog();
 
+    List<BlogVO> listHotBlog();
+
 }

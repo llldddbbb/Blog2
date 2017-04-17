@@ -35,4 +35,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select <include refid="listVO"/> from blog ORDER BY publishTime desc limit 0,5;
     </select>
 
+    <select id="listHotBlog" resultType="com.ldb.pojo.vo.BlogVO">
+        select <include refid="listVO"/> from blog ORDER BY readNum desc limit 0,5;
+    </select>
+
 </mapper> 

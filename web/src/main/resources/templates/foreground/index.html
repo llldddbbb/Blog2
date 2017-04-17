@@ -151,7 +151,7 @@
                             </div>
 
                             <h6><a href="singlepage.html" th:text="${newBlogList[1].title}">最新博文1</a></h6>
-                            <h6>BY <a href="singlepage.html" th:text="${newBlogList[1].author}">Bobbi</a><span th:text="${#calendars.format(newBlogList[1].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                            <h6>BY <a href="singlepage.html" th:text="${newBlogList[1].author}">Bobbi</a> <span th:text="${#calendars.format(newBlogList[1].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                             <p th:text="${newBlogList[1].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="bht1">
@@ -206,7 +206,7 @@
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h6><a href="singlepage.html" th:text="${newBlogList[3].title}">最新博文2</a></h6>
-                        <h6>BY <a href="singlepage.html" th:text="${newBlogList[3].author}">氧化钡 </a><span th:text="${#calendars.format(newBlogList[3].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                        <h6>BY <a href="singlepage.html" th:text="${newBlogList[3].author}">氧化钡 </a> <span th:text="${#calendars.format(newBlogList[3].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                         <p th:text="${newBlogList[3].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
@@ -287,59 +287,17 @@
                         </select>
                     </div><!--博客类别结束-->
 
-                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h4>热门点击</h4>
-                        <div class="blog-grid-left">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/t2.jpg}" src="../../static/foreground/images/t2.jpg"
-                                                           class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="blog-grid-right">
-
-                            <h5><a href="singlepage.html">热门博文0</a></h5>
-                        </div>
-                        <div class="clearfix"></div>
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" style="border: none">
+                        <h4 style="margin: 0">热门点击</h4>
                     </div>
-                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" th:each="hotBlog:${session.hotBlogList}">
                         <div class="blog-grid-left">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg"
-                                                           class="img-responsive" alt=""></a>
+                            <a href="singlepage.html">
+                                <img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="">
+                            </a>
                         </div>
                         <div class="blog-grid-right">
-
-                            <h5><a href="singlepage.html">热门博文1</a></h5>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <div class="blog-grid-left">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/f2.jpg}" src="../../static/foreground/images/f2.jpg"
-                                                           class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="blog-grid-right">
-
-                            <h5><a href="singlepage.html">热门博文2</a></h5>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <div class="blog-grid-left">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/t3.jpg}" src="../../static/foreground/images/t3.jpg"
-                                                           class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="blog-grid-right">
-
-                            <h5><a href="singlepage.html">热门博文3</a></h5>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <div class="blog-grid-left">
-                            <a href="singlepage.html"><img th:src="@{/foreground/images/m3.jpg}" src="../../static/foreground/images/m3.jpg"
-                                                           class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="blog-grid-right">
-
-                            <h5><a href="singlepage.html">SpringBoot多模块配置</a></h5>
+                            <h5><a href="singlepage.html" th:text="${hotBlog.title}">热门博文1</a></h5>
                         </div>
                         <div class="clearfix"></div>
                     </div>

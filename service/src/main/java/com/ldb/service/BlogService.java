@@ -15,4 +15,7 @@ public interface BlogService {
     BlogVO getRecommendBlog();
 
     List<BlogVO> listNewBlog();
+
+    List<BlogVO> listHotBlog();
+
 }
