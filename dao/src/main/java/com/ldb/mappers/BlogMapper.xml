@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.BlogDAO">
 
-    <resultMap id="BlogResultMap" type="com.ldb.pojo.po.BlogPO" >
+    <resultMap id="blogResultMap" type="com.ldb.pojo.po.BlogPO" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="title" property="title" jdbcType="VARCHAR" />
         <result column="author" property="author" jdbcType="VARCHAR" />
@@ -38,5 +38,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="listHotBlog" resultType="com.ldb.pojo.vo.BlogVO">
         select <include refid="listVO"/> from blog ORDER BY readNum desc limit 0,5;
     </select>
+
+    <select id="getBlog" resultMap="blogResultMap">
+        select * from blog where id=#{id}
+    </select>
+
+    <update id="updateBlogReadNum">
+        update blog set readNum=readNum+1 where id=#{id}
+    </update>
 
 </mapper> 

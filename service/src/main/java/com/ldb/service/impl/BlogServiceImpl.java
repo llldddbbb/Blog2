@@ -2,6 +2,7 @@ package com.ldb.service.impl;
 
 import com.ldb.dao.BlogDAO;
 import com.ldb.dao.CommentDAO;
+import com.ldb.pojo.po.BlogPO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 import com.ldb.service.BlogService;
@@ -51,6 +52,16 @@ public class BlogServiceImpl implements BlogService {
             BlogVOUtil.setBlogVO(blogVO,commentDAO);
         }
         return blogVOList;
+    }
+
+    @Override
+    public BlogPO getBlog(Integer id) {
+        return blogDAO.getBlog(id);
+    }
+
+    @Override
+    public int updateBlogReadNum(Integer id) {
+        return blogDAO.updateBlogReadNum(id);
     }
 
 

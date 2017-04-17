@@ -89,10 +89,10 @@
         <div class="col-md-9 technology-left">
             <div class="tech-no">
                 <div class="tc-ch wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                    <h3><a th:href="'/blog/'+${application.recommendBlog.id}" href="singlePage.html">推荐 : <span th:text="${application.recommendBlog.title}">网站源码下载</span></a></h3>
+                    <h3><a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html">推荐 : <span th:text="${application.recommendBlog.title}">网站源码下载</span></a></h3>
                     <h6></h6>
                     <div class="tch-img">
-                        <a th:href="'/blog/'+${application.recommendBlog.id}" href="singlePage.html"><img th:src="${application.recommendBlog.coverImageName}" th src="../../static/foreground/images/t4.jpg" class="img-responsive" alt=""></a>
+                        <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html"><img th:src="${application.recommendBlog.coverImageName}" th src="../../static/foreground/images/t4.jpg" class="img-responsive" alt=""></a>
                     </div>
                     <h6>BY <a  th:text="${application.recommendBlog.author}">氧化钡 </a> <span th:text="${#calendars.format(application.recommendBlog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                     <p th:text="${application.recommendBlog.summary}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -100,7 +100,7 @@
                         ut labore et dolore magna aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo
                         consequat.</p>
                     <div class="bht1">
-                        <a th:href="'/blog/'+${application.recommendBlog.id}" href="singlePage.html">继续阅读</a>
+                        <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html">继续阅读</a>
                     </div>
                     <div class="soci">
                         <p><a class="span_link" ><span class="glyphicon glyphicon-comment" ></span><span th:text="${application.recommendBlog.commentCount}"></span>
@@ -111,21 +111,21 @@
                 <div class="clearfix"></div>
 
                 <div class="w3ls tc-ch wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                    <h3><a href="singlePage.html">最新更新</a></h3>
+                    <h3><a href="blog.html">最新更新</a></h3>
                     <h6></h6>
                     <div class="col-md-6 w3ls-left wow fadeInDown">
                         <div class="tc-ch" style="padding:0px;">
                             <div class="tch-img">
-                                <a th:href="'/blog/'+${newBlogList[0].id}" href="singlePage.html">
+                                <a th:href="'/blog/'+${newBlogList[0].id}" href="blog.html">
                                     <img th:src="${newBlogList[0].coverImageName}" src="../../static/foreground/images/m4.jpg" class="img-responsive" alt="">
                                 </a>
                             </div>
-                            <h6><a th:href="'/blog/'+${newBlogList[0].id}" href="singlePage.html" th:text="${newBlogList[0].title}">最新博文0</a></h6>
+                            <h6><a th:href="'/blog/'+${newBlogList[0].id}" href="blog.html" th:text="${newBlogList[0].title}">最新博文0</a></h6>
                             <h6>BY <a  th:text="${newBlogList[0].author}">氧化钡</a> <span th:text="${#calendars.format(newBlogList[0].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                             <p th:text="${newBlogList[0].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="bht1">
-                                <a th:href="'/blog/'+${newBlogList[0].id}" href="singlePage.html">查看更多</a>
+                                <a th:href="'/blog/'+${newBlogList[0].id}" href="blog.html">查看更多</a>
                             </div>
                             <div class="soci">
                                 <p style="padding-right: 1.8em">
@@ -139,16 +139,16 @@
                     <div class="col-md-6 w3ls-left wow fadeInDown">
                         <div class="tc-ch" style="padding:0px;">
                             <div class="tch-img">
-                                <a th:href="'/blog/'+${newBlogList[1].id}" href="singlePage.html"><img th:src="${newBlogList[1].coverImageName}" src="../../static/foreground/images/m5.jpg"
-                                                               class="img-responsive" alt=""></a>
+                                <a th:href="'/blog/'+${newBlogList[1].id}" href="blog.html"><img th:src="${newBlogList[1].coverImageName}" src="../../static/foreground/images/m5.jpg"
+                                                                                                 class="img-responsive" alt=""></a>
                             </div>
 
-                            <h6><a th:href="'/blog/'+${newBlogList[1].id}" href="singlePage.html" th:text="${newBlogList[1].title}">最新博文1</a></h6>
+                            <h6><a th:href="'/blog/'+${newBlogList[1].id}" href="blog.html" th:text="${newBlogList[1].title}">最新博文1</a></h6>
                             <h6>BY <a  th:text="${newBlogList[1].author}">Bobbi</a> <span th:text="${#calendars.format(newBlogList[1].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                             <p th:text="${newBlogList[1].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                                 aliqua exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                             <div class="bht1">
-                                <a th:href="'/blog/'+${newBlogList[1].id}" href="singlePage.html">查看更多</a>
+                                <a th:href="'/blog/'+${newBlogList[1].id}" href="blog.html">查看更多</a>
                             </div>
                             <div class="soci">
                                 <p style="padding-right: 1.8em">
@@ -165,18 +165,18 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a th:href="'/blog/'+${newBlogList[2].id}" href="singlePage.html">
+                            <a th:href="'/blog/'+${newBlogList[2].id}" href="blog.html">
                                 <img th:src="${newBlogList[2].coverImageName}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h6><a th:href="'/blog/'+${newBlogList[2].id}" href="singlePage.html" th:text="${newBlogList[2].title}">最新博文2</a></h6>
+                        <h6><a th:href="'/blog/'+${newBlogList[2].id}" href="blog.html" th:text="${newBlogList[2].title}">最新博文2</a></h6>
                         <h6>BY <a  th:text="${newBlogList[2].author}">氧化钡 </a><span th:text="${#calendars.format(newBlogList[2].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                         <p th:text="${newBlogList[2].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
-                            <a th:href="'/blog/'+${newBlogList[2].id}" href="singlePage.html">查看更多</a>
+                            <a th:href="'/blog/'+${newBlogList[2].id}" href="blog.html">查看更多</a>
                         </div>
                         <div class="soci">
                             <p>
@@ -192,18 +192,18 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a th:href="'/blog/'+${newBlogList[3].id}" href="singlePage.html">
+                            <a th:href="'/blog/'+${newBlogList[3].id}" href="blog.html">
                                 <img th:src="${newBlogList[3].coverImageName}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h6><a th:href="'/blog/'+${newBlogList[3].id}" href="singlePage.html" th:text="${newBlogList[3].title}">最新博文2</a></h6>
+                        <h6><a th:href="'/blog/'+${newBlogList[3].id}" href="blog.html" th:text="${newBlogList[3].title}">最新博文2</a></h6>
                         <h6>BY <a  th:text="${newBlogList[3].author}">氧化钡 </a> <span th:text="${#calendars.format(newBlogList[3].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                         <p th:text="${newBlogList[3].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
-                            <a th:href="'/blog/'+${newBlogList[3].id}" href="singlePage.html">查看更多</a>
+                            <a th:href="'/blog/'+${newBlogList[3].id}" href="blog.html">查看更多</a>
                         </div>
                         <div class="soci">
                             <p>
@@ -219,18 +219,18 @@
                 <div class="wthree">
                     <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <div class="tch-img">
-                            <a th:href="'/blog/'+${newBlogList[4].id}" href="singlePage.html">
+                            <a th:href="'/blog/'+${newBlogList[4].id}" href="blog.html">
                                 <img th:src="${newBlogList[4].coverImageName}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                        <h6><a th:href="'/blog/'+${newBlogList[4].id}" href="singlePage.html" th:text="${newBlogList[4].title}">最新博文2</a></h6>
+                        <h6><a th:href="'/blog/'+${newBlogList[4].id}" href="blog.html" th:text="${newBlogList[4].title}">最新博文2</a></h6>
                         <h6>BY <a  th:text="${newBlogList[4].author}">氧化钡 </a><span th:text="${#calendars.format(newBlogList[4].publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                         <p th:text="${newBlogList[4].summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
-                            <a th:href="'/blog/'+${newBlogList[4].id}" href="singlePage.html">查看更多</a>
+                            <a th:href="'/blog/'+${newBlogList[4].id}" href="blog.html">查看更多</a>
                         </div>
                         <div class="soci">
                             <p>

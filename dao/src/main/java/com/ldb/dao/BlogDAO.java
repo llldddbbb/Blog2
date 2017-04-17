@@ -1,5 +1,6 @@
 package com.ldb.dao;
 
+import com.ldb.pojo.po.BlogPO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 
@@ -17,5 +18,9 @@ public interface BlogDAO {
     List<BlogVO> listNewBlog();
 
     List<BlogVO> listHotBlog();
+
+    BlogPO getBlog(Integer id);
+
+    int updateBlogReadNum(Integer id);
 
 }
