@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
 /**
  * Created by ldb on 2017/4/17.
  */
@@ -33,4 +34,5 @@ public class IndexControllerTest {
         mockMvc.perform(request)
                 .andExpect(content().string(equalTo(ConfigStrUtil.SUCCESS)));*/
     }
+
 }
