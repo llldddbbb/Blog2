@@ -58,6 +58,77 @@
             <div class="clearfix"></div>
         </div>
     </div><!--头部导航结束-->
+
+    <div class="header-bottom" th:fragment="blogTitle">
+        <div class="container">
+            <div class="logo wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                <h1><a href="index.html">DB'S BLOG</a></h1>
+                <p><label class="of"></label><span th:text="${application.motto.motto}">Just do IT</span><label class="on"></label></p>
+            </div>
+        </div>
+    </div><!--博客标题结束-->
+
+
+    <div class="col-md-3 technology-right" th:fragment="rightNav">
+        <div class="blo-top1">
+            <div class="tech-btm">
+                <div id="time" class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <canvas id="canvas" style="width: 100%"></canvas>
+                </div><!--时间结束-->
+
+                <div class="search-1 wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <form action="#" method="post">
+                        <input type="search" name="Search" value="Search" onfocus="this.value = '';"
+                               onblur="if (this.value == '') {this.value = 'Search';}" required>
+                        <input type="submit" value=" ">
+                    </form>
+                </div><!--搜索结束-->
+
+                <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <select id="cd-dropdown" class="cd-select">
+                        <option selected>博客类别</option>
+                        <option th:each="blogType:${application.blogTypeList}"><a href="#" th:text="${blogType.typeName}">项目分享</a></option>
+                    </select>
+                </div><!--博客类别结束-->
+
+                <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" style="border: none">
+                    <h4 style="margin: 0">热门点击</h4>
+                </div>
+                <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" th:each="hotBlog:${session.hotBlogList}">
+                    <div class="blog-grid-left">
+                        <a href="singlePage.html">
+                            <img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <div class="blog-grid-right">
+                        <h5><a href="singlePage.html" th:text="${hotBlog.title}">热门博文1</a></h5>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--热门点击结束-->
+
+                <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <h4>标签云</h4>
+                    <div id="tag-cloud"></div>
+                </div><!--标签云结束-->
+
+                <div class="dateCategory wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <h4>日期归档</h4>
+                    <nav class="cl-effect-1">
+                        <a th:each="blogDateArchive:${application.blogDateArchiveList}" th:text="${#calendars.format(blogDateArchive.archiveDate,'yyyy年MM月')}+'&nbsp;('+${blogDateArchive.totalNum}+')'" href="#">2017年04月11日 (10)</a>
+                    </nav>
+
+                </div><!--日期归档结束-->
+
+                <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <h4>友情链接</h4>
+                    <div class="sim-button button5" th:each="link:${application.linkList}"><a th:href="${link.linkUrl}" target="_blank"><span th:text="${link.linkName}">罗思瑜的博客</span></a></div>
+                </div><!--友情链接结束-->
+            </div>
+        </div>
+    </div><!--右侧内容结束-->
+
+
     <div class="footer" th:fragment="footer">
         <div class="container">
             <div class="col-md-4 footer-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
@@ -66,7 +137,7 @@
                 <p th:text="'网站总访问量: '+${session.readNum}">网站总访问量: 1200</p>
                 <img  src="http://oohwofmub.bkt.clouddn.com/images/t4.jpg" class="img-responsive" alt="">
                 <div class="bht1">
-                    <a href="singlepage.html">Read More</a>
+                    <a href="singlePage.html">Read More</a>
                 </div>
             </div>
             <div class="col-md-8 footer-middle wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
@@ -81,6 +152,8 @@
             <div class="clearfix"></div>
         </div>
     </div><!--脚部结束-->
+
+
     <div class="copyright wow fadeInDown" th:fragment="copyright" data-wow-duration=".8s" data-wow-delay=".2s">
         <div class="container">
             <p>Copyright &copy; 2017 Bobbi All rights reserved.</p>
