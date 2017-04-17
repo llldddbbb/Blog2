@@ -19,4 +19,9 @@ public class VisitorServiceImpl implements VisitorService {
     public int addVisitor(VisitorPO visitorPO) {
         return visitorDAO.addVisitor(visitorPO);
     }
+
+    @Override
+    public Long getReadNum() {
+        return visitorDAO.getReadNum();
+    }
 }

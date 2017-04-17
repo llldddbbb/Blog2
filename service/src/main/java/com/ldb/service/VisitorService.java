@@ -8,4 +8,6 @@ import com.ldb.pojo.po.VisitorPO;
 public interface VisitorService {
 
     int addVisitor(VisitorPO visitorPO);
+
+    Long getReadNum();
 }

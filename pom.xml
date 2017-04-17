@@ -34,7 +34,7 @@
         <mybatis-connector.version>5.1.39</mybatis-connector.version>
         <druid.version>1.0.26</druid.version>
         <jackson.version>2.8.6</jackson.version>
-        <userAgentUtils.version>1.2.0</userAgentUtils.version>
+        <useragentutils.version>1.20</useragentutils.version>
     </properties>
 
 
@@ -98,7 +98,7 @@
             <dependency>
                 <groupId>eu.bitwalker</groupId>
                 <artifactId>UserAgentUtils</artifactId>
-                <version>${userAgentUtils.version}</version>
+                <version>${useragentutils.version}</version>
             </dependency>
 
         </dependencies>

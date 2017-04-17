@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
  * Created by ldb on 2017/4/17.
  */
 @Controller
+@SessionAttributes("readNum")
 public class IndexController {
 
     @Autowired
@@ -36,23 +38,17 @@ public class IndexController {
         String userIP=RequestUtil.getUserIP(request);
         VisitorPO visitorPO=new VisitorPO(userIP,userBrowser,userOS);
         visitorService.addVisitor(visitorPO);
+
+        //获取游客浏览数量
+        Long readNum=visitorService.getReadNum();
+        mav.addObject("readNum",readNum);
         return mav;
     }
 
     @RequestMapping(value="/like",method = RequestMethod.POST)
     @ResponseBody
     public String clickLike(HttpServletRequest request){
-        //获取用户真实IP
-        String ip = request.getHeader("x-forwarded-for");
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("Proxy-Client-IP");
-        }
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getHeader("WL-Proxy-Client-IP");
-        }
-        if(ip == null || ip.length() == 0 || "unknown".equalsIgnoreCase(ip)) {
-            ip = request.getRemoteAddr();
-        }
+        String ip=RequestUtil.getUserIP(request);
         int resultNum=likeService.addLike(ip);
         if(resultNum>0){
             return ConfigStrUtil.SUCCESS;
