@@ -14,8 +14,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="blogId" property="blogId" jdbcType="INTEGER" />
     </resultMap>
 
+    <sql id="listVO">
+        nickName,content,publishTime
+    </sql>
+
     <select id="getCommentCount" parameterType="Integer" resultType="int">
         select count(*) from comment where blogId=#{blogId}
+    </select>
+
+    <select id="listNewCommentVO" resultMap="CommentResultMap">
+        SELECT <include refid="listVO"/> from comment ORDER BY publishTime DESC limit 0,5
     </select>
 
 </mapper> 

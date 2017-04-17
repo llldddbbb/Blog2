@@ -2,7 +2,9 @@ package com.ldb.controller;
 
 import com.ldb.pojo.po.VisitorPO;
 import com.ldb.pojo.vo.BlogVO;
+import com.ldb.pojo.vo.CommentVO;
 import com.ldb.service.BlogService;
+import com.ldb.service.CommentService;
 import com.ldb.service.LikeService;
 import com.ldb.service.VisitorService;
 import com.ldb.controller.utils.ConfigStrUtil;
@@ -22,7 +24,7 @@ import java.util.List;
  * Created by ldb on 2017/4/17.
  */
 @Controller
-@SessionAttributes(value = {"readNum","hotBlogList"})
+@SessionAttributes(value = {"readNum","hotBlogList","newCommentList"})
 public class IndexController {
 
     @Autowired
@@ -33,6 +35,9 @@ public class IndexController {
 
     @Autowired
     private BlogService blogService;
+
+    @Autowired
+    private CommentService commentService;
 
     @RequestMapping(value = {"/","/index"})
     public ModelAndView goIndex(HttpServletRequest request){
@@ -56,6 +61,9 @@ public class IndexController {
         //获取热门5篇博文
         List<BlogVO> hotBlogList = blogService.listHotBlog();
         mav.addObject("hotBlogList",hotBlogList);
+
+        List<CommentVO> newCommentList = commentService.listNewComment();
+        mav.addObject("newCommentList",newCommentList);
         return mav;
     }
 

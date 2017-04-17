@@ -71,13 +71,10 @@
             </div>
             <div class="col-md-8 footer-middle wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                 <h4>最新评论</h4>
-                <div class="mid-btm">
-                    <p>Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-                    <a href="#">your link</a>
+                <div class="mid-btm" th:each="newComment:${session.newCommentList}">
+                    <a th:text="${newComment.nickName}+'&nbsp&nbsp'+${#calendars.format(newComment.publishTime,'yyyy-MM-dd HH:mm:ss')}">your link</a>
+                    <p th:text="${newComment.content}">Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
                 </div>
-
-                <p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-                <a href="#">your link</a>
 
             </div>
 
