@@ -8,6 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <resultMap id="commentReplyResultMap" type="com.ldb.pojo.po.CommentReplyPO" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="userIP" property="userIP" jdbcType="VARCHAR" />
         <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
         <result column="commentId" property="commentId" jdbcType="INTEGER" />
         <result column="role" property="role" jdbcType="INTEGER" />
@@ -20,6 +21,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="listCommentReply" parameterType="Integer" resultMap="commentReplyResultMap">
         select <include refid="listVO"/> from comment_reply where commentId=#{commentId}
     </select>
+
+    <insert id="addCommentReply" parameterType="com.ldb.pojo.po.CommentReplyPO">
+        insert into comment_reply values(null,#{content},#{userIP},#{publishTime},#{commentId},#{role})
+    </insert>
 
 
 

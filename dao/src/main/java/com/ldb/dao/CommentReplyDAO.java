@@ -1,5 +1,6 @@
 package com.ldb.dao;
 
+import com.ldb.pojo.po.CommentReplyPO;
 import com.ldb.pojo.vo.CommentReplyVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,4 +12,6 @@ import java.util.List;
 public interface CommentReplyDAO {
 
     List<CommentReplyVO> listCommentReply(@Param("commentId") Integer commentId);
+
+    int addCommentReply(CommentReplyPO commentReplyPO);
 }

@@ -5,7 +5,9 @@ import com.ldb.controller.utils.JacksonUtil;
 import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.po.BlogPO;
 import com.ldb.pojo.po.CommentPO;
+import com.ldb.pojo.po.CommentReplyPO;
 import com.ldb.service.BlogService;
+import com.ldb.service.CommentReplyService;
 import com.ldb.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +32,9 @@ public class BlogController {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private CommentReplyService commentReplyService;
 
     @RequestMapping(value = "/blog/{id}",method = RequestMethod.GET)
     public ModelAndView blogPage(@PathVariable Integer id){
@@ -57,10 +62,30 @@ public class BlogController {
         //获取留言IP
         String userIP= RequestUtil.getUserIP(request);
         commentPO.setUserIP(userIP);
+        //设置时间
         commentPO.setPublishTime(new Date());
         int result=commentService.addComment(commentPO);
         if(result>0){
             return JacksonUtil.toJSon(commentPO);
+        }else{
+            return ConfigStrUtil.ERROR;
+        }
+    }
+
+    @RequestMapping(value = "/comment/reply",method = RequestMethod.POST)
+    @ResponseBody
+    public String addCommentReply(CommentReplyPO commentReplyPO,HttpServletRequest request){
+        //获取留言IP
+        String userIP= RequestUtil.getUserIP(request);
+        commentReplyPO.setUserIP(userIP);
+        //设置时间
+        commentReplyPO.setPublishTime(new Date());
+        //设置角色
+        commentReplyPO.setRole(false);
+        int result = commentReplyService.addCommentReply(commentReplyPO);
+        if(result>0){
+            System.out.println(JacksonUtil.toJSon(commentReplyPO));
+            return JacksonUtil.toJSon(commentReplyPO);
         }else{
             return ConfigStrUtil.ERROR;
         }

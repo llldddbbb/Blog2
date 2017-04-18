@@ -1,5 +1,7 @@
 package com.ldb.pojo.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class CommentReplyPO {
@@ -7,6 +9,9 @@ public class CommentReplyPO {
 
     private String content;
 
+    private String userIP;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishTime;
 
     private Integer commentId;
@@ -50,6 +55,24 @@ public class CommentReplyPO {
     }
 
     public void setRole(Boolean role) {
+        this.role = role;
+    }
+
+    public String getUserIP() {
+        return userIP;
+    }
+
+    public void setUserIP(String userIP) {
+        this.userIP = userIP;
+    }
+
+    public CommentReplyPO() {
+    }
+
+    public CommentReplyPO(String content, Date publishTime, Integer commentId, Boolean role) {
+        this.content = content;
+        this.publishTime = publishTime;
+        this.commentId = commentId;
         this.role = role;
     }
 }

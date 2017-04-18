@@ -81,9 +81,9 @@
 
                                     <div class="contact-section" style="padding:0;display: none" th:id="'replyPanel'+${comment.id}" id="replyPanel">
                                             <span class="comment-title">回复内容 : </span><br>
-                                            <textarea class="comment"  rows="3"></textarea>
-                                            <input type="submit" class="send">
-                                    </div>
+                                            <textarea class="comment" th:id="'commentReply'+${comment.id}"  rows="3"></textarea>
+                                            <input type="button" th:onclick="'addCommentReply('+${comment.id}+')'" class="send" value="提交">
+                                    </div><!--回复框-->
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                         您的昵称 : <input type="text" placeholder="请输入您的昵称" id="nickName" class="nickName"><br>
                         <span class="comment-title">评论内容 : </span><br>
                         <textarea class="comment" id="content" rows="3"></textarea>
-                        <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="send">
+                        <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="提交">
                     </div>
                 </div><!--回复框结束-->
                 <div class="clearfix"></div>
@@ -135,7 +135,7 @@
         src="../../static/foreground/js/jquery.emoji.js"></script>
 <script>
 
-    function addComment(blogId,commentId){
+    function addComment(blogId){
         var nickName=$("#nickName").val();
         var content=$("#content").val();
         if(nickName==null||nickName==''){
@@ -186,6 +186,32 @@
             }
         })
 
+    }
+
+    function addCommentReply(commentId){
+        var content=$('#commentReply'+commentId).val();
+        if(content==null||content==''){
+            alert("请输入回复内容哦!");
+            return;
+        }
+        $.ajax({
+            url:'/comment/reply',
+            type:'POST',
+            data:{
+                content:content,
+                commentId:commentId
+            },
+            success:function (result) {
+                var result=eval("("+result+")");
+                if(result.success==false){
+                    alert("留言失败，可能是系统出了故障~~(╯﹏╰)");
+                    return;
+                }else{
+                    alert("留言成功")
+                }
+
+            }
+        });
     }
 
     function showReply(id) {
