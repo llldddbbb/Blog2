@@ -44,9 +44,11 @@
                 </div>
                 <div class="response">
                     <h4>评论</h4>
-                    <hr>
-                    <div class="media response-info">
-                        <div th:each="comment:${commentList}">
+                </div>
+                <hr>
+                <div class="response"  th:each="comment:${commentList}">
+                        <div class="media response-info">
+                        <div>
                             <div class="media-left response-text-left">
                                 <a href="#">
                                     <img th:src="@{/foreground/images/sin2.jpg}" src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt="" style="width: 50px">
@@ -56,17 +58,20 @@
                             <p th:text="'留言内容 : '+${comment.content}">留言内容 : balabal></p>
                             <ul>
                                 <li th:text="${#calendars.format(comment.publishTime,'yyyy-MM-dd HH:mm:ss')}">Jun 21, 2016</li>
-                                <li><a href="javascript:showReply()"  id="replyButton">回复</a></li>
+                                <li><a th:href="'javascript:showReply('+${comment.id}+')'" href="javascript:showReply()"  th:id="'replyButton'+${comment.id}" id="replyButton">回复</a></li>
                             </ul>
                             <div class="media response-info">
                                 <div class="media-left response-text-left" style="width: 100%">
                                     <div th:each="reply:${comment.commentReplyVOList}">
                                         <a >
-                                            <img th:src="@{/foreground/images/sin1.jpg}" src="../../static/foreground/images/sin2.jpg" class="img-responsive"
+                                            <img th:src="@{/foreground/images/sin1.jpg}" th:if="${reply.role}==true" src="../../static/foreground/images/sin2.jpg" class="img-responsive"
+                                                 alt="" style="width: 50px">
+                                            <img th:src="@{/foreground/images/sin2.jpg}" th:if="${reply.role}==false" src="../../static/foreground/images/sin2.jpg" class="img-responsive"
                                                  alt="" style="width: 50px">
                                         </a>
                                         <div style="display: inline-block;vertical-align: middle">
-                                            <p class="reply-content" th:text="'博主回复 : '+${reply.content}">博主回复balabala</p>
+                                            <p class="reply-content" th:if="${reply.role}==true" th:text="'博主回复 : '+${reply.content}">博主回复balabala</p>
+                                            <p class="reply-content" th:if="${reply.role}==false" th:text="'楼主回复 : '+${reply.content}">博主回复balabala</p>
                                             <ul class="reply-date">
                                                 <li th:text="${#calendars.format(reply.publishTime,'yyyy-MM-dd HH:mm:ss')}">July 17, 2016</li>
                                             </ul>
@@ -74,17 +79,21 @@
                                         <div class="line"></div>
                                     </div>
 
+                                    <div class="contact-section" style="padding:0;display: none" th:id="'replyPanel'+${comment.id}" id="replyPanel">
+                                            <span class="comment-title">回复内容 : </span><br>
+                                            <textarea class="comment"  rows="3"></textarea>
+                                            <input type="submit" class="send">
+                                    </div>
                                 </div>
-                                <hr>
-                                <div class="clearfix"></div>
                             </div>
                         </div>
                         </div>
                         <div class="clearfix"></div>
                     </div><!--留言结束-->
+                    <hr>
                 </div>
-                <hr>
-                <div class="contact-section">
+
+                <div class="contact-section" style="padding-top:0;">
                     <div class="contact-grids">
                         您的昵称 : <input type="text" placeholder="请输入您的昵称" class="nickName"><br>
                         <span class="comment-title">评论内容 : </span><br>

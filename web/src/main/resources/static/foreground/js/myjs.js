@@ -90,10 +90,10 @@ function siteTime(){
 }
 siteTime();
 
-function showReply() {
+function showReply(id) {
 
-    var div = document.getElementById("replyPanel");
-    var button = document.getElementById("replyButton");
+    var div = document.getElementById("replyPanel"+id);
+    var button = document.getElementById("replyButton"+id);
     var show = div.dataset.show;//获取data-show
     if(show=='true'){
         div.style.display = "none";
