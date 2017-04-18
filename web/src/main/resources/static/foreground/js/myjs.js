@@ -90,3 +90,13 @@ function siteTime(){
 }
 siteTime();
 
+function parse() {
+    $(".sourceText").emojiParse({
+        icons: [{
+            path: "/foreground/images/qq/",
+            file: ".gif",
+            placeholder: "#qq_{alias}#"
+        }]
+    });
+}
+

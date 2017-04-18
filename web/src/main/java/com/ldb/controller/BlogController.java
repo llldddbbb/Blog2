@@ -66,8 +66,5 @@ public class BlogController {
         }
     }
 
-    @RequestMapping("/blog/test")
-    public String s(){
-        return "foreground/emojiTest";
-    }
+
 }

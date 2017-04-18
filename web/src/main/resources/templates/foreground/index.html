@@ -10,6 +10,8 @@
     <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
     <link th:href="@{/foreground/css/dropdown.css}" href="../../static/foreground/css/dropdown.css" rel='stylesheet' type='text/css'/>
     <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css" rel="stylesheet">
 </head>
 <body>
 <div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
@@ -279,6 +281,9 @@
 <script th:src="@{/foreground/js/time.js}" src="../../static/foreground/js/time.js"></script>
 <script th:src="@{/foreground/js/xiaolongbao.js}" src="../../static/foreground/js/xiaolongbao.js"></script>
 <script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel-3.0.6.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mousewheel-3.0.6.min.js"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mCustomScrollbar.min.js"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" type="text/javascript" src="../../static/foreground/js/jquery.emoji.js"></script>
 <script  th:inline="javascript">
     $(document).ready(function () {
         var blogTagList=[[${application.blogTagList}]];
@@ -314,7 +319,10 @@
 
         //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
         $('#tag-cloud').svg3DTagCloud(settings);
+        parse()
     });
+
+
 
 </script>
 </body>

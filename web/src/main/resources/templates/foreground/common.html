@@ -145,7 +145,7 @@
                 <h4>最新评论</h4>
                 <div class="mid-btm" th:each="newComment:${session.newCommentList}">
                     <a th:text="${newComment.nickName}+'&nbsp&nbsp'+${#calendars.format(newComment.publishTime,'yyyy-MM-dd HH:mm:ss')}">your link</a>
-                    <p th:text="${newComment.content}">Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+                    <p><span th:text="${newComment.content}" class="sourceText"></span></p>
                 </div>
 
             </div>

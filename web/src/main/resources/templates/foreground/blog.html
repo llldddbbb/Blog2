@@ -180,7 +180,7 @@
                         "<div class='contact-section' style='padding:0;display: none'  id='replyPanel"+result.id+"'>"+
                         "<span class='comment-title'>回复内容 : </span><br><textarea class='comment'  rows='3'></textarea><input type='submit' class='send'>"+
                         "</div></div></div></div></div><div class='clearfix'></div></div><!--留言结束--><hr></div>").insertAfter(response);
-                    parseEmoji();
+                    parse();
                 }
 
             }
@@ -224,7 +224,7 @@
                 placeholder: "#qq_{alias}#"
             }]
         });
-        parse()
+        parse();
 
     };
     function parse() {
