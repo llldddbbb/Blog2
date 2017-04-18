@@ -30,7 +30,7 @@ $(document).ready(function () {
             $("#likeCount"+messageID).html(C+1);
             $(this).addClass("heartAnimation").attr("rel","unlike");
             $.ajax({
-                url:'like',
+                url:'/like',
                 type:'POST',
                 async:true,    //或false,是否异步
                 data:{
@@ -38,7 +38,6 @@ $(document).ready(function () {
                 success:function (result) {
                     var result=eval("("+result+")");
                     if(result.success){
-                        alert("点赞成功，感谢你的支持(∩_∩)");
                     }else{
                         alert("点赞失败，系统可能出了故障哦~~~~(>_<)~~~~")
                     }
@@ -90,3 +89,19 @@ function siteTime(){
     $("#siteTime").html("本站已运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒");
 }
 siteTime();
+
+function showReply() {
+
+    var div = document.getElementById("replyPanel");
+    var button = document.getElementById("replyButton");
+    var show = div.dataset.show;//获取data-show
+    if(show=='true'){
+        div.style.display = "none";
+        div.dataset.show = "false";
+        button.innerHTML = "回复";
+    }else{
+        div.style.display = "block";
+        div.dataset.show = "true";
+        button.innerHTML = "收回";
+    }
+}

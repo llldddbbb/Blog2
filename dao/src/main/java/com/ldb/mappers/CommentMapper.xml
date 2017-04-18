@@ -26,4 +26,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT <include refid="listVO"/> from comment ORDER BY publishTime DESC limit 0,5
     </select>
 
+    <select id="listCommentPO" resultMap="CommentResultMap">
+        select id,<include refid="listVO"/> from comment where blogId=#{blogId} ORDER BY publishTime
+    </select>
+
 </mapper> 

@@ -1,6 +1,9 @@
 package com.ldb.pojo.po;
 
+import com.ldb.pojo.vo.CommentReplyVO;
+
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ldb on 2017/4/16.
@@ -17,6 +20,10 @@ public class CommentPO {
     private Date publishTime;
 
     private Integer blogId;
+
+    private List<CommentReplyVO> commentReplyVOList;
+
+
 
     public Integer getId() {
         return id;
@@ -64,5 +71,13 @@ public class CommentPO {
 
     public void setBlogId(Integer blogId) {
         this.blogId = blogId;
+    }
+
+    public List<CommentReplyVO> getCommentReplyVOList() {
+        return commentReplyVOList;
+    }
+
+    public void setCommentReplyVOList(List<CommentReplyVO> commentReplyVOList) {
+        this.commentReplyVOList = commentReplyVOList;
     }
 }

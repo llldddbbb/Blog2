@@ -52,7 +52,7 @@
             </div>
             <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s"
                  style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-                <div class="heart " id="like1" rel="like"><span class="likeCount" id="likeCount1" th:text="${likeCount}">15</span></div>
+                <div class="heart " id="like1" rel="like"><span class="likeCount" id="likeCount1" th:text="${session.likeCount}">15</span></div>
 
             </div><!--点赞按钮结束-->
             <div class="clearfix"></div>
@@ -63,7 +63,7 @@
     <div class="header-bottom" th:fragment="blogTitle">
         <div class="container">
             <div class="logo wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                <h1><a href="index.html">DB'S BLOG</a></h1>
+                <h1><a href="/">DB'S BLOG</a></h1>
                 <p><label class="of"></label><span th:text="${application.motto.motto}">Just do IT</span><label class="on"></label></p>
             </div>
         </div>

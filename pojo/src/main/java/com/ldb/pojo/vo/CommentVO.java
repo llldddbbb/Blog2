@@ -10,6 +10,7 @@ public class CommentVO {
     private Date publishTime;
     private String content;
 
+
     public String getNickName() {
         return nickName;
     }
@@ -33,4 +34,6 @@ public class CommentVO {
     public void setContent(String content) {
         this.content = content;
     }
+
+
 }

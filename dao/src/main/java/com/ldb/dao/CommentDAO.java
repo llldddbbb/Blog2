@@ -1,5 +1,6 @@
 package com.ldb.dao;
 
+import com.ldb.pojo.po.CommentPO;
 import com.ldb.pojo.vo.CommentVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -13,4 +14,6 @@ public interface CommentDAO {
     int getCommentCount(@Param("blogId") Integer blogId);
 
     List<CommentVO> listNewCommentVO();
+
+    List<CommentPO> listCommentPO(@Param("blogId")Integer blogId);
 }

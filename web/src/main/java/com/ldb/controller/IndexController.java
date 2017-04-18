@@ -1,5 +1,7 @@
 package com.ldb.controller;
 
+import com.ldb.controller.utils.ConfigStrUtil;
+import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.po.VisitorPO;
 import com.ldb.pojo.vo.BlogVO;
 import com.ldb.pojo.vo.CommentVO;
@@ -7,8 +9,6 @@ import com.ldb.service.BlogService;
 import com.ldb.service.CommentService;
 import com.ldb.service.LikeService;
 import com.ldb.service.VisitorService;
-import com.ldb.controller.utils.ConfigStrUtil;
-import com.ldb.controller.utils.RequestUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +24,7 @@ import java.util.List;
  * Created by ldb on 2017/4/17.
  */
 @Controller
-@SessionAttributes(value = {"readNum","hotBlogList","newCommentList"})
+@SessionAttributes(value = {"readNum","likeCount","hotBlogList","newCommentList"})
 public class IndexController {
 
     @Autowired
@@ -42,6 +42,7 @@ public class IndexController {
     @RequestMapping(value = {"/","/index"})
     public ModelAndView goIndex(HttpServletRequest request){
         ModelAndView mav=new ModelAndView("foreground/index");
+        //获取点赞数量
         mav.addObject("likeCount",likeService.getLikeCount());
         //获取游客浏览器、操作系统、IP信息
         String userBrowser=RequestUtil.getUserBrowser(request);
@@ -73,6 +74,8 @@ public class IndexController {
         String ip=RequestUtil.getUserIP(request);
         int resultNum=likeService.addLike(ip);
         if(resultNum>0){
+            // session.removeAttribute("readNum");
+            // session.setAttribute("readNum",visitorService.getReadNum());
             return ConfigStrUtil.SUCCESS;
         }else{
             return ConfigStrUtil.ERROR;
