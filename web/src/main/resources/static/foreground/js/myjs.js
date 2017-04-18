@@ -90,18 +90,3 @@ function siteTime(){
 }
 siteTime();
 
-function showReply(id) {
-
-    var div = document.getElementById("replyPanel"+id);
-    var button = document.getElementById("replyButton"+id);
-    var show = div.dataset.show;//获取data-show
-    if(show=='true'){
-        div.style.display = "none";
-        div.dataset.show = "false";
-        button.innerHTML = "回复";
-    }else{
-        div.style.display = "block";
-        div.dataset.show = "true";
-        button.innerHTML = "收回";
-    }
-}
