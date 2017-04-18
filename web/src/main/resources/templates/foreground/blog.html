@@ -62,7 +62,7 @@
                             </ul>
                             <div class="media response-info">
                                 <div class="media-left response-text-left" style="width: 100%">
-                                    <div th:each="reply:${comment.commentReplyVOList}">
+                                    <div th:each="reply:${comment.commentReplyVOList}" th:class="'replyPanel'+${comment.id}" class="replyPanel">
                                         <a >
                                             <img th:src="@{/foreground/images/sin1.jpg}" th:if="${reply.role}==true" src="../../static/foreground/images/sin2.jpg" class="img-responsive"
                                                  alt="" style="width: 50px">
@@ -204,10 +204,32 @@
             success:function (result) {
                 var result=eval("("+result+")");
                 if(result.success==false){
-                    alert("留言失败，可能是系统出了故障~~(╯﹏╰)");
+                    alert("回复失败，可能是系统出了故障~~(╯﹏╰)");
                     return;
                 }else{
-                    alert("留言成功")
+                    var top = $('#emoji_btn_1').position().top;
+                    $('#emoji_container_1').css('top',top+115+"px");
+                    $('#emoji_btn_1').css('top',top+87+"px");
+                    var imgSrc;
+                    var title;
+                    if(result.role){
+                        imgSrc='/foreground/images/sin1.jpg';
+                        title='博主回复 : ';
+                    }else{
+                        imgSrc='/foreground/images/sin2.jpg';
+                        title='楼主回复 : ';
+                    }
+                    var replyPanel=document.getElementsByClassName('replyPanel'+commentId);
+                    if(replyPanel.length==0){
+                        $("<div  class='replyPanel"+commentId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
+                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content' >"+title+result.content+"</p><ul class='reply-date'>"+
+                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertBefore($("#replyPanel"+commentId));
+                    }else{
+                        $("<div  class='replyPanel"+commentId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
+                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content' >"+title+result.content+"</p><ul class='reply-date'>"+
+                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
+                    }
+                    parse();
                 }
 
             }
