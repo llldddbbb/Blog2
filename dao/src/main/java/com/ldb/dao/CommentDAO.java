@@ -16,4 +16,6 @@ public interface CommentDAO {
     List<CommentVO> listNewCommentVO();
 
     List<CommentPO> listCommentPO(@Param("blogId")Integer blogId);
+
+    int addComment(CommentPO commentPO);
 }

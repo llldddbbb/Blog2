@@ -1,5 +1,6 @@
 package com.ldb.pojo.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ldb.pojo.vo.CommentReplyVO;
 
 import java.util.Date;
@@ -17,6 +18,7 @@ public class CommentPO {
 
     private String content;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishTime;
 
     private Integer blogId;
@@ -80,4 +82,15 @@ public class CommentPO {
     public void setCommentReplyVOList(List<CommentReplyVO> commentReplyVOList) {
         this.commentReplyVOList = commentReplyVOList;
     }
+
+    public CommentPO() {
+    }
+
+    public CommentPO(String nickName, String userIP, String content, Integer blogId) {
+        this.nickName = nickName;
+        this.userIP = userIP;
+        this.content = content;
+        this.blogId = blogId;
+    }
 }
+

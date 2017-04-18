@@ -37,4 +37,9 @@ public class CommentServiceImpl implements CommentService {
         }
         return commentPOList;
     }
+
+    @Override
+    public int addComment(CommentPO commentPO) {
+        return commentDAO.addComment(commentPO);
+    }
 }

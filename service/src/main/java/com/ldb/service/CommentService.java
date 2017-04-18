@@ -13,4 +13,6 @@ public interface CommentService {
     List<CommentVO> listNewComment();
 
     List<CommentPO> listComment(Integer blogId);
+
+    int addComment(CommentPO commentPO);
 }

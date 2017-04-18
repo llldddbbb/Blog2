@@ -28,6 +28,9 @@ public class BlogPageServiceTest {
     @Test
     public void testCommentService(){
         List<CommentPO> commentPOList = commentService.listComment(2);
+        // int result=commentService.addComment(new CommentPO("小罗","127.0.0.1","滴",2));
+        // Assert.assertEquals(result,1);
         logger.info(JacksonUtil.toJSon(commentPOList));
     }
+
 }

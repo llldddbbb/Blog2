@@ -55,7 +55,7 @@
                                 </a>
                             </div>
                             <div class="media-body response-text-right">
-                            <p th:text="'留言内容 : '+${comment.content}">留言内容 : balabal></p>
+                            <p th:text="${comment.nickName}+' : '+${comment.content}">留言内容 : balabal></p>
                             <ul>
                                 <li th:text="${#calendars.format(comment.publishTime,'yyyy-MM-dd HH:mm:ss')}">Jun 21, 2016</li>
                                 <li><a th:href="'javascript:showReply('+${comment.id}+')'" href="javascript:showReply()"  th:id="'replyButton'+${comment.id}" id="replyButton">回复</a></li>
@@ -95,12 +95,12 @@
 
                 <div class="contact-section" style="padding-top:0;">
                     <div class="contact-grids">
-                        您的昵称 : <input type="text" placeholder="请输入您的昵称" class="nickName"><br>
+                        您的昵称 : <input type="text" placeholder="请输入您的昵称" id="nickName" class="nickName"><br>
                         <span class="comment-title">评论内容 : </span><br>
                         <textarea class="comment" id="content" rows="3"></textarea>
-                        <input type="submit" class="send">
+                        <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="send">
                     </div>
-                </div>
+                </div><!--回复框结束-->
                 <div class="clearfix"></div>
             </div>
         </div><!--左侧内容结束-->
@@ -133,6 +133,52 @@
 <script th:src="@{/foreground/js/jquery.emoji.js}" type="text/javascript"
         src="../../static/foreground/js/jquery.emoji.js"></script>
 <script>
+
+    function addComment(blogId,commentId){
+        var nickName=$("#nickName").val();
+        var content=$("#content").val();
+        if(nickName==null||nickName==''){
+            alert("请输入您的昵称哦!");
+            return;
+        }
+        if(content==null||content==''){
+            alert("请输入回复内容哦!");
+            return;
+        }
+        $.ajax({
+            url:"/comment",
+            type:"POST",
+            data:{
+                blogId:blogId,
+                nickName:nickName,
+                content:content
+            },
+            success:function(result){
+                var result=eval("("+result+")");
+                if(result.success==false){
+                    alert("留言失败，可能是系统出了故障~~(╯﹏╰)");
+                    return;
+                }else{
+                    var top = $('#emoji_btn_1').position().top;
+                    $('#emoji_container_1').css('top',top+195+"px");
+                    $('#emoji_btn_1').css('top',top+167+"px");
+                    var responsePanel=document.getElementsByClassName('response');
+                    $("<div class='response'>" +
+                        "<div class='media response-info'>" +
+                        "<div>" +
+                        "<div class='media-left response-text-left'><a href='#'><img src='/foreground/images/sin2.jpg' class='img-responsive' style='width: 50px'></a></div>"+
+                        "<div class='media-body response-text-right'><p>"+result.nickName+" : "+result.content+"</p><ul>"+
+                        "<li>"+result.publishTime+"</li>"+
+                        "<li><a href='javascript:showReply()'>回复</a></li></ul><div class='media response-info'><div class='media-left response-text-left' style='width: 100%'>"+
+                        "<div class='contact-section' style='padding:0;display: none'  id='replyPanel"+result.id+"'>"+
+                        "<span class='comment-title'>回复内容 : </span><br><textarea class='comment'  rows='3'></textarea><input type='submit' class='send'>"+
+                        "</div></div></div></div></div><div class='clearfix'></div></div><!--留言结束--><hr></div>").insertAfter(responsePanel[responsePanel.length-1]);
+                }
+
+            }
+        })
+
+    }
 
     window.onload = function () {
         $("#content").emoji({
