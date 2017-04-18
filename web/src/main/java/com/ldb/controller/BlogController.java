@@ -65,4 +65,9 @@ public class BlogController {
             return ConfigStrUtil.ERROR;
         }
     }
+
+    @RequestMapping("/blog/test")
+    public String s(){
+        return "foreground/emojiTest";
+    }
 }
