@@ -49,7 +49,7 @@
                                     <input type="button" onclick="addBlogAdvice()" value="Send" class="send">
                                 </div>
                             </div><!--输入框结束-->
-
+                            <hr>
                             <div class="response"  th:each="blogAdvice:${blogAdviceList}">
                                 <div class="media response-info">
                                     <div>
@@ -86,7 +86,7 @@
                                                     <div class="contact-section" style="padding:0;display: none" th:id="'replyPanel'+${blogAdvice.id}" id="replyPanel">
                                                         <span class="blogAdvice-title">回复内容 : </span><br>
                                                         <textarea class="comment" th:id="'blogAdviceReply'+${blogAdvice.id}"  rows="3"></textarea>
-                                                        <input type="button" th:onclick="'addCommentReply('+${blogAdvice.id}+')'" class="send" value="提交">
+                                                        <input type="button" th:onclick="'addBlogAdviceReply('+${blogAdvice.id}+')'" class="send" value="提交">
                                                     </div><!--回复框-->
                                                 </div>
                                             </div>
@@ -193,11 +193,73 @@
                     alert("留言失败，可能是系统出了故障~~(╯﹏╰)");
                     return;
                 }else {
-
+                    var responsePanel=document.getElementsByClassName('response');
+                    var response;
+                    if(responsePanel.length==1){
+                        response=$("#responseHr");
+                    }else{
+                        response=responsePanel[0];
+                    }
+                    $("<div class='response'>" +
+                        "<div class='media response-info'>" +
+                        "<div>" +
+                        "<div class='media-left response-text-left'><a href='#'><img src='/foreground/images/sin2.jpg' class='img-responsive' style='width: 50px'></a></div>"+
+                        "<div class='media-body response-text-right'><p ><span class='sourceText'>"+result.nickName+" : "+result.content+"</span></p><ul>"+
+                        "<li>"+result.publishTime+"</li>"+
+                        "<li><a href='javascript:showReply("+result.id+")' id='replyButton"+result.id+"'>回复</a></li></ul><div class='media response-info'><div class='media-left response-text-left' style='width: 100%'>"+
+                        "<div class='contact-section' style='padding:0;display: none'  id='replyPanel"+result.id+"'>"+
+                        "<span class='comment-title'>回复内容 : </span><br><textarea class='comment' id='commentReply"+result.id+"' rows='3'></textarea><input type='button' onclick='addBlogAdviceReply("+result.id+")' class='send' value='提交'>"+
+                        "</div></div></div></div></div><div class='clearfix'></div></div><!--留言结束--><hr></div>").insertBefore(response);
+                    parse();
                 }
             }
         })
 
+    }
+
+    function addBlogAdviceReply(blogAdviceId){
+        var content=$('#blogAdviceReply'+blogAdviceId).val();
+        if(content==null||content==''){
+            alert("请输入回复内容哦!");
+            return;
+        }
+        $.ajax({
+            url:'/blogAdvice/reply',
+            type:'POST',
+            data:{
+                content:content,
+                blogAdviceId:blogAdviceId
+            },
+            success:function (result) {
+                var result=eval("("+result+")");
+                if(result.success==false){
+                    alert("回复失败，可能是系统出了故障~~(╯﹏╰)");
+                    return;
+                }else{
+                    var imgSrc;
+                    var title;
+                    if(result.role){
+                        imgSrc='/foreground/images/sin1.jpg';
+                        title=' 博主回复 : ';
+                    }else{
+                        imgSrc='/foreground/images/sin2.jpg';
+                        title=' 楼主回复 : ';
+                    }
+                    var replyPanel=document.getElementsByClassName('replyPanel'+blogAdviceId);
+                    if(replyPanel.length==0){
+                        $("<div  class='replyPanel"+blogAdviceId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
+                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content' >"+title+result.content+"</p><ul class='reply-date'>"+
+                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertBefore($("#replyPanel"+blogAdviceId));
+                    }else{
+                        $("<div  class='replyPanel"+blogAdviceId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
+                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content' >"+title+result.content+"</p><ul class='reply-date'>"+
+                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
+                    }
+                    parse();
+                }
+
+            }
+        });
     }
 </script>
 </body>

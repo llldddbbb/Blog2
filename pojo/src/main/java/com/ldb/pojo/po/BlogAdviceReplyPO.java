@@ -1,5 +1,7 @@
 package com.ldb.pojo.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class BlogAdviceReplyPO {
@@ -9,6 +11,7 @@ public class BlogAdviceReplyPO {
 
     private String userIP;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishTime;
 
     private Integer blogAdviceId;

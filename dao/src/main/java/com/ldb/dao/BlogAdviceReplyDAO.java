@@ -1,5 +1,6 @@
 package com.ldb.dao;
 
+import com.ldb.pojo.po.BlogAdviceReplyPO;
 import com.ldb.pojo.vo.BlogAdviceReplyVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,5 +12,7 @@ import java.util.List;
 public interface BlogAdviceReplyDAO {
 
     List<BlogAdviceReplyVO> listBlogAdviceReplyVO(@Param("blogAdviceId")Integer blogAdviceId);
+
+    int addBlogAdviceReply(BlogAdviceReplyPO blogAdviceReplyPO);
 
 }

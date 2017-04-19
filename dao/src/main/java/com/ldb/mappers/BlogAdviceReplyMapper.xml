@@ -21,5 +21,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT <include refid="listVO"/> from blogadvice_reply where blogAdviceId=#{blogAdviceId} order by publishTime
     </select>
 
+    <insert id="addBlogAdviceReply" parameterType="com.ldb.pojo.po.BlogAdviceReplyPO">
+        insert into blogadvice_reply values(null,#{content},#{userIP},#{publishTime},#{blogAdviceId},#{role})
+    </insert>
+
 
 </mapper> 

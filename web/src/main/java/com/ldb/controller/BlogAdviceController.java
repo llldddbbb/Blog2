@@ -4,6 +4,8 @@ import com.ldb.controller.utils.PageUtil;
 import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.bo.PageBeanBO;
 import com.ldb.pojo.po.BlogAdvicePO;
+import com.ldb.pojo.po.BlogAdviceReplyPO;
+import com.ldb.service.BlogAdviceReplyService;
 import com.ldb.service.BlogAdviceService;
 import com.ldb.utils.ConfigStrUtil;
 import com.ldb.utils.JacksonUtil;
@@ -28,6 +30,9 @@ public class BlogAdviceController {
 
     @Autowired
     private BlogAdviceService blogAdviceService;
+
+    @Autowired
+    private BlogAdviceReplyService blogAdviceReplyService;
 
    @RequestMapping(value="/blogAdvice",method = RequestMethod.GET)
     public ModelAndView blogAdvice(){
@@ -69,6 +74,21 @@ public class BlogAdviceController {
         int result = blogAdviceService.addBlogAdvice(blogAdvicePO);
         if(result>0){
             return JacksonUtil.toJSon(blogAdvicePO);
+        }else{
+            return ConfigStrUtil.ERROR;
+        }
+    }
+
+    @RequestMapping(value = "/blogAdvice/reply",method = RequestMethod.POST)
+    @ResponseBody
+    public String addBlogAdviceReply(BlogAdviceReplyPO blogAdviceReplyPO, HttpServletRequest request){
+        String userIP=RequestUtil.getUserIP(request);
+        blogAdviceReplyPO.setUserIP(userIP);
+        blogAdviceReplyPO.setPublishTime(new Date());
+        blogAdviceReplyPO.setRole(false);
+        int result = blogAdviceReplyService.addBlogAdviceReply(blogAdviceReplyPO);
+        if(result>0){
+            return JacksonUtil.toJSon(blogAdviceReplyPO);
         }else{
             return ConfigStrUtil.ERROR;
         }
