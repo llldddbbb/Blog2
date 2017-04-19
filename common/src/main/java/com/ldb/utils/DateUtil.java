@@ -1,4 +1,4 @@
-package com.ldb.controller.utils;
+package com.ldb.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

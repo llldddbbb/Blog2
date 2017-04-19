@@ -6,6 +6,7 @@ import com.ldb.pojo.po.CommentPO;
 import com.ldb.pojo.vo.CommentReplyVO;
 import com.ldb.pojo.vo.CommentVO;
 import com.ldb.service.CommentService;
+import com.ldb.service.utils.CommentUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,10 +32,7 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<CommentPO> listComment(Integer blogId) {
         List<CommentPO> commentPOList = commentDAO.listCommentPO(blogId);
-        for(CommentPO commentPO:commentPOList){
-            List<CommentReplyVO> commentReplyVOList = commentReplyDAO.listCommentReply(commentPO.getId());
-            commentPO.setCommentReplyVOList(commentReplyVOList);
-        }
+        CommentUtil.setCommentList(commentPOList,commentReplyDAO);
         return commentPOList;
     }
 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应dao接口 -->
+<mapper namespace="com.ldb.dao.BlogAdviceReplyDAO">
+    <resultMap id="blogAdviceReplyResultMap" type="com.ldb.pojo.po.BlogAdviceReplyPO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="userIP" property="userIP" jdbcType="VARCHAR" />
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+        <result column="blogAdviceId" property="blogAdviceId" jdbcType="INTEGER" />
+        <result column="role" property="role" jdbcType="BIT" />
+    </resultMap>
+
+    <sql id="listVO">
+        content,publishTime,role
+    </sql>
+
+    <select id="listBlogAdviceReplyVO" resultMap="blogAdviceReplyResultMap">
+        SELECT <include refid="listVO"/> from blogadvice_reply where blogAdviceId=#{blogAdviceId} order by publishTime
+    </select>
+
+
+</mapper> 

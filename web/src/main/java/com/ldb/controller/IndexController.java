@@ -1,6 +1,6 @@
 package com.ldb.controller;
 
-import com.ldb.controller.utils.ConfigStrUtil;
+import com.ldb.utils.ConfigStrUtil;
 import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.po.VisitorPO;
 import com.ldb.pojo.vo.BlogVO;

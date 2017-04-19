@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应dao接口 -->
+<mapper namespace="com.ldb.dao.BlogAdviceDAO">
+    <resultMap id="blogAdviceResultMap" type="com.ldb.pojo.po.BlogAdvicePO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="nickName" property="nickName" jdbcType="VARCHAR" />
+        <result column="userIP" property="userIP" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="listPO">
+        id,userIP,nickName,content,publishTime
+    </sql>
+
+    <select id="listBlogAdvicePO" resultMap="blogAdviceResultMap" parameterType="com.ldb.pojo.bo.PageBeanBO">
+        select <include refid="listPO"/> from blogadvice order by publishTime desc limit #{start} , #{pageSize}
+    </select>
+
+    <select id="getBlogAdviceCount" resultType="Long">
+        select count(*) from blogadvice
+    </select>
+
+    <insert id="addBlogAdvice" parameterType="com.ldb.pojo.po.BlogAdvicePO" useGeneratedKeys="true"  keyProperty="id">
+        insert into blogadvice values(null,#{nickName},#{userIP},#{content},#{publishTime})
+    </insert>
+
+
+</mapper> 

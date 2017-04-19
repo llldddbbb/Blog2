@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
-    <link th:href="@{/foreground/images/blog.ico}"  rel="icon" type="image/x-icon" >
-    <link th:href="@{/foreground/css/bootstrap.css}" href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css'/>
-    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css'/>
-    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
-    <link th:href="@{/foreground/css/jquery.eeyellow.Timeline.css}" href="../../static/foreground/css/jquery.eeyellow.Timeline.css" rel='stylesheet' type='text/css'/>
-    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css" rel="stylesheet">
+    <link th:href="@{/foreground/images/blog.ico}" rel="icon" type="image/x-icon">
+    <link th:href="@{/foreground/css/bootstrap.css}" href="../../static/foreground/css/bootstrap.css" rel='stylesheet'
+          type='text/css'/>
+    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel='stylesheet'
+          type='text/css'/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet'
+          type='text/css'/>
+    <link th:href="@{/foreground/css/jquery.eeyellow.Timeline.css}"
+          href="../../static/foreground/css/jquery.eeyellow.Timeline.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css"
+          rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"
+          href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css"
+          rel="stylesheet">
 </head>
 <body>
 <div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
@@ -25,133 +32,77 @@
 
 <!-- technology-left -->
 <div class="technology">
-
     <div class="container">
         <div class="col-md-12 technology-left" style="width: 100%">
             <div class="blog">
                 <div class="row">
-                        <div class="col-md-12">
-                            <div class="services w3l wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-                                <fieldset>
-                                    <legend style="text-align: center">本页面可留言、吐槽、提问。欢迎灌水，杜绝广告！</legend>
-                                </fieldset>
+                    <div class="col-md-12">
+                        <div class="services w3l wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                            <fieldset>
+                                <legend style="text-align: center">本页面可留言、吐槽、提问。欢迎灌水，杜绝广告！</legend>
+                            </fieldset>
+                            <div class="contact-section">
+                                <div class="contact-grids" style="margin: 0">
+                                    您的昵称 : <input type="text" placeholder="请输入您的昵称" class="nickName" id="nickName"><br>
+                                    <span class="comment-title">评论内容 : </span><br>
+                                    <textarea class="comment" id="content" rows="3"></textarea>
+                                    <input type="button" onclick="addBlogAdvice()" value="Send" class="send">
+                                </div>
+                            </div><!--输入框结束-->
 
-                                <div class="contact-section">
-                                    <div class="contact-grids"  style="margin: 0">
-                                        您的昵称 : <input type="text" placeholder="请输入您的昵称" class="nickName"><br>
-                                        <span class="comment-title">评论内容 : </span><br>
-                                        <textarea class="comment" id="content" rows="3" ></textarea>
-                                        <input type="submit" class="send">
-                                    </div>
-                                </div><!--输入框结束-->
-                                <hr>
+                            <div class="response"  th:each="blogAdvice:${blogAdviceList}">
                                 <div class="media response-info">
-                                    <div class="media-left response-text-left">
-                                        <a href="#">
-                                            <img src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="media-body response-text-right">
-                                        <p>留言内容balabal></p>
-                                        <ul>
-                                            <li>Jun 21, 2016</li>
-                                            <li><a href="#">Reply</a></li>
-                                        </ul>
-                                        <div class="media response-info">
-                                            <div class="media-left response-text-left" style="width: 100%">
-                                                <div>
-                                                    <a href="#">
-                                                        <img src="../../static/foreground/images/sin2.jpg" class="img-responsive" alt="">
-                                                    </a>
-                                                    <div style="display: inline-block;vertical-align: middle">
-                                                        <p class="reply-content">回复内容balabala</p>
-                                                        <ul class="reply-date">
-                                                            <li>July 17, 2016</li>
-                                                            <li><a href="#">Reply</a></li>
-                                                        </ul>
+                                    <div>
+                                        <div class="media-left response-text-left">
+                                            <a href="#">
+                                                <img th:src="@{/foreground/images/sin2.jpg}" src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt="" style="width: 50px">
+                                            </a>
+                                        </div>
+                                        <div class="media-body response-text-right">
+                                            <p ><span th:text="${blogAdvice.nickName}+' : '+${blogAdvice.content}" class="sourceText">留言内容 : balabal></span></p>
+                                            <ul>
+                                                <li th:text="${#calendars.format(blogAdvice.publishTime,'yyyy-MM-dd HH:mm:ss')}">Jun 21, 2016</li>
+                                                <li><a th:href="'javascript:showReply('+${blogAdvice.id}+')'" href="javascript:showReply()"  th:id="'replyButton'+${blogAdvice.id}" id="replyButton">回复</a></li>
+                                            </ul>
+                                            <div class="media response-info">
+                                                <div class="media-left response-text-left" style="width: 100%">
+                                                    <div th:each="blogAdvice:${blogAdvice.blogAdviceReplyVOList}" th:class="'replyPanel'+${blogAdvice.id}" class="replyPanel">
+                                                        <a >
+                                                            <img th:src="@{/foreground/images/sin1.jpg}" th:if="${blogAdvice.role}==true" src="../../static/foreground/images/sin2.jpg" class="img-responsive"
+                                                                 alt="" style="width: 50px">
+                                                            <img th:src="@{/foreground/images/sin2.jpg}" th:if="${blogAdvice.role}==false" src="../../static/foreground/images/sin2.jpg" class="img-responsive"
+                                                                 alt="" style="width: 50px">
+                                                        </a>
+                                                        <div style="display: inline-block;vertical-align: middle">
+                                                            <p class="reply-content" th:if="${blogAdvice.role}==true" th:text="' 博主回复 : '+${blogAdvice.content}">博主回复balabala</p>
+                                                            <p class="reply-content" th:if="${blogAdvice.role}==false" th:text="' 楼主回复 : '+${blogAdvice.content}">博主回复balabala</p>
+                                                            <ul class="reply-date">
+                                                                <li th:text="${#calendars.format(blogAdvice.publishTime,'yyyy-MM-dd HH:mm:ss')}">July 17, 2016</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="line"></div>
                                                     </div>
-                                                </div>
-                                                <div class="line"></div>
-                                                <div>
-                                                    <a href="#">
-                                                        <img src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt="">
-                                                    </a>
-                                                    <div style="display: inline-block;vertical-align: middle">
-                                                        <p class="reply-content">回复内容balabala</p>
-                                                        <ul class="reply-date">
-                                                            <li>July 17, 2016</li>
-                                                            <li><a href="#">Reply</a></li>
-                                                        </ul>
-                                                    </div>
+
+                                                    <div class="contact-section" style="padding:0;display: none" th:id="'replyPanel'+${blogAdvice.id}" id="replyPanel">
+                                                        <span class="blogAdvice-title">回复内容 : </span><br>
+                                                        <textarea class="comment" th:id="'blogAdviceReply'+${blogAdvice.id}"  rows="3"></textarea>
+                                                        <input type="button" th:onclick="'addCommentReply('+${blogAdvice.id}+')'" class="send" value="提交">
+                                                    </div><!--回复框-->
                                                 </div>
                                             </div>
-
-                                            <!--<div class="media-body response-text-right">
-
-                                            </div>-->
-
-
-                                            <div class="clearfix"> </div>
                                         </div>
                                     </div>
-                                    <div class="clearfix"> </div>
-                                </div><!--留言结束-->
-                                <hr>
-                                <div class="media response-info">
-                                    <div class="media-left response-text-left">
-                                        <a href="#">
-                                            <img src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="media-body response-text-right">
-                                        <p>留言内容balabal></p>
-                                        <ul>
-                                            <li>Jun 21, 2016</li>
-                                            <li><a href="#">Reply</a></li>
-                                        </ul>
-                                        <div class="media response-info">
-                                            <div class="media-left response-text-left" style="width: 100%">
-                                                <div>
-                                                    <a href="#">
-                                                        <img src="../../static/foreground/images/sin2.jpg" class="img-responsive" alt="">
-                                                    </a>
-                                                    <div style="display: inline-block;vertical-align: middle">
-                                                        <p class="reply-content">回复内容balabala</p>
-                                                        <ul class="reply-date">
-                                                            <li>July 17, 2016</li>
-                                                            <li><a href="#">Reply</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="line"></div>
-                                                <div>
-                                                    <a href="#">
-                                                        <img src="../../static/foreground/images/sin1.jpg" class="img-responsive" alt="">
-                                                    </a>
-                                                    <div style="display: inline-block;vertical-align: middle">
-                                                        <p class="reply-content">回复内容balabala</p>
-                                                        <ul class="reply-date">
-                                                            <li>July 17, 2016</li>
-                                                            <li><a href="#">Reply</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!--<div class="media-body response-text-right">
-
-                                            </div>-->
-
-
-                                            <div class="clearfix"> </div>
-                                        </div>
-                                    </div>
-                                    <div class="clearfix"> </div>
+                                    <div class="clearfix"></div>
                                 </div><!--留言结束-->
                                 <hr>
                             </div>
+                            <nav class="paging wow fadeInDown" data-wow-duration=".5s" data-wow-delay=".2s" style="text-align: center">
+                                <ul class="pagination pagination-mg" th:utext="${pageNation}" >
+                                </ul>
+                            </nav> <!--分页结束-->
                         </div>
                     </div>
+                </div>
 
             </div>
         </div>
@@ -167,12 +118,17 @@
 <script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
 <script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
 <script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
-<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
-<script th:src="@{/foreground/js/jquery.eeyellow.Timeline.js}" src="../../static/foreground/js/jquery.eeyellow.Timeline.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}"
+        src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/jquery.eeyellow.Timeline.js}"
+        src="../../static/foreground/js/jquery.eeyellow.Timeline.js"></script>
 <script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
-<script th:src="@{/foreground/js/jquery.mousewheel-3.0.6.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mousewheel-3.0.6.min.js"></script>
-<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mCustomScrollbar.min.js"></script>
-<script th:src="@{/foreground/js/jquery.emoji.js}" type="text/javascript" src="../../static/foreground/js/jquery.emoji.js"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel-3.0.6.min.js}" type="text/javascript"
+        src="../../static/foreground/js/jquery.mousewheel-3.0.6.min.js"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" type="text/javascript"
+        src="../../static/foreground/js/jquery.mCustomScrollbar.min.js"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" type="text/javascript"
+        src="../../static/foreground/js/jquery.emoji.js"></script>
 <script>
     window.onload = function () {
         $("#content").emoji({
@@ -196,6 +152,52 @@
                 placeholder: "#qq_{alias}#"
             }]
         });
+    }
+    function showReply(id) {
+
+        var div = document.getElementById("replyPanel"+id);
+        var button = document.getElementById("replyButton"+id);
+        var show = div.dataset.show;//获取data-show
+        if(show=='true'){
+            div.style.display = "none";
+            div.dataset.show = "false";
+            button.innerHTML = "回复";
+
+        }else{
+            div.style.display = "block";
+            div.dataset.show = "true";
+            button.innerHTML = "收回";
+        }
+    }
+    function addBlogAdvice(){
+        var nickName=$("#nickName").val();
+        var content=$("#content").val();
+        if(nickName==null||nickName==''){
+            alert("请输入您的昵称!");
+            return ;
+        }
+        if(content==null||content==''){
+            alert("请输入回复内容!")
+            return;
+        }
+        $.ajax({
+            url:"/blogAdvice",
+            type:'POST',
+            data:{
+                nickName:nickName,
+                content:content
+            },
+            success:function(result){
+                var result=eval("("+result+")");
+                if(result.success==false) {
+                    alert("留言失败，可能是系统出了故障~~(╯﹏╰)");
+                    return;
+                }else {
+
+                }
+            }
+        })
+
     }
 </script>
 </body>

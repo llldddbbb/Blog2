@@ -94,13 +94,13 @@
                 </div>
 
                 <div class="contact-section" style="padding-top:0;">
-                    <div class="contact-grids">
-                        您的昵称 : <input type="text" placeholder="请输入您的昵称" id="nickName" class="nickName"><br>
-                        <span class="comment-title">评论内容 : </span><br>
-                        <textarea class="comment" id="content" rows="3"></textarea>
-                        <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="提交">
-                    </div>
-                </div><!--回复框结束-->
+                <div class="contact-grids">
+                    您的昵称 : <input type="text" placeholder="请输入您的昵称" id="nickName" class="nickName"><br>
+                    <span class="comment-title">评论内容 : </span><br>
+                    <textarea class="comment" id="content" rows="3"></textarea>
+                    <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="提交">
+                </div>
+            </div><!--回复框结束-->
                 <div class="clearfix"></div>
             </div>
         </div><!--左侧内容结束-->

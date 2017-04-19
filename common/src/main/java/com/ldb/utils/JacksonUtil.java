@@ -1,4 +1,4 @@
-package com.ldb.controller.utils;
+package com.ldb.utils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

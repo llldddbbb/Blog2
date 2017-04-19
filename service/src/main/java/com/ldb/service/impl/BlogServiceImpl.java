@@ -6,7 +6,7 @@ import com.ldb.pojo.po.BlogPO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 import com.ldb.service.BlogService;
-import com.ldb.service.utils.BlogVOUtil;
+import com.ldb.service.utils.BlogUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +32,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public BlogVO getRecommendBlog() {
         BlogVO recommendBlogVO = blogDAO.getRecommendBlogVO();
-        BlogVOUtil.setBlogVO(recommendBlogVO,commentDAO);
+        BlogUtil.setBlogVO(recommendBlogVO,commentDAO);
         return recommendBlogVO;
     }
 
@@ -40,7 +40,7 @@ public class BlogServiceImpl implements BlogService {
     public List<BlogVO> listNewBlog() {
         List<BlogVO> blogVOList = blogDAO.listNewBlog();
         for(BlogVO blogVO:blogVOList){
-            BlogVOUtil.setBlogVO(blogVO,commentDAO);
+            BlogUtil.setBlogVO(blogVO,commentDAO);
         }
         return blogVOList;
     }
@@ -49,7 +49,7 @@ public class BlogServiceImpl implements BlogService {
     public List<BlogVO> listHotBlog() {
         List<BlogVO> blogVOList = blogDAO.listHotBlog();
         for(BlogVO blogVO:blogVOList){
-            BlogVOUtil.setBlogVO(blogVO,commentDAO);
+            BlogUtil.setBlogVO(blogVO,commentDAO);
         }
         return blogVOList;
     }
