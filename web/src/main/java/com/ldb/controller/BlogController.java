@@ -84,7 +84,6 @@ public class BlogController {
         commentReplyPO.setRole(false);
         int result = commentReplyService.addCommentReply(commentReplyPO);
         if(result>0){
-            System.out.println(JacksonUtil.toJSon(commentReplyPO));
             return JacksonUtil.toJSon(commentReplyPO);
         }else{
             return ConfigStrUtil.ERROR;

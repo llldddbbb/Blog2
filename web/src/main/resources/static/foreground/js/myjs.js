@@ -77,7 +77,7 @@ function siteTime(){
     var todayMinute = today.getMinutes();
     var todaySecond = today.getSeconds();
 
-    var t1 = Date.UTC(2016,8,29,0,0,00);
+    var t1 = Date.UTC(2016,11,30,21,0,00);
     var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
     var diff = t2-t1;
 

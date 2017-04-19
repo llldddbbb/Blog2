@@ -1,119 +1,25 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>DB'S BLOG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords" content=""/>
-    <link href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css'/>
-    <!-- Custom Theme files -->
-    <link href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css'/>
-    <link href="../../static/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
-    <link href="../../static/foreground/css/jquery.eeyellow.Timeline.css" rel='stylesheet' type='text/css'/>
-    <link href="../../static/foreground/css/animate.min.css" rel="stylesheet">
-    <script src="../../static/foreground/js/wow.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../static/foreground/js/bootstrap.min.js"></script>
-    <script src="../../static/foreground/js/wow.min.js"></script>
-    <script src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
-    <script src="../../static/foreground/js/jquery.eeyellow.Timeline.js"></script>
-    <script src="../../static/foreground/js/myjs.js"></script>
-    <!--评论插件-->
-    <link href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
-    <link href="../../static/foreground/css/jquery.emoji.css" rel="stylesheet">
-    <script type="text/javascript" src="../../static/foreground/js/jquery.mousewheel-3.0.6.min.js"></script>
-    <script type="text/javascript" src="../../static/foreground/js/jquery.mCustomScrollbar.min.js"></script>
-    <script type="text/javascript" src="../../static/foreground/js/jquery.emoji.js"></script>
-    <script>
-        window.onload = function() {
-            $("#content").emoji({
-                animation: 'slide',
-                icons: [ {
-                    name:"qq",
-                    path: "../../static/foreground/images/qq/",
-                    maxNum: 91,
-                    excludeNums: [41, 45, 54],
-                    file: ".gif",
-                    placeholder: "#qq_{alias}#"
-                }]
-            });
-        }
-    </script>
-
+    <link th:href="@{/foreground/images/blog.ico}"  rel="icon" type="image/x-icon" >
+    <link th:href="@{/foreground/css/bootstrap.css}" href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/jquery.eeyellow.Timeline.css}" href="../../static/foreground/css/jquery.eeyellow.Timeline.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css" rel="stylesheet">
 </head>
 <body>
-<div class="header" id="ban">
-    <div class="container">
-        <div class="head-left wow fadeInLeft animated animated" data-wow-delay=".5s"
-             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-            <div class="header-search">
-                <div class="search">
-                    <input class="search_box" type="checkbox" id="search_box">
-                    <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search"
-                                                                      aria-hidden="true"></span></label>
-                    <div class="search_form">
-                        <form action="#" method="post">
-                            <input type="text" name="Search" placeholder="Search...">
-                            <input type="submit" value="Send">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header_right wow fadeInLeft animated animated" data-wow-delay=".5s"
-             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
-            <nav class="navbar navbar-default">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
+<div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-                    <nav class="link-effect-7" id="link-effect-7">
-                        <ul class="nav navbar-nav">
-                            <li class="active act"><a href="index.html">首页</a></li>
-                            <li><a href="features.html">技术干货</a></li>
-                            <li><a href="about.html">经验总结</a></li>
-                            <li><a href="music.html">实验基地</a></li>
-                            <li><a href="fashion.html">资源导航</a></li>
-                            <li><a href="travel.html">心情随笔</a></li>
-                            <li><a href="codes.html">给我留言</a></li>
-                            <li><a href="contact.html">关于博主</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- /.navbar-collapse -->
-            </nav>
-        </div>
-        <div class="nav navbar-nav navbar-right social-icons wow fadeInRight animated animated" data-wow-delay=".5s"
-             style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
-            <div class="heart " id="like1" rel="like"><span class="likeCount" id="likeCount1">15</span></div>
-
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-<!--start-main-->
-<div class="header-bottom">
-    <div class="container">
-        <div class="logo wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-            <h1><a href="index.html">DB'S BLOG</a></h1>
-            <p><label class="of"></label>Just do IT<label class="on"></label></p>
-        </div>
-    </div>
-</div>
-<!-- banner -->
+<div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
 
 <!--<div class="banner-1">
-
 </div>-->
 
 
@@ -253,37 +159,45 @@
         <!-- technology-right -->
     </div>
 </div>
-<div class="footer">
-    <div class="container">
-        <div class="col-md-4 footer-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-            <h4>关于本站</h4>
-            <p id="siteTime"></p>
-            <p>网站总访问量: 1200</p>
-            <img src="../../static/foreground/images/t4.jpg" class="img-responsive" alt="">
-            <div class="bht1">
-                <a href="blog.html">Read More</a>
-            </div>
-        </div>
-        <div class="col-md-8 footer-middle wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-            <h4>最新评论</h4>
-            <div class="mid-btm">
-                <p>Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-                <a href="#">your link</a>
-            </div>
 
-            <p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
-            <a href="#">your link</a>
+<div class="footer" th:include="foreground/common::footer"></div><!--尾部结束-->
 
-        </div>
+<div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s"
+     th:include="foreground/common::copyright"></div><!--版权区结束-->
+<script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/jquery.eeyellow.Timeline.js}" src="../../static/foreground/js/jquery.eeyellow.Timeline.js"></script>
+<script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel-3.0.6.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mousewheel-3.0.6.min.js"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mCustomScrollbar.min.js"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" type="text/javascript" src="../../static/foreground/js/jquery.emoji.js"></script>
+<script>
+    window.onload = function () {
+        $("#content").emoji({
+            animation: 'slide',
+            icons: [{
+                name: "qq",
+                path: "/foreground/images/qq/",
+                maxNum: 91,
+                excludeNums: [41, 45, 54],
+                file: ".gif",
+                placeholder: "#qq_{alias}#"
+            }]
+        });
 
-        <div class="clearfix"></div>
-    </div>
-</div>
-<div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
-    <div class="container">
-        <p>Copyright &copy; 2017 Bobbi All rights reserved.</p>
-    </div>
-</div>
+    };
+    function parse() {
+        $(".sourceText").emojiParse({
+            icons: [{
+                path: "/foreground/images/qq/",
+                file: ".gif",
+                placeholder: "#qq_{alias}#"
+            }]
+        });
+    }
+</script>
 </body>
 </html>
 

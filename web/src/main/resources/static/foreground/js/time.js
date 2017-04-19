@@ -213,7 +213,7 @@ var WINDOW_WIDTH = 920;
 							vx:Math.pow(-1, Math.ceil(Math.random()*10))*4+Math.random(),
 							vy:-5
 						}
-						//balls.push(ball);
+						balls.push(ball);
 					}
 				}
 			}
