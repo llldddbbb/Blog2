@@ -70,8 +70,8 @@
                                                  alt="" style="width: 50px">
                                         </a>
                                         <div style="display: inline-block;vertical-align: middle">
-                                            <p class="reply-content" th:if="${reply.role}==true" th:text="'博主回复 : '+${reply.content}">博主回复balabala</p>
-                                            <p class="reply-content" th:if="${reply.role}==false" th:text="'楼主回复 : '+${reply.content}">博主回复balabala</p>
+                                            <p class="reply-content sourceText" th:if="${reply.role}==true" th:text="'博主回复 : '+${reply.content}">博主回复balabala</p>
+                                            <p class="reply-content sourceText" th:if="${reply.role}==false" th:text="'楼主回复 : '+${reply.content}">博主回复balabala</p>
                                             <ul class="reply-date">
                                                 <li th:text="${#calendars.format(reply.publishTime,'yyyy-MM-dd HH:mm:ss')}">July 17, 2016</li>
                                             </ul>
@@ -222,11 +222,11 @@
                     var replyPanel=document.getElementsByClassName('replyPanel'+commentId);
                     if(replyPanel.length==0){
                         $("<div  class='replyPanel"+commentId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
-                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content' >"+title+result.content+"</p><ul class='reply-date'>"+
+                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content sourceText' >"+title+result.content+"</p><ul class='reply-date'>"+
                             "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertBefore($("#replyPanel"+commentId));
                     }else{
                         $("<div  class='replyPanel"+commentId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
-                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content' >"+title+result.content+"</p><ul class='reply-date'>"+
+                            "<div style='display: inline-block;vertical-align: middle'><p class='reply-content sourceText' >"+title+result.content+"</p><ul class='reply-date'>"+
                             "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
                     }
                     parse();
