@@ -1,6 +1,8 @@
 package com.ldb.utils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -13,4 +15,21 @@ public class DateUtil {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(date);
     }
+
+    //日期月份+1
+    public static String getMouthAdd(String datetime) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+        Date date = null;
+        try {
+            date = sdf.parse(datetime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar cl = Calendar.getInstance();
+        cl.setTime(date);
+        cl.add(Calendar.MONTH, +1);
+        date = cl.getTime();
+        return sdf.format(date);
+    }
+
 }

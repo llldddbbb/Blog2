@@ -51,13 +51,13 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         BlogVO recommendBlog=blogService.getRecommendBlog();
 
         //将数据塞进application
-        application.setAttribute("linkList",linkList);//友情链接
-        application.setAttribute("blogTypeList",blogTypeList);//博客类比
-        application.setAttribute("blogTagList",blogTagList);//博客列表
+        application.setAttribute("linkList",linkList);//友情链接;
+        application.setAttribute("blogTypeList",blogTypeList);//博客类别;
+        application.setAttribute("blogTagList",blogTagList);//博客列表;
         application.setAttribute("blogDateArchiveList",blogDateArchiveList);//博客日期归档;
         application.setAttribute("motto",motto);//博客座右铭;
-        application.setAttribute("signature",signature);//博客座右铭;
-        application.setAttribute("recommendBlog",recommendBlog);//博客座右铭;
+        application.setAttribute("signature",signature);//博客签名;
+        application.setAttribute("recommendBlog",recommendBlog);//推荐博客;
 
     }
 

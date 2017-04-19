@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DB'S BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <link th:href="@{/foreground/images/blog.ico}" rel="icon" type="image/x-icon">
+    <link th:href="@{/foreground/css/bootstrap.css}" href="../../static/foreground/css/bootstrap.css" rel='stylesheet'
+          type='text/css'/>
+    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel='stylesheet'
+          type='text/css'/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet'
+          type='text/css'/>
+    <link th:href="@{/foreground/css/jquery.eeyellow.Timeline.css}"
+          href="../../static/foreground/css/jquery.eeyellow.Timeline.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/chocolat.css}" href="../../static/foreground/css/chocolat.css" type="text/css"
+          rel="stylesheet" media="screen">
+    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
+
+<div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
+<!-- banner -->
+
+<!--<div class="banner-1">
+
+</div>-->
+
+
+<!-- technology-left -->
+<div class="technology  wow fadeInDown " data-wow-duration=".8s" data-wow-delay=".2s">
+    <div class="container ">
+        <div class="col-md-12 technology-left" style="width: 100%">
+            <div class="blog">
+                <div class="row">
+                    <div class="services w3l wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="grid_3 grid_5">
+                            <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                                <ul id="myTab" class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active" style="width: 50%">
+                                        <a href="#expeditions" id="expeditions-tab" role="tab" data-toggle="tab"
+                                           aria-controls="expeditions" aria-expanded="true">时光轴</a></li>
+                                    <li role="presentation" class="" style="width: 50%">
+                                        <a href="#safari" role="tab" id="safari-tab" data-toggle="tab"
+                                           aria-controls="safari">照片墙</a>
+                                    </li>
+                                </ul><!--面板标签标题结束-->
+                                <div id="myTabContent" class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade active in" id="expeditions"
+                                         aria-labelledby="expeditions-tab" style="padding-bottom: 0">
+                                        <div class="VivaTimeline">
+                                            <dl>
+                                                <span th:each="timeLine:${timeLineList}">
+                                                    <dt th:text="${timeLine.moodArchiveDate}">May 2016</dt>
+
+                                                    <span th:each="mood,iterStat:${timeLine.moodVOList}">
+                                                        <dd class="pos-left clearfix" th:if="${iterStat.odd}==true"    >
+                                                    <div class="circ"></div>
+                                                    <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
+                                                    <div class="events">
+                                                        <div class="events-header" th:text="${mood.title}">Event Heading</div>
+                                                        <div class="events-body">
+                                                            <div class="row">
+                                                                <div class="events-desc" th:text="${mood.content}">
+                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                    adipisicing elit, sed do eiusmod tempor
+                                                                    incididunt ut labore et dolore magna aliqua. Ut
+                                                                    enim ad minim veniam, quis nostrud exercitation
+                                                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                                                    consequat. Duis aute irure dolor in
+                                                                    reprehenderit in voluptate velit esse cillum
+                                                                    dolore eu fugiat nulla pariatur. Excepteur sint
+                                                                    occaecat cupidatat non proident, sunt in culpa
+                                                                    qui officia deserunt mollit anim id est laborum.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="events-footer">
+                                                             123
+                                                         </div>-->
+                                                    </div>
+                                                </dd>
+
+                                                        <dd class="pos-right clearfix" th:if="${iterStat.even}==true"  >
+                                                    <div class="circ"></div>
+                                                    <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
+                                                    <div class="events">
+                                                        <div class="events-header" th:text="${mood.title}">Event Heading</div>
+                                                        <div class="events-body">
+                                                            <div class="row">
+                                                                <div class="events-desc" th:text="${mood.content}">
+                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                    adipisicing elit, sed do eiusmod tempor
+                                                                    incididunt ut labore et dolore magna aliqua. Ut
+                                                                    enim ad minim veniam, quis nostrud exercitation
+                                                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                                                    consequat. Duis aute irure dolor in
+                                                                    reprehenderit in voluptate velit esse cillum
+                                                                    dolore eu fugiat nulla pariatur. Excepteur sint
+                                                                    occaecat cupidatat non proident, sunt in culpa
+                                                                    qui officia deserunt mollit anim id est laborum.
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="events-footer">
+                                                             123
+                                                         </div>-->
+                                                    </div>
+                                                </dd>
+                                                    </span>
+                                                </span>
+                                            </dl>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div><!--面板1内容结束-->
+
+                                    <div role="tabpanel" class="tab-pane fade" id="safari"
+                                         aria-labelledby="safari-tab">
+                                        <div class="gallery-grids" style="margin: 0;padding: 0 3em">
+                                            <div class="gallery-grid">
+                                                <a href="/foreground/images/g1.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g1.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                                <a href="/foreground/images/g5.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g5.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                            </div>
+                                            <div class="gallery-grid">
+                                                <a href="/foreground/images/g6.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g6.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                                <a href="/foreground/images/g2.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g2.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                            </div>
+                                            <div class="gallery-grid">
+                                                <a href="/foreground/images/g3.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g3.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                                <a href="/foreground/images/g7.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g7.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                            </div>
+                                            <div class="gallery-grid" data-wow-delay=".3s">
+                                                <a href="/foreground/images/g8.jpg">
+                                                    <img src="/foreground/images/g8.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                                <a href="/foreground/images/g4.jpg"
+                                                   class="wow fadeInUp animated animated" data-wow-delay=".3s"
+                                                   style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                                    <img src="/foreground/images/g4.jpg" alt=" "
+                                                         class="img-responsive zoom-img">
+                                                </a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div><!--面板2内容结束-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <!-- technology-right -->
+    </div>
+</div>
+
+
+<div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s"
+     th:include="foreground/common::copyright"></div><!--版权区结束-->
+
+<script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}"
+        src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/jquery.eeyellow.Timeline.js}"
+        src="../../static/foreground/js/jquery.eeyellow.Timeline.js"></script>
+<script th:src="@{/foreground/js/jquery.chocolat.js}" src="../../static/foreground/js/jquery.chocolat.js"></script>
+<script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.VivaTimeline').vivaTimeline({
+            carousel: false,
+            carouselTime: 3000
+        });
+        $('.gallery-grid a').Chocolat();
+    });
+</script>
+</body>
+</html>
+
+
+
+

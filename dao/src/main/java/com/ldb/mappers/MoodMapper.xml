@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 对应dao接口 -->
+<mapper namespace="com.ldb.dao.MoodDAO">
+
+    <resultMap id="moodResultMap" type="com.ldb.pojo.po.MoodPO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+
+    <sql id="listVO">
+        title,content,publishTime
+    </sql>
+
+    <select id="listMood" resultMap="moodResultMap">
+        select <include refid="listVO"/> from mood
+        <where>
+            <if test="endDate!=null">
+                and publishTime &lt; #{endDate}
+            </if>
+            <if test="startDate!=null">
+                and publishTime &gt;= #{startDate}
+            </if>
+        </where>
+         order by publishTime desc
+    </select>
+
+    <select id="listMoodArchiveDate" resultType="String">
+        SELECT DATE_FORMAT(publishTime,"%Y-%m") AS moodArchiveDate FROM mood GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
+    </select>
+
+
+
+</mapper> 
