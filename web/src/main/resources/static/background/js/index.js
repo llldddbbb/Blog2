@@ -1,11 +1,4 @@
-﻿/*
-
-@Name：不落阁后台模板源码 
-@Author：Absolutely 
-@Site：http://www.lyblogs.cn
-
-*/
-
+﻿
 layui.define(['element', 'layer', 'form'], function (exports) {
     var form = layui.form();
     var $ = layui.jquery;
@@ -30,19 +23,28 @@ layui.define(['element', 'layer', 'form'], function (exports) {
     //监听登陆提交
     form.on('submit(login)', function (data) {
         var index = layer.load(1);
-        setTimeout(function () {
             //模拟登陆
             layer.close(index);
-            if (data.field.account != 'lyblogscn' || data.field.password != '111111') {
-                layer.msg('账号或者密码错误', { icon: 5 });
-            } else {
-                layer.msg('登陆成功，正在跳转......', { icon: 6 });
-                layer.closeAll('page');
-                setTimeout(function () {
-                    location.href = "../../../templates/background/main.html";
-                }, 1000);
-            }
-        }, 400);
+            $.ajax({
+                url:"/login",
+                type:"GET",
+                data:{
+                    userName:data.field.account,
+                    password:data.field.password
+                },
+                success:function (result) {
+                    var result=eval("("+result+")");
+                    if(result.success){
+                        layer.msg('登陆成功，正在跳转......', { icon: 6 });
+                        layer.closeAll('page');
+                        setTimeout(function () {
+                            location.href = "/admin/main";
+                        }, 1000);
+                    }else{
+                        layer.msg('账号或者密码错误', { icon: 5 });
+                    }
+                }
+            });
         return false;
     });
     //检测键盘按下

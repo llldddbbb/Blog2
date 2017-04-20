@@ -45,6 +45,14 @@
                 <div class="response">
                     <h4>评论</h4>
                 </div>
+                <div class="contact-section" style="padding-top:0;">
+                    <div class="contact-grids">
+                        您的昵称 : <input type="text" placeholder="请输入您的昵称" id="nickName" class="nickName"><br>
+                        <span class="comment-title">评论内容 : </span><br>
+                        <textarea class="comment" id="content" rows="3"></textarea>
+                        <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="提交">
+                    </div>
+                </div><!--回复框结束-->
                 <hr id="responseHr">
                 <div class="response"  th:each="comment:${commentList}">
                         <div class="media response-info">
@@ -93,14 +101,7 @@
                     <hr>
                 </div>
 
-                <div class="contact-section" style="padding-top:0;">
-                <div class="contact-grids">
-                    您的昵称 : <input type="text" placeholder="请输入您的昵称" id="nickName" class="nickName"><br>
-                    <span class="comment-title">评论内容 : </span><br>
-                    <textarea class="comment" id="content" rows="3"></textarea>
-                    <input type="button" th:onclick="'addComment('+${blog.id}+')'" class="send" value="提交">
-                </div>
-            </div><!--回复框结束-->
+
                 <div class="clearfix"></div>
             </div>
         </div><!--左侧内容结束-->
@@ -160,26 +161,18 @@
                     alert("留言失败，可能是系统出了故障~~(╯﹏╰)");
                     return;
                 }else{
-                    var top = $('#emoji_btn_1').position().top;
-                    $('#emoji_container_1').css('top',top+195+"px");
-                    $('#emoji_btn_1').css('top',top+167+"px");
-                    var responsePanel=document.getElementsByClassName('response');
-                    var response;
-                    if(responsePanel.length==1){
-                        response=$("#responseHr");
-                    }else{
-                        response=responsePanel[responsePanel.length-1];
-                    }
-                    $("<div class='response'>" +
-                        "<div class='media response-info'>" +
-                        "<div>" +
-                        "<div class='media-left response-text-left'><a href='#'><img src='/foreground/images/sin2.jpg' class='img-responsive' style='width: 50px'></a></div>"+
-                        "<div class='media-body response-text-right'><p ><span class='sourceText'>"+result.nickName+" : "+result.content+"</span></p><ul>"+
-                        "<li>"+result.publishTime+"</li>"+
-                        "<li><a href='javascript:showReply("+result.id+")' id='replyButton"+result.id+"'>回复</a></li></ul><div class='media response-info'><div class='media-left response-text-left' style='width: 100%'>"+
-                        "<div class='contact-section' style='padding:0;display: none'  id='replyPanel"+result.id+"'>"+
-                        "<span class='comment-title'>回复内容 : </span><br><textarea class='comment' id='commentReply"+result.id+"' rows='3'></textarea><input type='button' onclick='addCommentReply("+result.id+")' class='send' value='提交'>"+
-                        "</div></div></div></div></div><div class='clearfix'></div></div><!--留言结束--><hr></div>").insertAfter(response);
+                    var response=$("#responseHr");
+                        $("<div class='response'>" +
+                            "<div class='media response-info'>" +
+                            "<div>" +
+                            "<div class='media-left response-text-left'><a href='#'><img src='/foreground/images/sin2.jpg' class='img-responsive' style='width: 50px'></a></div>"+
+                            "<div class='media-body response-text-right'><p ><span class='sourceText'>"+result.nickName+" : "+result.content+"</span></p><ul>"+
+                            "<li>"+result.publishTime+"</li>"+
+                            "<li><a href='javascript:showReply("+result.id+")' id='replyButton"+result.id+"'>回复</a></li></ul><div class='media response-info'><div class='media-left response-text-left' style='width: 100%'>"+
+                            "<div class='contact-section' style='padding:0;display: none'  id='replyPanel"+result.id+"'>"+
+                            "<span class='comment-title'>回复内容 : </span><br><textarea class='comment' id='commentReply"+result.id+"' rows='3'></textarea><input type='button' onclick='addCommentReply("+result.id+")' class='send' value='提交'>"+
+                            "</div></div></div></div></div><div class='clearfix'></div></div><!--留言结束--><hr></div>").insertAfter(response);
+
                     parse();
                 }
 
@@ -207,9 +200,6 @@
                     alert("回复失败，可能是系统出了故障~~(╯﹏╰)");
                     return;
                 }else{
-                    var top = $('#emoji_btn_1').position().top;
-                    $('#emoji_container_1').css('top',top+115+"px");
-                    $('#emoji_btn_1').css('top',top+87+"px");
                     var imgSrc;
                     var title;
                     if(result.role){
@@ -245,16 +235,12 @@
             div.style.display = "none";
             div.dataset.show = "false";
             button.innerHTML = "回复";
-            var top = $('#emoji_btn_1').position().top;
-            $('#emoji_container_1').css('top',top-165+"px");
-            $('#emoji_btn_1').css('top',top-137+"px");
+
         }else{
             div.style.display = "block";
             div.dataset.show = "true";
             button.innerHTML = "收回";
-            var top = $('#emoji_btn_1').position().top;
-            $('#emoji_container_1').css('top',top+165+"px");
-            $('#emoji_btn_1').css('top',top+137+"px");
+
         }
     }
 

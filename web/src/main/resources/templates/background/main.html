@@ -1,27 +1,18 @@
-﻿<!--
+﻿<!DOCTYPE html>
 
- @Name：不落阁后台模板源码
- @Author：Absolutely
- @Site：http://www.lyblogs.cn
-
- -->
-
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>不落阁后台管理系统</title>
-    <link rel="shortcut icon" href="../../static/background/images/Logo_40.png" type="image/x-icon">
-    <!-- layui.css -->
-    <link href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
-    <!-- font-awesome.css -->
-    <link href="../../static/background/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link th:href="@{/foreground/images/blog.ico}" rel="icon" type="image/x-icon">
     <!-- animate.css -->
-    <link href="../../static/background/css/animate.min.css" rel="stylesheet" />
+    <link th:href="@{/background/css/animate.min.css}" href="/background/css/animate.min.css" rel="stylesheet" />
+    <!-- layui.css -->
+    <link th:href="@{/background/plugin/layui/css/layui.css}" href="/background/plugin/layui/css/layui.css" rel="stylesheet" />
+    <!-- font-awesome.css -->
+    <link th:href="@{/background/plugin/font-awesome/css/font-awesome.css}" href="/background/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!-- 本页样式 -->
-    <link href="../../static/background/css/main.css" rel="stylesheet" />
+    <link th:href="@{/background/css/main.css}" href="/background/css/main.css" rel="stylesheet" />
 </head>
 <body>
     <div class="layui-layout layui-layout-admin">
@@ -29,7 +20,7 @@
         <div class="layui-header">
             <div class="ht-console">
                 <div class="ht-user">
-                    <img src="../../static/background/images/Logo_40.png" />
+                    <img src="/background/images/Logo_40.png" />
                     <a class="ht-user-name">超级管理员</a>
                 </div>
             </div>
@@ -51,9 +42,9 @@
             <div class="layui-side-scroll">
                 <ul class="layui-nav layui-nav-tree" lay-filter="leftnav">
                     <li class="layui-nav-item layui-this">
-                        <a href="javascript:;"><i class="fa fa-home"></i>首页</a>
+                        <a href="javascript:;"><i class="fa fa-home fa-fw"></i>首页</a>
                     </li>
-                    <li class="layui-nav-item">
+                    <li class="layui-nav-item ">
                         <a href="javascript:;"><i class="fa fa-file-text"></i>内容管理</a>
                         <dl class="layui-nav-child">
                             <dd><a href="javascript:;" data-url="datalist.html" data-id="1">文章管理</a></dd>
@@ -238,11 +229,11 @@
         </div>
     </div>
     <!-- layui.js -->
-    <script src="../../static/background/plugin/layui/layui.js"></script>
+    <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript">
         layui.config({
-            base: '../../static/background/js/'
+            base: '/background/js/'
         }).use('main');
     </script>
 </body>

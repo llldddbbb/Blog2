@@ -1,17 +1,17 @@
 ﻿
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>DB'S BLOG后台管理系统</title>
-    <link rel="shortcut icon" href="../../static/background/images/Logo_40.png" type="image/x-icon">
+    <link th:href="@{/foreground/images/blog.ico}" rel="icon" type="image/x-icon">
     <!-- layui.css -->
-    <link href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
+    <link th:href="@{/background/plugin/layui/css/layui.css}" href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
     <!-- 本页样式 -->
-    <link href="../../static/background/css/index.css" rel="stylesheet" />
+    <link th:href="@{/background/css/index.css}" href="../../static/background/css/index.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-image: url('/background/images/background.jpg')">
     <div class="mask"></div>
     <div class="main">
         <h1><span style="font-size: 84px;">B</span><span style="font-size:30px;">log</span></h1>
@@ -21,11 +21,11 @@
         </div>
     </div>
     <!-- layui.js -->
-    <script src="../../static/background/plugin/layui/layui.js"></script>
+    <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript">
         layui.config({
-            base: '../../static/background/js/'
+            base: '/background/js/'
         }).use('index');
     </script>
 </body>

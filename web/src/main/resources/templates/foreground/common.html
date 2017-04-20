@@ -97,12 +97,12 @@
                 </div>
                 <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" th:each="hotBlog:${session.hotBlogList}">
                     <div class="blog-grid-left">
-                        <a href="blog.html">
+                        <a href="blog.html" th:href="'/blog/'+${hotBlog.id}">
                             <img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="">
                         </a>
                     </div>
                     <div class="blog-grid-right">
-                        <h5><a href="blog.html" th:text="${hotBlog.title}">热门博文1</a></h5>
+                        <h5><a href="blog.html" th:href="'/blog/'+${hotBlog.id}" th:text="${hotBlog.title}">热门博文1</a></h5>
                     </div>
                     <div class="clearfix"></div>
                 </div>
