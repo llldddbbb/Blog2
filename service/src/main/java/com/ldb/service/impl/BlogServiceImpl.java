@@ -74,5 +74,10 @@ public class BlogServiceImpl implements BlogService {
         return blogVOList;
     }
 
+    @Override
+    public Long getBlogCount(HashMap<String, Integer> param) {
+        return blogDAO.getBlogCount(param);
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package com.ldb.controller;
 
+import com.ldb.controller.utils.PageUtil;
 import com.ldb.pojo.bo.PageBeanBO;
 import com.ldb.pojo.vo.BlogVO;
 import com.ldb.service.BlogService;
@@ -35,7 +36,15 @@ public class BlogListController {
         //拼装筛选参数
         param.put("blogTypeId",Integer.parseInt(blogTypeId));
         List<BlogVO> blogList = blogService.listBlog(param);
+
+        //获取总记录数
+        Long count=blogService.getBlogCount(param);
+        //拼装分页代码
+        String targetUrl="/blog/category/"+blogTypeId+"/list";
+        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+
         mav.addObject("blogList",blogList);
+        mav.addObject("pageNation",pageNation);
         return mav;
     }
 
@@ -50,7 +59,62 @@ public class BlogListController {
         //拼装筛选参数
         param.put("blogTagId",Integer.parseInt(blogTagId));
         List<BlogVO> blogList = blogService.listBlog(param);
+
+        //获取总记录数
+        Long count=blogService.getBlogCount(param);
+        //拼装分页代码
+        String targetUrl="/blog/tag/"+blogTagId+"/list";
+        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+
         mav.addObject("blogList",blogList);
+        mav.addObject("pageNation",pageNation);
         return mav;
     }
+
+    @RequestMapping(value="/blog/category/{blogTypeId}/list/{page}",method = RequestMethod.GET)
+    public ModelAndView blogTypeList(@PathVariable String blogTypeId,@PathVariable String page){
+        ModelAndView mav=new ModelAndView("foreground/blogList");
+        HashMap<String,Integer> param=new HashMap<>();
+        //拼装分页参数
+        PageBeanBO pageBean=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        param.put("start",pageBean.getStart());
+        param.put("pageSize",pageBean.getPageSize());
+        //拼装筛选参数
+        param.put("blogTypeId",Integer.parseInt(blogTypeId));
+        List<BlogVO> blogList = blogService.listBlog(param);
+
+        //获取总记录数
+        Long count=blogService.getBlogCount(param);
+        //拼装分页代码
+        String targetUrl="/blog/tag/"+blogTypeId+"/list";
+        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+
+        mav.addObject("blogList",blogList);
+        mav.addObject("pageNation",pageNation);
+        return mav;
+    }
+
+    @RequestMapping(value="/blog/tag/{blogTagId}/list/{page}",method = RequestMethod.GET)
+    public ModelAndView blogTagList(@PathVariable String blogTagId,@PathVariable String page){
+        ModelAndView mav=new ModelAndView("foreground/blogList");
+        HashMap<String,Integer> param=new HashMap<>();
+        //拼装分页参数
+        PageBeanBO pageBean=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        param.put("start",pageBean.getStart());
+        param.put("pageSize",pageBean.getPageSize());
+        //拼装筛选参数
+        param.put("blogTagId",Integer.parseInt(blogTagId));
+        List<BlogVO> blogList = blogService.listBlog(param);
+
+        //获取总记录数
+        Long count=blogService.getBlogCount(param);
+        //拼装分页代码
+        String targetUrl="/blog/tag/"+blogTagId+"/list";
+        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+
+        mav.addObject("blogList",blogList);
+        mav.addObject("pageNation",pageNation);
+        return mav;
+    }
+
 }

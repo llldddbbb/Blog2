@@ -41,7 +41,8 @@ public class BlogAdviceController {
         List<BlogAdvicePO> blogAdviceList = blogAdviceService.listBlogAdvice(pageBeanBO);
         //获取分页代码
         Long count=blogAdviceService.getBlogAdviceCount();
-        String pageNation = PageUtil.genPageNation(count, pageBeanBO.getPage(), pageBeanBO.getPageSize());
+        String targetUrl="/blogAdvice/list";
+        String pageNation = PageUtil.getPageNation(count,targetUrl, pageBeanBO.getPage(), pageBeanBO.getPageSize());
         mav.addObject("blogAdviceList",blogAdviceList);
         mav.addObject("pageNation",pageNation);
         return mav;
@@ -57,7 +58,8 @@ public class BlogAdviceController {
         List<BlogAdvicePO> blogAdviceList = blogAdviceService.listBlogAdvice(pageBeanBO);
         //获取分页代码
         Long count=blogAdviceService.getBlogAdviceCount();
-        String pageNation = PageUtil.genPageNation(count, pageBeanBO.getPage(), pageBeanBO.getPageSize());
+        String targetUrl="/blogAdvice/list";
+        String pageNation = PageUtil.getPageNation(count,targetUrl, pageBeanBO.getPage(), pageBeanBO.getPageSize());
         mav.addObject("blogAdviceList",blogAdviceList);
         mav.addObject("pageNation",pageNation);
         return mav;

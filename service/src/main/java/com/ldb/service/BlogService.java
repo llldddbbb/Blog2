@@ -26,4 +26,6 @@ public interface BlogService {
 
     List<BlogVO> listBlog(HashMap<String,Integer> param);
 
+    Long getBlogCount(HashMap<String,Integer> param);
+
 }

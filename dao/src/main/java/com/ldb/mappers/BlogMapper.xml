@@ -64,4 +64,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     </select>
 
+    <select id="getBlogCount" resultType="Long" parameterType="Map">
+        select count(*) from blog
+        <where>
+            <if test="blogTypeId!=null">
+                and blogTypeId=#{blogTypeId}
+            </if>
+            <if test="blogTagId!=null">
+                and blogTagId=#{blogTagId}
+            </if>
+        </where>
+    </select>
+
 </mapper> 
