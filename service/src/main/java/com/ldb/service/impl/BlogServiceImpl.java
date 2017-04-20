@@ -10,6 +10,7 @@ import com.ldb.service.utils.BlogUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -62,6 +63,15 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public int updateBlogReadNum(Integer id) {
         return blogDAO.updateBlogReadNum(id);
+    }
+
+    @Override
+    public List<BlogVO> listBlog(HashMap<String, Integer> param) {
+        List<BlogVO> blogVOList = blogDAO.listBlog(param);
+        for(BlogVO blogVO:blogVOList){
+            BlogUtil.setBlogVO(blogVO,commentDAO);
+        }
+        return blogVOList;
     }
 
 

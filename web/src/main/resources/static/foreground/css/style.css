@@ -579,7 +579,7 @@ i.glyphicon.glyphicon-comment {
 /*--technology-right--*/
 .search-1 {
     border: 1px solid #000;
-    margin: 0px 0px 2em 0;
+    margin: -3px 0px 2em 0;
 }
 .search-1 input[type="search"] {
   border: none;

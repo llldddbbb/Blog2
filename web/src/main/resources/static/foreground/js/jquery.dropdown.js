@@ -78,11 +78,11 @@
 					selected = $this.attr( 'selected' ),
 					label = $this.text();
 
-				if( val !== -1 ) {
+                if( val !== -1 ) {
 					optshtml += 
 						classes !== undefined ? 
-							'<li data-value="' + val + '"><a href="#"><span class="' + classes + '">' + label + '</span></a></li>' :
-							'<li data-value="' + val + '"><a href="#"><span>' + label + '</span></a></li>';
+							'<li data-value="' + val + '"><a href="'+val+'"><span class="' + classes + '">' + label + '</span></a></li>' :
+							'<li data-value="' + val + '"><a href="'+val+'"><span>' + label + '</span></a></li>';
 				}
 
 				if( selected ) {

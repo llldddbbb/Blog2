@@ -36,8 +36,8 @@
                         <nav class="link-effect-7" id="link-effect-7">
                             <ul class="nav navbar-nav">
                                 <li class="active act"><a href="/">首页</a></li>
-                                <li><a href="features.html">技术干货</a></li>
-                                <li><a href="about.html">经验总结</a></li>
+                                <li><a href="/blog/category/1">技术干货</a></li>
+                                <li><a href="/blog/category/2">经验总结</a></li>
                                 <li><a href="music.html">实验基地</a></li>
                                 <li><a href="fashion.html">资源导航</a></li>
                                 <li><a href="/diary">点点滴滴</a></li>
@@ -88,7 +88,7 @@
                 <div class="insta wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                     <select id="cd-dropdown" class="cd-select">
                         <option selected>博客类别</option>
-                        <option th:each="blogType:${application.blogTypeList}"><a href="#" th:text="${blogType.typeName}">项目分享</a></option>
+                        <option th:each="blogType:${application.blogTypeList}" th:value="'/blog/category/'+${blogType.id}"><a  th:text="${blogType.typeName}">项目分享</a></option>
                     </select>
                 </div><!--博客类别结束-->
 

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>DB'S BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link th:href="@{/foreground/images/blog.ico}"  rel="icon" type="image/x-icon" >
+    <link th:href="@{/foreground/css/bootstrap.css}" href="../../static/foreground/css/bootstrap.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/style.css}" href="../../static/foreground/css/style.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/mystyle.css}" href="../../static/foreground/css/mystyle.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/dropdown.css}" href="../../static/foreground/css/dropdown.css" rel='stylesheet' type='text/css'/>
+    <link th:href="@{/foreground/css/animate.min.css}" href="../../static/foreground/css/animate.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.mCustomScrollbar.min.css}"href="../../static/foreground/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link th:href="@{/foreground/css/jquery.emoji.css}" href="../../static/foreground/css/jquery.emoji.css" rel="stylesheet">
+</head>
+<body>
+<div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
+
+<div class="header-bottom" th:include="foreground/common::blogTitle"></div><!--博客标题结束-->
+
+<!--<div class="banner">
+    <div class="container">
+        <h2 th:text="${application.signature.title}">提醒自己一件事，千万不要自己感动自己</h2>
+        <p th:text="${application.signature.content}">大部分人看似的努力，不过是愚蠢导致的。什么熬夜看书到天亮，连续几天只睡几小时，多久没放假了，如果这些东西也值得夸耀，那么富士康流水线上任何一个人都比你努力多了。人难免天生有自怜的情绪，唯有时刻保持清醒，才能看清真正的价值在哪里。 </p>
+        <a href="#" th:text="${application.signature.buttonText}">Hello Word!</a>
+    </div>
+</div>&lt;!&ndash;鸡汤签名结束&ndash;&gt;-->
+
+
+<div class="technology wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+    <div class="container">
+        <div class="col-md-9 technology-left">
+            <div class="tech-no">
+                <div class="wthree" th:each="blog:${blogList}">
+                    <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <div class="tch-img">
+                            <a th:href="'/blog/'+${blog.id}" href="blog.html">
+                                <img th:src="${blog.coverImageName}" src="../../static/foreground/images/f1.jpg" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                        <h6><a th:href="'/blog/'+${blog.id}" href="blog.html" th:text="${blog.title}">最新博文2</a></h6>
+                        <h6>BY <a  th:text="${blog.author}">氧化钡 </a><span th:text="${#calendars.format(blog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                        <p th:text="${blog.summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua exercitation ullamco laboris .</p>
+                        <div class="bht1">
+                            <a th:href="'/blog/'+${blog.id}" href="blog.html">查看更多</a>
+                        </div>
+                        <div class="soci">
+                            <p>
+                                <a class="span_link" ><span class="glyphicon glyphicon-comment"></span><span th:text="${blog.commentCount}">0</span></a>
+                                <a class="span_link" ><span class="glyphicon glyphicon-eye-open"></span><span th:text="${blog.readNum}">56</span></a>
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <!--3篇博文结束-->
+            </div>
+        </div><!--左侧内容结束-->
+
+        <div class="col-md-3 technology-right" th:include="foreground/common::rightNav" ></div><!--右侧内容结束-->
+
+        <div class="clearfix"></div>
+    </div>
+</div><!--内容主体结束-->
+
+<div class="footer" th:include="foreground/common::footer"></div><!--尾部结束-->
+
+<div class="copyright wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" th:include="foreground/common::copyright"></div><!--版权区结束-->
+
+<img id="oImg" th:src="@{/foreground/images/xiaolongbao.gif}" src="../../static/foreground/images/xiaolongbao.gif" />
+
+<script th:src="@{/foreground/js/jquery.min.js}" src="../../static/foreground/js/jquery.min.js"></script>
+<script th:src="@{/foreground/js/bootstrap.min.js}" src="../../static/foreground/js/bootstrap.min.js"></script>
+<script th:src="@{/foreground/js/wow.min.js}" src="../../static/foreground/js/wow.min.js"></script>
+<script th:src="@{/foreground/js/jquery.svg3dtagcloud.min.js}" src="../../static/foreground/js/jquery.svg3dtagcloud.min.js"></script>
+<script th:src="@{/foreground/js/modernizr.custom.63321.js}" src="../../static/foreground/js/modernizr.custom.63321.js"></script>
+<script th:src="@{/foreground/js/jquery.dropdown.js}" src="../../static/foreground/js/jquery.dropdown.js"></script>
+<script th:src="@{/foreground/js/time.js}" src="../../static/foreground/js/time.js"></script>
+<script th:src="@{/foreground/js/xiaolongbao.js}" src="../../static/foreground/js/xiaolongbao.js"></script>
+<script th:src="@{/foreground/js/myjs.js}" src="../../static/foreground/js/myjs.js"></script>
+<script th:src="@{/foreground/js/jquery.mousewheel-3.0.6.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mousewheel-3.0.6.min.js"></script>
+<script th:src="@{/foreground/js/jquery.mCustomScrollbar.min.js}" type="text/javascript" src="../../static/foreground/js/jquery.mCustomScrollbar.min.js"></script>
+<script th:src="@{/foreground/js/jquery.emoji.js}" type="text/javascript" src="../../static/foreground/js/jquery.emoji.js"></script>
+<script  th:inline="javascript">
+    $(document).ready(function () {
+        var blogTagList=[[${application.blogTagList}]];
+        var entries=[];
+        for(var i in blogTagList){
+            var entry={
+                label:blogTagList[i].tagName,
+                url: '/blog/tag/'+blogTagList[i].id
+            }
+            entries.push(entry);
+        }
+        var settings = {
+            entries: entries,
+            width: '100%',
+            height: '100%',
+            radius: '73%',
+            radiusMin: '50%',
+            bgDraw: true,
+            bgColor: '#FFF',
+            opacityOver: 1.00,
+            opacityOut: 0.13,
+            opacitySpeed: 6,
+            fov: 800,
+            speed: 0.5,
+            fontFamily: 'Oswald, Arial, sans-serif',
+            fontSize: '15',
+            fontColor: '#000',
+            fontWeight: 'normal',//bold
+            fontStyle: 'normal',//italic
+            fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            fontToUpperCase: false
+
+        };
+
+        //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+        $('#tag-cloud').svg3DTagCloud(settings);
+        parse()
+    });
+
+
+
+</script>
+</body>
+</html>

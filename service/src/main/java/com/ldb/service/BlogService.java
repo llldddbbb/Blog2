@@ -4,6 +4,7 @@ import com.ldb.pojo.po.BlogPO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -22,5 +23,7 @@ public interface BlogService {
     BlogPO getBlog(Integer id);
 
     int updateBlogReadNum(Integer id);
+
+    List<BlogVO> listBlog(HashMap<String,Integer> param);
 
 }

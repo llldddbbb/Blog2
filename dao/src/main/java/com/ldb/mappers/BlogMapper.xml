@@ -47,4 +47,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         update blog set readNum=readNum+1 where id=#{id}
     </update>
 
+    <select id="listBlog"  resultType="com.ldb.pojo.vo.BlogVO" parameterType="Map">
+        select <include refid="listVO"/> from blog
+        <where>
+            <if test="blogTypeId!=null">
+                and blogTypeId=#{blogTypeId}
+            </if>
+            <if test="blogTagId!=null">
+                and blogTagId=#{blogTagId}
+            </if>
+        </where>
+        order by publishTime DESC
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
+
+    </select>
+
 </mapper> 
