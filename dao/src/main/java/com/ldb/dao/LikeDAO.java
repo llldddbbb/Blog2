@@ -7,7 +7,9 @@ import org.apache.ibatis.annotations.Param;
  */
 public interface LikeDAO {
 
-    int getLikeCount();
+    Long getLikeCount();
 
     int addLike(@Param("userIP")String userIP);
+
+    Long getTodayLike(@Param("today") String today);
 }

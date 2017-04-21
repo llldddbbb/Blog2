@@ -11,11 +11,13 @@ import java.util.List;
  */
 public interface CommentDAO {
 
-    int getCommentCount(@Param("blogId") Integer blogId);
+    Long getCommentCount(@Param("blogId") Integer blogId);
 
     List<CommentVO> listNewCommentVO();
 
     List<CommentPO> listCommentPO(@Param("blogId")Integer blogId);
 
     int addComment(CommentPO commentPO);
+
+    Long getCommentCount();
 }

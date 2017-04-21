@@ -39,4 +39,9 @@ public class BlogAdviceServiceImpl implements BlogAdviceService {
     public int addBlogAdvice(BlogAdvicePO blogAdvicePO) {
         return blogAdviceDAO.addBlogAdvice(blogAdvicePO);
     }
+
+    @Override
+    public Long getNotReplyCount() {
+        return blogAdviceDAO.getNotReplyCount();
+    }
 }

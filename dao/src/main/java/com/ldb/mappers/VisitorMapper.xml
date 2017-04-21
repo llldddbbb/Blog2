@@ -14,4 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select count(*) from visitor
     </select>
 
+    <select id="getTodayReadNum" resultType="Long">
+        select count(*) from visitor where readTime like #{today}
+    </select>
 </mapper> 

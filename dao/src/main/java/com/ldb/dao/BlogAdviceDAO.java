@@ -16,4 +16,7 @@ public interface BlogAdviceDAO {
 
     int addBlogAdvice(BlogAdvicePO blogAdvicePO);
 
+    Long getNotReplyCount();
+
+
 }

@@ -16,6 +16,12 @@ public class DateUtil {
         return sdf.format(date);
     }
 
+    public static String getTodayDateStr(){
+        Date date=new Date();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
+
     //日期月份+1
     public static String getMouthAdd(String datetime) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");

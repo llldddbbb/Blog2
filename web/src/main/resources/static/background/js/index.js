@@ -23,14 +23,22 @@ layui.define(['element', 'layer', 'form'], function (exports) {
     //监听登陆提交
     form.on('submit(login)', function (data) {
         var index = layer.load(1);
-            //模拟登陆
+
             layer.close(index);
+
+            var ip=returnCitySN["cip"];
+            var ipName=returnCitySN["cname"];
+            var loginTime=new Date();
+
             $.ajax({
                 url:"/login",
                 type:"GET",
                 data:{
                     userName:data.field.account,
-                    password:data.field.password
+                    password:data.field.password,
+                    ip:ip,
+                    ipName:ipName,
+                    loginTime:loginTime
                 },
                 success:function (result) {
                     var result=eval("("+result+")");
@@ -52,8 +60,6 @@ layui.define(['element', 'layer', 'form'], function (exports) {
         if (e.keyCode == 13) {  //Enter键
             if ($('#layer-login').length <= 0) {
                 login();
-            } else {
-                $('button[lay-filter=login]').click();
             }
         }
     });

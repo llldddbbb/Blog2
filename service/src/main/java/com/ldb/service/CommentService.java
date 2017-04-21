@@ -15,4 +15,6 @@ public interface CommentService {
     List<CommentPO> listComment(Integer blogId);
 
     int addComment(CommentPO commentPO);
+
+    Long getCommentCount();
 }

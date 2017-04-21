@@ -40,4 +40,9 @@ public class CommentServiceImpl implements CommentService {
     public int addComment(CommentPO commentPO) {
         return commentDAO.addComment(commentPO);
     }
+
+    @Override
+    public Long getCommentCount() {
+        return commentDAO.getCommentCount();
+    }
 }

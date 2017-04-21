@@ -18,4 +18,8 @@ public class StringUtil {
             return false;
         }
     }
+
+    public static String formatLikeSQL(String str){
+        return str+"%";
+    }
 }

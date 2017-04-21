@@ -10,4 +10,6 @@ public interface VisitorService {
     int addVisitor(VisitorPO visitorPO);
 
     Long getReadNum();
+
+    Long getTodayReadNum();
 }

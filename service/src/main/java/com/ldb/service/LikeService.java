@@ -5,7 +5,9 @@ package com.ldb.service;
  */
 public interface LikeService {
 
-    int getLikeCount();
+    Long getLikeCount();
 
     int addLike(String userIP);
+
+    Long getTodayLike();
 }

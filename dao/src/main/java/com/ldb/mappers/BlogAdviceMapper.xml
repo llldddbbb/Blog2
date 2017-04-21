@@ -27,5 +27,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         insert into blogadvice values(null,#{nickName},#{userIP},#{content},#{publishTime})
     </insert>
 
+    <select id="getNotReplyCount" resultType="Long">
+        SELECT COUNT(id) FROM blogadvice WHERE id NOT IN(SELECT DISTINCT blogAdviceId FROM blogadvice_reply )
+    </select>
+
 
 </mapper> 

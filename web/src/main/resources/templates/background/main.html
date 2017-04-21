@@ -27,7 +27,7 @@
             <span class="sys-title">DB'S BLOG后台管理系统</span>
             <ul class="ht-nav">
                 <li class="ht-nav-item">
-                    <a target="_blank" href="javascript:;">前台入口</a>
+                    <a target="_blank" href="www.dblearn.top">前台入口</a>
                 </li>
                 <li class="ht-nav-item">
                     <a href="javascript:;" id="individuation"><i class="fa fa-tasks fa-fw" style="padding-right:5px;"></i>个性化</a>
@@ -105,37 +105,37 @@
                     <div class="layui-tab-item layui-show">
                         <p style="padding: 10px 15px; margin-bottom: 20px; margin-top: 10px; border:1px solid #ddd;display:inline-block;">
                             上次登陆
-                            <span style="padding-left:1em;">IP：192.168.1.101</span>
-                            <span style="padding-left:1em;">地点：四川成都</span>
-                            <span style="padding-left:1em;">时间：2017-3-26 14：12</span>
+                            <span style="padding-left:1em;" th:text="'IP : '+${loginHistory.ip}">IP：192.168.1.101</span>
+                            <span style="padding-left:1em;" th:text="'地点 : '+${loginHistory.ipName}">地点：四川成都</span>
+                            <span style="padding-left:1em;" th:text="'时间 : '+${#calendars.format(loginHistory.loginTime,'yyyy-MM-dd HH:mm:ss')}">时间：2017-3-26 14：12</span>
                         </p>
                         <fieldset class="layui-elem-field layui-field-title">
                             <legend>统计信息</legend>
                             <div class="layui-field-box">
                                 <div style="display: inline-block; width: 100%;">
                                     <div class="ht-box layui-bg-blue">
-                                        <p>123</p>
-                                        <p>用户总数</p>
+                                        <p th:text="${todayReadNum}">123</p>
+                                        <p>今日访问</p>
                                     </div>
                                     <div class="ht-box layui-bg-red">
-                                        <p>32</p>
-                                        <p>今日注册</p>
+                                        <p th:text="${todayLike}">32</p>
+                                        <p>今日点赞</p>
                                     </div>
                                     <div class="ht-box layui-bg-green">
-                                        <p>55</p>
-                                        <p>今日登陆</p>
+                                        <p th:text="${readNum}">55</p>
+                                        <p>访问总数</p>
                                     </div>
                                     <div class="ht-box layui-bg-orange">
-                                        <p>123</p>
-                                        <p>文章总数</p>
+                                        <p th:text="${likeNum}">123</p>
+                                        <p>点赞总数</p>
                                     </div>
                                     <div class="ht-box layui-bg-cyan">
-                                        <p>321</p>
-                                        <p>资源总数</p>
+                                        <p th:text="${commentNum}">321</p>
+                                        <p>评论总数</p>
                                     </div>
                                     <div class="ht-box layui-bg-black">
-                                        <p>231</p>
-                                        <p>笔记总数</p>
+                                        <p th:text="${blogNum}">231</p>
+                                        <p>文章总数</p>
                                     </div>
                                 </div>
                             </div>
@@ -231,10 +231,17 @@
     <!-- layui.js -->
     <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
-    <script type="text/javascript">
+
+    <script type="text/javascript" th:inline="javascript">
         layui.config({
             base: '/background/js/'
         }).use('main');
+        var notReplyNum=[[${notReplyNum}]];
+        var isStop = false; //是否停止提醒
+
     </script>
+
+
+
 </body>
 </html>

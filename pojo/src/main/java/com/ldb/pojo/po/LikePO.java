@@ -8,7 +8,7 @@ public class LikePO {
 
     private String userIP;
 
-    private Date clikcTime;
+    private Date clickTime;
 
     public Integer getId() {
         return id;
@@ -26,11 +26,11 @@ public class LikePO {
         this.userIP = userIP;
     }
 
-    public Date getClikcTime() {
-        return clikcTime;
+    public Date getClickTime() {
+        return clickTime;
     }
 
-    public void setClikcTime(Date clikcTime) {
-        this.clikcTime = clikcTime;
+    public void setClickTime(Date clickTime) {
+        this.clickTime = clickTime;
     }
 }

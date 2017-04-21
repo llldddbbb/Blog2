@@ -18,8 +18,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         nickName,content,publishTime
     </sql>
 
-    <select id="getCommentCount" parameterType="Integer" resultType="int">
-        select count(*) from comment where blogId=#{blogId}
+    <select id="getCommentCount" parameterType="Integer" resultType="Long">
+        select count(*) from comment
+        <if test="blogId !=null">
+            where blogId=#{blogId}
+        </if>
     </select>
 
     <select id="listNewCommentVO" resultMap="CommentResultMap">

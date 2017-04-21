@@ -7,12 +7,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 
-    <select id="getLikeCount" resultType="int">
+    <select id="getLikeCount" resultType="Long">
         select COUNT(*) from `like`
     </select>
 
     <insert id="addLike" >
         insert into `like` values(null,#{userIP},now())
     </insert>
+
+    <select id="getTodayLike"  resultType="Long">
+        select count(*) from `like` where clickTime like #{today}
+    </select>
 
 </mapper> 

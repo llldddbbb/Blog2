@@ -3,6 +3,8 @@ package com.ldb.service.impl;
 import com.ldb.dao.VisitorDAO;
 import com.ldb.pojo.po.VisitorPO;
 import com.ldb.service.VisitorService;
+import com.ldb.utils.DateUtil;
+import com.ldb.utils.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +25,12 @@ public class VisitorServiceImpl implements VisitorService {
     @Override
     public Long getReadNum() {
         return visitorDAO.getReadNum();
+    }
+
+    @Override
+    public Long getTodayReadNum() {
+        String todayDateStr = DateUtil.getTodayDateStr();
+        String today= StringUtil.formatLikeSQL(todayDateStr);
+        return visitorDAO.getTodayReadNum(today);
     }
 }

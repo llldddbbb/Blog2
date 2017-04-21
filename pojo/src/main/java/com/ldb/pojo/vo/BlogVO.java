@@ -21,7 +21,7 @@ public class BlogVO {
 
     private int readNum;
 
-    private int commentCount;
+    private Long commentCount;
 
     public Integer getId() {
         return id;
@@ -79,11 +79,11 @@ public class BlogVO {
         this.readNum = readNum;
     }
 
-    public int getCommentCount() {
+    public Long getCommentCount() {
         return commentCount;
     }
 
-    public void setCommentCount(int commentCount) {
+    public void setCommentCount(Long commentCount) {
         this.commentCount = commentCount;
     }
 }
