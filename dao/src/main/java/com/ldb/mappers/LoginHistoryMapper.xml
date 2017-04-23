@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </insert>
 
     <select id="getLoginHistory" resultMap="loginHistoryResultMap">
-        select * from login_history order by loginTime desc limit 0,1
+        select * from login_history order by loginTime desc limit 1,1
     </select>
 
 </mapper> 

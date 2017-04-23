@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>数据列表页面</title>
+    <!-- layui.css -->
+    <link th:href="@{/background/plugin/layui/css/layui.css}" href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
+    <style>
+
+        tr td:not(:nth-child(0)),
+        tr th:not(:nth-child(0)) {
+            text-align: center;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+            -icab-text-overflow: ellipsis;
+            -khtml-text-overflow: ellipsis;
+            -moz-text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+        }
+
+        #dataConsole {
+            text-align: center;
+        }
+        /*分页页容量样式*/
+        /*可选*/
+        .layui-laypage {
+            display: block;
+        }
+
+            /*可选*/
+            .layui-laypage > * {
+                float: left;
+            }
+            /*可选*/
+            .layui-laypage .laypage-extend-pagesize {
+                float: right;
+            }
+            /*可选*/
+            .layui-laypage:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+            /*必须*/
+            .layui-laypage .laypage-extend-pagesize {
+                height: 30px;
+                line-height: 30px;
+                margin: 0px;
+                border: none;
+                font-weight: 400;
+            }
+        /*分页页容量样式END*/
+    </style>
+</head>
+<body>
+    <div class="layui-field-box" style="text-align: center">
+        <div id="articleIndexTop">
+            <form class="layui-form layui-form-pane" action="">
+                <div class="layui-form-item" style="margin:0;margin-top:15px;">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">标题</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="keywords" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label">类别</label>
+                        <div class="layui-input-inline">
+                            <select name="city">
+                                <option value="0"></option>
+                                <option value="1"  th:each="blogType:${blogTypeList}" th:value="${blogType.id}" th:text="${blogType.typeName}">类别1</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label">标签</label>
+                        <div class="layui-input-inline">
+                            <select name="city">
+                                <option value="0"></option>
+                                <option value="1" th:each="blogTag:${blogTagList}" th:value="${blogTag.id}" th:text="${blogTag.tagName}">类别1</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline" style="width:auto">
+                            <button class="layui-btn" lay-submit lay-filter="formSearch">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <fieldset id="dataList" class="layui-elem-field layui-field-title sys-list-field" style="display:none;">
+        <legend style="text-align:center;">文章列表</legend>
+        <div class="layui-field-box layui-form">
+            <div id="dataContent" class="">
+                <!--内容区域 ajax获取-->
+                <table style="table-layout: fixed" class="layui-table" lay-even="">
+                    <colgroup>
+                        <col width="40">
+                        <col width="150">
+                        <col width="180">
+                        <col width="120">
+                        <col width="90">
+                        <col width="90">
+                        <col width="40">
+                        <col width="40">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>博客标题</th>
+                            <th>博客摘要</th>
+                            <th>发布日期</th>
+                            <th>所属类别</th>
+                            <th>所属标签</th>
+                            <th colspan="2">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="blog:${blogList}">
+                            <td th:text="${blog.id}"></td>
+                            <td th:text="${blog.title}">Absolutely</td>
+                            <td th:text="${blog.summary}">Absolutely</td>
+                            <td th:text="${#calendars.format(blog.publishTime,'yyyy-MM-dd HH:mm:ss')}">Absolutely</td>
+                            <td >typeName</td>
+                            <td >tagName</td>
+                            <td>
+                                <button class="layui-btn layui-btn-small layui-btn-normal"><i class="layui-icon">&#xe642;</i></button>
+                            </td>
+                            <td>
+                                <button class="layui-btn layui-btn-small layui-btn-danger"><i class="layui-icon">&#xe640;</i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="pageNav"></div>
+            </div>
+        </div>
+    </fieldset>
+    <!-- layui.js -->
+    <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
+    <!-- layui规范化用法 -->
+    <script type="text/javascript">
+        layui.config({
+            base: '/background/js/'
+        }).use('blogManage');
+
+    </script>
+</body>
+</html>
