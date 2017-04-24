@@ -67,5 +67,12 @@ public class BlogManageController {
         return blogList;
     }
 
+    @RequestMapping("/writeBlog")
+    public ModelAndView writeBlog(){
+        ModelAndView mav=new ModelAndView("/background/writeBlog");
+        return mav;
+    }
+
+
 
 }
