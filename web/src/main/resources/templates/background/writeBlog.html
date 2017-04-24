@@ -11,11 +11,15 @@
     <legend>编写博客</legend>
 </fieldset>
 
-<form class="layui-form" action="/admin/addBlog" method="post" onsubmit=" return submitData()" >
+<form class="layui-form" action="/admin/addBlog" method="post" onsubmit=" return setContent()" >
     <div class="layui-form-item">
         <label class="layui-form-label">博客标题</label>
         <div class="layui-input-inline">
             <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+        </div>
+        <label class="layui-form-label">博文作者</label>
+        <div class="layui-input-inline">
+            <input type="text" name="title" lay-verify="required" autocomplete="off" th:value="${session.currentAdmin.userName}" class="layui-input">
         </div>
     </div>
 
@@ -27,9 +31,6 @@
                 <option value="1"  th:each="blogType:${blogTypeList}" th:value="${blogType.id}" th:text="${blogType.typeName}">类别1</option>
             </select>
         </div>
-    </div>
-
-    <div class="layui-form-item">
         <label class="layui-form-label">所属标签</label>
         <div class="layui-input-inline">
             <select  lay-verify="required"name="blogTagId" >
@@ -37,7 +38,9 @@
                 <option value="1"  th:each="blogTag:${blogTagList}" th:value="${blogTag.id}" th:text="${blogTag.tagName}">类别1</option>
             </select>
         </div>
-        <button class="layui-btn">添加标签</button>
+        <div class="layui-input-inline">
+            <button class="layui-btn">添加标签</button>
+        </div>
     </div>
 
     <div class="layui-form-item">
@@ -45,6 +48,10 @@
         <div class="layui-input-inline">
             <input type="radio" name="idRecommend" value="1" title="是" >
             <input type="radio" name="idRecommend" value="0" title="否" checked="">
+        </div>
+        <label class="layui-form-label">添加封面</label>
+        <div class="layui-input-inline">
+            <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡了的图片">
         </div>
     </div>
 
@@ -74,16 +81,20 @@
 <script th:src="@{/background/plugin/ueditor/ueditor.all.js}" type="text/javascript" charset="utf-8"> </script>
 <script th:src="@{/background/plugin/ueditor/lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
 <script th:inline="javascript" type="text/javascript">
-    layui.use(['form', 'laydate'], function(){
+    layui.use(['form','upload'], function(){
         var form = layui.form()
-            ,layer = layui.layer
-            ,$ = layui.jquery
-
-
+            ,layer = layui.layer;
+        layui.upload({
+            url: '' //上传接口
+            ,success: function(res){ //上传成功后的回调
+                console.log(res)
+            }
+        });
     });
     //实例化编辑器
     var ue = UE.getEditor('editor');
-    function submitData() {
+
+    function setContent() {
         var content = ue.getContent();
         document.getElementById("content").value=content;
         return true;
