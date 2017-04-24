@@ -18,6 +18,12 @@
             <artifactId>service</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+       <!-- web层依赖于第三方Jar包层-->
+        <dependency>
+            <groupId>com.ldb</groupId>
+            <artifactId>plugin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <!--添加thymeleaf页面引擎-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,19 +47,6 @@
             <artifactId>UserAgentUtils</artifactId>
         </dependency>
 
-        <!--ueditor依赖的Jar包-->
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-codec</groupId>
-            <artifactId>commons-codec</artifactId>
-        </dependency>
 
     </dependencies>
 
