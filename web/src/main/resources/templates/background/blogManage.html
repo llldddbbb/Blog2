@@ -123,8 +123,8 @@
                             <td th:text="${blog.title}">Absolutely</td>
                             <td th:text="${blog.summary}">Absolutely</td>
                             <td th:text="${#calendars.format(blog.publishTime,'yyyy-MM-dd HH:mm:ss')}">Absolutely</td>
-                            <td >typeName</td>
-                            <td >tagName</td>
+                            <td th:text="${blog.blogTypePO.typeName}">typeName</td>
+                            <td th:text="${blog.blogTagPO.tagName}">tagName</td>
                             <td>
                                 <button class="layui-btn layui-btn-small layui-btn-normal"><i class="layui-icon">&#xe642;</i></button>
                             </td>
@@ -134,18 +134,18 @@
                         </tr>
                     </tbody>
                 </table>
-                <div id="pageNav"></div>
             </div>
+            <div id="pageNav"></div>
         </div>
     </fieldset>
     <!-- layui.js -->
     <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
-    <script type="text/javascript">
+    <script type="text/javascript" th:inline="javascript">
         layui.config({
             base: '/background/js/'
         }).use('blogManage');
-
+        var blogNum=[[${session.blogNum}]];
     </script>
 </body>
 </html>

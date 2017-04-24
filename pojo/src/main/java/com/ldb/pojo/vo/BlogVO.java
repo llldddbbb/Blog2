@@ -91,6 +91,7 @@ public class BlogVO {
         this.commentCount = commentCount;
     }
 
+
     public String getTypeName() {
         return typeName;
     }

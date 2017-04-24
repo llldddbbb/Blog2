@@ -79,5 +79,10 @@ public class BlogServiceImpl implements BlogService {
         return blogDAO.getBlogCount(param);
     }
 
+    @Override
+    public List<BlogPO> listBlogPO(HashMap<String, Integer> param) {
+        return blogDAO.listBlogPO(param);
+    }
+
 
 }

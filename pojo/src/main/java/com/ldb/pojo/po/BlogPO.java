@@ -1,5 +1,7 @@
 package com.ldb.pojo.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 /**
@@ -16,6 +18,7 @@ public class BlogPO {
 
     private String coverImageName;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishTime;
 
     private Integer readNum;
@@ -27,6 +30,10 @@ public class BlogPO {
     private Integer blogTagId;
 
     private String content;
+
+    private BlogTypePO blogTypePO;
+
+    private BlogTagPO blogTagPO;
 
     public Integer getId() {
         return id;
@@ -114,5 +121,21 @@ public class BlogPO {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public BlogTypePO getBlogTypePO() {
+        return blogTypePO;
+    }
+
+    public void setBlogTypePO(BlogTypePO blogTypePO) {
+        this.blogTypePO = blogTypePO;
+    }
+
+    public BlogTagPO getBlogTagPO() {
+        return blogTagPO;
+    }
+
+    public void setBlogTagPO(BlogTagPO blogTagPO) {
+        this.blogTagPO = blogTagPO;
     }
 }

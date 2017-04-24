@@ -1,6 +1,7 @@
 package com.ldb.dao;
 
 import com.ldb.pojo.po.BlogTypePO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,5 +11,7 @@ import java.util.List;
 public interface BlogTypeDAO {
 
     List<BlogTypePO> listBlogTypePO();
+
+    BlogTypePO getBlogType(@Param("blogTypeId")Integer blogTypeId);
 
 }

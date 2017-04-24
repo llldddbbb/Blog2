@@ -4,7 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.BlogTypeDAO">
-    <resultMap id="BlogTypeResultMap" type="com.ldb.pojo.po.BlogTypePO" >
+    <resultMap id="blogTypeResultMap" type="com.ldb.pojo.po.BlogTypePO" >
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="typeName" property="typeName" jdbcType="VARCHAR" />
     </resultMap>
@@ -14,8 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </sql>
 
 
-    <select id="listBlogTypePO" resultMap="BlogTypeResultMap">
+    <select id="listBlogTypePO" resultMap="blogTypeResultMap">
         select <include refid="list"/> from blogType
+    </select>
+
+    <select id="getBlogType" resultMap="blogTypeResultMap">
+        select * FROM blogType where id=#{blogTypeId}
     </select>
 
 </mapper> 
