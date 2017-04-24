@@ -76,6 +76,7 @@ public class StorageManager {
 		return new BaseState(false, AppInfo.IO_ERROR);
 	}
 
+
 	public static State saveFileByInputStream(InputStream is, String path) {
 		State state = null;
 

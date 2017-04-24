@@ -40,7 +40,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <!-- 添加客户端信息解析框架 -->
         <dependency>
             <groupId>eu.bitwalker</groupId>

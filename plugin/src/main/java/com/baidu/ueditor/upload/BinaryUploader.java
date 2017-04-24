@@ -5,11 +5,9 @@ import com.baidu.ueditor.define.AppInfo;
 import com.baidu.ueditor.define.BaseState;
 import com.baidu.ueditor.define.FileType;
 import com.baidu.ueditor.define.State;
-import org.apache.commons.fileupload.FileItemStream;
+import com.ldb.utils.QiNiuUploadUtil;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -21,11 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 public class BinaryUploader {
-	private static final Logger logger = LoggerFactory.getLogger(BinaryUploader.class);
 
 	public static final State save(HttpServletRequest request,
                                    Map<String, Object> conf) {
-		FileItemStream fileStream = null;
 		boolean isAjaxUpload = request.getHeader( "X_Requested_With" ) != null;
 
 		if (!ServletFileUpload.isMultipartContent(request)) {
@@ -40,14 +36,16 @@ public class BinaryUploader {
         }
 
 		try {
+        	//SpringMVC的上传框架
 			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 			MultipartFile multipartFile = multipartRequest.getFile(conf.get("fieldName").toString());
 			if(multipartFile==null){
 				return new BaseState(false, AppInfo.NOTFOUND_UPLOAD_DATA);
 			}
 
+			//获取配置文件的路径
 			String savePath = (String) conf.get("savePath");
-			String baseSavePath=(String)conf.get("baseSavePath");
+			//获取文件名
 			String originFileName = multipartFile.getOriginalFilename();
 			String suffix = FileType.getSuffixByFilename(originFileName);
 
@@ -55,31 +53,32 @@ public class BinaryUploader {
 					originFileName.length() - suffix.length());
 			savePath = savePath + suffix;
 
+			//判断上传文件的长度
 			long maxSize = ((Long) conf.get("maxSize")).longValue();
+			byte[] bytes = multipartFile.getBytes();
+			if(bytes.length>maxSize){
+				return new BaseState(false, AppInfo.MAX_SIZE);
+			}
 
 			if (!validType(suffix, (String[]) conf.get("allowFiles"))) {
 				return new BaseState(false, AppInfo.NOT_ALLOW_FILE_TYPE);
 			}
 
+			//解析路径
 			savePath = PathFormat.parse(savePath, originFileName);
-
-
-			logger.info("savePath = "+baseSavePath+savePath);
-			String physicalPath = baseSavePath + savePath;
-			logger.info("savePath = "+physicalPath);
-
 			InputStream in =multipartFile.getInputStream();
-			State storageState = StorageManager.saveFileByInputStream(in,
-					physicalPath, maxSize);
+			//使用七牛云进行上传
+			boolean result=QiNiuUploadUtil.upload(in,savePath);
 			in.close();
-
-			if (storageState.isSuccess()) {
+			if(result){
+				State storageState=new BaseState();
 				storageState.putInfo("url", PathFormat.format(savePath));
 				storageState.putInfo("type", suffix);
 				storageState.putInfo("original", originFileName + suffix);
+				return storageState;
+			}else{
+				return new BaseState(false, AppInfo.NOT_ALLOW_FILE_TYPE);
 			}
-
-			return storageState;
 
 		} catch (IOException e) {
 		}

@@ -4,8 +4,6 @@ import com.baidu.ueditor.define.ActionMap;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.HashMap;
@@ -29,8 +27,7 @@ public final class ConfigManager {
 	// 远程图片抓取filename定义
 	private final static String REMOTE_FILE_NAME = "remote";
 
-	private final  Logger logger= LoggerFactory.getLogger(this.getClass());
-	
+
 	/*
 	 * 通过一个给定的路径构建一个配置管理器， 该管理器要求地址路径所在目录下必须存在config.properties文件
 	 */
@@ -83,7 +80,6 @@ public final class ConfigManager {
 		
 		Map<String, Object> conf = new HashMap<String, Object>();
 		String savePath = null;
-		String baseSavePath=null;
 		switch ( type ) {
 		
 			case ActionMap.UPLOAD_FILE:
@@ -100,7 +96,6 @@ public final class ConfigManager {
 				conf.put( "allowFiles", this.getArray( "imageAllowFiles" ) );
 				conf.put( "fieldName", this.jsonConfig.getString( "imageFieldName" ) );
 				savePath = this.jsonConfig.getString( "imagePathFormat" );
-				baseSavePath=this.jsonConfig.getString( "imageBaseSavePath" );
 				break;
 				
 			case ActionMap.UPLOAD_VIDEO:
@@ -142,9 +137,8 @@ public final class ConfigManager {
 		}
 		
 		conf.put( "savePath", savePath );
-		conf.put( "baseSavePath", baseSavePath );
 		conf.put( "rootPath", this.rootPath );
-		
+
 		return conf;
 		
 	}
@@ -158,7 +152,7 @@ public final class ConfigManager {
 		}
 		
 		this.parentPath = file.getParent();
-		
+		//这里直接获取config.json并读取
 		String configContent = this.filter(IOUtils.toString(this.getClass().getClassLoader().getResourceAsStream("config.json")));
 		try{
 			JSONObject jsonConfig = new JSONObject( configContent );

@@ -79,11 +79,14 @@
 <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
 <script th:src="@{/background/plugin/ueditor/ueditor.config.js}" type="text/javascript" charset="utf-8"></script>
 <script th:src="@{/background/plugin/ueditor/ueditor.all.js}" type="text/javascript" charset="utf-8"> </script>
-<script th:src="@{lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
+<script th:src="@{/background/plugin/ueditor/lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
 <script th:inline="javascript" type="text/javascript">
-    layui.config({
-        base: '/background/js/'
-    }).use('blogManage');
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form()
+            ,layer = layui.layer
+            ,laydate = layui.laydate;
+
+    });
 
     //实例化编辑器
     var ue = UE.getEditor('editor');

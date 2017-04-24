@@ -1,8 +1,6 @@
 package com.ldb.controller.admin;
 
 import com.baidu.ueditor.ActionEnter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,18 +10,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by ldb on 2017/4/9.
+ * Created by ldb on 2017/4/24.
  */
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/ueditor")
 public class UEditorController {
-
-    private Logger logger= LoggerFactory.getLogger(this.getClass());
-
-    @RequestMapping("/")
-    private String showPage(){
-        return "index";
-    }
 
     @RequestMapping(value="/config")
     public void config(HttpServletRequest request, HttpServletResponse response) {
