@@ -69,7 +69,6 @@ public class BinaryUploader {
 			InputStream in =multipartFile.getInputStream();
 			//使用七牛云进行上传
 			boolean result=QiNiuUploadUtil.upload(in,savePath);
-			in.close();
 			if(result){
 				State storageState=new BaseState();
 				storageState.putInfo("url", PathFormat.format(savePath));

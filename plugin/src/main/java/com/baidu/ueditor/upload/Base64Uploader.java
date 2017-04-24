@@ -5,6 +5,7 @@ import com.baidu.ueditor.define.AppInfo;
 import com.baidu.ueditor.define.BaseState;
 import com.baidu.ueditor.define.FileType;
 import com.baidu.ueditor.define.State;
+import com.ldb.utils.QiNiuUploadUtil;
 import org.apache.commons.codec.binary.Base64;
 
 import java.util.Map;
@@ -16,6 +17,9 @@ public final class Base64Uploader {
 		byte[] data = decode(content);
 
 		long maxSize = ((Long) conf.get("maxSize")).longValue();
+		if(data.length>maxSize){
+			return new BaseState(false, AppInfo.MAX_SIZE);
+		}
 
 		if (!validSize(data, maxSize)) {
 			return new BaseState(false, AppInfo.MAX_SIZE);
@@ -27,17 +31,20 @@ public final class Base64Uploader {
 				(String) conf.get("filename"));
 		
 		savePath = savePath + suffix;
-		String physicalPath = (String) conf.get("rootPath") + savePath;
+		//String physicalPath = (String) conf.get("rootPath") + savePath;
 
-		State storageState = StorageManager.saveBinaryFile(data, physicalPath);
-
-		if (storageState.isSuccess()) {
+		boolean result= QiNiuUploadUtil.upload(data,savePath);
+		if(result){
+			State storageState=new BaseState();
 			storageState.putInfo("url", PathFormat.format(savePath));
 			storageState.putInfo("type", suffix);
 			storageState.putInfo("original", "");
+			return storageState;
+		}else{
+			return new BaseState(false, AppInfo.NOT_ALLOW_FILE_TYPE);
 		}
 
-		return storageState;
+
 	}
 
 	private static byte[] decode(String content) {
