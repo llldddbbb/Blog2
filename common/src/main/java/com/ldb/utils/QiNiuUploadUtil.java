@@ -20,18 +20,19 @@ public class QiNiuUploadUtil {
     private static String ACCESS_KEY ; //这两个登录七牛 账号里面可以找到
     private static String SECRET_KEY ;
 
+    //由于Spring无法直接注入静态参数，故用set方法
     @Value("${SECRET_KEY}")
-    public void setSECRET_KEY(String SECRET_KEY) {
+    private void setSECRET_KEY(String SECRET_KEY) {
         this.SECRET_KEY = SECRET_KEY;
     }
 
     @Value("${ACCESS_KEY}")
-    public void setACCESS_KEY(String ACCESS_KEY) {
+    private void setACCESS_KEY(String ACCESS_KEY) {
         this.ACCESS_KEY = ACCESS_KEY;
     }
 
     @Value("${BUCKET_NAME}")
-    public void setBUCKET_NAME(String BUCKET_NAME){
+    private void setBUCKET_NAME(String BUCKET_NAME){
         this.BUCKET_NAME=BUCKET_NAME;
     }
 
