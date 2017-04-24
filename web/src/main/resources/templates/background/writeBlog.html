@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>写博客页面</title>
     <link th:href="@{/background/plugin/layui/css/layui.css}" href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
+
 </head>
 <body>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
@@ -63,7 +64,9 @@
     </div>
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">编辑器</label>
+        <script id="editor" type="text/plain"></script>
     </div>
+
     <div class="layui-form-item">
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
@@ -71,14 +74,18 @@
         </div>
     </div>
 </form>
-
 <!-- layui.js -->
 <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
-<script type="text/javascript" th:inline="javascript">
+<script th:src="@{/background/plugin/ueditor/ueditor.config.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/background/plugin/ueditor/ueditor.all.js}" type="text/javascript" charset="utf-8"> </script>
+<script th:src="@{lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
+<script th:inline="javascript" type="text/javascript">
     layui.config({
         base: '/background/js/'
     }).use('blogManage');
-    //创建一个编辑器
+
+    //实例化编辑器
+    var ue = UE.getEditor('editor');
 </script>
 </body>
 </html>
