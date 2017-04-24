@@ -96,4 +96,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
     </select>
 
+    <insert id="addBlog" parameterType="com.ldb.pojo.po.BlogPO">
+        insert into blog values(null,#{title},#{author},#{content},#{summary},#{coverImageName},#{publishTime},0,#{isRecommend},#{blogTypeId},#{blogTagId})
+    </insert>
+
 </mapper> 

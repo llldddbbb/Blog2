@@ -70,7 +70,24 @@ public class BlogManageController {
     @RequestMapping("/writeBlog")
     public ModelAndView writeBlog(){
         ModelAndView mav=new ModelAndView("/background/writeBlog");
+        //获取下拉框
+        List<BlogTagPO> blogTagList = blogTagService.listBlogTag();
+        List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();
+
+
+        mav.addObject("blogTagList",blogTagList);
+        mav.addObject("blogTypeList",blogTypeList);
         return mav;
+    }
+
+    @RequestMapping("/addBlog")
+    public String addBlog(BlogPO blogPO){
+        int result = blogService.addBlog(blogPO);
+        if(result>0){
+            return "redirect:/admin/blogManage";
+        }else{
+            return null;
+        }
     }
 
 

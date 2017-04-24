@@ -30,4 +30,6 @@ public interface BlogDAO {
 
     List<BlogPO> listBlogPO(HashMap<String,Integer> param);
 
+    int addBlog(BlogPO blogPO);
+
 }

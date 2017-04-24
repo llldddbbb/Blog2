@@ -84,5 +84,10 @@ public class BlogServiceImpl implements BlogService {
         return blogDAO.listBlogPO(param);
     }
 
+    @Override
+    public int addBlog(BlogPO blogPO) {
+        return blogDAO.addBlog(blogPO);
+    }
+
 
 }

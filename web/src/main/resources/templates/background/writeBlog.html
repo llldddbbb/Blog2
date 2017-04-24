@@ -11,7 +11,7 @@
     <legend>编写博客</legend>
 </fieldset>
 
-<form class="layui-form" action="">
+<form class="layui-form" action="/admin/addBlog" method="post" onsubmit=" return submitData()" >
     <div class="layui-form-item">
         <label class="layui-form-label">博客标题</label>
         <div class="layui-input-inline">
@@ -22,13 +22,9 @@
     <div class="layui-form-item">
         <label class="layui-form-label">所属类别</label>
         <div class="layui-input-inline">
-            <select name="interest" lay-filter="aihao">
+            <select lay-verify="required" name="blogTypeId" >
                 <option value=""></option>
-                <option value="0">写作</option>
-                <option value="1" selected="">阅读</option>
-                <option value="2">游戏</option>
-                <option value="3">音乐</option>
-                <option value="4">旅行</option>
+                <option value="1"  th:each="blogType:${blogTypeList}" th:value="${blogType.id}" th:text="${blogType.typeName}">类别1</option>
             </select>
         </div>
     </div>
@@ -36,13 +32,9 @@
     <div class="layui-form-item">
         <label class="layui-form-label">所属标签</label>
         <div class="layui-input-inline">
-            <select name="interest" lay-filter="aihao">
+            <select  lay-verify="required"name="blogTagId" >
                 <option value=""></option>
-                <option value="0">写作</option>
-                <option value="1" selected="">阅读</option>
-                <option value="2">游戏</option>
-                <option value="3">音乐</option>
-                <option value="4">旅行</option>
+                <option value="1"  th:each="blogTag:${blogTagList}" th:value="${blogTag.id}" th:text="${blogTag.tagName}">类别1</option>
             </select>
         </div>
         <button class="layui-btn">添加标签</button>
@@ -51,26 +43,27 @@
     <div class="layui-form-item">
         <label class="layui-form-label">推荐博文</label>
         <div class="layui-input-inline">
-            <input type="radio" name="sex" value="是" title="是" >
-            <input type="radio" name="sex" value="否" title="否" checked="">
+            <input type="radio" name="idRecommend" value="1" title="是" >
+            <input type="radio" name="idRecommend" value="0" title="否" checked="">
         </div>
     </div>
 
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">博文摘要</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入内容" style='width:99%;' class="layui-textarea"></textarea>
+            <textarea placeholder="请输入内容" name="summary" lay-verify="required" style='width:99%;' class="layui-textarea"></textarea>
         </div>
     </div>
 
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">编辑博文</label>
+        <input type="hidden" name="content" id="content">
         <div class="layui-input-block">
-        <script id="editor" type="text/plain" style='width:99%;height:500px;'></script></div>
+        <script id="editor" type="text/plain" style='width:99%;height:300px;'></script></div>
         </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+            <button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
@@ -81,13 +74,21 @@
 <script th:src="@{/background/plugin/ueditor/ueditor.all.js}" type="text/javascript" charset="utf-8"> </script>
 <script th:src="@{/background/plugin/ueditor/lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
 <script th:inline="javascript" type="text/javascript">
-    layui.use(['form', 'layedit', 'laydate'], function(){
+    layui.use(['form', 'laydate'], function(){
         var form = layui.form()
             ,layer = layui.layer
-    });
+            ,$ = layui.jquery
 
+
+    });
     //实例化编辑器
     var ue = UE.getEditor('editor');
+    function submitData() {
+        var content = ue.getContent();
+        document.getElementById("content").value=content;
+        return true;
+    }
+
 </script>
 </body>
 </html>
