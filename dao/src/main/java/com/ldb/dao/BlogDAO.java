@@ -34,4 +34,6 @@ public interface BlogDAO {
 
     int updateBlog(BlogPO blogPO);
 
+    int deleteBlog(Integer id);
+
 }

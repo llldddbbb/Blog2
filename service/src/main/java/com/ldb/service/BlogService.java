@@ -34,5 +34,7 @@ public interface BlogService {
 
     int updateBlog(BlogPO blogPO);
 
+    int deleteBlog(Integer id);
+
 
 }

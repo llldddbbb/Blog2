@@ -79,10 +79,22 @@ layui.define(['element','laypage', 'layer', 'form', 'pagesize'], function (expor
     //输出接口，主要是两个函数，一个删除一个编辑
     var datalist = {
         deleteData: function (id) {
-            layer.confirm('确定删除？', {
+            layer.confirm('同时会删除对应评论，确定删除？', {
                 btn: ['确定', '取消'] //按钮
             }, function () {
-                layer.msg('删除Id为【' + id + '】的数据');
+               $.ajax({
+                   url:'/blog/'+id,
+                   data:{},
+                   type:'DELETE',
+                   success:function (result) {
+                       var result=eval("("+result+")");
+                       if(result.success){
+                           layer.alert('删除成功!', {icon: 1});
+                       }else{
+                           layer.alert('删除失败!', {icon: 5});
+                       }
+                   }
+               });
             }, function () {
 
             });
