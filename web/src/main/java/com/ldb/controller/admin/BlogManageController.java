@@ -86,8 +86,12 @@ public class BlogManageController {
 
     @RequestMapping("/addBlog")
     public String addBlog(BlogPO blogPO) throws Exception{
-
-        int result = blogService.addBlog(blogPO);
+        int result=0;
+        if(blogPO.getId()!=null){
+            result = blogService.updateBlog(blogPO);
+        }else{
+            result = blogService.addBlog(blogPO);
+        }
         if(result>0){
             return "redirect:/admin/blogManage";
         }else{

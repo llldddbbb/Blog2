@@ -32,5 +32,7 @@ public interface BlogService {
 
     int addBlog(BlogPO blogPO);
 
+    int updateBlog(BlogPO blogPO);
+
 
 }

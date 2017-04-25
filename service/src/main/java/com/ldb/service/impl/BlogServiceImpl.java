@@ -89,5 +89,10 @@ public class BlogServiceImpl implements BlogService {
         return blogDAO.addBlog(blogPO);
     }
 
+    @Override
+    public int updateBlog(BlogPO blogPO) {
+        return blogDAO.updateBlog(blogPO);
+    }
+
 
 }

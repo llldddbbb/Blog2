@@ -32,4 +32,6 @@ public interface BlogDAO {
 
     int addBlog(BlogPO blogPO);
 
+    int updateBlog(BlogPO blogPO);
+
 }

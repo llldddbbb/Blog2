@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.BlogDAO">
 
-    <resultMap id="blogResultMap" type="com.ldb.pojo.po.BlogPO" >
-        <id column="id" property="id" jdbcType="INTEGER" />
-        <result column="title" property="title" jdbcType="VARCHAR" />
-        <result column="author" property="author" jdbcType="VARCHAR" />
-        <result column="summary" property="summary" jdbcType="VARCHAR" />
-        <result column="coverImageName" property="coverImageName" jdbcType="VARCHAR" />
-        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
-        <result column="readNum" property="readNum" jdbcType="INTEGER" />
-        <result column="isRecommend" property="isRecommend" jdbcType="BIT" />
-        <result column="blogTypeId" property="blogTypeId" jdbcType="INTEGER" />
-        <result column="blogTagId" property="blogTagId" jdbcType="INTEGER" />
-        <association column="blogTypeId" property="blogTypePO"  select="com.ldb.dao.BlogTypeDAO.getBlogType"></association>
-        <association column="blogTagId" property="blogTagPO"  select="com.ldb.dao.BlogTagDAO.getBlogTag"></association>
+    <resultMap id="blogResultMap" type="com.ldb.pojo.po.BlogPO">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="author" property="author" jdbcType="VARCHAR"/>
+        <result column="summary" property="summary" jdbcType="VARCHAR"/>
+        <result column="coverImageName" property="coverImageName" jdbcType="VARCHAR"/>
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP"/>
+        <result column="readNum" property="readNum" jdbcType="INTEGER"/>
+        <result column="is_Recommend" property="is_Recommend" jdbcType="BIT"/>
+        <result column="blogTypeId" property="blogTypeId" jdbcType="INTEGER"/>
+        <result column="blogTagId" property="blogTagId" jdbcType="INTEGER"/>
+        <association column="blogTypeId" property="blogTypePO"
+                     select="com.ldb.dao.BlogTypeDAO.getBlogType"></association>
+        <association column="blogTagId" property="blogTagPO" select="com.ldb.dao.BlogTagDAO.getBlogTag"></association>
     </resultMap>
 
     <sql id="listVO">
@@ -30,15 +31,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <select id="getRecommendBlogVO" resultType="com.ldb.pojo.vo.BlogVO">
-        SELECT <include refid="listVO"/> from blog WHERE is_Recommend=1 ORDER BY publishTime limit 0,1
+        SELECT
+        <include refid="listVO"/>
+        from blog WHERE is_Recommend=1 ORDER BY publishTime desc limit 0,1
     </select>
 
     <select id="listNewBlog" resultType="com.ldb.pojo.vo.BlogVO">
-        select <include refid="listVO"/> from blog ORDER BY publishTime desc limit 0,5;
+        select
+        <include refid="listVO"/>
+        from blog ORDER BY publishTime desc limit 0,5;
     </select>
 
     <select id="listHotBlog" resultType="com.ldb.pojo.vo.BlogVO">
-        select <include refid="listVO"/> from blog ORDER BY readNum desc limit 0,5;
+        select
+        <include refid="listVO"/>
+        from blog ORDER BY readNum desc limit 0,5;
     </select>
 
     <select id="getBlog" resultMap="blogResultMap">
@@ -49,8 +56,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         update blog set readNum=readNum+1 where id=#{id}
     </update>
 
-    <select id="listBlog"  resultType="com.ldb.pojo.vo.BlogVO" parameterType="Map">
-        select <include refid="listVO"/> from blog
+    <select id="listBlog" resultType="com.ldb.pojo.vo.BlogVO" parameterType="Map">
+        select
+        <include refid="listVO"/>
+        from blog
         <where>
             <if test="blogTypeId!=null">
                 and blogTypeId=#{blogTypeId}
@@ -79,7 +88,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
 
-    <select id="listBlogPO"  resultMap="blogResultMap" parameterType="Map">
+    <select id="listBlogPO" resultMap="blogResultMap" parameterType="Map">
         select * from blog
         <where>
             <if test="blogTypeId!=null">
@@ -99,5 +108,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <insert id="addBlog" parameterType="com.ldb.pojo.po.BlogPO">
         insert into blog values(null,#{title},#{author},#{content},#{summary},#{coverImageName},#{publishTime},0,#{is_Recommend},#{blogTypeId},#{blogTagId})
     </insert>
+
+    <update id="updateBlog" parameterType="com.ldb.pojo.po.BlogPO">
+        update blog set title=#{title},author=#{author},content=#{content},summary=#{summary},coverImageName=#{coverImageName},publishTime=#{publishTime},is_Recommend=#{is_Recommend},blogTypeId=#{blogTypeId},blogTagId=#{blogTagId} where id=#{id}
+    </update>
 
 </mapper> 

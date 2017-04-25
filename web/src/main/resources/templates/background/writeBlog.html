@@ -16,6 +16,7 @@
         <label class="layui-form-label">博客标题</label>
         <div class="layui-input-inline">
             <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input" th:value="${blog}==null?'':${blog.title}"/>
+            <input type="hidden" name="id" th:value="${blog}==null?'':${blog.id}"/>
         </div>
         <label class="layui-form-label">博文作者</label>
         <div class="layui-input-inline">
@@ -55,8 +56,16 @@
     <div class="layui-form-item">
         <label class="layui-form-label">推荐博文</label>
         <div class="layui-input-inline">
-            <input type="radio" name="is_Recommend" value=true title="是" th:checked="${blog}==null?'':(${blog.is_Recommend}==true?'checked':'')" >
-            <input type="radio" name="is_Recommend" value=false title="否"th:checked="${blog}==null?'checked':(${blog.is_Recommend}==false?'checked':'')" >
+            <div th:switch="${blog}==null? ${false}:${blog.is_Recommend}">
+                <span th:case="${false}">
+                    <input type="radio" name="is_Recommend" value=true title="是"  >
+                    <input type="radio" name="is_Recommend" value=false title="否" checked >
+                </span>
+                <span th:case="${true}">
+                    <input type="radio" name="is_Recommend" value=true title="是"  checked>
+                    <input type="radio" name="is_Recommend" value=false title="否"  >
+                </span>
+            </div>
         </div>
         <label class="layui-form-label">添加封面</label>
         <div class="layui-input-inline">
