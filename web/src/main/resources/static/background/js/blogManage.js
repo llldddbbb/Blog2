@@ -1,9 +1,10 @@
 ﻿
-layui.define(['laypage', 'layer', 'form', 'pagesize'], function (exports) {
-    var $ = layui.jquery,
-        layer = layui.layer,
-        form = layui.form(),
-        laypage = layui.laypage;
+layui.define(['element','laypage', 'layer', 'form', 'pagesize'], function (exports) {
+    var $ = layui.jquery;
+    var layer = layui.layer;
+    var form = layui.form();
+    var laypage = layui.laypage;
+    var element = layui.element();
     var laypageId = 'pageNav';
 
 
@@ -37,12 +38,13 @@ layui.define(['laypage', 'layer', 'form', 'pagesize'], function (exports) {
                         html+='<td>'+item.publishTime+'</td>';
                         html+='<td>'+item.blogTypePO.typeName+'</td>';
                         html+='<td>'+item.blogTagPO.tagName+'</td>';
-                        html+='<td><button class="layui-btn layui-btn-small layui-btn-normal"><i class="layui-icon">&#xe642;</i></button></td>';
-                        html+='<td><button class="layui-btn layui-btn-small layui-btn-danger"><i class="layui-icon">&#xe640;</i></button></td>';
+                        html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+')"><i class="layui-icon">&#xe642;</i></button></td>';
+                        html+='<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData('+item.id+')"><i class="layui-icon">&#xe640;</i></button></td>';
                         html+='</tr>';
                     }
                     html+='</tbody></table>';
                     $('#dataContent').html(html);
+                    element.init();
 
                 }
             });
@@ -72,4 +74,32 @@ layui.define(['laypage', 'layer', 'form', 'pagesize'], function (exports) {
 
         }, 500);
     }
+
+
+    //输出接口，主要是两个函数，一个删除一个编辑
+    var datalist = {
+        deleteData: function (id) {
+            layer.confirm('确定删除？', {
+                btn: ['确定', '取消'] //按钮
+            }, function () {
+                layer.msg('删除Id为【' + id + '】的数据');
+            }, function () {
+
+            });
+        },
+        editData: function (id) {
+            var index = layer.load(1);
+            //由于Ajax调用本地静态页面存在跨域问题，这里用iframe
+            setTimeout(function () {
+                //模拟菜单加载
+                layer.close(index);
+                parent.switchTab(parent.element,'22','/admin/writeBlog',id);
+
+            }, 500);
+            layer.msg('编辑Id为【' + id + '】的数据');
+        }
+    };
+
+
+    exports('datalist', datalist);
 });

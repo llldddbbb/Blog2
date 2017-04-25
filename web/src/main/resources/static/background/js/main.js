@@ -5,10 +5,10 @@
 @Site：http://www.lyblogs.cn
 
 */
-
+var element;
 layui.define(['element', 'layer', 'util', 'pagesize', 'form'], function (exports) {
     var $ = layui.jquery;
-    var element = layui.element();
+    element = layui.element();
     var layer = layui.layer;
     var util = layui.util;
     var form = layui.form();
@@ -59,40 +59,12 @@ layui.define(['element', 'layer', 'util', 'pagesize', 'form'], function (exports
             setTimeout(function () {
                 //模拟菜单加载
                 layer.close(index);
-                element.tabAdd('tab', { title: title, content: '<iframe src="' + url + '" style="width:100%;height:100%;border:none;outline:none;"></iframe>', id: id });
-                //切换到指定索引的卡片
-                element.tabChange('tab', id);
+                switchTab(element,title,url,id);
+
             }, 500);
         }
     });
 
-    //监听快捷菜单点击
-    $('.short-menu .layui-field-box>div>div').click(function () {
-        var elem = this;
-        var url = $(elem).children('span').attr('data-url');
-        var id = $(elem).children('span').attr('data-id');
-        var title = $(elem).children('span').text();
-
-        if (url == undefined) return;
-
-        var tabTitleDiv = $('.layui-tab[lay-filter=\'tab\']').children('.layui-tab-title');
-        var exist = tabTitleDiv.find('li[lay-id=' + id + ']');
-        if (exist.length > 0) {
-            //切换到指定索引的卡片
-            element.tabChange('tab', id);
-        } else {
-            var index = layer.load(1);
-            //由于Ajax调用本地静态页面存在跨域问题，这里用iframe
-            setTimeout(function () {
-                //模拟菜单加载
-                layer.close(index);
-                element.tabAdd('tab', { title: title, content: '<iframe src="' + url + '" style="width:100%;height:100%;border:none;outline:none;"></iframe>', id: id });
-                //切换到指定索引的卡片
-                element.tabChange('tab', id);
-            }, 500);
-        }
-        $('div.short-menu').slideUp('fast');
-    });
 
     //监听侧边导航开关
     form.on('switch(sidenav)', function (data) {
@@ -274,3 +246,9 @@ layui.define(['element', 'layer', 'util', 'pagesize', 'form'], function (exports
 
     exports('main', {});
 });
+
+function switchTab(element,title,url,id){
+    element.tabAdd('tab', { title: title, content: '<iframe src="' + url + '" style="width:100%;height:100%;border:none;outline:none;"></iframe>', id: id });
+    //切换到指定索引的卡片
+    element.tabChange('tab', id);
+}
