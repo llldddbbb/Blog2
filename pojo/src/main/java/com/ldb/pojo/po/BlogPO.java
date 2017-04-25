@@ -23,7 +23,7 @@ public class BlogPO {
 
     private Integer readNum;
 
-    private Boolean isRecommend;
+    private Boolean is_Recommend;
 
     private Integer blogTypeId;
 
@@ -91,12 +91,12 @@ public class BlogPO {
         this.readNum = readNum;
     }
 
-    public Boolean getRecommend() {
-        return isRecommend;
+    public Boolean getIs_Recommend() {
+        return is_Recommend;
     }
 
-    public void setRecommend(Boolean recommend) {
-        isRecommend = recommend;
+    public void setIs_Recommend(Boolean is_Recommend) {
+        this.is_Recommend = is_Recommend;
     }
 
     public Integer getBlogTypeId() {
@@ -138,4 +138,6 @@ public class BlogPO {
     public void setBlogTagPO(BlogTagPO blogTagPO) {
         this.blogTagPO = blogTagPO;
     }
+
+
 }

@@ -19,7 +19,7 @@
         </div>
         <label class="layui-form-label">博文作者</label>
         <div class="layui-input-inline">
-            <input type="text" name="title" lay-verify="required" autocomplete="off" th:value="${session.currentAdmin.userName}" class="layui-input">
+            <input type="text" name="author" lay-verify="required" autocomplete="off"  class="layui-input">
         </div>
     </div>
 
@@ -46,12 +46,13 @@
     <div class="layui-form-item">
         <label class="layui-form-label">推荐博文</label>
         <div class="layui-input-inline">
-            <input type="radio" name="idRecommend" value="1" title="是" >
-            <input type="radio" name="idRecommend" value="0" title="否" checked="">
+            <input type="radio" name="is_Recommend" value=true title="是" >
+            <input type="radio" name="is_Recommend" value=false title="否" checked="">
         </div>
         <label class="layui-form-label">添加封面</label>
         <div class="layui-input-inline">
             <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡了的图片">
+            <input type="hidden" name="coverImageName" id="coverImageName">
         </div>
     </div>
 
@@ -65,6 +66,7 @@
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">编辑博文</label>
         <input type="hidden" name="content" id="content">
+        <input type="hidden" name="publishTime" id="publishTime">
         <div class="layui-input-block">
         <script id="editor" type="text/plain" style='width:99%;height:300px;'></script></div>
         </div>
@@ -85,9 +87,13 @@
         var form = layui.form()
             ,layer = layui.layer;
         layui.upload({
-            url: '' //上传接口
-            ,success: function(res){ //上传成功后的回调
-                console.log(res)
+            url: '/admin/uploadImage' //上传接口
+            ,success: function(result){ //上传成功后的回调
+                if(result.success=='true'){
+                    document.getElementById("coverImageName").value=result.coverImageName;
+                }else{
+                    alert("上传文件失败");
+                }
             }
         });
     });
@@ -97,6 +103,7 @@
     function setContent() {
         var content = ue.getContent();
         document.getElementById("content").value=content;
+        document.getElementById("publishTime").value=new Date();
         return true;
     }
 

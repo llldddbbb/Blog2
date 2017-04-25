@@ -7,17 +7,20 @@ import com.ldb.pojo.po.BlogTypePO;
 import com.ldb.service.BlogService;
 import com.ldb.service.BlogTagService;
 import com.ldb.service.BlogTypeService;
+import com.ldb.utils.ConfigStrUtil;
+import com.ldb.utils.DateUtil;
+import com.ldb.utils.JacksonUtil;
+import com.ldb.utils.QiNiuUploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ldb on 2017/4/21.
@@ -81,12 +84,31 @@ public class BlogManageController {
     }
 
     @RequestMapping("/addBlog")
-    public String addBlog(BlogPO blogPO){
+    public String addBlog(BlogPO blogPO) throws Exception{
+
         int result = blogService.addBlog(blogPO);
         if(result>0){
             return "redirect:/admin/blogManage";
         }else{
             return null;
+        }
+    }
+
+    @RequestMapping("/uploadImage")
+    @ResponseBody
+    public String uploadImage(@RequestParam(value = "file") MultipartFile file)throws Exception{
+        String imageName= DateUtil.getCurrentTimeStr();
+        String filePath="/image/coverImage/"+imageName+"."+file.getOriginalFilename().split("\\.")[1];
+        Boolean uploadResult=QiNiuUploadUtil.upload(file.getInputStream(),filePath);
+        Map<String,String> jsonMap=new HashMap<>();
+        if(uploadResult){
+            String coverImageName=ConfigStrUtil.QINIU_URL+filePath;
+            jsonMap.put("coverImageName",coverImageName );
+            jsonMap.put("success","true");
+            return JacksonUtil.toJSon(jsonMap);
+        }else{
+            jsonMap.put("success","false");
+            return JacksonUtil.toJSon(jsonMap);
         }
     }
 
