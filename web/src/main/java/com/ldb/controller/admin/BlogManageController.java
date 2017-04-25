@@ -7,10 +7,7 @@ import com.ldb.pojo.po.BlogTypePO;
 import com.ldb.service.BlogService;
 import com.ldb.service.BlogTagService;
 import com.ldb.service.BlogTypeService;
-import com.ldb.utils.ConfigStrUtil;
-import com.ldb.utils.DateUtil;
-import com.ldb.utils.JacksonUtil;
-import com.ldb.utils.QiNiuUploadUtil;
+import com.ldb.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -71,17 +68,21 @@ public class BlogManageController {
     }
 
     @RequestMapping("/writeBlog")
-    public ModelAndView writeBlog(){
+    public ModelAndView writeBlog(@RequestParam(required = false) String id){
         ModelAndView mav=new ModelAndView("/background/writeBlog");
+        if(StringUtil.isNotEmpty(id)){
+            BlogPO blogPO=blogService.getBlog(Integer.parseInt(id));
+            mav.addObject("blog",blogPO);
+        }
         //获取下拉框
         List<BlogTagPO> blogTagList = blogTagService.listBlogTag();
         List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();
-
-
         mav.addObject("blogTagList",blogTagList);
         mav.addObject("blogTypeList",blogTypeList);
         return mav;
     }
+
+
 
     @RequestMapping("/addBlog")
     public String addBlog(BlogPO blogPO) throws Exception{

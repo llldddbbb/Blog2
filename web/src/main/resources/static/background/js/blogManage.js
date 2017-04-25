@@ -93,13 +93,9 @@ layui.define(['element','laypage', 'layer', 'form', 'pagesize'], function (expor
             setTimeout(function () {
                 //模拟菜单加载
                 layer.close(index);
-                parent.switchTab(parent.element,'22','/admin/writeBlog',id);
-
+                parent.switchTab(parent.element,'修改博客','/admin/writeBlog?id='+id,id);
             }, 500);
-            layer.msg('编辑Id为【' + id + '】的数据');
         }
     };
-
-
     exports('datalist', datalist);
 });

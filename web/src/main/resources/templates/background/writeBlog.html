@@ -15,11 +15,11 @@
     <div class="layui-form-item">
         <label class="layui-form-label">博客标题</label>
         <div class="layui-input-inline">
-            <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input">
+            <input type="text" name="title" lay-verify="required" autocomplete="off" placeholder="请输入标题" class="layui-input" th:value="${blog}==null?'':${blog.title}"/>
         </div>
         <label class="layui-form-label">博文作者</label>
         <div class="layui-input-inline">
-            <input type="text" name="author" lay-verify="required" autocomplete="off"  class="layui-input">
+            <input type="text" name="author" lay-verify="required" autocomplete="off"  class="layui-input" th:value="${blog}==null?'':${blog.author}">
         </div>
     </div>
 
@@ -28,14 +28,21 @@
         <div class="layui-input-inline">
             <select lay-verify="required" name="blogTypeId" >
                 <option value=""></option>
-                <option value="1"  th:each="blogType:${blogTypeList}" th:value="${blogType.id}" th:text="${blogType.typeName}">类别1</option>
+                <option value="1"  th:each="blogType:${blogTypeList}" th:selected="${blog}==null?false:(${blog.blogTypeId}==${blogType.id}?true:false)" th:value="${blogType.id}" th:text="${blogType.typeName}">类别1</option>
             </select>
         </div>
+        <div class="layui-input-inline">
+            <button class="layui-btn">添加类别</button>
+        </div>
+
+    </div>
+
+    <div class="layui-form-item">
         <label class="layui-form-label">所属标签</label>
         <div class="layui-input-inline">
             <select  lay-verify="required"name="blogTagId" >
                 <option value=""></option>
-                <option value="1"  th:each="blogTag:${blogTagList}" th:value="${blogTag.id}" th:text="${blogTag.tagName}">类别1</option>
+                <option value="1"  th:each="blogTag:${blogTagList}" th:selected="${blog}==null?false:(${blog.blogTagId}==${blogTag.id}?true:false)" th:value="${blogTag.id}" th:text="${blogTag.tagName}">类别1</option>
             </select>
         </div>
         <div class="layui-input-inline">
@@ -43,23 +50,25 @@
         </div>
     </div>
 
+
+
     <div class="layui-form-item">
         <label class="layui-form-label">推荐博文</label>
         <div class="layui-input-inline">
-            <input type="radio" name="is_Recommend" value=true title="是" >
-            <input type="radio" name="is_Recommend" value=false title="否" checked="">
+            <input type="radio" name="is_Recommend" value=true title="是" th:checked="${blog}==null?'':(${blog.is_Recommend}==true?'checked':'')" >
+            <input type="radio" name="is_Recommend" value=false title="否"th:checked="${blog}==null?'checked':(${blog.is_Recommend}==false?'checked':'')" >
         </div>
         <label class="layui-form-label">添加封面</label>
         <div class="layui-input-inline">
             <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡了的图片">
-            <input type="hidden" name="coverImageName" id="coverImageName">
+            <input type="hidden" name="coverImageName" id="coverImageName" th:value="${blog}==null?'':${blog.coverImageName}">
         </div>
     </div>
 
     <div class="layui-form-item layui-form-text">
         <label class="layui-form-label">博文摘要</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入内容" name="summary" lay-verify="required" style='width:99%;' class="layui-textarea"></textarea>
+            <textarea placeholder="请输入内容" name="summary" lay-verify="required" style='width:99%;' class="layui-textarea" th:text="${blog}==null?'':${blog.summary}"></textarea>
         </div>
     </div>
 
@@ -68,7 +77,7 @@
         <input type="hidden" name="content" id="content">
         <input type="hidden" name="publishTime" id="publishTime">
         <div class="layui-input-block">
-        <script id="editor" type="text/plain" style='width:99%;height:300px;'></script></div>
+        <script id="editor" type="text/plain" style='width:99%;height:300px;' th:utext="${blog}==null?'':(${blog.content}==null?'':${blog.content})"></script></div>
         </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
