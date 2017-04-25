@@ -88,13 +88,7 @@ layui.define(['element','laypage', 'layer', 'form', 'pagesize'], function (expor
             });
         },
         editData: function (id) {
-            var index = layer.load(1);
-            //由于Ajax调用本地静态页面存在跨域问题，这里用iframe
-            setTimeout(function () {
-                //模拟菜单加载
-                layer.close(index);
-                parent.switchTab(parent.element,'修改博客','/admin/writeBlog?id='+id,id);
-            }, 500);
+            parent.switchTab(parent.$,parent.element,'修改博客','/admin/writeBlog?id='+id,'Blog'+id);
         }
     };
     exports('datalist', datalist);
