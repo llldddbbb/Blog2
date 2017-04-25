@@ -43,6 +43,6 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public Long getCommentCount() {
-        return commentDAO.getCommentCount();
+        return commentDAO.getCommentCount(null);
     }
 }

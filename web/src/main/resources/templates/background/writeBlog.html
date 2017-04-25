@@ -24,6 +24,27 @@
         </div>
     </div>
 
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">推荐博文</label>
+        <div class="layui-input-inline">
+            <div th:switch="${blog}==null? ${false}:${blog.is_Recommend}">
+                <span th:case="${false}">
+                    <input type="radio" name="is_Recommend" value=true title="是"  >
+                    <input type="radio" name="is_Recommend" value=false title="否" checked >
+                </span>
+                <span th:case="${true}">
+                    <input type="radio" name="is_Recommend" value=true title="是"  checked>
+                    <input type="radio" name="is_Recommend" value=false title="否"  >
+                </span>
+            </div>
+        </div>
+        <label class="layui-form-label">添加封面</label>
+        <div class="layui-input-inline">
+            <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡了的图片">
+            <input type="hidden" name="coverImageName" id="coverImageName" th:value="${blog}==null?'':${blog.coverImageName}">
+        </div>
+    </div>
     <div class="layui-form-item">
         <label class="layui-form-label">所属类别</label>
         <div class="layui-input-inline">
@@ -48,29 +69,6 @@
         </div>
         <div class="layui-input-inline">
             <button class="layui-btn">添加标签</button>
-        </div>
-    </div>
-
-
-
-    <div class="layui-form-item">
-        <label class="layui-form-label">推荐博文</label>
-        <div class="layui-input-inline">
-            <div th:switch="${blog}==null? ${false}:${blog.is_Recommend}">
-                <span th:case="${false}">
-                    <input type="radio" name="is_Recommend" value=true title="是"  >
-                    <input type="radio" name="is_Recommend" value=false title="否" checked >
-                </span>
-                <span th:case="${true}">
-                    <input type="radio" name="is_Recommend" value=true title="是"  checked>
-                    <input type="radio" name="is_Recommend" value=false title="否"  >
-                </span>
-            </div>
-        </div>
-        <label class="layui-form-label">添加封面</label>
-        <div class="layui-input-inline">
-            <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡了的图片">
-            <input type="hidden" name="coverImageName" id="coverImageName" th:value="${blog}==null?'':${blog.coverImageName}">
         </div>
     </div>
 

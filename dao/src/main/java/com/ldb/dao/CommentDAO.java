@@ -19,5 +19,4 @@ public interface CommentDAO {
 
     int addComment(CommentPO commentPO);
 
-    Long getCommentCount();
 }

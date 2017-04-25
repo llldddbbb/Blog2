@@ -30,7 +30,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <select id="listCommentPO" resultMap="CommentResultMap">
-        select id,<include refid="listVO"/> from comment where blogId=#{blogId} ORDER BY publishTime desc
+        select id,<include refid="listVO"/> from comment
+        <where>
+            <if test="blogId!=null">
+                and blogId=#{blogId}
+            </if>
+        </where>
+         ORDER BY publishTime desc
     </select>
 
     <insert id="addComment" parameterType="com.ldb.pojo.po.CommentPO"  useGeneratedKeys="true"  keyProperty="id">

@@ -15,7 +15,7 @@ import java.util.HashMap;
  */
 @Controller
 @RequestMapping("/admin")
-@SessionAttributes(value = {"blogNum"})
+@SessionAttributes(value = {"blogNum","commentNum"})
 public class MainController {
 
     @Autowired

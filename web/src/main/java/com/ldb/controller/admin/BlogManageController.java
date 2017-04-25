@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -50,18 +49,12 @@ public class BlogManageController {
 
     @RequestMapping(value="/blogManage/list/{page}",method = RequestMethod.GET)
     @ResponseBody
-    public List<BlogPO> blogManagePage(@PathVariable String page, String pageSize, HttpSession session){
+    public List<BlogPO> blogManagePage(@PathVariable String page, String pageSize){
         //获取博文列表
         PageBeanBO pageBeanBO=new PageBeanBO(Integer.parseInt(page), Integer.parseInt(pageSize));
         HashMap<String,Integer> param=new HashMap<>();
         param.put("start",pageBeanBO.getStart());
         param.put("pageSize",pageBeanBO.getPageSize());
-
-        Long blogCount = blogService.getBlogCount(new HashMap<>());
-
-        //获取总页数
-        long totalPage=blogCount%pageBeanBO.getPageSize()==0?blogCount/pageBeanBO.getPageSize():blogCount/pageBeanBO.getPageSize()+1;
-        session.setAttribute("totalPage",totalPage);
 
         List<BlogPO> blogList=blogService.listBlogPO(param);
         return blogList;
