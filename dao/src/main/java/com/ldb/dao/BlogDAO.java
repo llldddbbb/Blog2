@@ -1,8 +1,10 @@
 package com.ldb.dao;
 
 import com.ldb.pojo.po.BlogPO;
+import com.ldb.pojo.vo.BlogCommentVO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.HashMap;
 import java.util.List;
@@ -35,5 +37,7 @@ public interface BlogDAO {
     int updateBlog(BlogPO blogPO);
 
     int deleteBlog(Integer id);
+
+    BlogCommentVO getBlogCommentVO(@Param("id") Integer id);
 
 }

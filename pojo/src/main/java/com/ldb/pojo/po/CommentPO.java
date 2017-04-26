@@ -1,6 +1,7 @@
 package com.ldb.pojo.po;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.ldb.pojo.vo.BlogCommentVO;
 import com.ldb.pojo.vo.CommentReplyVO;
 
 import java.util.Date;
@@ -24,6 +25,8 @@ public class CommentPO {
     private Integer blogId;
 
     private List<CommentReplyVO> commentReplyVOList;
+
+    private BlogCommentVO blogCommentVO;
 
 
 
@@ -83,6 +86,14 @@ public class CommentPO {
         this.commentReplyVOList = commentReplyVOList;
     }
 
+    public BlogCommentVO getBlogCommentVO() {
+        return blogCommentVO;
+    }
+
+    public void setBlogCommentVO(BlogCommentVO blogCommentVO) {
+        this.blogCommentVO = blogCommentVO;
+    }
+
     public CommentPO() {
     }
 
@@ -92,5 +103,7 @@ public class CommentPO {
         this.content = content;
         this.blogId = blogId;
     }
+
+
 }
 

@@ -3,6 +3,7 @@ package com.ldb.service.impl;
 import com.ldb.dao.BlogDAO;
 import com.ldb.dao.CommentDAO;
 import com.ldb.pojo.po.BlogPO;
+import com.ldb.pojo.vo.BlogCommentVO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 import com.ldb.service.BlogService;
@@ -98,6 +99,11 @@ public class BlogServiceImpl implements BlogService {
     public int deleteBlog(Integer id) {
 
         return blogDAO.deleteBlog(id);
+    }
+
+    @Override
+    public BlogCommentVO getBlogCommentVO(Integer id) {
+        return blogDAO.getBlogCommentVO(id);
     }
 
 

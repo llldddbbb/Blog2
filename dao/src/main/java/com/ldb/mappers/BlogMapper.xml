@@ -117,4 +117,8 @@
         delete from blog where id = #{id}
     </delete>
 
+    <select id="getBlogCommentVO" resultType="com.ldb.pojo.vo.BlogCommentVO">
+        SELECT id,title from blog where id=#{id}
+    </select>
+
 </mapper> 

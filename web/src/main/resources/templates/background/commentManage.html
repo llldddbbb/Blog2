@@ -58,78 +58,11 @@
     </style>
 </head>
 <body>
-<div class="layui-field-box" style="text-align: center">
-    <div id="articleIndexTop">
-        <form class="layui-form layui-form-pane" action="">
-            <div class="layui-form-item" style="margin:0;margin-top:15px;">
-                <div class="layui-inline">
-                    <label class="layui-form-label">标题</label>
-                    <div class="layui-input-inline">
-                        <input type="text" name="keywords" autocomplete="off" class="layui-input">
-                    </div>
-                    <div class="layui-input-inline" style="width:auto">
-                        <button class="layui-btn" lay-submit lay-filter="formSearch">搜索</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
     <fieldset id="dataList" class="layui-elem-field layui-field-title sys-list-field" style="display:none;">
-        <legend style="text-align:center;">文章列表</legend>
+        <legend style="text-align:center;">评论列表</legend>
         <div class="layui-field-box layui-form">
             <div id="dataContent" class="">
                 <!--内容区域 ajax获取-->
-                <table style="table-layout: fixed" class="layui-table" lay-even="">
-                    <colgroup>
-                        <col width="180">
-                        <col>
-                        <col width="150">
-                        <col width="180">
-                        <col width="90">
-                        <col width="90">
-                        <col width="50">
-                        <col width="50">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>发表时间</th>
-                            <th>标题</th>
-                            <th>作者</th>
-                            <th>类别</th>
-                            <th colspan="2">选项</th>
-                            <th colspan="2">操作</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>2017-03-22 23:07</td>
-                        <td>不落阁后台模板源码分享</td>
-                        <td>Absolutely</td>
-                        <td>Web前端</td>
-                        <td>
-                            <form class="layui-form" action="">
-                                <div class="layui-form-item" style="margin:0;">
-                                    <input type="checkbox" name="top" title="置顶" lay-filter="top" checked>
-                                </div>
-                            </form>
-                        </td>
-                        <td>
-                            <form class="layui-form" action="">
-                                <div class="layui-form-item" style="margin:0;">
-                                    <input type="checkbox" name="top" title="推荐" lay-filter="recommend" checked>
-                                </div>
-                            </form>
-                        </td>
-                        <td>
-                            <button class="layui-btn layui-btn-small layui-btn-normal"><i class="layui-icon">&#xe642;</i></button>
-                        </td>
-                        <td>
-                            <button class="layui-btn layui-btn-small layui-btn-danger"><i class="layui-icon">&#xe640;</i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
             <div id="pageNav"></div>
         </div>
@@ -149,7 +82,7 @@
             var laypageId = 'pageNav';
 
 
-            initilData(1, 8);
+            initilData(1, 10);
             //页数据初始化
             //currentIndex：当前页面
             //pageSize：页容量（每页显示的条数）
@@ -167,7 +100,7 @@
                         success:function(commentList){
                             var html = '';
                             html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
-                            html += '<colgroup><col width="40"><col width="100"><col width="80"><col width="200"><col width="90"><col width="90"><col width="40"><col width="40"></colgroup>';
+                            html += '<colgroup><col width="40"><col width="80"><col width="70"><col width="200"><col width="90"><col width="130"><col width="40"><col width="40"></colgroup>';
                             html += '<thead><tr><th>编号</th><th>用户IP</th><th>用户昵称</th><th>内容</th><th>评论时间</th><th>所属博文</th><th colspan="2">操作</th></tr></thead>';
                             html += '<tbody>';
                             for(var i in commentList){
@@ -178,7 +111,7 @@
                                 html+='<td>'+item.nickName+'</td>';
                                 html+='<td>'+item.content+'</td>';
                                 html+='<td>'+item.publishTime+'</td>';
-                                html+='<td>'+item.userIP+'</td>';
+                                html+='<td>'+item.blogCommentVO.title+'</td>';
                                 html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+')"><i class="layui-icon">&#xe642;</i></button></td>';
                                 html+='<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData('+item.id+')"><i class="layui-icon">&#xe640;</i></button></td>';
                                 html+='</tr>';

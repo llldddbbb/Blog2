@@ -18,6 +18,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         nickName,content,publishTime
     </sql>
 
+    <sql id="listPO">
+        id,nickName,content,publishTime,blogId,userIP
+    </sql>
+
     <select id="getCommentCount" parameterType="Integer" resultType="Long">
         select count(*) from comment
         <if test="blogId !=null">
@@ -29,14 +33,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         SELECT <include refid="listVO"/> from comment ORDER BY publishTime DESC limit 0,5
     </select>
 
-    <select id="listCommentPO" resultMap="CommentResultMap">
-        select id,<include refid="listVO"/> from comment
+    <select id="listCommentPO" resultMap="CommentResultMap" parameterType="Map">
+        select <include refid="listPO"/> from comment
         <where>
             <if test="blogId!=null">
                 and blogId=#{blogId}
             </if>
         </where>
          ORDER BY publishTime desc
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
     </select>
 
     <insert id="addComment" parameterType="com.ldb.pojo.po.CommentPO"  useGeneratedKeys="true"  keyProperty="id">

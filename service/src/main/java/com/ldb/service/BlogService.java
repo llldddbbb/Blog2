@@ -1,6 +1,7 @@
 package com.ldb.service;
 
 import com.ldb.pojo.po.BlogPO;
+import com.ldb.pojo.vo.BlogCommentVO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
 
@@ -35,6 +36,8 @@ public interface BlogService {
     int updateBlog(BlogPO blogPO);
 
     int deleteBlog(Integer id);
+
+    BlogCommentVO getBlogCommentVO(Integer id);
 
 
 }

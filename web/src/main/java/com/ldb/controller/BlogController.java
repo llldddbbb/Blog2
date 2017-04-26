@@ -1,7 +1,5 @@
 package com.ldb.controller;
 
-import com.ldb.utils.ConfigStrUtil;
-import com.ldb.utils.JacksonUtil;
 import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.po.BlogPO;
 import com.ldb.pojo.po.CommentPO;
@@ -9,6 +7,8 @@ import com.ldb.pojo.po.CommentReplyPO;
 import com.ldb.service.BlogService;
 import com.ldb.service.CommentReplyService;
 import com.ldb.service.CommentService;
+import com.ldb.utils.ConfigStrUtil;
+import com.ldb.utils.JacksonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -47,7 +48,9 @@ public class BlogController {
 
         }
         //获取该Blog下的评论
-        List<CommentPO> commentList = commentService.listComment(blog.getId());
+        HashMap<String,Integer> param=new HashMap<>();
+        param.put("blogId",blog.getId());
+        List<CommentPO> commentList = commentService.listComment(param);
         mav.addObject("commentList",commentList);
         //更新阅读数量
         blogService.updateBlogReadNum(id);

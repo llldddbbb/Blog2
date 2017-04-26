@@ -3,13 +3,13 @@ package com.ldb.service.impl;
 import com.ldb.dao.CommentDAO;
 import com.ldb.dao.CommentReplyDAO;
 import com.ldb.pojo.po.CommentPO;
-import com.ldb.pojo.vo.CommentReplyVO;
 import com.ldb.pojo.vo.CommentVO;
 import com.ldb.service.CommentService;
 import com.ldb.service.utils.CommentUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -30,8 +30,8 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<CommentPO> listComment(Integer blogId) {
-        List<CommentPO> commentPOList = commentDAO.listCommentPO(blogId);
+    public List<CommentPO> listComment(HashMap<String,Integer> param) {
+        List<CommentPO> commentPOList = commentDAO.listCommentPO(param);
         CommentUtil.setCommentList(commentPOList,commentReplyDAO);
         return commentPOList;
     }

@@ -4,6 +4,7 @@ import com.ldb.pojo.po.CommentPO;
 import com.ldb.pojo.vo.CommentVO;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public interface CommentDAO {
 
     List<CommentVO> listNewCommentVO();
 
-    List<CommentPO> listCommentPO(@Param("blogId")Integer blogId);
+    List<CommentPO> listCommentPO(HashMap<String,Integer> param);
 
     int addComment(CommentPO commentPO);
 
