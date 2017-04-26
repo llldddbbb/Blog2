@@ -1,5 +1,7 @@
 package com.ldb.pojo.po;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class MoodPO {
@@ -9,6 +11,7 @@ public class MoodPO {
 
     private String content;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date publishTime;
 
     public Integer getId() {

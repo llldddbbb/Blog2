@@ -1,7 +1,9 @@
 package com.ldb.service;
 
+import com.ldb.pojo.po.MoodPO;
 import com.ldb.pojo.vo.TimeLineVO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,4 +12,8 @@ import java.util.List;
 public interface TimeLineService {
 
     List<TimeLineVO> listTimeLine();
+
+    List<MoodPO> listMoodPO(HashMap<String,Object> param);
+
+    Long getMoodCount();
 }

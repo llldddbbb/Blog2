@@ -16,7 +16,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         title,content,publishTime
     </sql>
 
-    <select id="listMood" resultMap="moodResultMap">
+    <sql id="listPO">
+        id,title,content,publishTime
+    </sql>
+
+    <select id="listMoodVO" resultType="com.ldb.pojo.vo.MottoVO" parameterType="Map">
         select <include refid="listVO"/> from mood
         <where>
             <if test="endDate!=null">
@@ -27,10 +31,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             </if>
         </where>
          order by publishTime desc
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
     </select>
 
     <select id="listMoodArchiveDate" resultType="String">
         SELECT DATE_FORMAT(publishTime,"%Y-%m") AS moodArchiveDate FROM mood GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
+    </select>
+
+    <select id="listMoodPO" resultMap="moodResultMap" parameterType="Map">
+        select <include refid="listPO"/> from mood order by publishTime desc
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
+    </select>
+
+    <select id="getMoodCount" resultType="Long">
+        select count(*) from mood
     </select>
 
 

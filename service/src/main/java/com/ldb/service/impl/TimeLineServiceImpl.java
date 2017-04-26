@@ -1,6 +1,7 @@
 package com.ldb.service.impl;
 
 import com.ldb.dao.MoodDAO;
+import com.ldb.pojo.po.MoodPO;
 import com.ldb.pojo.vo.MoodVO;
 import com.ldb.pojo.vo.TimeLineVO;
 import com.ldb.service.TimeLineService;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,7 +36,10 @@ public class TimeLineServiceImpl implements TimeLineService {
         for(int i=0;i<=size-2;i++){
             TimeLineVO timeLineVO=new TimeLineVO();
             //取出月份内的数据
-            List<MoodVO> moodVOList=moodDAO.listMood(moodArchiveDateList.get(i+1),moodArchiveDateList.get(i));
+            HashMap<String,Object> param=new HashMap<>();
+            param.put("startDate",moodArchiveDateList.get(i+1));
+            param.put("endDate",moodArchiveDateList.get(i));
+            List<MoodVO> moodVOList=moodDAO.listMoodVO(param);
             //添加当前月份
             timeLineVO.setMoodArchiveDate(moodArchiveDateList.get(i));
             timeLineVO.setMoodVOList(moodVOList);
@@ -42,5 +47,16 @@ public class TimeLineServiceImpl implements TimeLineService {
             timeLineVOList.add(timeLineVO);
         }
         return timeLineVOList;
+    }
+
+    @Override
+    public List<MoodPO> listMoodPO(HashMap<String, Object> param) {
+        List<MoodPO> moodList = moodDAO.listMoodPO(param);
+        return moodList;
+    }
+
+    @Override
+    public Long getMoodCount() {
+        return moodDAO.getMoodCount();
     }
 }

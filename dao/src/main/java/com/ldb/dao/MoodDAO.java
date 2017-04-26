@@ -1,8 +1,9 @@
 package com.ldb.dao;
 
+import com.ldb.pojo.po.MoodPO;
 import com.ldb.pojo.vo.MoodVO;
-import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,7 +11,11 @@ import java.util.List;
  */
 public interface MoodDAO {
 
-    List<MoodVO> listMood(@Param("startDate") String startDate, @Param("endDate")String endDate);
+    List<MoodVO> listMoodVO(HashMap<String ,Object> param);
 
     List<String> listMoodArchiveDate();
+
+    List<MoodPO> listMoodPO(HashMap<String ,Object> param);
+
+    Long getMoodCount();
 }
