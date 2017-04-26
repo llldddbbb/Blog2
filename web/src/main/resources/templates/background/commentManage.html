@@ -100,8 +100,8 @@
                         success:function(commentList){
                             var html = '';
                             html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
-                            html += '<colgroup><col width="40"><col width="80"><col width="70"><col width="200"><col width="90"><col width="130"><col width="40"><col width="40"></colgroup>';
-                            html += '<thead><tr><th>编号</th><th>用户IP</th><th>用户昵称</th><th>内容</th><th>评论时间</th><th>所属博文</th><th colspan="2">操作</th></tr></thead>';
+                            html += '<colgroup><col width="40"><col width="80"><col width="70"><col width="200"><col width="90"><col width="130"><col width="40"><col width="40"><col width="40"><col width="40"></colgroup>';
+                            html += '<thead><tr><th>编号</th><th>用户IP</th><th>用户昵称</th><th>内容</th><th>评论时间</th><th>所属博文</th><th>回复</th><th colspan="3">操作</th></tr></thead>';
                             html += '<tbody>';
                             for(var i in commentList){
                                 var item=commentList[i];
@@ -111,8 +111,14 @@
                                 html+='<td>'+item.nickName+'</td>';
                                 html+='<td>'+item.content+'</td>';
                                 html+='<td>'+item.publishTime+'</td>';
-                                html+='<td>'+item.blogCommentVO.title+'</td>';
-                                html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+')"><i class="layui-icon">&#xe642;</i></button></td>';
+                                html+='<td><a href="/blog/'+item.blogCommentVO.id+'" target="_blank">'+item.blogCommentVO.title+'</a></td>';
+                                if(item.commentReplyVOList.length<=0){
+                                    html+='<td><i class="layui-icon" style="font-size: 30px; color: #1E9FFF;vertical-align: middle;">&#xe61f;</i> </td>';
+                                }else{
+                                    html+='<td><i class="layui-icon" style="font-size: 30px; color: #FA4B2A;vertical-align: middle;">&#x1005;</i> </td>';
+                                }
+                                html+='<td><button class="layui-btn layui-btn-small" onclick=\'layui.datalist.showData('+JSON.stringify(item)+')\'><i class="layui-icon">&#xe63a;</i></button></td>';
+                                html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+',\''+item.content+'\')"><i class="layui-icon">&#xe642;</i></button></td>';
                                 html+='<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData('+item.id+')"><i class="layui-icon">&#xe640;</i></button></td>';
                                 html+='</tr>';
                             }
@@ -123,7 +129,6 @@
                         }
                     });
 
-                    form.render('checkbox');  //重新渲染CheckBox，编辑和添加的时候
                     $('#dataConsole,#dataList').attr('style', 'display:block'); //显示FiledBox
                     laypage({
                         cont: laypageId,
@@ -138,18 +143,94 @@
                             }
                         }
                     });
-
-                    //laypageId:laypage对象的id同laypage({})里面的cont属性
-                    //pagesize当前页容量，用于显示当前页容量
-                    //callback用于设置pagesize确定按钮点击时的回掉函数，返回新的页容量
-//                    layui.pagesize(laypageId, pageSize).callback(function (newPageSize) {
-//                        initilData(1, newPageSize);
-//                    });
-
                 }, 500);
             }
 
+            //输出接口，主要是两个函数，一个删除一个编辑
+            var datalist = {
+                deleteData: function (id) {
+                    layer.confirm('同时会删除对应回复，确定删除？', {
+                        btn: ['确定', '取消'] //按钮
+                    }, function () {
+                        $.ajax({
+                            url:'/blog/'+id,
+                            data:{},
+                            type:'DELETE',
+                            success:function (result) {
+                                var result=eval("("+result+")");
+                                if(result.success){
+                                    layer.alert('删除成功!', {icon: 1});
+                                }else{
+                                    layer.alert('删除失败!', {icon: 5});
+                                }
+                            }
+                        });
+                    }, function () {
 
+                    });
+                },
+                showData:function(item){
+                    var html='';
+                    html+='<fieldset  class="layui-elem-field layui-field-title sys-list-field" >';
+                    html+='<legend style="text-align:center;">回复列表</legend>';
+                    html+='<div class="layui-field-box layui-form">';
+                    html+='<blockquote class="layui-elem-quote layui-quote-nm">';
+                    html+='<blockquote class="layui-elem-quote ">';
+                    html+='<span> 游客昵称 : '+item.nickName+'<br> 评论内容 : '+item.content+'</span>';
+                    html+='</blockquote>';
+                    if(item.commentReplyVOList[0]==null){
+                        html+='<span>注 : 暂未回复此条评论</span>';
+                    }else{
+                        for(var j in item.commentReplyVOList){
+                            var reply=item.commentReplyVOList[j];
+                            html+='<blockquote class="layui-elem-quote" style="margin-left: 60px">';
+                            if(reply.role){
+                                html+='<span>博主 : '+reply.content+'</span>';
+                            }else{
+                                html+='<span>游客 : '+reply.content+'</span>';
+                            }
+                            html+='</blockquote>';
+                        }
+                        html+='</blockquote>';
+                        html+='<hr>';
+                    }
+                    html+='</div>';
+                    html+='</fieldset>';
+                    layer.open({
+                        type: 1,
+                        skin: 'layui-layer-rim', //加上边框
+                        area: '620px', //宽高
+                        title:'回复评论',
+                        content: html
+                    });
+                },
+
+                editData: function (id,content) {
+                    var html='';
+                    html+='<form class="layui-form layui-form-pane" action="/admin/comment/reply" method="post">';
+                    html+='<label class="layui-form-label" style="border: none" >评论内容:</label>';
+                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;"  readonly="true" class="layui-textarea layui-disabled" >'+content+'</textarea>';
+                    html+='<label class="layui-form-label" style="border: none">回复内容:</label>';
+                    html+='<textarea placeholder="请输入回复内容" name="content" lay-verify="required" style="width:87%;margin: auto" class="layui-textarea " ></textarea>';
+                    html+='<input type="hidden" name="commentId" value="'+id+'"/>';
+                    html+='<div class="layui-form-item">';
+                    html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
+                    html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即提交</button>';
+                    html+='<button type="reset" class="layui-btn layui-btn-primary">重置</button>';
+                    html+='</div>';
+                    html+='</div>';
+                    html+='</form>';
+
+                    layer.open({
+                        type: 1,
+                        skin: 'layui-layer-rim', //加上边框
+                        area: '420px', //宽高
+                        title:'回复评论',
+                        content: html
+                    });
+                }
+            };
+            exports('datalist', datalist);
         });
 
     </script>

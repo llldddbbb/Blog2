@@ -1,9 +1,14 @@
 package com.ldb.controller.admin;
 
+import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.bo.PageBeanBO;
 import com.ldb.pojo.po.CommentPO;
+import com.ldb.pojo.po.CommentReplyPO;
 import com.ldb.service.BlogService;
+import com.ldb.service.CommentReplyService;
 import com.ldb.service.CommentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,6 +34,11 @@ public class CommentManageController {
 
     @Autowired
     private BlogService blogService;
+
+    @Autowired
+    private CommentReplyService commentReplyService;
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping("/commentManage")
     public ModelAndView commentManage(){
@@ -49,4 +61,23 @@ public class CommentManageController {
         }
         return commentList;
     }
+
+    @RequestMapping(value="/comment/reply",method = RequestMethod.POST)
+    public String addCommentReply(CommentReplyPO commentReplyPO, HttpServletRequest request){
+        //获取留言IP
+        String userIP= RequestUtil.getUserIP(request);
+        commentReplyPO.setUserIP(userIP);
+        //设置时间
+        commentReplyPO.setPublishTime(new Date());
+        //设置角色
+        commentReplyPO.setRole(true);
+        int result = commentReplyService.addCommentReply(commentReplyPO);
+        if(result>0){
+            return "redirect:/admin/commentManage";
+        }else{
+            return null;
+        }
+    }
+
+
 }

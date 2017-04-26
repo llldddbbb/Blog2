@@ -1,15 +1,21 @@
 package com.ldb.controller.admin;
 
+import com.ldb.controller.utils.RequestUtil;
 import com.ldb.pojo.bo.PageBeanBO;
 import com.ldb.pojo.po.BlogAdvicePO;
+import com.ldb.pojo.po.BlogAdviceReplyPO;
+import com.ldb.service.BlogAdviceReplyService;
 import com.ldb.service.BlogAdviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,6 +28,9 @@ public class BlogAdviceManageController {
 
     @Autowired
     private BlogAdviceService blogAdviceService;
+
+    @Autowired
+    private BlogAdviceReplyService blogAdviceReplyService;
 
     @RequestMapping("/blogAdviceManage")
     public String blogAdviceManage( HttpSession session){
@@ -42,6 +51,20 @@ public class BlogAdviceManageController {
         List<BlogAdvicePO> blogAdviceList = blogAdviceService.listBlogAdvice(pageBeanBO);
 
         return blogAdviceList;
+    }
+
+    @RequestMapping(value = "/blogAdviceReply/{commentId}",method = RequestMethod.POST)
+    public String addBlogAdviceReply(BlogAdviceReplyPO blogAdviceReplyPO, HttpServletRequest request){
+        String userIP=RequestUtil.getUserIP(request);
+        blogAdviceReplyPO.setUserIP(userIP);
+        blogAdviceReplyPO.setPublishTime(new Date());
+        blogAdviceReplyPO.setRole(true);
+        int result = blogAdviceReplyService.addBlogAdviceReply(blogAdviceReplyPO);
+        if(result>0){
+            return "redirect:/admin/blogAdviceManage";
+        }else{
+            return null;
+        }
     }
 
 }

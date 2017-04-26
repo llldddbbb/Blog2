@@ -39,6 +39,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="blogId!=null">
                 and blogId=#{blogId}
             </if>
+            <if test="id!=null">
+                and id=#{id}
+            </if>
         </where>
          ORDER BY publishTime desc
         <if test="start!=null and pageSize!=null">
