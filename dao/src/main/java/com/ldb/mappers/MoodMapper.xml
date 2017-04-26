@@ -20,7 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         id,title,content,publishTime
     </sql>
 
-    <select id="listMoodVO" resultType="com.ldb.pojo.vo.MottoVO" parameterType="Map">
+    <select id="listMoodVO" resultMap="moodResultMap" parameterType="Map">
         select <include refid="listVO"/> from mood
         <where>
             <if test="endDate!=null">

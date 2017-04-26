@@ -31,12 +31,12 @@
 
 
 <!-- technology-left -->
-<div class="technology  wow fadeInDown " data-wow-duration=".8s" data-wow-delay=".2s">
+<div class="technology " data-wow-duration=".8s" data-wow-delay=".2s">
     <div class="container ">
         <div class="col-md-12 technology-left" style="width: 100%">
             <div class="blog">
                 <div class="row">
-                    <div class="services w3l wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <div class="services w3l " >
                         <div class="grid_3 grid_5">
                             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                                 <ul id="myTab" class="nav nav-tabs" role="tablist">
@@ -57,7 +57,7 @@
                                                     <dt th:text="${timeLine.moodArchiveDate}">May 2016</dt>
 
                                                     <span th:each="mood,iterStat:${timeLine.moodVOList}">
-                                                        <dd class="pos-left clearfix" th:if="${iterStat.odd}==true"    >
+                                                        <dd class="pos-left clearfix wow fadeInLeftBig animated" th:if="${iterStat.odd}==true"    >
                                                     <div class="circ"></div>
                                                     <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
                                                     <div class="events">
@@ -65,16 +65,7 @@
                                                         <div class="events-body">
                                                             <div class="row">
                                                                 <div class="events-desc" th:text="${mood.content}">
-                                                                    Lorem ipsum dolor sit amet, consectetur
-                                                                    adipisicing elit, sed do eiusmod tempor
-                                                                    incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud exercitation
-                                                                    ullamco laboris nisi ut aliquip ex ea commodo
-                                                                    consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum
-                                                                    dolore eu fugiat nulla pariatur. Excepteur sint
-                                                                    occaecat cupidatat non proident, sunt in culpa
-                                                                    qui officia deserunt mollit anim id est laborum.
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -84,7 +75,7 @@
                                                     </div>
                                                 </dd>
 
-                                                        <dd class="pos-right clearfix" th:if="${iterStat.even}==true"  >
+                                                        <dd class="pos-right clearfix wow fadeInRightBig animated" th:if="${iterStat.even}==true"  >
                                                     <div class="circ"></div>
                                                     <div class="time" th:text="${#calendars.format(mood.publishTime,'M月d日')}">Feb 03</div>
                                                     <div class="events">
@@ -92,16 +83,7 @@
                                                         <div class="events-body">
                                                             <div class="row">
                                                                 <div class="events-desc" th:text="${mood.content}">
-                                                                    Lorem ipsum dolor sit amet, consectetur
-                                                                    adipisicing elit, sed do eiusmod tempor
-                                                                    incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud exercitation
-                                                                    ullamco laboris nisi ut aliquip ex ea commodo
-                                                                    consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum
-                                                                    dolore eu fugiat nulla pariatur. Excepteur sint
-                                                                    occaecat cupidatat non proident, sunt in culpa
-                                                                    qui officia deserunt mollit anim id est laborum.
+
                                                                 </div>
                                                             </div>
                                                         </div>

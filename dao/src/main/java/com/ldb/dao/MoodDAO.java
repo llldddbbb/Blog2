@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface MoodDAO {
 
-    List<MoodVO> listMoodVO(HashMap<String ,Object> param);
+    List<MoodVO> listMoodVO(HashMap<String ,String> param);
 
     List<String> listMoodArchiveDate();
 

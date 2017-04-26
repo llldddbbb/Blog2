@@ -36,7 +36,7 @@ public class TimeLineServiceImpl implements TimeLineService {
         for(int i=0;i<=size-2;i++){
             TimeLineVO timeLineVO=new TimeLineVO();
             //取出月份内的数据
-            HashMap<String,Object> param=new HashMap<>();
+            HashMap<String,String> param=new HashMap<>();
             param.put("startDate",moodArchiveDateList.get(i+1));
             param.put("endDate",moodArchiveDateList.get(i));
             List<MoodVO> moodVOList=moodDAO.listMoodVO(param);
