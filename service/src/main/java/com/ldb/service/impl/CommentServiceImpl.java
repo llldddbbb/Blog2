@@ -45,4 +45,10 @@ public class CommentServiceImpl implements CommentService {
     public Long getCommentCount() {
         return commentDAO.getCommentCount(null);
     }
+
+    @Override
+    public int deleteComment(Integer id) {
+        commentReplyDAO.deleteCommentReply(id);
+        return commentDAO.deleteComment(id);
+    }
 }

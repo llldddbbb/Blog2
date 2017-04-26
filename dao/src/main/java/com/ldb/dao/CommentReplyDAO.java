@@ -14,4 +14,6 @@ public interface CommentReplyDAO {
     List<CommentReplyVO> listCommentReply(@Param("commentId") Integer commentId);
 
     int addCommentReply(CommentReplyPO commentReplyPO);
+
+    int deleteCommentReply(@Param("commentId")Integer commentId);
 }

@@ -20,4 +20,6 @@ public interface CommentDAO {
 
     int addComment(CommentPO commentPO);
 
+    int deleteComment(@Param("id")Integer id);
+
 }

@@ -18,4 +18,6 @@ public interface CommentService {
     int addComment(CommentPO commentPO);
 
     Long getCommentCount();
+
+    int deleteComment(Integer id);
 }

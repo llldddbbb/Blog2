@@ -7,6 +7,7 @@ import com.ldb.pojo.po.CommentReplyPO;
 import com.ldb.service.BlogService;
 import com.ldb.service.CommentReplyService;
 import com.ldb.service.CommentService;
+import com.ldb.utils.ConfigStrUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +77,17 @@ public class CommentManageController {
             return "redirect:/admin/commentManage";
         }else{
             return null;
+        }
+    }
+
+    @RequestMapping(value="/comment/{id}",method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteComment(@PathVariable Integer id){
+        int result=commentService.deleteComment(id);
+        if(result>0){
+            return ConfigStrUtil.SUCCESS;
+        }else{
+            return ConfigStrUtil.ERROR;
         }
     }
 

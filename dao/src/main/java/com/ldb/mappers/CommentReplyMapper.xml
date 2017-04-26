@@ -26,6 +26,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         insert into comment_reply values(null,#{content},#{userIP},#{publishTime},#{commentId},#{role})
     </insert>
 
+    <delete id="deleteCommentReply" parameterType="Integer">
+        delete from comment_reply where commentId=#{commentId}
+    </delete>
 
 
 </mapper> 

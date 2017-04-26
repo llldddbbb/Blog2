@@ -53,4 +53,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         insert into comment values(null,#{nickName},#{userIP},#{content},#{publishTime},#{blogId})
     </insert>
 
+    <delete id="deleteComment" parameterType="Integer">
+        delete from comment where id=#{id}
+    </delete>
+
 </mapper> 
