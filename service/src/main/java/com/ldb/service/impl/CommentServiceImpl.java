@@ -49,6 +49,8 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public int deleteComment(Integer id) {
         commentReplyDAO.deleteCommentReply(id);
-        return commentDAO.deleteComment(id);
+        HashMap<String ,Integer> param=new HashMap<>();
+        param.put("id",id);
+        return commentDAO.deleteComment(param);
     }
 }

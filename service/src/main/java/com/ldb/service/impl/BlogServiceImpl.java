@@ -2,7 +2,9 @@ package com.ldb.service.impl;
 
 import com.ldb.dao.BlogDAO;
 import com.ldb.dao.CommentDAO;
+import com.ldb.dao.CommentReplyDAO;
 import com.ldb.pojo.po.BlogPO;
+import com.ldb.pojo.po.CommentPO;
 import com.ldb.pojo.vo.BlogCommentVO;
 import com.ldb.pojo.vo.BlogDateArchiveVO;
 import com.ldb.pojo.vo.BlogVO;
@@ -25,6 +27,9 @@ public class BlogServiceImpl implements BlogService {
 
     @Autowired
     private CommentDAO commentDAO;
+
+    @Autowired
+    private CommentReplyDAO commentReplyDAO;
 
     @Override
     public List<BlogDateArchiveVO> listBlogDateArchive() {
@@ -97,7 +102,13 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public int deleteBlog(Integer id) {
-
+        HashMap<String,Integer> param=new HashMap<>();
+        param.put("blogId",id);
+        List<CommentPO> commentPOList = commentDAO.listCommentPO(param);
+        for (CommentPO commentPO : commentPOList) {
+            commentReplyDAO.deleteCommentReply(commentPO.getId());
+        }
+        commentDAO.deleteComment(param);
         return blogDAO.deleteBlog(id);
     }
 

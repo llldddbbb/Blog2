@@ -83,13 +83,18 @@ layui.define(['element','laypage', 'layer', 'form', 'pagesize'], function (expor
                 btn: ['确定', '取消'] //按钮
             }, function () {
                $.ajax({
-                   url:'/blog/'+id,
+                   url:'/admin/blog/'+id,
                    data:{},
                    type:'DELETE',
                    success:function (result) {
                        var result=eval("("+result+")");
                        if(result.success){
-                           layer.alert('删除成功!', {icon: 1});
+                           layer.alert('删除成功!', {
+                               closeBtn: 0,
+                               icon: 1
+                           }, function(){
+                               window.location.href="/admin/blogManage"
+                           });
                        }else{
                            layer.alert('删除失败!', {icon: 5});
                        }
