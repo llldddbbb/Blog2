@@ -53,7 +53,7 @@ public class BlogAdviceManageController {
         return blogAdviceList;
     }
 
-    @RequestMapping(value = "/blogAdviceReply/{commentId}",method = RequestMethod.POST)
+    @RequestMapping(value = "/blogAdvice/reply",method = RequestMethod.POST)
     public String addBlogAdviceReply(BlogAdviceReplyPO blogAdviceReplyPO, HttpServletRequest request){
         String userIP=RequestUtil.getUserIP(request);
         blogAdviceReplyPO.setUserIP(userIP);

@@ -8,8 +8,6 @@ import com.ldb.service.BlogService;
 import com.ldb.service.CommentReplyService;
 import com.ldb.service.CommentService;
 import com.ldb.utils.ConfigStrUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,7 +37,6 @@ public class CommentManageController {
     @Autowired
     private CommentReplyService commentReplyService;
 
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping("/commentManage")
     public ModelAndView commentManage(){
