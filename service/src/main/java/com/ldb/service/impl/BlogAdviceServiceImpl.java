@@ -44,4 +44,10 @@ public class BlogAdviceServiceImpl implements BlogAdviceService {
     public Long getNotReplyCount() {
         return blogAdviceDAO.getNotReplyCount();
     }
+
+    @Override
+    public int deleteBlogAdvice(Integer id) {
+        blogAdviceReplyDAO.deleteBlogAdviceReply(id);
+        return blogAdviceDAO.deleteBlogAdvice(id);
+    }
 }

@@ -15,4 +15,6 @@ public interface BlogAdviceReplyDAO {
 
     int addBlogAdviceReply(BlogAdviceReplyPO blogAdviceReplyPO);
 
+    int deleteBlogAdviceReply(@Param("blogAdviceId") Integer blogAdviceId);
+
 }

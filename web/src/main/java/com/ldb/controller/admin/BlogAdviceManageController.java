@@ -6,6 +6,7 @@ import com.ldb.pojo.po.BlogAdvicePO;
 import com.ldb.pojo.po.BlogAdviceReplyPO;
 import com.ldb.service.BlogAdviceReplyService;
 import com.ldb.service.BlogAdviceService;
+import com.ldb.utils.ConfigStrUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,6 +65,17 @@ public class BlogAdviceManageController {
             return "redirect:/admin/blogAdviceManage";
         }else{
             return null;
+        }
+    }
+
+    @RequestMapping(value="/blogAdvice/{id}",method = RequestMethod.DELETE)
+    @ResponseBody
+    public String deleteComment(@PathVariable Integer id){
+        int result=blogAdviceService.deleteBlogAdvice(id);
+        if(result>0){
+            return ConfigStrUtil.SUCCESS;
+        }else{
+            return ConfigStrUtil.ERROR;
         }
     }
 

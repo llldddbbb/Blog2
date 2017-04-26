@@ -25,5 +25,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         insert into blogadvice_reply values(null,#{content},#{userIP},#{publishTime},#{blogAdviceId},#{role})
     </insert>
 
+    <delete id="deleteBlogAdviceReply" parameterType="Integer">
+        delete from blogadvice_reply where blogAdviceId=#{blogAdviceId}
+    </delete>
+
 
 </mapper> 

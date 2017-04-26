@@ -17,4 +17,6 @@ public interface BlogAdviceService {
     int addBlogAdvice(BlogAdvicePO blogAdvicePO);
 
     Long getNotReplyCount();
+
+    int deleteBlogAdvice(Integer id);
 }
