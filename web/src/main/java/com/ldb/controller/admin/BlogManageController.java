@@ -36,7 +36,7 @@ public class BlogManageController {
 
     @RequestMapping("/blogManage")
     public ModelAndView blogManage(){
-        ModelAndView mav=new ModelAndView("/background/blogManage");
+        ModelAndView mav=new ModelAndView("background/blogManage");
         //获取下拉框
         List<BlogTagPO> blogTagList = blogTagService.listBlogTag();
         List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();
@@ -62,7 +62,7 @@ public class BlogManageController {
 
     @RequestMapping("/writeBlog")
     public ModelAndView writeBlog(@RequestParam(required = false) String id){
-        ModelAndView mav=new ModelAndView("/background/writeBlog");
+        ModelAndView mav=new ModelAndView("background/writeBlog");
         if(StringUtil.isNotEmpty(id)){
             BlogPO blogPO=blogService.getBlog(Integer.parseInt(id));
             mav.addObject("blog",blogPO);

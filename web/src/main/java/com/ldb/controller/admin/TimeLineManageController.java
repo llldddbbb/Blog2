@@ -25,7 +25,7 @@ public class TimeLineManageController {
 
     @RequestMapping("/timeLineManage")
     public ModelAndView moodManage(){
-        ModelAndView mav=new ModelAndView("/background/timeLineManage");
+        ModelAndView mav=new ModelAndView("background/timeLineManage");
         Long moodNum=timeLineService.getMoodCount();
         mav.addObject("moodNum",moodNum);
         return mav;

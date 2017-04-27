@@ -20,7 +20,7 @@ public class DiaryController {
 
     @RequestMapping("/diary")
     public ModelAndView diary(){
-        ModelAndView mav=new ModelAndView("/foreground/diary");
+        ModelAndView mav=new ModelAndView("foreground/diary");
         List<TimeLineVO> timeLineList = timeLineService.listTimeLine();
         mav.addObject("timeLineList",timeLineList);
         return mav;

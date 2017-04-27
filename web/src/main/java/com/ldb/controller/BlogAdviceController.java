@@ -36,7 +36,7 @@ public class BlogAdviceController {
 
    @RequestMapping(value="/blogAdvice",method = RequestMethod.GET)
     public ModelAndView blogAdvice(){
-        ModelAndView mav=new ModelAndView("/foreground/blogAdvice");
+        ModelAndView mav=new ModelAndView("foreground/blogAdvice");
         PageBeanBO pageBeanBO=new PageBeanBO(1, ConfigStrUtil.BLOGADVICEPAGESIZE);
         List<BlogAdvicePO> blogAdviceList = blogAdviceService.listBlogAdvice(pageBeanBO);
         //获取分页代码
@@ -50,7 +50,7 @@ public class BlogAdviceController {
 
     @RequestMapping(value = "/blogAdvice/list/{page}",method = RequestMethod.GET)
     public ModelAndView blogAdvice(@PathVariable String page){
-        ModelAndView mav=new ModelAndView("/foreground/blogAdvice");
+        ModelAndView mav=new ModelAndView("foreground/blogAdvice");
         if(StringUtil.isEmpty(page)){
             page="1";
         }

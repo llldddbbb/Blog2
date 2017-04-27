@@ -40,7 +40,7 @@ public class CommentManageController {
 
     @RequestMapping("/commentManage")
     public ModelAndView commentManage(){
-        ModelAndView mav=new ModelAndView("/background/commentManage");
+        ModelAndView mav=new ModelAndView("background/commentManage");
         return mav;
     }
 

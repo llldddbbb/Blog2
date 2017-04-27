@@ -37,7 +37,7 @@ public class BlogAdviceManageController {
     public String blogAdviceManage( HttpSession session){
         Long blogAdviceNum = blogAdviceService.getBlogAdviceCount();
         session.setAttribute("blogAdviceNum",blogAdviceNum);
-        return "/background/blogAdviceManage";
+        return "background/blogAdviceManage";
     }
 
     @RequestMapping("blogAdviceManage/list/{page}")
