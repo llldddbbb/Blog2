@@ -59,4 +59,14 @@ public class TimeLineServiceImpl implements TimeLineService {
     public Long getMoodCount() {
         return moodDAO.getMoodCount();
     }
+
+    @Override
+    public int updateMood(MoodPO moodPO) {
+        return moodDAO.updateMood(moodPO);
+    }
+
+    @Override
+    public int addMood(MoodPO moodPO) {
+        return moodDAO.addMood(moodPO);
+    }
 }

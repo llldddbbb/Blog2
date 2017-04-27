@@ -10,6 +10,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="title" property="title" jdbcType="VARCHAR" />
         <result column="content" property="content" jdbcType="VARCHAR" />
         <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+        <result column="is_show" property="is_show" jdbcType="BIT" />
     </resultMap>
 
     <sql id="listVO">
@@ -17,7 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </sql>
 
     <sql id="listPO">
-        id,title,content,publishTime
+        id,title,content,publishTime,is_show
     </sql>
 
     <select id="listMoodVO" resultMap="moodResultMap" parameterType="Map">
@@ -29,6 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="startDate!=null">
                 and publishTime &gt;= #{startDate}
             </if>
+            and is_show=1
         </where>
          order by publishTime desc
         <if test="start!=null and pageSize!=null">
@@ -37,7 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <select id="listMoodArchiveDate" resultType="String">
-        SELECT DATE_FORMAT(publishTime,"%Y-%m") AS moodArchiveDate FROM mood GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
+        SELECT DATE_FORMAT(publishTime,"%Y-%m") AS moodArchiveDate FROM mood WHERE is_show=1 GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
     </select>
 
     <select id="listMoodPO" resultMap="moodResultMap" parameterType="Map">
@@ -50,6 +52,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <select id="getMoodCount" resultType="Long">
         select count(*) from mood
     </select>
+
+    <update id="updateMood" parameterType="com.ldb.pojo.po.MoodPO">
+        update mood
+        <set>
+            <if test="title!=null and title!=''">
+                title=#{title},
+            </if>
+            <if test="content!=null and content!=''">
+                content=#{content},
+            </if>
+            <if test="is_show!=null">
+                is_show=#{is_show},
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+    <insert id="addMood" parameterType="com.ldb.pojo.po.MoodPO">
+        insert into mood values(null,#{title},#{content},#{publishTime},#{is_show})
+    </insert>
 
 
 

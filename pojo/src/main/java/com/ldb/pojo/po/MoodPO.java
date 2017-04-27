@@ -14,6 +14,8 @@ public class MoodPO {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date publishTime;
 
+    private Boolean is_show;
+
     public Integer getId() {
         return id;
     }
@@ -44,5 +46,13 @@ public class MoodPO {
 
     public void setPublishTime(Date publishTime) {
         this.publishTime = publishTime;
+    }
+
+    public Boolean getIs_show() {
+        return is_show;
+    }
+
+    public void setIs_show(Boolean is_show) {
+        this.is_show = is_show;
     }
 }

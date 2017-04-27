@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -40,6 +41,27 @@ public class TimeLineManageController {
         param.put("pageSize",pageBeanBO.getPageSize());
         List<MoodPO> moodList = timeLineService.listMoodPO(param);
         return moodList;
+    }
+
+    @RequestMapping(value = "/mood",method = RequestMethod.PUT)
+    public String updateMood(MoodPO moodPO){
+        int result=timeLineService.updateMood(moodPO);
+        if(result>0){
+            return "redirect:/admin/timeLineManage";
+        }else{
+            return null;
+        }
+    }
+
+    @RequestMapping(value = "/mood",method = RequestMethod.POST)
+    public String addMood(MoodPO moodPO){
+        moodPO.setPublishTime(new Date());
+        int result=timeLineService.addMood(moodPO);
+        if(result>0){
+            return "redirect:/admin/timeLineManage";
+        }else{
+            return null;
+        }
     }
 
 }

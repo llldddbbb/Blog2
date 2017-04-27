@@ -16,4 +16,8 @@ public interface TimeLineService {
     List<MoodPO> listMoodPO(HashMap<String,Object> param);
 
     Long getMoodCount();
+
+    int updateMood(MoodPO moodPO);
+
+    int addMood(MoodPO moodPO);
 }
