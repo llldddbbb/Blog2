@@ -14,7 +14,8 @@ layui.define([ 'layer', 'form'], function (exports) {
                 return "账号只能为英文或数字";
             }
         },
-        result_response: function (value) {
+        result_response: function () {
+            var value=$("#lc-captcha-response").val();
             if (value.length < 1) {
                 return '请点击人机识别验证';
             }
@@ -38,7 +39,8 @@ layui.define([ 'layer', 'form'], function (exports) {
                     password:data.field.password,
                     ip:ip,
                     ipName:ipName,
-                    loginTime:loginTime
+                    loginTime:loginTime,
+
                 },
                 success:function (result) {
                     var result=eval("("+result+")");
@@ -68,24 +70,23 @@ layui.define([ 'layer', 'form'], function (exports) {
 
     function login() {
         var loginHtml = ''; //静态页面只能拼接，这里可以用iFrame或者Ajax请求分部视图。html文件夹下有login.html
-
         loginHtml += '<form class="layui-form" action="">';
         loginHtml += '<div class="layui-form-item">';
         loginHtml += '<label class="layui-form-label">账号</label>';
         loginHtml += '<div class="layui-input-inline pm-login-input">';
-        loginHtml += '<input type="text" name="account" lay-verify="account" placeholder="请输入账号" value="lyblogscn" autocomplete="off" class="layui-input">';
+        loginHtml += '<input type="text" name="account" lay-verify="account" placeholder="请输入账号"  autocomplete="off" class="layui-input">';
         loginHtml += '</div>';
         loginHtml += '</div>';
         loginHtml += '<div class="layui-form-item">';
         loginHtml += '<label class="layui-form-label">密码</label>';
         loginHtml += '<div class="layui-input-inline pm-login-input">';
-        loginHtml += '<input type="password" name="password" lay-verify="passWord" placeholder="请输入密码" value="111111" autocomplete="off" class="layui-input">';
+        loginHtml += '<input type="password" name="password" lay-verify="passWord" placeholder="请输入密码"  autocomplete="off" class="layui-input">';
         loginHtml += '</div>';
         loginHtml += '</div>';
         loginHtml += '<div class="layui-form-item">';
         loginHtml += '<label class="layui-form-label">人机验证</label>';
         loginHtml += '<div class="layui-input-inline pm-login-input">';
-        loginHtml += '<input type="text" name="result_response" placeholder="人机验证，百度螺丝帽" value="" autocomplete="off" class="layui-input">';
+        loginHtml += '<div class="l-captcha" lay-verify="result_response" data-site-key="0c5f2ddcf3eb0f58a678e0c50e0d736e"></div>';
         loginHtml += '</div>';
         loginHtml += '</div>';
         loginHtml += '<div class="layui-form-item" style="margin-top:25px;margin-bottom:0;">';
@@ -94,6 +95,7 @@ layui.define([ 'layer', 'form'], function (exports) {
         loginHtml += ' </div>';
         loginHtml += ' </div>';
         loginHtml += '</form>';
+        loginHtml +='<script src="//captcha.luosimao.com/static/dist/api.js"></script>';
 
         layer.open({
             id: 'layer-login',
