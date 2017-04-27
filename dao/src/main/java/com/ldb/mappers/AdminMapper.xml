@@ -16,6 +16,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select * from admin where userName=#{userName} and password=#{password}
     </select>
 
+    <select id="getAdminPOByUserName" parameterType="String" resultMap="adminResultMap">
+        select * from admin where userName=#{userName}
+    </select>
+
 
 
 

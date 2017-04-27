@@ -13,4 +13,6 @@ public interface AdminService {
     int addLoginHistory(LoginHistoryPO loginHistoryPO);
 
     LoginHistoryPO getLoginHistory();
+
+    AdminPO getAdminPOByUserName(String userName);
 }

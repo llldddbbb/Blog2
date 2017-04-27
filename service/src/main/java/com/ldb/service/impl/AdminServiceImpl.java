@@ -34,4 +34,10 @@ public class AdminServiceImpl implements AdminService {
     public LoginHistoryPO getLoginHistory() {
         return loginHistoryDAO.getLoginHistory();
     }
+
+    @Override
+    public AdminPO getAdminPOByUserName(String userName) {
+        return adminDAO.getAdminPOByUserName(userName);
+    }
+
 }

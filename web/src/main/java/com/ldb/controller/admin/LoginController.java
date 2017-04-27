@@ -4,6 +4,9 @@ import com.ldb.pojo.po.AdminPO;
 import com.ldb.pojo.po.LoginHistoryPO;
 import com.ldb.service.AdminService;
 import com.ldb.utils.ConfigStrUtil;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,20 +34,23 @@ public class LoginController {
     @RequestMapping(value ="/login",method = RequestMethod.GET)
     @ResponseBody
     public String checkLogin(AdminPO adminPO, LoginHistoryPO loginHistoryPO, HttpSession session){
-        AdminPO currentAdmin = adminService.checkLogin(adminPO);
-        if(currentAdmin==null){
-            return ConfigStrUtil.ERROR;
-        }else{
-
-            //存储登录信息
+        Subject subject= SecurityUtils.getSubject();
+        UsernamePasswordToken token=new UsernamePasswordToken(adminPO.getUserName(), adminPO.getPassword());
+        try{
+            subject.login(token);//登录验证
+            session.setAttribute("currentAdmin",adminPO);
             int result=adminService.addLoginHistory(loginHistoryPO);
             if(result>0){
-                session.setAttribute("currentAdmin",currentAdmin);
+                session.setAttribute("currentAdmin",adminPO);
                 return ConfigStrUtil.SUCCESS;
             }else{
                 return ConfigStrUtil.ERROR;
             }
+        }catch(Exception e){
+            e.printStackTrace();
+            return ConfigStrUtil.ERROR;
         }
+
 
     }
 
