@@ -5,12 +5,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.SignatureDAO">
 
-    <sql id="model">
-        title,content,buttonText
-    </sql>
+    <resultMap id="signatureResultMap" type="com.ldb.pojo.po.SignaturePO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="buttonText" property="buttonText" jdbcType="VARCHAR" />
+        <result column="is_show" property="is_show" jdbcType="BIT" />
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+    </resultMap>
 
-    <select id="getSignatureVO" resultType="com.ldb.pojo.vo.SignatureVO">
-        select <include refid="model"/> from signature where isShow=1 limit 0,1
+    <select id="getSignaturePO" resultMap="signatureResultMap">
+        select * from signature where is_show=1 limit 0,1
+    </select>
+
+    <update id="updateSignature" parameterType="com.ldb.pojo.po.SignaturePO">
+        update signature set title=#{title},content=#{content},buttonText=#{buttonText},is_show=#{is_show} where id=#{id}
+    </update>
+
+    <insert id="addSignature" parameterType="com.ldb.pojo.po.SignaturePO">
+        insert into signature values(null,#{title},#{content},#{buttonText},#{is_show},now())
+    </insert>
+
+    <delete id="deleteSignature" parameterType="Integer">
+        update signature set is_show=0 where id=#{id}
+    </delete>
+
+    <select id="getSignatureCount" resultType="Long">
+        select count(*) from signature
+    </select>
+    
+    <select id="listSignature" resultMap="signatureResultMap" parameterType="Map">
+        select * from signature ORDER BY id desc
     </select>
 
 </mapper> 

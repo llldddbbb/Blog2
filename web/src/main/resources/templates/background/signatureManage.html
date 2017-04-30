@@ -59,9 +59,9 @@
 </head>
 <body>
     <fieldset id="dataList" class="layui-elem-field layui-field-title sys-list-field" style="display:none;">
-        <legend style="text-align:center;">心情列表</legend>
+        <legend style="text-align:center;">签名列表</legend>
         <button class="layui-btn" style="margin:10px auto auto auto;display: block" onclick="layui.datalist.addData()">
-            <i class="layui-icon">&#xe608;</i> 添加心情
+            <i class="layui-icon">&#xe608;</i> 添加签名
         </button>
         <div class="layui-field-box layui-form">
             <div id="dataContent" class="">
@@ -74,7 +74,7 @@
     <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript" th:inline="javascript">
-        var moodNum=[[${session.moodNum}]];
+        var signatureNum=[[${session.signatureNum}]];
 
         layui.define(['element','laypage', 'layer', 'form' ], function (exports) {
             var $ = layui.jquery;
@@ -83,7 +83,6 @@
             var laypage = layui.laypage;
             var element = layui.element();
             var laypageId = 'pageNav';
-
 
             initilData(1, 10);
             //页数据初始化
@@ -95,23 +94,24 @@
                 setTimeout(function () {
                     layer.close(index);
                     $.ajax({
-                        url:"/admin/moodManage/list/"+currentIndex,
+                        url:"/admin/signatureManage/list/"+currentIndex,
                         type:"GET",
                         data:{
                             pageSize:pageSize
                         },
-                        success:function(moodList){
+                        success:function(signatureList){
                             var html = '';
                             html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
-                            html += '<colgroup><col width="30"><col width="80"><col width="250"><col width="90"><col width="30"><col width="30"></colgroup>';
-                            html += '<thead><tr><th>编号</th><th>标题</th><th>内容</th><th>时间</th><th>状态</th><th >操作</th></tr></thead>';
+                            html += '<colgroup><col width="40"><col width="100"><col width="100"><col width="60"><col width="60"><col width="40"><col width="40"><col width="40"></colgroup>';
+                            html += '<thead><tr><th>编号</th><th>标题</th><th>内容</th><th>按钮内容</th><th>发布时间</th><th>显示</th><th colspan="2">操作</th></tr></thead>';
                             html += '<tbody>';
-                            for(var i in moodList){
-                                var item=moodList[i];
+                            for(var i in signatureList){
+                                var item=signatureList[i];
                                 html+='<tr>';
                                 html+='<td>'+item.id+'</td>';
                                 html+='<td>'+item.title+'</td>';
                                 html+='<td>'+item.content+'</td>';
+                                html+='<td>'+item.buttonText+'</td>';
                                 html+='<td>'+item.publishTime+'</td>';
                                 if(item.is_show){
                                     html+='<td><i class="layui-icon" style="font-size: 30px; color: #009688;vertical-align: middle;">&#xe609;</i> </td>';
@@ -119,17 +119,21 @@
                                     html+='<td><i class="layui-icon" style="font-size: 30px; color:#d2d2d2; vertical-align: middle;">&#xe60f;</i> </td>';
                                 }
                                 html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick=\'layui.datalist.editData('+JSON.stringify(item)+')\'><i class="layui-icon">&#xe642;</i></button></td>';
+                                html+='<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData('+item.id+')"><i class="layui-icon">&#xe640;</i></button></td>';
                                 html+='</tr>';
                             }
                             html+='</tbody></table>';
                             $('#dataContent').html(html);
+                            element.init();
+
                         }
                     });
 
                     $('#dataConsole,#dataList').attr('style', 'display:block'); //显示FiledBox
+
                     laypage({
                         cont: laypageId,
-                        pages: moodNum/pageSize==0?moodNum/pageSize:moodNum/pageSize+1,
+                        pages: signatureNum/pageSize==0?signatureNum/pageSize:signatureNum/pageSize+1,
                         groups: 5,
                         skip: true,
                         curr: currentIndex,
@@ -146,11 +150,11 @@
             //输出接口，主要是两个函数，一个删除一个编辑
             var datalist = {
                 deleteData: function (id) {
-                    layer.confirm('确定删除这条心情吗？', {
+                    layer.confirm('您确定要删除吗？', {
                         btn: ['确定', '取消'] //按钮
                     }, function () {
                         $.ajax({
-                            url:'/admin/mood/'+id,
+                            url:'/admin/signature/'+id,
                             data:{},
                             type:'DELETE',
                             success:function (result) {
@@ -160,7 +164,7 @@
                                         closeBtn: 0,
                                         icon: 1
                                     }, function(){
-                                        window.location.href="/admin/moodManage"
+                                        window.location.href="/admin/signatureManage"
                                     });
                                 }else{
                                     layer.alert('删除失败!', {icon: 5});
@@ -173,13 +177,16 @@
                 },
                 editData: function (item) {
                     var html='';
-                    html+='<form class="layui-form layui-form-pane" action="/admin/mood" method="post">';
+                    html+='<form class="layui-form layui-form-pane" action="/admin/signature" method="post">';
                     html+='<input type="hidden" name="_method" value="put" />';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >心情标题:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="title" lay-verify="required"  class="layui-input" value="'+item.title+'" >';
-                    html+='<input type="hidden" name="id" value="'+item.id+'">';
-                    html+='<label class="layui-form-label" style="border: none" name="content" lay-verify="required" >心情内容:</label>';
+                    html+='<input type="hidden" name="id" value="'+item.id+'" />';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >签名标题:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="title"  class="layui-input" value="'+item.title+'" >';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >签名内容:</label>';
                     html+='<textarea  style="width:87%;margin: auto;color: #000!important;" name="content" class="layui-textarea " >'+item.content+'</textarea>';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >按钮内容:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="buttonText"  class="layui-input" value="'+item.buttonText+'" >';
+
                     html+='<label class="layui-form-label" style="border: none" name="content" >是否显示:</label>';
                     if(item.is_show){
                         html+='<input type="radio" name="is_show" value="1" title="是" checked>';
@@ -200,18 +207,20 @@
                         type: 1,
                         skin: 'layui-layer-rim', //加上边框
                         area: '620px', //宽高
-                        title:'修改心情',
+                        title:'修改签名',
                         content: html
                     });
                     form.render('radio');  //radio，编辑和添加的时候
                 },
                 addData:function () {
                     var html='';
-                    html+='<form class="layui-form layui-form-pane" action="/admin/mood" method="post">';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >心情标题:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" lay-verify="required" name="title"  class="layui-input" >';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >心情内容:</label>';
+                    html+='<form class="layui-form layui-form-pane" action="/admin/signature" method="post">';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >签名标题:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="title" lay-verify="required"  class="layui-input" >';
+                    html+='<label class="layui-form-label" style="border: none" name="content"  >签名内容:</label>';
                     html+='<textarea  style="width:87%;margin: auto;color: #000!important;" lay-verify="required" name="content" class="layui-textarea " ></textarea>';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >按钮内容:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" lay-verify="required" name="buttonText"  class="layui-input"  >';
                     html+='<label class="layui-form-label" style="border: none" name="content" >是否显示:</label>';
                     html+='<input type="radio" name="is_show" value="1" title="是" checked>';
                     html+='<input type="radio" name="is_show" value="0" title="否" >';
@@ -227,7 +236,7 @@
                         type: 1,
                         skin: 'layui-layer-rim', //加上边框
                         area: '620px', //宽高
-                        title:'添加心情',
+                        title:'添加签名',
                         content: html
                     });
                     form.render('radio');  //radio，编辑和添加的时候

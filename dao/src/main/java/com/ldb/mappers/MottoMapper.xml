@@ -5,12 +5,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 对应dao接口 -->
 <mapper namespace="com.ldb.dao.MottoDAO">
 
-    <sql id="model">
-        motto
-    </sql>
+    <resultMap id="mottoResultMap" type="com.ldb.pojo.po.MottoPO" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="content" property="content" jdbcType="VARCHAR" />
+        <result column="is_show" property="is_show" jdbcType="BIT" />
+        <result column="publishTime" property="publishTime" jdbcType="TIMESTAMP" />
+    </resultMap>
 
-    <select id="getMottoVO" resultType="com.ldb.pojo.vo.MottoVO">
-        select <include refid="model"/> from motto where isShow=1 limit 0,1
+    <select id="getMottoPO" resultMap="mottoResultMap">
+        select * from motto where is_show=1 limit 0,1
+    </select>
+
+    <update id="updateMotto" parameterType="com.ldb.pojo.po.MottoPO">
+        update  motto set motto=#{motto},is_show=#{is_show} WHERE id=#{id}
+    </update>
+
+    <insert id="addMotto" parameterType="com.ldb.pojo.po.MottoPO">
+        insert into motto values(null,#{motto},#{is_show},now())
+    </insert>
+
+    <delete id="deleteMotto" parameterType="Integer">
+        update  motto set is_show=0 where id=#{id}
+    </delete>
+
+    <select id="getMottoCount" resultType="Long">
+        select count(*) from motto
+    </select>
+
+    <select id="listMotto" resultMap="mottoResultMap" parameterType="Map">
+        select * from motto ORDER BY id desc
     </select>
 
 </mapper> 
