@@ -1,10 +1,4 @@
-﻿/*
-
-@Name：不落阁后台模板源码 
-@Author：Absolutely 
-@Site：http://www.lyblogs.cn
-
-*/
+﻿
 var element;
 var $;
 layui.define(['element', 'layer', 'util', 'pagesize', 'form'], function (exports) {

@@ -5,13 +5,18 @@
     <title>写博客页面</title>
     <link th:href="@{/background/plugin/layui/css/layui.css}" href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
 
+    <style>
+        .layui-form-selected dl{
+            z-index: 1000;
+        }
+    </style>
 </head>
 <body>
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
     <legend>编写博客</legend>
 </fieldset>
 
-<form class="layui-form" action="/admin/addBlog" method="post" onsubmit=" return setContent()" >
+<form class="layui-form" action="/admin/addBlog" method="post" >
     <div class="layui-form-item">
         <label class="layui-form-label">博客标题</label>
         <div class="layui-input-inline">
@@ -54,9 +59,10 @@
             </select>
         </div>
         <div class="layui-input-inline">
-            <button class="layui-btn">添加类别</button>
+            <button class="layui-btn" type="button" onclick="layui.datalist.addTypeData()">
+                <i class="layui-icon">&#xe608;</i> 添加类别
+            </button>
         </div>
-
     </div>
 
     <div class="layui-form-item">
@@ -67,8 +73,9 @@
                 <option value="1"  th:each="blogTag:${blogTagList}" th:selected="${blog}==null?false:(${blog.blogTagId}==${blogTag.id}?true:false)" th:value="${blogTag.id}" th:text="${blogTag.tagName}">类别1</option>
             </select>
         </div>
-        <div class="layui-input-inline">
-            <button class="layui-btn">添加标签</button>
+            <button class="layui-btn" type="button"  onclick="layui.datalist.addTagData()">
+                <i class="layui-icon">&#xe608;</i> 添加标签
+            </button>
         </div>
     </div>
 
@@ -88,20 +95,30 @@
         </div>
     <div class="layui-form-item">
         <div class="layui-input-block">
-            <button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即提交</button>
+            <button class="layui-btn" id="submit"  lay-submit="" lay-filter="submitBlog">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         </div>
     </div>
 </form>
 <!-- layui.js -->
-<script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
 <script th:src="@{/background/plugin/ueditor/ueditor.config.js}" type="text/javascript" charset="utf-8"></script>
 <script th:src="@{/background/plugin/ueditor/ueditor.all.js}" type="text/javascript" charset="utf-8"> </script>
 <script th:src="@{/background/plugin/ueditor/lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
+<script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
 <script th:inline="javascript" type="text/javascript">
-    layui.use(['form','upload','layer'], function(){
-        var form = layui.form()
-            ,layer = layui.layer;
+    //实例化编辑器
+    var ue = UE.getEditor('editor');
+
+    layui.define(['form','upload','layer'], function(exports){
+        var $ = layui.jquery;
+        var layer = layui.layer;
+        var form = layui.form();
+        form.on('submit(submitBlog)', function(data){
+            var content = ue.getContent();
+            document.getElementById("content").value=content;
+            document.getElementById("publishTime").value=new Date();
+            return true;
+        });
         layui.upload({
             url: '/admin/uploadImage' //上传接口
             ,success: function(result){ //上传成功后的回调
@@ -137,19 +154,54 @@
                     title:'回复评论',
                     content: html
                 });
+            },
+            addTagData:function () {
+                var html='';
+                html+='<form class="layui-form layui-form-pane" action="/admin/blogTag" method="post">';
+                html+='<label class="layui-form-label" style="border: none" name="content" >标签名称:</label>';
+                html+='<input  style="width:87%;margin: auto;color: #000!important;" name="tagName"  class="layui-input" >';
+                html+='<div class="layui-form-item">';
+                html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
+                html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="callback">添加</button>';
+                html+='<button type="reset" class="layui-btn layui-btn-primary">重置</button>';
+                html+='</div>';
+                html+='</div>';
+                html+='</form>';
+                layer.open({
+                    type: 1,
+                    skin: 'layui-layer-rim', //加上边框
+                    area: '420px', //宽高
+                    title:'添加标签',
+                    content: html
+                });
+            },
+            addTypeData:function () {
+                var html='';
+                html+='<form class="layui-form layui-form-pane" action="/admin/blogType" method="post">';
+                html+='<label class="layui-form-label" style="border: none" name="content" >类别名称:</label>';
+                html+='<input  style="width:87%;margin: auto;color: #000!important;" name="typeName"  class="layui-input" >';
+                html+='<div class="layui-form-item">';
+                html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
+                html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="callback">添加</button>';
+                html+='<button type="reset" class="layui-btn layui-btn-primary">重置</button>';
+                html+='</div>';
+                html+='</div>';
+                html+='</form>';
+                layer.open({
+                    type: 1,
+                    skin: 'layui-layer-rim', //加上边框
+                    area: '420px', //宽高
+                    title:'添加类别',
+                    content: html
+                });
             }
         };
+
+
         exports('datalist', datalist);
     });
-    //实例化编辑器
-    var ue = UE.getEditor('editor');
 
-    function setContent() {
-        var content = ue.getContent();
-        document.getElementById("content").value=content;
-        document.getElementById("publishTime").value=new Date();
-        return true;
-    }
+
 
 </script>
 </body>
