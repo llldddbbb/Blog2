@@ -2,7 +2,11 @@ package com.ldb.cache;
 
 import com.ldb.pojo.po.BlogTagPO;
 import com.ldb.pojo.po.BlogTypePO;
-import com.ldb.pojo.vo.*;
+import com.ldb.pojo.po.LinkPO;
+import com.ldb.pojo.vo.BlogDateArchiveVO;
+import com.ldb.pojo.vo.BlogVO;
+import com.ldb.pojo.vo.MottoVO;
+import com.ldb.pojo.vo.SignatureVO;
 import com.ldb.service.*;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -43,7 +47,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         SignatureService signatureService=(SignatureService)applicationContext.getBean("signatureService");
 
         //调用service方法，取得数据
-        List<LinkVO> linkList=linkService.listLink();
+        List<LinkPO> linkList=linkService.listLink(new HashMap<>());
         List<BlogTypePO> blogTypeList=blogTypeService.listBlogType();
         List<BlogTagPO> blogTagList=blogTagService.listBlogTag(new HashMap<>());
         List<BlogDateArchiveVO> blogDateArchiveList=blogService.listBlogDateArchive();

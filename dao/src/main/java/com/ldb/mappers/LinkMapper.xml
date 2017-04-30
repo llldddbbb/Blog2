@@ -11,13 +11,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result column="orderNum" property="orderNum" jdbcType="INTEGER" />
     </resultMap>
 
-    <sql id="list">
-        linkName,linkUrl
-    </sql>
 
 
-    <select id="listLinkVO" resultMap="linkResultMap">
-        select <include refid="list"/> from link order by orderNum
+    <select id="listLinkPO" resultMap="linkResultMap">
+        select * from link order by orderNum
+    </select>
+
+    <update id="updateLink" parameterType="com.ldb.pojo.po.LinkPO">
+        update link set linkName=#{linkName},linkUrl=#{linkUrl},orderNum=#{orderNum} where id=#{id}
+    </update>
+
+    <delete id="deleteLink" parameterType="Integer">
+        delete from link where id=#{id}
+    </delete>
+
+    <insert id="addLink" parameterType="com.ldb.pojo.po.LinkPO">
+        insert into link VALUES (null,#{linkName},#{linkUrl},#{orderNum})
+    </insert>
+
+    <select id="getLinkCount" resultType="Long">
+        select count(*) from link
     </select>
 
 </mapper> 

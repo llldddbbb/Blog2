@@ -1,7 +1,9 @@
 package com.ldb.dao;
 
-import com.ldb.pojo.vo.LinkVO;
+import com.ldb.pojo.po.LinkPO;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,5 +11,13 @@ import java.util.List;
  */
 public interface LinkDAO {
 
-    List<LinkVO> listLinkVO();
+    List<LinkPO> listLinkPO(HashMap<String,Integer> param);
+    
+    int updateLink(LinkPO linkPO);
+
+    int deleteLink(@Param("id") Integer id);
+
+    int addLink(LinkPO linkPO);
+
+    Long getLinkCount();
 }

@@ -1,7 +1,8 @@
 package com.ldb.service;
 
-import com.ldb.pojo.vo.LinkVO;
+import com.ldb.pojo.po.LinkPO;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -9,5 +10,13 @@ import java.util.List;
  */
 public interface LinkService {
 
-    List<LinkVO> listLink();
+    List<LinkPO> listLink(HashMap<String,Integer> param);
+
+    int updateLink(LinkPO linkPO);
+
+    int deleteLink(Integer id);
+
+    int addLink(LinkPO linkPO);
+
+    Long getLinkCount();
 }

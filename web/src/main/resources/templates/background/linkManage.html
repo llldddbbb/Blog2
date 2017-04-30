@@ -59,7 +59,7 @@
 </head>
 <body>
     <fieldset id="dataList" class="layui-elem-field layui-field-title sys-list-field" style="display:none;">
-        <legend style="text-align:center;">博客标签列表</legend>
+        <legend style="text-align:center;">友情链接列表</legend>
         <button class="layui-btn" style="margin:10px auto auto auto;display: block" onclick="layui.datalist.addData()">
             <i class="layui-icon">&#xe608;</i> 添加标签
         </button>
@@ -74,7 +74,7 @@
     <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript" th:inline="javascript">
-        var blogTagNum=[[${session.blogTagNum}]];
+        var linkNum=[[${session.linkNum}]];
 
         layui.define(['element','laypage', 'layer', 'form' ], function (exports) {
             var $ = layui.jquery;
@@ -94,23 +94,25 @@
                 setTimeout(function () {
                     layer.close(index);
                     $.ajax({
-                        url:"/admin/blogTagManage/list/"+currentIndex,
+                        url:"/admin/linkManage/list/"+currentIndex,
                         type:"GET",
                         data:{
                             pageSize:pageSize
                         },
-                        success:function(blogTagList){
+                        success:function(linkList){
                             var html = '';
                             html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
-                            html += '<colgroup><col width="40"><col width="200"><col width="40"><col width="40"></colgroup>';
-                            html += '<thead><tr><th>编号</th><th>博客标签名</th><th colspan="2">操作</th></tr></thead>';
+                            html += '<colgroup><col width="40"><col width="100"><col width="100"><col width="40"><col width="40"><col width="40"></colgroup>';
+                            html += '<thead><tr><th>编号</th><th>友情链接名</th><th>友情链接地址</th><th>顺序</th><th colspan="2">操作</th></tr></thead>';
                             html += '<tbody>';
-                            for(var i in blogTagList){
-                                var item=blogTagList[i];
+                            for(var i in linkList){
+                                var item=linkList[i];
                                 html+='<tr>';
                                 html+='<td>'+item.id+'</td>';
-                                html+='<td>'+item.tagName+'</td>';
-                                html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+',\''+item.tagName+'\')"><i class="layui-icon">&#xe642;</i></button></td>';
+                                html+='<td>'+item.linkName+'</td>';
+                                html+='<td>'+item.linkUrl+'</td>';
+                                html+='<td>'+item.orderNum+'</td>';
+                                html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+',\''+item.linkName+'\',\''+item.linkUrl+'\','+item.orderNum+')"><i class="layui-icon">&#xe642;</i></button></td>';
                                 html+='<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData('+item.id+')"><i class="layui-icon">&#xe640;</i></button></td>';
                                 html+='</tr>';
                             }
@@ -125,7 +127,7 @@
 
                     laypage({
                         cont: laypageId,
-                        pages: blogTagNum/pageSize==0?blogTagNum/pageSize:blogTagNum/pageSize+1,
+                        pages: linkNum/pageSize==0?linkNum/pageSize:linkNum/pageSize+1,
                         groups: 5,
                         skip: true,
                         curr: currentIndex,
@@ -146,7 +148,7 @@
                         btn: ['确定', '取消'] //按钮
                     }, function () {
                         $.ajax({
-                            url:'/admin/blogTag/'+id,
+                            url:'/admin/link/'+id,
                             data:{},
                             type:'DELETE',
                             success:function (result) {
@@ -156,10 +158,10 @@
                                         closeBtn: 0,
                                         icon: 1
                                     }, function(){
-                                        window.location.href="/admin/blogTagManage"
+                                        window.location.href="/admin/linkManage"
                                     });
                                 }else{
-                                    layer.alert('删除失败,该标签下存在博文!', {icon: 5});
+                                    layer.alert('删除失败!', {icon: 5});
                                 }
                             }
                         });
@@ -167,11 +169,15 @@
 
                     });
                 },
-                editData: function (id,tagName) {
+                editData: function (id,linkName,linkUrl,orderNum) {
                     var html='';
-                    html+='<form class="layui-form layui-form-pane" action="/admin/blogTag" method="post">';
-                    html+='<label class="layui-form-label" style="border: none" >标签名称:</label>';
-                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;" name="tagName" class="layui-textarea" >'+tagName+'</textarea>';
+                    html+='<form class="layui-form layui-form-pane" action="/admin/link" method="post">';
+                    html+='<label class="layui-form-label" style="border: none" >友情链接名称:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkName"  class="layui-input" value="'+linkName+'">';
+                    html+='<label class="layui-form-label" style="border: none" >友情链接地址:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkUrl"  class="layui-input" value="'+linkUrl+'">';
+                    html+='<label class="layui-form-label" style="border: none" >顺序:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="orderNum"  class="layui-input" value="'+orderNum+'">';
                     html+='<input type="hidden" name="id" value="'+id+'"/>';
                     html+='<input type="hidden" name="_method" value="PUT"/>';
                     html+='<div class="layui-form-item">';
@@ -186,15 +192,19 @@
                         type: 1,
                         skin: 'layui-layer-rim', //加上边框
                         area: '420px', //宽高
-                        title:'修改标签',
+                        title:'修改友情链接',
                         content: html
                     });
                 },
                 addData:function () {
                     var html='';
-                    html+='<form class="layui-form layui-form-pane" action="/admin/blogTag" method="post">';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >标签名称:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="tagName"  class="layui-input" >';
+                    html+='<form class="layui-form layui-form-pane" action="/admin/link" method="post">';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >友情链接名称:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkName"  class="layui-input" >';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >友情链接地址:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkUrl"  class="layui-input" >';
+                    html+='<label class="layui-form-label" style="border: none" name="content" >顺序:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="orderNum"  class="layui-input" >';
                     html+='<div class="layui-form-item">';
                     html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
                     html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">添加</button>';
@@ -206,7 +216,7 @@
                         type: 1,
                         skin: 'layui-layer-rim', //加上边框
                         area: '420px', //宽高
-                        title:'添加标签',
+                        title:'添加友情链接',
                         content: html
                     });
                 }

@@ -36,7 +36,7 @@ public class InitServiceTest {
 
     @Test
     public void testInit(){
-        Assert.assertNotNull(linkService.listLink());
+        Assert.assertNotNull(linkService.listLink(new HashMap<>()));
         Assert.assertNotNull(blogTypeService.listBlogType());
         Assert.assertNotNull(blogTagService.listBlogTag(new HashMap<>()));
         Assert.assertNotNull(blogService.listBlogDateArchive());
