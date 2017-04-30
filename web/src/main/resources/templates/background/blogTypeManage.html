@@ -148,7 +148,7 @@
                     var html='';
                     html+='<form class="layui-form layui-form-pane" action="/admin/blogType" method="post">';
                     html+='<label class="layui-form-label" style="border: none" >类别名称:</label>';
-                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;" name="typeName" class="layui-textarea" >'+typeName+'</textarea>';
+                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;" name="typeName" class="layui-textarea" lay-verify="required" >'+typeName+'</textarea>';
                     html+='<input type="hidden" name="id" value="'+id+'"/>';
                     html+='<input type="hidden" name="_method" value="PUT"/>';
                     html+='<div class="layui-form-item">';
@@ -171,7 +171,7 @@
                     var html='';
                     html+='<form class="layui-form layui-form-pane" action="/admin/blogType" method="post">';
                     html+='<label class="layui-form-label" style="border: none" name="content" >类别名称:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="typeName"  class="layui-input" >';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="typeName" lay-verify="required" class="layui-input" >';
                     html+='<div class="layui-form-item">';
                     html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
                     html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">添加</button>';

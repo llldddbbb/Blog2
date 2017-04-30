@@ -61,7 +61,7 @@
     <fieldset id="dataList" class="layui-elem-field layui-field-title sys-list-field" style="display:none;">
         <legend style="text-align:center;">友情链接列表</legend>
         <button class="layui-btn" style="margin:10px auto auto auto;display: block" onclick="layui.datalist.addData()">
-            <i class="layui-icon">&#xe608;</i> 添加标签
+            <i class="layui-icon">&#xe608;</i> 添加友情链接
         </button>
         <div class="layui-field-box layui-form">
             <div id="dataContent" class="">
@@ -172,17 +172,17 @@
                 editData: function (id,linkName,linkUrl,orderNum) {
                     var html='';
                     html+='<form class="layui-form layui-form-pane" action="/admin/link" method="post">';
-                    html+='<label class="layui-form-label" style="border: none" >友情链接名称:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkName"  class="layui-input" value="'+linkName+'">';
-                    html+='<label class="layui-form-label" style="border: none" >友情链接地址:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkUrl"  class="layui-input" value="'+linkUrl+'">';
-                    html+='<label class="layui-form-label" style="border: none" >顺序:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="orderNum"  class="layui-input" value="'+orderNum+'">';
+                    html+='<label class="layui-form-label" style="border: none;width: 180px;"  >友情链接名称:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkName" lay-verify="required" class="layui-input" value="'+linkName+'">';
+                    html+='<label class="layui-form-label" style="border: none;width: 180px;" >友情链接地址:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkUrl"  class="layui-input" lay-verify="url" value="'+linkUrl+'">';
+                    html+='<label class="layui-form-label" style="border: none;" >顺序:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="orderNum"  class="layui-input" lay-verify="number" value="'+orderNum+'">';
                     html+='<input type="hidden" name="id" value="'+id+'"/>';
                     html+='<input type="hidden" name="_method" value="PUT"/>';
                     html+='<div class="layui-form-item">';
                     html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
-                    html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即提交</button>';
+                    html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即修改</button>';
                     html+='<button type="reset" class="layui-btn layui-btn-primary">重置</button>';
                     html+='</div>';
                     html+='</div>';
@@ -191,7 +191,7 @@
                     layer.open({
                         type: 1,
                         skin: 'layui-layer-rim', //加上边框
-                        area: '420px', //宽高
+                        area: '620px', //宽高
                         title:'修改友情链接',
                         content: html
                     });
@@ -199,12 +199,12 @@
                 addData:function () {
                     var html='';
                     html+='<form class="layui-form layui-form-pane" action="/admin/link" method="post">';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >友情链接名称:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkName"  class="layui-input" >';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >友情链接地址:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkUrl"  class="layui-input" >';
-                    html+='<label class="layui-form-label" style="border: none" name="content" >顺序:</label>';
-                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="orderNum"  class="layui-input" >';
+                    html+='<label class="layui-form-label" style="border: none;width: 180px;" name="content" >友情链接名称:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkName" lay-verify="required"  class="layui-input" >';
+                    html+='<label class="layui-form-label" style="border: none;width: 180px;" name="content" >友情链接地址:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="linkUrl" lay-verify="url"  class="layui-input" >';
+                    html+='<label class="layui-form-label" style="border: none;" name="content" >顺序:</label>';
+                    html+='<input  style="width:87%;margin: auto;color: #000!important;" name="orderNum" lay-verify="number" class="layui-input" >';
                     html+='<div class="layui-form-item">';
                     html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
                     html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">添加</button>';
@@ -215,7 +215,7 @@
                     layer.open({
                         type: 1,
                         skin: 'layui-layer-rim', //加上边框
-                        area: '420px', //宽高
+                        area: '620px', //宽高
                         title:'添加友情链接',
                         content: html
                     });

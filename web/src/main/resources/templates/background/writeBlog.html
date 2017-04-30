@@ -47,7 +47,7 @@
         <label class="layui-form-label">添加封面</label>
         <div class="layui-input-inline">
             <input type="file" name="file" class="layui-upload-file" lay-title="添加一个碉堡了的图片">
-            <input type="hidden" name="coverImageName" id="coverImageName" th:value="${blog}==null?'':${blog.coverImageName}">
+            <input type="hidden" name="coverImageName" id="coverImageName" lay-verify="required"  th:value="${blog}==null?'':${blog.coverImageName}">
         </div>
     </div>
     <div class="layui-form-item">
