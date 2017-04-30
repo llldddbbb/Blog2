@@ -3,6 +3,7 @@ package com.ldb.dao;
 import com.ldb.pojo.po.BlogTagPO;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public interface BlogTagDAO {
 
-    List<BlogTagPO> listBlogTagPO();
+    List<BlogTagPO> listBlogTagPO(HashMap<String,Integer> param);
 
     BlogTagPO getBlogTag(@Param("blogTagId")Integer blogTagId);
 
@@ -19,5 +20,7 @@ public interface BlogTagDAO {
     int deleteBlogTag(@Param("id") Integer id);
 
     int addBlogTag(BlogTagPO blogTagPO);
+
+    Long getBlogTagCount();
 
 }

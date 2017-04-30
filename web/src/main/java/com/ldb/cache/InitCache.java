@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -44,7 +45,7 @@ public class InitCache implements ServletContextListener,ApplicationContextAware
         //调用service方法，取得数据
         List<LinkVO> linkList=linkService.listLink();
         List<BlogTypePO> blogTypeList=blogTypeService.listBlogType();
-        List<BlogTagPO> blogTagList=blogTagService.listBlogTag();
+        List<BlogTagPO> blogTagList=blogTagService.listBlogTag(new HashMap<>());
         List<BlogDateArchiveVO> blogDateArchiveList=blogService.listBlogDateArchive();
         MottoVO motto=mottoService.getMotto();
         SignatureVO signature = signatureService.getSignature();

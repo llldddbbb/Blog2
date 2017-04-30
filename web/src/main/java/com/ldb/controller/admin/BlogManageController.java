@@ -38,7 +38,7 @@ public class BlogManageController {
     public ModelAndView blogManage(){
         ModelAndView mav=new ModelAndView("background/blogManage");
         //获取下拉框
-        List<BlogTagPO> blogTagList = blogTagService.listBlogTag();
+        List<BlogTagPO> blogTagList = blogTagService.listBlogTag(new HashMap<>());
         List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();
 
 
@@ -68,7 +68,7 @@ public class BlogManageController {
             mav.addObject("blog",blogPO);
         }
         //获取下拉框
-        List<BlogTagPO> blogTagList = blogTagService.listBlogTag();
+        List<BlogTagPO> blogTagList = blogTagService.listBlogTag(new HashMap<>());
         List<BlogTypePO> blogTypeList = blogTypeService.listBlogType();
         mav.addObject("blogTagList",blogTagList);
         mav.addObject("blogTypeList",blogTypeList);

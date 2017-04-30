@@ -24,8 +24,8 @@ public class BlogTagServiceImpl implements BlogTagService {
     private BlogDAO blogDAO;
 
     @Override
-    public List<BlogTagPO> listBlogTag() {
-        return blogTagDAO.listBlogTagPO();
+    public List<BlogTagPO> listBlogTag(HashMap<String,Integer> param) {
+        return blogTagDAO.listBlogTagPO(param);
     }
 
     @Override
@@ -47,5 +47,10 @@ public class BlogTagServiceImpl implements BlogTagService {
     @Override
     public int addBlogTag(BlogTagPO blogTagPO) {
         return blogTagDAO.addBlogTag(blogTagPO);
+    }
+
+    @Override
+    public Long getBlogTagCount() {
+        return blogTagDAO.getBlogTagCount();
     }
 }

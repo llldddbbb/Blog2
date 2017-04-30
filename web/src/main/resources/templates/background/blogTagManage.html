@@ -74,24 +74,31 @@
     <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript" th:inline="javascript">
-        var blogTagNum=[[${blogTagNum}]];
+        var blogTagNum=[[${session.blogTagNum}]];
 
-        layui.define([ 'layer', 'form' ], function (exports) {
+        layui.define(['element','laypage', 'layer', 'form' ], function (exports) {
             var $ = layui.jquery;
             var layer = layui.layer;
             var form = layui.form();
+            var laypage = layui.laypage;
+            var element = layui.element();
+            var laypageId = 'pageNav';
 
-            initilData();
-
-            function initilData() {
+            initilData(1, 10);
+            //页数据初始化
+            //currentIndex：当前页面
+            //pageSize：页容量（每页显示的条数）
+            function initilData(currentIndex, pageSize) {
                 var index = layer.load(1);
                 //模拟数据加载
                 setTimeout(function () {
                     layer.close(index);
                     $.ajax({
-                        url:"/admin/blogTagManage/list",
+                        url:"/admin/blogTagManage/list/"+currentIndex,
                         type:"GET",
-                        data:{},
+                        data:{
+                            pageSize:pageSize
+                        },
                         success:function(blogTagList){
                             var html = '';
                             html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
@@ -115,6 +122,20 @@
                     });
 
                     $('#dataConsole,#dataList').attr('style', 'display:block'); //显示FiledBox
+
+                    laypage({
+                        cont: laypageId,
+                        pages: blogTagNum/pageSize==0?blogTagNum/pageSize:blogTagNum/pageSize+1,
+                        groups: 5,
+                        skip: true,
+                        curr: currentIndex,
+                        jump: function (obj, first) {
+                            var currentIndex = obj.curr;
+                            if (!first) {
+                                initilData(currentIndex, pageSize);
+                            }
+                        }
+                    });
                 }, 500);
             }
 

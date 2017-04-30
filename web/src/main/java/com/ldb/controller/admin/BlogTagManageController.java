@@ -1,16 +1,15 @@
 package com.ldb.controller.admin;
 
+import com.ldb.pojo.bo.PageBeanBO;
 import com.ldb.pojo.po.BlogTagPO;
 import com.ldb.service.BlogTagService;
 import com.ldb.utils.ConfigStrUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -18,6 +17,7 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/admin")
+@SessionAttributes(value = {"blogTagNum"})
 public class BlogTagManageController {
 
     @Autowired
@@ -26,13 +26,21 @@ public class BlogTagManageController {
     @RequestMapping("/blogTagManage")
     public ModelAndView blogTagManage(){
         ModelAndView mav=new ModelAndView("background/blogTagManage");
+        Long blogTagNum=blogTagService.getBlogTagCount();
+        mav.addObject("blogTagNum",blogTagNum);
         return mav;
     }
 
-    @RequestMapping(value="/blogTagManage/list",method = RequestMethod.GET)
+    @RequestMapping(value="/blogTagManage/list/{page}",method = RequestMethod.GET)
     @ResponseBody
-    public List<BlogTagPO> blogTagManagePage(){
-        List<BlogTagPO> blogTagList = blogTagService.listBlogTag();
+    public List<BlogTagPO> blogTagManagePage(@PathVariable String page, String pageSize){
+        PageBeanBO pageBeanBO=new PageBeanBO(Integer.parseInt(page), Integer.parseInt(pageSize));
+        HashMap<String,Integer> param=new HashMap<>();
+        param.put("start",pageBeanBO.getStart());
+        param.put("pageSize",pageBeanBO.getPageSize());
+
+        List<BlogTagPO> blogTagList = blogTagService.listBlogTag(param);
+
         return blogTagList;
     }
 

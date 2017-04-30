@@ -14,8 +14,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </sql>
 
 
-    <select id="listBlogTagPO" resultMap="blogTagResultMap">
+    <select id="listBlogTagPO" resultMap="blogTagResultMap" parameterType="Map">
         select <include refid="list"/> from blogTag
+        <if test="start!=null and pageSize!=null">
+            limit #{start},#{pageSize}
+        </if>
     </select>
 
     <select id="getBlogTag" resultMap="blogTagResultMap">
@@ -33,5 +36,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <insert id="addBlogTag" parameterType="com.ldb.pojo.po.BlogTagPO">
         insert into blogtag VALUES (null,#{tagName})
     </insert>
+
+    <select id="getBlogTagCount" resultType="Long">
+        select count(*) from blogtag
+    </select>
 
 </mapper> 

@@ -74,8 +74,6 @@
     <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
     <!-- layui规范化用法 -->
     <script type="text/javascript" th:inline="javascript">
-        var blogTypeNum=[[${blogTypeNum}]];
-
         layui.define([ 'layer', 'form' ], function (exports) {
             var $ = layui.jquery;
             var layer = layui.layer;

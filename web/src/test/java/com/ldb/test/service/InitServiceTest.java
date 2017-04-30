@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+
 /**
  * Created by ldb on 2017/4/16.
  */
@@ -36,7 +38,7 @@ public class InitServiceTest {
     public void testInit(){
         Assert.assertNotNull(linkService.listLink());
         Assert.assertNotNull(blogTypeService.listBlogType());
-        Assert.assertNotNull(blogTagService.listBlogTag());
+        Assert.assertNotNull(blogTagService.listBlogTag(new HashMap<>()));
         Assert.assertNotNull(blogService.listBlogDateArchive());
         Assert.assertNotNull(mottoService.getMotto());
         Assert.assertNotNull(signatureService.getSignature());
