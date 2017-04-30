@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  * Created by ldb on 2017/4/20.
  */
 @Controller
-public class LoginController {
+public class AdminController {
 
     @Autowired
     private AdminService adminService;
@@ -51,7 +51,21 @@ public class LoginController {
             return ConfigStrUtil.ERROR;
         }
 
+    }
 
+    @RequestMapping(value = "admin/adminManage")
+    public String adminManage(){
+        return "background/adminManage";
+    }
+
+    @RequestMapping(value = "/admin/admin",method = RequestMethod.PUT)
+    public String updateAdmin(AdminPO adminPO){
+        int result=adminService.updateAdmin(adminPO);
+        if(result>0){
+            return "redirect:/background";
+        }else{
+            return null;
+        }
     }
 
 }

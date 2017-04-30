@@ -11,4 +11,6 @@ public interface AdminDAO {
     AdminPO checkLogin(AdminPO adminPO);
 
     AdminPO getAdminPOByUserName(@Param("userName") String userName);
+
+    int updateAdmin(AdminPO adminPO);
 }

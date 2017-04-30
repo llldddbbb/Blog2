@@ -40,4 +40,9 @@ public class AdminServiceImpl implements AdminService {
         return adminDAO.getAdminPOByUserName(userName);
     }
 
+    @Override
+    public int updateAdmin(AdminPO adminPO) {
+        return adminDAO.updateAdmin(adminPO);
+    }
+
 }

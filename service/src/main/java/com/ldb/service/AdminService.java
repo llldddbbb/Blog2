@@ -15,4 +15,8 @@ public interface AdminService {
     LoginHistoryPO getLoginHistory();
 
     AdminPO getAdminPOByUserName(String userName);
+
+    int updateAdmin(AdminPO adminPO);
+
+
 }

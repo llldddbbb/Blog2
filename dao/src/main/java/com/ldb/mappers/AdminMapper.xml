@@ -20,7 +20,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select * from admin where userName=#{userName}
     </select>
 
-
+    <update id="updateAdmin" parameterType="com.ldb.pojo.po.AdminPO">
+        update admin set userName=#{userName},password=#{password}
+    </update>
 
 
 </mapper> 
