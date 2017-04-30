@@ -14,4 +14,10 @@ public interface BlogTagDAO {
 
     BlogTagPO getBlogTag(@Param("blogTagId")Integer blogTagId);
 
+    int updateBlogTag(BlogTagPO blogTagPO);
+
+    int deleteBlogTag(@Param("id") Integer id);
+
+    int addBlogTag(BlogTagPO blogTagPO);
+
 }

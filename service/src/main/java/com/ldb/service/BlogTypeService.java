@@ -11,5 +11,9 @@ public interface BlogTypeService {
 
     List<BlogTypePO> listBlogType();
 
-    Long getBlogTypeCount();
+    int updateBlogType(BlogTypePO blogTypePO);
+
+    int deleteBlogType(Integer id);
+
+    int addBlogType(BlogTypePO blogTypePO);
 }

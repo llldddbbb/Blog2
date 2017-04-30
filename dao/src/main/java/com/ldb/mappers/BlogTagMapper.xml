@@ -22,4 +22,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select * from blogTag where id=#{blogTagId}
     </select>
 
+    <update id="updateBlogTag" parameterType="com.ldb.pojo.po.BlogTagPO">
+        update blogtag set tagName=#{tagName} where id=#{id}
+    </update>
+
+    <delete id="deleteBlogTag" parameterType="Integer">
+        delete from blogtag where id=#{id}
+    </delete>
+
+    <insert id="addBlogTag" parameterType="com.ldb.pojo.po.BlogTagPO">
+        insert into blogtag VALUES (null,#{tagName})
+    </insert>
+
 </mapper> 

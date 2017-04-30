@@ -22,7 +22,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select * FROM blogType where id=#{blogTypeId}
     </select>
 
-    <select id="getBlogTypeCount" resultType="Long">
-        SELECT count(*) from blogType
-    </select>
+    <update id="updateBlogType" parameterType="com.ldb.pojo.po.BlogTypePO">
+        update blogtype SET typeName=#{typeName} where id=#{id}
+    </update>
+
+    <delete id="deleteBlogType" parameterType="Integer">
+        delete from blogtype where id=#{id}
+    </delete>
+
+    <insert id="addBlogType" parameterType="com.ldb.pojo.po.BlogTypePO">
+        insert into blogtype VALUES (null,#{typeName})
+    </insert>
 </mapper> 

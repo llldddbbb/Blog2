@@ -14,6 +14,10 @@ public interface BlogTypeDAO {
 
     BlogTypePO getBlogType(@Param("blogTypeId")Integer blogTypeId);
 
-    Long getBlogTypeCount();
+    int updateBlogType(BlogTypePO blogTypePO);
+
+    int deleteBlogType(@Param("id") Integer id);
+
+    int addBlogType(BlogTypePO blogTypePO);
 
 }

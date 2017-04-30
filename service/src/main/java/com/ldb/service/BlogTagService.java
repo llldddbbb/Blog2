@@ -10,4 +10,10 @@ import java.util.List;
 public interface BlogTagService {
 
     List<BlogTagPO> listBlogTag();
+
+    int updateBlogTag(BlogTagPO blogTagPO);
+
+    int deleteBlogTag(Integer id);
+
+    int addBlogTag(BlogTagPO blogTagPO);
 }
