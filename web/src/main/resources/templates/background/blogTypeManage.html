@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>数据列表页面</title>
+    <!-- layui.css -->
+    <link th:href="@{/background/plugin/layui/css/layui.css}" href="../../static/background/plugin/layui/css/layui.css" rel="stylesheet" />
+    <style>
+
+        tr td:not(:nth-child(0)),
+        tr th:not(:nth-child(0)) {
+            text-align: center;
+            overflow:hidden;
+            white-space:nowrap;
+            text-overflow:ellipsis;
+            -o-text-overflow:ellipsis;
+            -icab-text-overflow: ellipsis;
+            -khtml-text-overflow: ellipsis;
+            -moz-text-overflow: ellipsis;
+            -webkit-text-overflow: ellipsis;
+        }
+
+        #dataConsole {
+            text-align: center;
+        }
+        /*分页页容量样式*/
+        /*可选*/
+        .layui-laypage {
+            display: block;
+        }
+
+            /*可选*/
+            .layui-laypage > * {
+                float: left;
+            }
+            /*可选*/
+            .layui-laypage .laypage-extend-pagesize {
+                float: right;
+            }
+            /*可选*/
+            .layui-laypage:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+            /*必须*/
+            .layui-laypage .laypage-extend-pagesize {
+                height: 30px;
+                line-height: 30px;
+                margin: 0px;
+                border: none;
+                font-weight: 400;
+            }
+        /*分页页容量样式END*/
+    </style>
+</head>
+<body>
+    <fieldset id="dataList" class="layui-elem-field layui-field-title sys-list-field" style="display:none;">
+        <legend style="text-align:center;">博客类别列表</legend>
+        <button class="layui-btn" style="margin:10px auto auto auto;display: block" onclick="layui.datalist.addData()">
+            <i class="layui-icon">&#xe608;</i> 添加类别
+        </button>
+        <div class="layui-field-box layui-form">
+            <div id="dataContent" class="">
+                <!--内容区域 ajax获取-->
+            </div>
+            <div id="pageNav"></div>
+        </div>
+    </fieldset>
+    <!-- layui.js -->
+    <script th:src="@{/background/plugin/layui/layui.js}" src="../../static/background/plugin/layui/layui.js"></script>
+    <!-- layui规范化用法 -->
+    <script type="text/javascript" th:inline="javascript">
+        var blogTypeNum=[[${blogTypeNum}]];
+
+        layui.define([ 'layer', 'form' ], function (exports) {
+            var $ = layui.jquery;
+            var layer = layui.layer;
+            var form = layui.form();
+
+            initilData();
+
+            function initilData() {
+                var index = layer.load(1);
+                //模拟数据加载
+                setTimeout(function () {
+                    layer.close(index);
+                    $.ajax({
+                        url:"/admin/blogTypeManage/list",
+                        type:"GET",
+                        data:{},
+                        success:function(blogTypeList){
+                            var html = '';
+                            html += '<table style="table-layout: fixed" class="layui-table" lay-even>';
+                            html += '<colgroup><col width="40"><col width="200"><col width="40"><col width="40"></colgroup>';
+                            html += '<thead><tr><th>编号</th><th>博客类型名</th><th colspan="2">操作</th></tr></thead>';
+                            html += '<tbody>';
+                            for(var i in blogTypeList){
+                                var item=blogTypeList[i];
+                                html+='<tr>';
+                                html+='<td>'+item.id+'</td>';
+                                html+='<td>'+item.typeName+'</td>';
+                                html+='<td><button class="layui-btn layui-btn-small layui-btn-normal" onclick="layui.datalist.editData('+item.id+',\''+item.typeName+'\')"><i class="layui-icon">&#xe642;</i></button></td>';
+                                html+='<td><button class="layui-btn layui-btn-small layui-btn-danger" onclick="layui.datalist.deleteData('+item.id+')"><i class="layui-icon">&#xe640;</i></button></td>';
+                                html+='</tr>';
+                            }
+                            html+='</tbody></table>';
+                            $('#dataContent').html(html);
+                            element.init();
+
+                        }
+                    });
+
+                    $('#dataConsole,#dataList').attr('style', 'display:block'); //显示FiledBox
+                }, 500);
+            }
+
+            //输出接口，主要是两个函数，一个删除一个编辑
+            var datalist = {
+                deleteData: function (id) {
+                    layer.confirm('同时会删除对应回复，确定删除？', {
+                        btn: ['确定', '取消'] //按钮
+                    }, function () {
+                        $.ajax({
+                            url:'/admin/blogType/'+id,
+                            data:{},
+                            type:'DELETE',
+                            success:function (result) {
+                                var result=eval("("+result+")");
+                                if(result.success){
+                                    layer.alert('删除成功!', {
+                                        closeBtn: 0,
+                                        icon: 1
+                                    }, function(){
+                                        window.location.href="/admin/blogTypeManage"
+                                    });
+                                }else{
+                                    layer.alert('删除失败!', {icon: 5});
+                                }
+                            }
+                        });
+                    }, function () {
+
+                    });
+                },
+                editData: function (id,typeName) {
+                    var html='';
+                    html+='<form class="layui-form layui-form-pane" action="/admin/blogType/reply" method="post">';
+                    html+='<label class="layui-form-label" style="border: none" >评论内容:</label>';
+                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;"   class="layui-textarea" >'+typeName+'</textarea>';
+                    html+='<input type="hidden" name="blogTypeId" value="'+id+'"/>';
+                    html+='<div class="layui-form-item">';
+                    html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
+                    html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即提交</button>';
+                    html+='<button type="reset" class="layui-btn layui-btn-primary">重置</button>';
+                    html+='</div>';
+                    html+='</div>';
+                    html+='</form>';
+
+                    layer.open({
+                        type: 1,
+                        skin: 'layui-layer-rim', //加上边框
+                        area: '420px', //宽高
+                        title:'回复评论',
+                        content: html
+                    });
+                }
+            };
+            exports('datalist', datalist);
+        });
+
+    </script>
+</body>
+</html>

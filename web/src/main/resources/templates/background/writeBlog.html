@@ -99,7 +99,7 @@
 <script th:src="@{/background/plugin/ueditor/ueditor.all.js}" type="text/javascript" charset="utf-8"> </script>
 <script th:src="@{/background/plugin/ueditor/lang/zh-cn/zh-cn.js}" type="text/javascript" charset="utf-8" ></script>
 <script th:inline="javascript" type="text/javascript">
-    layui.use(['form','upload'], function(){
+    layui.use(['form','upload','layer'], function(){
         var form = layui.form()
             ,layer = layui.layer;
         layui.upload({
@@ -112,6 +112,34 @@
                 }
             }
         });
+        //输出接口，主要是两个函数，一个删除一个编辑
+        var datalist = {
+            editData: function (id,content) {
+                var html='';
+                html+='<form class="layui-form layui-form-pane" action="/admin/comment/reply" method="post">';
+                html+='<label class="layui-form-label" style="border: none" >评论内容:</label>';
+                html+='<textarea  style="width:87%;margin: auto;color: #000!important;"  readonly="true" class="layui-textarea layui-disabled" >'+content+'</textarea>';
+                html+='<label class="layui-form-label" style="border: none">回复内容:</label>';
+                html+='<textarea placeholder="请输入回复内容" name="content" lay-verify="required" style="width:87%;margin: auto" class="layui-textarea " ></textarea>';
+                html+='<input type="hidden" name="commentId" value="'+id+'"/>';
+                html+='<div class="layui-form-item">';
+                html+='<div class="layui-input-inline" style="margin:10px auto 0 auto;display: block;float: none;">';
+                html+='<button class="layui-btn" id="submit"  lay-submit="" lay-filter="demo1">立即提交</button>';
+                html+='<button type="reset" class="layui-btn layui-btn-primary">重置</button>';
+                html+='</div>';
+                html+='</div>';
+                html+='</form>';
+
+                layer.open({
+                    type: 1,
+                    skin: 'layui-layer-rim', //加上边框
+                    area: '420px', //宽高
+                    title:'回复评论',
+                    content: html
+                });
+            }
+        };
+        exports('datalist', datalist);
     });
     //实例化编辑器
     var ue = UE.getEditor('editor');

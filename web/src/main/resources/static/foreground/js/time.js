@@ -1,5 +1,6 @@
 $(function(){
 $('#time').html('<canvas id="canvas" style="width: 100%"></canvas>');
+
 var WINDOW_WIDTH = 920;
 		var WINDOW_HEIGHT = 400;
 		var RADIUS = 7; //球半径
@@ -188,7 +189,7 @@ var WINDOW_WIDTH = 920;
 				for(var index = 0;index<currentNums.length;index++){
 					if(currentNums[index].num!=nums[index].num){
 						//不一样时，添加彩色小球
-						addBalls(nums[index]);
+                        addBalls(nums[index]);
 						currentNums[index].num=nums[index].num;
 					}
 				}
@@ -205,15 +206,17 @@ var WINDOW_WIDTH = 920;
 			for(var y = 0;y<numMatrix.length;y++){
 				for(var x = 0;x<numMatrix[y].length;x++){
 					if(numMatrix[y][x]==1){
-						var ball={
-							offsetX:item.offsetX+RADIUS+RADIUS*2*x,
-							offsetY:30+RADIUS+RADIUS*2*y,
-							color:colors[Math.floor(Math.random()*colors.length)],
-							g:1.5+Math.random(),
-							vx:Math.pow(-1, Math.ceil(Math.random()*10))*4+Math.random(),
-							vy:-5
-						}
-						balls.push(ball);
+                        if(balls.length<200){
+                            var ball={
+                                offsetX:item.offsetX+RADIUS+RADIUS*2*x,
+                                offsetY:30+RADIUS+RADIUS*2*y,
+                                color:colors[Math.floor(Math.random()*colors.length)],
+                                g:1.5+Math.random(),
+                                vx:Math.pow(-1, Math.ceil(Math.random()*10))*4+Math.random(),
+                                vy:-5
+                            }
+                            balls.push(ball);
+                        }
 					}
 				}
 			}
@@ -271,8 +274,6 @@ var WINDOW_WIDTH = 920;
 		canvas.height=WINDOW_HEIGHT;
 		context = canvas.getContext("2d");
 
-		//记录当前绘制的时刻
-		var currentDate = new Date();
 
 		setInterval(function(){
 			//清空整个Canvas，重新绘制内容

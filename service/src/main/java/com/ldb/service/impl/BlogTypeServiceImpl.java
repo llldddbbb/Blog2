@@ -21,4 +21,9 @@ public class BlogTypeServiceImpl implements BlogTypeService {
     public List<BlogTypePO> listBlogType() {
         return blogTypeDAO.listBlogTypePO();
     }
+
+    @Override
+    public Long getBlogTypeCount() {
+        return blogTypeDAO.getBlogTypeCount();
+    }
 }

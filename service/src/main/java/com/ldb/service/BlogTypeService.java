@@ -10,4 +10,6 @@ import java.util.List;
 public interface BlogTypeService {
 
     List<BlogTypePO> listBlogType();
+
+    Long getBlogTypeCount();
 }

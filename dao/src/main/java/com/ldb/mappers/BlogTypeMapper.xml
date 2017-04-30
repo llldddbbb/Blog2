@@ -22,4 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select * FROM blogType where id=#{blogTypeId}
     </select>
 
+    <select id="getBlogTypeCount" resultType="Long">
+        SELECT count(*) from blogType
+    </select>
 </mapper> 

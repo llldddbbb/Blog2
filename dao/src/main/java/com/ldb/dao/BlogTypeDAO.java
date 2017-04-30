@@ -14,4 +14,6 @@ public interface BlogTypeDAO {
 
     BlogTypePO getBlogType(@Param("blogTypeId")Integer blogTypeId);
 
+    Long getBlogTypeCount();
+
 }
