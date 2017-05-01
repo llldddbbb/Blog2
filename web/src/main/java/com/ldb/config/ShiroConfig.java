@@ -63,9 +63,9 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilters(filters);
 
         Map<String, String> filterChainDefinitionManager = new LinkedHashMap<String, String>();
-        //filterChainDefinitionManager.put("/admin/**", "authc");
+        filterChainDefinitionManager.put("/admin/**", "authc");
         //先暂时设置不拦截
-        filterChainDefinitionManager.put("/admin/**", "anon");
+       // filterChainDefinitionManager.put("/admin/**", "anon");
         filterChainDefinitionManager.put("/**", "anon");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 
