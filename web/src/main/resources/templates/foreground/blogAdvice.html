@@ -18,11 +18,12 @@
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?d972459f4e6c7ad98bc5047746a97a11";
+            hm.src = "https://hm.baidu.com/hm.js?8bbebf81099e93cb652e9215fa86d98c";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+
 </head>
 <body>
 <div class="header" id="ban" th:include="foreground/common::header"></div><!--头部导航结束-->
@@ -83,7 +84,7 @@
                                                                 <li th:text="${#calendars.format(blogAdvice.publishTime,'yyyy-MM-dd HH:mm:ss')}">July 17, 2016</li>
                                                             </ul>
                                                         </div>
-                                                        <div class="line"></div>
+                                                        <div class='lineBar'></div>
                                                     </div>
 
                                                     <div class="contact-section" style="padding:0;display: none" th:id="'replyPanel'+${blogAdvice.id}" id="replyPanel">
@@ -249,11 +250,11 @@
                     if(replyPanel.length==0){
                         $("<div  class='replyPanel"+blogAdviceId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
                             "<div style='display: inline-block;vertical-align: middle'><p class='reply-content sourceText' >"+title+result.content+"</p><ul class='reply-date'>"+
-                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertBefore($("#replyPanel"+blogAdviceId));
+                            "<li>"+result.publishTime+"</li></ul></div><div class='lineBar'></div></div>").insertBefore($("#replyPanel"+blogAdviceId));
                     }else{
                         $("<div  class='replyPanel"+blogAdviceId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
                             "<div style='display: inline-block;vertical-align: middle'><p class='reply-content sourceText' >"+title+result.content+"</p><ul class='reply-date'>"+
-                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
+                            "<li>"+result.publishTime+"</li></ul></div><div class='lineBar'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
                     }
                     parse();
                 }

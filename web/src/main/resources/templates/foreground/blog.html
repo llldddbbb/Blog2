@@ -13,16 +13,22 @@
     <link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css" rel="stylesheet">
     <link href="http://op93pqovl.bkt.clouddn.com/css/jquery.emoji.css" rel="stylesheet">
+    <!--代码高亮-->
+    <link href="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/styles/shCore.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/styles/shThemeEclipse.min.css" rel="stylesheet">
+
     <!--百度站点统计-->
     <script>
         var _hmt = _hmt || [];
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?d972459f4e6c7ad98bc5047746a97a11";
+            hm.src = "https://hm.baidu.com/hm.js?8bbebf81099e93cb652e9215fa86d98c";
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+
+
 
 </head>
 <body>
@@ -88,7 +94,7 @@
                                                 <li th:text="${#calendars.format(reply.publishTime,'yyyy-MM-dd HH:mm:ss')}">July 17, 2016</li>
                                             </ul>
                                         </div>
-                                        <div class="line"></div>
+                                        <div class="lineBar"></div>
                                     </div>
 
                                     <div class="contact-section" style="padding:0;display: none" th:id="'replyPanel'+${comment.id}" id="replyPanel">
@@ -133,6 +139,16 @@
 <script src="http://cdn.bootcss.com/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.js" type="text/javascript"></script>
 <script src="http://op93pqovl.bkt.clouddn.com/js/jquery.emoji.js" type="text/javascript" ></script>
 <script src="http://cdn.bootcss.com/layer/3.0.1/layer.min.js" type="text/javascript"></script>
+<!--代码高亮-->
+<script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shCore.min.js"></script>
+<script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushJava.min.js"></script>
+<script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushXml.min.js"></script>
+<script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushSql.min.js"></script>
+<script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushPython.min.js"></script>
+<script src="http://cdn.bootcss.com/SyntaxHighlighter/3.0.83/scripts/shBrushJScript.min.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all();
+</script>
 <script>
 
     function addComment(blogId){
@@ -217,11 +233,11 @@
                     if(replyPanel.length==0){
                         $("<div  class='replyPanel"+commentId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
                             "<div style='display: inline-block;vertical-align: middle'><p class='reply-content sourceText' >"+title+result.content+"</p><ul class='reply-date'>"+
-                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertBefore($("#replyPanel"+commentId));
+                            "<li>"+result.publishTime+"</li></ul></div><div class='lineBar'></div></div>").insertBefore($("#replyPanel"+commentId));
                     }else{
                         $("<div  class='replyPanel"+commentId+"'><a><img src="+imgSrc+" class='img-responsive' style='width: 50px'></a>"+
                             "<div style='display: inline-block;vertical-align: middle'><p class='reply-content sourceText' >"+title+result.content+"</p><ul class='reply-date'>"+
-                            "<li>"+result.publishTime+"</li></ul></div><div class='line'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
+                            "<li>"+result.publishTime+"</li></ul></div><div class='lineBar'></div></div>").insertAfter(replyPanel[replyPanel.length-1]);
                     }
                     parse();
                     layer.alert("回复成功!");
@@ -275,6 +291,49 @@
             }]
         });
     }
+</script>
+
+<script  th:inline="javascript">
+    $(document).ready(function () {
+        var blogTagList=[[${application.blogTagList}]];
+        var entries=[];
+        for(var i in blogTagList){
+            var entry={
+                label:blogTagList[i].tagName,
+                url: '/blog/tag/'+blogTagList[i].id
+            }
+            entries.push(entry);
+        }
+        var settings = {
+            entries: entries,
+            width: '100%',
+            height: '100%',
+            radius: '73%',
+            radiusMin: '50%',
+            bgDraw: true,
+            bgColor: '#FFF',
+            opacityOver: 1.00,
+            opacityOut: 0.13,
+            opacitySpeed: 6,
+            fov: 800,
+            speed: 0.5,
+            fontFamily: 'Oswald, Arial, sans-serif',
+            fontSize: '15',
+            fontColor: '#000',
+            fontWeight: 'normal',//bold
+            fontStyle: 'normal',//italic
+            fontStretch: 'normal',//wider, narrower, ultra-condensed, extra-condensed, condensed, semi-condensed, semi-expanded, expanded, extra-expanded, ultra-expanded
+            fontToUpperCase: false
+
+        };
+
+        //var svg3DTagCloud = new SVG3DTagCloud( document.getElementById( 'holder'  ), settings );
+        $('#tag-cloud').svg3DTagCloud(settings);
+        parse()
+    });
+
+
+
 </script>
 </body>
 </html>
