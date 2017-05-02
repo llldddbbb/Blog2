@@ -178,8 +178,8 @@
                     html+='<label class="layui-form-label" style="border: none" name="content" >心情标题:</label>';
                     html+='<input  style="width:87%;margin: auto;color: #000!important;" name="title" lay-verify="required"  class="layui-input" value="'+item.title+'" >';
                     html+='<input type="hidden" name="id" value="'+item.id+'">';
-                    html+='<label class="layui-form-label" style="border: none" name="content" lay-verify="required" >心情内容:</label>';
-                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;" name="content" class="layui-textarea " >'+item.content+'</textarea>';
+                    html+='<label class="layui-form-label" style="border: none" name="content"  >心情内容:</label>';
+                    html+='<textarea  style="width:87%;margin: auto;color: #000!important;" name="content" class="layui-textarea " lay-verify="required" >'+item.content+'</textarea>';
                     html+='<label class="layui-form-label" style="border: none" name="content" >是否显示:</label>';
                     if(item.is_show){
                         html+='<input type="radio" name="is_show" value="1" title="是" checked>';

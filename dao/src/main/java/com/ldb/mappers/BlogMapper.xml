@@ -110,7 +110,7 @@
     </insert>
 
     <update id="updateBlog" parameterType="com.ldb.pojo.po.BlogPO">
-        update blog set title=#{title},author=#{author},content=#{content},summary=#{summary},coverImageName=#{coverImageName},publishTime=#{publishTime},is_Recommend=#{is_Recommend},blogTypeId=#{blogTypeId},blogTagId=#{blogTagId} where id=#{id}
+        update blog set title=#{title},author=#{author},content=#{content},summary=#{summary},coverImageName=#{coverImageName},is_Recommend=#{is_Recommend},blogTypeId=#{blogTypeId},blogTagId=#{blogTagId} where id=#{id}
     </update>
 
     <delete id="deleteBlog" parameterType="Integer">

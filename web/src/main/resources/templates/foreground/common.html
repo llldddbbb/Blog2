@@ -98,7 +98,7 @@
                 <div class="blog-grids wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" th:each="hotBlog:${session.hotBlogList}">
                     <div class="blog-grid-left">
                         <a href="blog.html" th:href="'/blog/'+${hotBlog.id}">
-                            <img th:src="@{/foreground/images/m2.jpg}" src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="">
+                            <img th:src="${hotBlog.coverImageName}" src="../../static/foreground/images/m2.jpg" class="img-responsive" alt="">
                         </a>
                     </div>
                     <div class="blog-grid-right">
