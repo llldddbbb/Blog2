@@ -93,11 +93,8 @@ public class BlogController {
         }
     }
 
-    @RequestMapping(value="/blog/{id}",method = RequestMethod.DELETE)
-    @ResponseBody
-    public String deleteBlog(@PathVariable Integer id){
-        return null;
-    }
+
+
 
 
 }

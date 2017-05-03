@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -115,6 +116,12 @@ public class BlogListController {
         mav.addObject("blogList",blogList);
         mav.addObject("pageNation",pageNation);
         return mav;
+    }
+
+    @RequestMapping(value="/blog/dateArchive/{dateArchive}",method = RequestMethod.DELETE)
+    @ResponseBody
+    public String dateArchive(@PathVariable String dateArchive){
+        return null;
     }
 
 }
