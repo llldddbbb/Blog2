@@ -72,7 +72,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public List<BlogVO> listBlog(HashMap<String, Integer> param) {
+    public List<BlogVO> listBlog(HashMap<String, Object> param) {
         List<BlogVO> blogVOList = blogDAO.listBlog(param);
         for(BlogVO blogVO:blogVOList){
             BlogUtil.setBlogVO(blogVO,commentDAO);
@@ -81,12 +81,12 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Long getBlogCount(HashMap<String, Integer> param) {
+    public Long getBlogCount(HashMap<String, Object> param) {
         return blogDAO.getBlogCount(param);
     }
 
     @Override
-    public List<BlogPO> listBlogPO(HashMap<String, Integer> param) {
+    public List<BlogPO> listBlogPO(HashMap<String, Object> param) {
         return blogDAO.listBlogPO(param);
     }
 

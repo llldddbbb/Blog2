@@ -29,7 +29,7 @@ public class BlogListController {
     @RequestMapping(value="/blog/category/{blogTypeId}",method = RequestMethod.GET)
     public ModelAndView blogType(@PathVariable String blogTypeId){
         ModelAndView mav=new ModelAndView("foreground/blogList");
-        HashMap<String,Integer> param=new HashMap<>();
+        HashMap<String,Object> param=new HashMap<>();
         //拼装分页参数
         PageBeanBO pageBean=new PageBeanBO(1, ConfigStrUtil.BLOGLISTPAGESIZE);
         param.put("start",pageBean.getStart());
@@ -52,7 +52,7 @@ public class BlogListController {
     @RequestMapping(value="/blog/tag/{blogTagId}",method = RequestMethod.GET)
     public ModelAndView blogTag(@PathVariable String blogTagId){
         ModelAndView mav=new ModelAndView("foreground/blogList");
-        HashMap<String,Integer> param=new HashMap<>();
+        HashMap<String,Object> param=new HashMap<>();
         //拼装分页参数
         PageBeanBO pageBean=new PageBeanBO(1, ConfigStrUtil.BLOGLISTPAGESIZE);
         param.put("start",pageBean.getStart());
@@ -75,7 +75,7 @@ public class BlogListController {
     @RequestMapping(value="/blog/category/{blogTypeId}/list/{page}",method = RequestMethod.GET)
     public ModelAndView blogTypeList(@PathVariable String blogTypeId,@PathVariable String page){
         ModelAndView mav=new ModelAndView("foreground/blogList");
-        HashMap<String,Integer> param=new HashMap<>();
+        HashMap<String,Object> param=new HashMap<>();
         //拼装分页参数
         PageBeanBO pageBean=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
         param.put("start",pageBean.getStart());
@@ -98,7 +98,7 @@ public class BlogListController {
     @RequestMapping(value="/blog/tag/{blogTagId}/list/{page}",method = RequestMethod.GET)
     public ModelAndView blogTagList(@PathVariable String blogTagId,@PathVariable String page){
         ModelAndView mav=new ModelAndView("foreground/blogList");
-        HashMap<String,Integer> param=new HashMap<>();
+        HashMap<String,Object> param=new HashMap<>();
         //拼装分页参数
         PageBeanBO pageBean=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
         param.put("start",pageBean.getStart());
@@ -118,10 +118,51 @@ public class BlogListController {
         return mav;
     }
 
-    @RequestMapping(value="/blog/dateArchive/{dateArchive}",method = RequestMethod.DELETE)
+    @RequestMapping(value="/blog/dateArchive/{dateArchive}",method = RequestMethod.GET)
     @ResponseBody
-    public String dateArchive(@PathVariable String dateArchive){
-        return null;
+    public ModelAndView dateArchive(@PathVariable String dateArchive){
+        ModelAndView mav=new ModelAndView("foreground/blogList");
+        HashMap<String,Object> param=new HashMap<>();
+        //拼装分页参数
+        PageBeanBO pageBean=new PageBeanBO(1, ConfigStrUtil.BLOGLISTPAGESIZE);
+        param.put("start",pageBean.getStart());
+        param.put("pageSize",pageBean.getPageSize());
+        //拼装筛选参数
+        param.put("dateArchive",dateArchive+"%");
+        List<BlogVO> blogList = blogService.listBlog(param);
+
+        //获取总记录数
+        Long count=blogService.getBlogCount(param);
+        //拼装分页代码
+        String targetUrl="/blog/dateArchive/"+dateArchive+"/list";
+        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+
+        mav.addObject("blogList",blogList);
+        mav.addObject("pageNation",pageNation);
+        return mav;
+    }
+
+    @RequestMapping(value="/blog/dateArchive/{dateArchive}/list/{page}",method = RequestMethod.GET)
+    public ModelAndView dateArchiveList(@PathVariable String dateArchive,@PathVariable String page){
+        ModelAndView mav=new ModelAndView("foreground/blogList");
+        HashMap<String,Object> param=new HashMap<>();
+        //拼装分页参数
+        PageBeanBO pageBean=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
+        param.put("start",pageBean.getStart());
+        param.put("pageSize",pageBean.getPageSize());
+        //拼装筛选参数
+        param.put("dateArchive",dateArchive+"%");
+        List<BlogVO> blogList = blogService.listBlog(param);
+
+        //获取总记录数
+        Long count=blogService.getBlogCount(param);
+        //拼装分页代码
+        String targetUrl="/blog/dateArchive/"+dateArchive+"/list";
+        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+
+        mav.addObject("blogList",blogList);
+        mav.addObject("pageNation",pageNation);
+        return mav;
     }
 
 }

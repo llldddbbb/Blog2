@@ -52,7 +52,7 @@ public class BlogManageController {
     public List<BlogPO> blogManagePage(@PathVariable String page, String pageSize){
         //获取博文列表
         PageBeanBO pageBeanBO=new PageBeanBO(Integer.parseInt(page), Integer.parseInt(pageSize));
-        HashMap<String,Integer> param=new HashMap<>();
+        HashMap<String,Object> param=new HashMap<>();
         param.put("start",pageBeanBO.getStart());
         param.put("pageSize",pageBeanBO.getPageSize());
 

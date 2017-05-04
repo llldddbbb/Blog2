@@ -26,11 +26,11 @@ public interface BlogDAO {
 
     int updateBlogReadNum(Integer id);
 
-    List<BlogVO> listBlog(HashMap<String,Integer> param);
+    List<BlogVO> listBlog(HashMap<String,Object> param);
 
-    Long getBlogCount(HashMap<String,Integer> param);
+    Long getBlogCount(HashMap<String,Object> param);
 
-    List<BlogPO> listBlogPO(HashMap<String,Integer> param);
+    List<BlogPO> listBlogPO(HashMap<String,Object> param);
 
     int addBlog(BlogPO blogPO);
 

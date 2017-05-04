@@ -27,7 +27,7 @@
 
 
     <select id="listBlogDateArchiveVO" resultType="com.ldb.pojo.vo.BlogDateArchiveVO">
-        SELECT publishTime AS archiveDate,COUNT(publishTime)AS totalNum  FROM blog GROUP BY DATE_FORMAT(publishTime,"%Y-%m")ORDER BY publishTime DESC
+        SELECT publishTime AS archiveDate,COUNT(publishTime)AS totalNum  FROM blog GROUP BY DATE_FORMAT(publishTime,"%Y-%m") ORDER BY publishTime DESC
     </select>
 
     <select id="getRecommendBlogVO" resultType="com.ldb.pojo.vo.BlogVO">
@@ -67,6 +67,9 @@
             <if test="blogTagId!=null">
                 and blogTagId=#{blogTagId}
             </if>
+            <if test="dateArchive!=null and dateArchive!=''">
+                and publishTime like binary  #{dateArchive}
+            </if>
         </where>
         order by publishTime DESC
         <if test="start!=null and pageSize!=null">
@@ -83,6 +86,9 @@
             </if>
             <if test="blogTagId!=null">
                 and blogTagId=#{blogTagId}
+            </if>
+            <if test="dateArchive!=null and dateArchive!=''">
+                and publishTime like #{dateArchive}
             </if>
         </where>
     </select>

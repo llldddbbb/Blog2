@@ -35,8 +35,8 @@ public class BlogTypeServiceImpl implements BlogTypeService {
 
     @Override
     public int deleteBlogType(Integer id) {
-        HashMap<String,Integer> param=new HashMap<>();
-        param.put("blogTypeId",id);
+        HashMap<String,Object> param=new HashMap<>();
+        param.put("blogTypeId",id.toString());
         List<BlogVO> blogVOList = blogDAO.listBlog(param);
         if(blogVOList.size()>0){
             return 0;

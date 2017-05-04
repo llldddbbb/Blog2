@@ -35,7 +35,7 @@ public class BlogTagServiceImpl implements BlogTagService {
 
     @Override
     public int deleteBlogTag(Integer id) {
-        HashMap<String,Integer> param=new HashMap<>();
+        HashMap<String,Object> param=new HashMap<>();
         param.put("blogTagId",id);
         List<BlogVO> blogVOList = blogDAO.listBlog(param);
         if(blogVOList.size()>0){
