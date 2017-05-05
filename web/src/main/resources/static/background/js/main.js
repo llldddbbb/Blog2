@@ -113,7 +113,7 @@ layui.define(['element', 'layer', 'util', 'pagesize', 'form'], function (exports
 
         getNotReplyLeaveMessage();
 
-        var interval = setInterval(function () {
+        var interval = setTimeout(function () {
             getNotReplyLeaveMessage();
         }, 60000);  //1分钟提醒一次
 

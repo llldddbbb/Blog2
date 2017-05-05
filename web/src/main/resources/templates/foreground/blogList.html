@@ -39,17 +39,17 @@
         <div class="col-md-9 technology-left">
             <div class="tech-no">
                 <div class="wthree" th:each="blog:${blogList}">
-                    <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
+                    <div class="col-md-6 wthree-left wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s" style="width: 250px;height: 250px;">
                         <div class="tch-img">
                             <a th:href="'/blog/'+${blog.id}" href="blog.html">
-                                <img th:src="${blog.coverImageName}" src="../../static/foreground/images/f1.jpg" style="width: 350px;height: 250px;" class="img-responsive" alt="">
+                                <img th:src="${blog.coverImageName}" src="../../static/foreground/images/f1.jpg"  class="img-responsive" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-6 wthree-right wow fadeInDown" data-wow-duration=".8s" data-wow-delay=".2s">
                         <h6><a th:href="'/blog/'+${blog.id}" href="blog.html" th:text="${blog.title}">最新博文2</a></h6>
-                        <h6>BY <a  th:text="${blog.author}">氧化钡 </a><span th:text="${#calendars.format(blog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
-                        <p th:text="${blog.summary}">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
+                        <h6>BY <a  th:text="${blog.author}">氧化钡 </a> <span th:text="${#calendars.format(blog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
+                        <p th:text="${blog.summary}" class="summary">Ut enim ad minim veniam, quis nostrud eiusmod tempor incididunt ut labore et dolore magna
                             aliqua exercitation ullamco laboris .</p>
                         <div class="bht1">
                             <a th:href="'/blog/'+${blog.id}" href="blog.html">查看更多</a>

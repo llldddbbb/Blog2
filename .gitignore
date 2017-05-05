@@ -22,3 +22,13 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+common/src/main/resources/
+common/src/test/
+dao/src/main/resources/
+dao/src/test/
+plugin/src/test/
+pojo/src/main/resources/
+pojo/src/test/
+service/src/main/resources/
+service/src/test/
+web/src/main/resources/static/background/plugin/layui/css/css/
