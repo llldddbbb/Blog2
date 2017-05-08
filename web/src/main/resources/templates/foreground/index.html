@@ -105,7 +105,7 @@
                     <h3><a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html">推荐 : <span th:text="${application.recommendBlog.title}">网站源码下载</span></a></h3>
                     <h6></h6>
                     <div class="tch-img">
-                        <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html"><img th:src="${application.recommendBlog.coverImageName}"src="../../static/foreground/images/t4.jpg" class="img-responsive" alt=""></a>
+                        <a th:href="'/blog/'+${application.recommendBlog.id}" href="blog.html"><img th:src="${application.recommendBlog.coverImageName}"src="../../static/foreground/images/t4.jpg" class="img-responsive" style="width: 100%" alt=""></a>
                     </div>
                     <h6>BY <a  th:text="${application.recommendBlog.author}">氧化钡 </a> <span th:text="${#calendars.format(application.recommendBlog.publishTime,'yyyy-MM-dd')}">2017-04-13</span></h6>
                     <p th:text="${application.recommendBlog.summary}">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -127,7 +127,7 @@
                         <div class="tc-ch">
                             <div class="tch-img">
                                 <a th:href="'/blog/'+${newBlogList[0].id}" href="blog.html">
-                                    <img th:src="${newBlogList[0].coverImageName}" src="../../static/foreground/images/m4.jpg" class="img-responsive" style="max-height: 270px">
+                                    <img th:src="${newBlogList[0].coverImageName}" src="../../static/foreground/images/m4.jpg" class="img-responsive" style="max-height: 250px">
                                 </a>
                             </div>
                             <h6><a th:href="'/blog/'+${newBlogList[0].id}" href="blog.html" th:text="${newBlogList[0].title}">最新博文0</a></h6>
@@ -150,7 +150,7 @@
                         <div class="tc-ch" >
                             <div class="tch-img">
                                 <a th:href="'/blog/'+${newBlogList[1].id}" href="blog.html">
-                                    <img th:src="${newBlogList[1].coverImageName}"  class="img-responsive" style="max-height: 270px" ></a>
+                                    <img th:src="${newBlogList[1].coverImageName}"  class="img-responsive" style="max-height: 250px" ></a>
                             </div>
 
                             <h6><a th:href="'/blog/'+${newBlogList[1].id}" href="blog.html" th:text="${newBlogList[1].title}">最新博文1</a></h6>

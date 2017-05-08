@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
@@ -27,49 +26,23 @@ public class BlogListController {
 
 
     @RequestMapping(value="/blog/category/{blogTypeId}",method = RequestMethod.GET)
-    public ModelAndView blogType(@PathVariable String blogTypeId){
-        ModelAndView mav=new ModelAndView("foreground/blogList");
-        HashMap<String,Object> param=new HashMap<>();
-        //拼装分页参数
-        PageBeanBO pageBean=new PageBeanBO(1, ConfigStrUtil.BLOGLISTPAGESIZE);
-        param.put("start",pageBean.getStart());
-        param.put("pageSize",pageBean.getPageSize());
-        //拼装筛选参数
-        param.put("blogTypeId",Integer.parseInt(blogTypeId));
-        List<BlogVO> blogList = blogService.listBlog(param);
-
-        //获取总记录数
-        Long count=blogService.getBlogCount(param);
-        //拼装分页代码
-        String targetUrl="/blog/category/"+blogTypeId+"/list";
-        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
-
-        mav.addObject("blogList",blogList);
-        mav.addObject("pageNation",pageNation);
-        return mav;
+    public String blogType(@PathVariable String blogTypeId){
+        return "redirect:/blog/category/"+blogTypeId+"/list/1";
     }
 
     @RequestMapping(value="/blog/tag/{blogTagId}",method = RequestMethod.GET)
-    public ModelAndView blogTag(@PathVariable String blogTagId){
-        ModelAndView mav=new ModelAndView("foreground/blogList");
-        HashMap<String,Object> param=new HashMap<>();
-        //拼装分页参数
-        PageBeanBO pageBean=new PageBeanBO(1, ConfigStrUtil.BLOGLISTPAGESIZE);
-        param.put("start",pageBean.getStart());
-        param.put("pageSize",pageBean.getPageSize());
-        //拼装筛选参数
-        param.put("blogTagId",Integer.parseInt(blogTagId));
-        List<BlogVO> blogList = blogService.listBlog(param);
+    public String blogTag(@PathVariable String blogTagId){
+        return "redirect:/blog/tag/"+blogTagId+"/list/1";
+    }
 
-        //获取总记录数
-        Long count=blogService.getBlogCount(param);
-        //拼装分页代码
-        String targetUrl="/blog/tag/"+blogTagId+"/list";
-        String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
+    @RequestMapping(value="/blog/dateArchive/{dateArchive}",method = RequestMethod.GET)
+    public String dateArchive(@PathVariable String dateArchive){
+        return "redirect:/blog/dateArchive/"+dateArchive+"/list/1";
+    }
 
-        mav.addObject("blogList",blogList);
-        mav.addObject("pageNation",pageNation);
-        return mav;
+    @RequestMapping(value="/blog/list",method = RequestMethod.GET)
+    public String blogList(){
+        return "redirect:/blog/list/1";
     }
 
     @RequestMapping(value="/blog/category/{blogTypeId}/list/{page}",method = RequestMethod.GET)
@@ -118,13 +91,12 @@ public class BlogListController {
         return mav;
     }
 
-    @RequestMapping(value="/blog/dateArchive/{dateArchive}",method = RequestMethod.GET)
-    @ResponseBody
-    public ModelAndView dateArchive(@PathVariable String dateArchive){
+    @RequestMapping(value="/blog/dateArchive/{dateArchive}/list/{page}",method = RequestMethod.GET)
+    public ModelAndView dateArchiveList(@PathVariable String dateArchive,@PathVariable String page){
         ModelAndView mav=new ModelAndView("foreground/blogList");
         HashMap<String,Object> param=new HashMap<>();
         //拼装分页参数
-        PageBeanBO pageBean=new PageBeanBO(1, ConfigStrUtil.BLOGLISTPAGESIZE);
+        PageBeanBO pageBean=new PageBeanBO(Integer.parseInt(page), ConfigStrUtil.BLOGLISTPAGESIZE);
         param.put("start",pageBean.getStart());
         param.put("pageSize",pageBean.getPageSize());
         //拼装筛选参数
@@ -142,8 +114,9 @@ public class BlogListController {
         return mav;
     }
 
-    @RequestMapping(value="/blog/dateArchive/{dateArchive}/list/{page}",method = RequestMethod.GET)
-    public ModelAndView dateArchiveList(@PathVariable String dateArchive,@PathVariable String page){
+
+    @RequestMapping(value="/blog/list/{page}",method = RequestMethod.GET)
+    public ModelAndView blogList(@PathVariable String page){
         ModelAndView mav=new ModelAndView("foreground/blogList");
         HashMap<String,Object> param=new HashMap<>();
         //拼装分页参数
@@ -151,13 +124,12 @@ public class BlogListController {
         param.put("start",pageBean.getStart());
         param.put("pageSize",pageBean.getPageSize());
         //拼装筛选参数
-        param.put("dateArchive",dateArchive+"%");
         List<BlogVO> blogList = blogService.listBlog(param);
 
         //获取总记录数
         Long count=blogService.getBlogCount(param);
         //拼装分页代码
-        String targetUrl="/blog/dateArchive/"+dateArchive+"/list";
+        String targetUrl="/blog/list/";
         String pageNation= PageUtil.getPageNation(count,targetUrl,pageBean.getPage(),pageBean.getPageSize());
 
         mav.addObject("blogList",blogList);
